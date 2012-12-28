@@ -30,9 +30,9 @@ public class SoundSense {
 			
 			logger.info("SoundSense for Dwarf Fortress is starting...");
 			logger.info(getVersionString());
-			logger.info("Loading theme packs from "+configuration.getSoundpacksPath());
-			SoundsXML soundsXML = new SoundsXML(configuration.getSoundpacksPath());
-			logger.info("Done loading "+configuration.getSoundpacksPath()+", loaded "+soundsXML.getSounds().size()+" items.");
+			logger.info("Loading theme packs; default directory is "+configuration.getSoundpacksPath());
+			SoundsXML soundsXML = new SoundsXML(configuration.getSoundpacksPath(), false, configuration.noWarnAbsolutePath());
+			logger.info("Done loading "+soundsXML.toString()+", loaded "+soundsXML.getSounds().size()+" items.");
 			
 			new GameLogValidator(configuration).gamelogValidate();
 			logger.info("Attempting to listen to "+configuration.getGamelogPath());

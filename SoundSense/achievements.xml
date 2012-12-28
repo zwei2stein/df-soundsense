@@ -8,10 +8,6 @@
 		<achievement title="Your deeds are legend" description="Create 1000 Masterpiece items." triggerAmount="1000" image="masterpiece.png" />
 	</achievementPattern>
 	
-	<achievementPattern logPattern="(.+) has engraved a masterpiece!">
-		<achievement title="Historian" description="Engrave a masterpiece." triggerAmount="1" image="masterpiece.png" />
-	</achievementPattern>
-	
 	<achievementPattern logPattern="(.+) has given birth to ((a kitten)|(kittens))\.">
 		<achievement title="Nice little kitten" description="Have cat give birth." triggerAmount="1" image="cats.png" />
 		<achievement title="Free kitten giveaway!" description="Have cats give 10 births." triggerAmount="10" image="cats.png" />
@@ -26,7 +22,7 @@
 		<achievement title="Cat powered industry" description="Butcher 1000 live kittens." triggerAmount="1000" image="cats.png" />
 	</achievementPattern>
 	
-	<achievementPattern logPattern="The Stray Kitten \(Tame\) has been struck down\.">
+	<achievementPattern logPattern="You have struck (.+)!">
 		<achievement title="Strike the earth!" description="Discover a mineral deposit." triggerAmount="1" image="ore.png" />
 		<achievement title="Dig Deeper!" description="Discover 10 mineral deposits." triggerAmount="10" image="ore.png" />
 		<achievement title="Underground diversity" description="Discover 100 mineral deposits." triggerAmount="100" image="ore.png" />
@@ -35,12 +31,6 @@
 	
 	<achievementPattern logPattern="The (.+) has organized a party at (.+)\.">
 		<achievement title="Party time! Excellent!" description="Let dwarves organize party." triggerAmount="1" image="party.png" />
-	</achievementPattern>
-	
-	<achievementPattern logPattern="(.+) cancels (.+): Went insane\.">
-		<achievement title="Dwarven sanity." description="Let dwarf loose his mind." triggerAmount="1" image="dwarf.png" />
-		<achievement title="Don't let lunatics escape!." description="Let 10 dwarves loose their mind." triggerAmount="10" image="dwarf.png" />
-		<achievement title="Forum meetup." description="Let 100 dwarves loose their mind." triggerAmount="100" image="dwarf.png" />
 	</achievementPattern>
 	
 </achievements>

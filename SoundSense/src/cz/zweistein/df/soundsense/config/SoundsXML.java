@@ -26,27 +26,37 @@ public class SoundsXML {
 	private List<Sound> sounds;
 	private String rootDirectory;
 	private boolean ignoreEmptySounds;
+	private boolean noWarnAbsolutePath;
+	
+	private List<String> parsedDirectories;
 
 	private List<IReloadProgressCallback> reloadProgressCallbacks;
 	
-	public SoundsXML(String directory, boolean ignoreEmptySounds) {
+	public SoundsXML(String directory, boolean ignoreEmptySounds, boolean noWarnAbsolutePath) {
 		this.rootDirectory = directory;
 		this.sounds = new LinkedList<Sound>();
 		this.reloadProgressCallbacks = new LinkedList<IReloadProgressCallback>();
 		this.ignoreEmptySounds = ignoreEmptySounds;
+		this.noWarnAbsolutePath = noWarnAbsolutePath;
+		this.parsedDirectories = new LinkedList<String>();
 		
-		this.loadDirectory(directory, ignoreEmptySounds);
+		this.loadDirectory(this.rootDirectory, ignoreEmptySounds);
 		for (IReloadProgressCallback reloadProgressCallback: this.reloadProgressCallbacks) {
 			reloadProgressCallback.done();
 		}
 	}
 
 	public SoundsXML(String directory) {
-		this(directory, false);
+		this(directory, false, false);
+	}
+
+	public SoundsXML(String directory, boolean ignoreEmptySounds) {
+		this(directory, ignoreEmptySounds, false);
 	}
 	
 	public void reload() {
 		this.sounds = new ArrayList<Sound>(this.getSounds().size());
+		this.parsedDirectories = new ArrayList<String>(this.parsedDirectories.size());
 		this.loadDirectory(this.rootDirectory, this.ignoreEmptySounds);
 		for (IReloadProgressCallback reloadProgressCallback: this.reloadProgressCallbacks) {
 			reloadProgressCallback.done();
@@ -54,36 +64,44 @@ public class SoundsXML {
 	}
 	
 	private void loadDirectory(String directory, boolean ignoreEmptySounds) {
+		if (!(directory.substring(directory.length()-1).equals("\\") || directory.substring(directory.length()-1).equals("/"))) {
+			directory = directory+"/";
+		}
 		logger.fine("Scanning directory '"+directory+"'.");
 		File dir = new File(directory);
 		
-		String[] files = dir.list();
-		
-		if (files == null) {
-			logger.info("'"+directory+"' is empty or invalid? Ignoring.");
+		if (parsedDirectories.contains(dir.getAbsolutePath())) {
+			logger.info("ignoring already parsed directory to prevent infinite loop");
 		} else {
-			Arrays.sort(files);
-			for (int i = 0; i < files.length; i++) {
-				
-				String fileName = files[i];
-				
-				if (new File(directory+fileName).isDirectory()) {
-					this.loadDirectory(directory+fileName+"/", ignoreEmptySounds);
-				} else if (fileName.endsWith(".xml")) {
-				
-					try {
-						logger.info("Loading config "+directory+fileName);
-						this.loadFile(directory+fileName, ignoreEmptySounds);
-					} catch (Exception e) {
-						logger.severe("Failed to load "+ fileName + ": " + e.toString());
+			String[] files = dir.list();
+			
+			if (files == null) {
+				logger.info("'"+directory+"' is empty or invalid? Ignoring.");
+			} else {
+				this.parsedDirectories.add(new String(dir.getAbsolutePath()));
+			
+				Arrays.sort(files);
+				for (int i = 0; i < files.length; i++) {
+					
+					String fileName = files[i];
+					
+					if (new File(directory+fileName).isDirectory()) {
+						this.loadDirectory(directory+fileName+"/", ignoreEmptySounds);
+					} else if (fileName.endsWith(".xml")) {
+					
+						try {
+							logger.info("Loading config "+directory+fileName);
+							this.loadFile(directory+fileName, ignoreEmptySounds);
+						} catch (Exception e) {
+							logger.severe("Failed to load "+ fileName + ": " + e.toString());
+						}
+					
+					} else {
+						logger.finest("'"+fileName+"' is not configuration file.");
 					}
-				
-				} else {
-					logger.finest("'"+fileName+"' is not configuration file.");
 				}
 			}
 		}
-		
 	}
 	
 	private void loadFile(String fileName, boolean ignoreEmptySounds) throws SAXException, IOException {
@@ -103,10 +121,18 @@ public class SoundsXML {
 		NodeList soundTags = doc.getElementsByTagName("sound");
 		parseSounds(soundTags, fileName, ignoreEmptySounds, defaultAnsiFormat);
 		
+		// add check for directory/listing references here?
+		NodeList directoryReferences = doc.getElementsByTagName("includeDirectory");
+		parseDirectories(directoryReferences);
+		
+		NodeList listings = doc.getElementsByTagName("includeListing");
+		parseListings(listings);
+		
 		for (IReloadProgressCallback reloadProgressCallback: this.reloadProgressCallbacks) {
 			reloadProgressCallback.tick();
 		}
 		
+		// or add them here??
 	}
 
 	
@@ -239,7 +265,9 @@ public class SoundsXML {
 			// we did not find file on relative path respecting location of parent xml, lets see if it is on absolute path
 			if (new File(fileNameAttribute.getNodeValue()).exists()) {
 				soundFile = fileNameAttribute.getNodeValue();
-				logger.info("File " + soundFile + " is on absolute path.");
+				if (!this.noWarnAbsolutePath) {
+					logger.info("File " + soundFile + " is on absolute path.");
+				}
 			} else {
 				logger.warning("Did not find " + soundFile + ", ignoring.");
 				return null;
@@ -266,6 +294,35 @@ public class SoundsXML {
 		boolean randomBalance = parseBooleanAttribute(configNode, "randomBalance", false);
 
 		return new SoundFile(soundFile, weight, volumeAdjustment, balanceAdjustment, randomBalance);
+	}
+
+	private void parseDirectories(NodeList directoryReferences) {
+		for (int i = 0; i < directoryReferences.getLength(); i++) {
+			Node directoryNode = directoryReferences.item(i);
+			
+			String directoryReference = parseStringAtribute(directoryNode, "path", null);
+			
+			if (directoryReference == null) {
+				logger.info("Directory reference tag without 'path' attribute encountered.");
+			} else {
+				loadDirectory(directoryReference,this.ignoreEmptySounds);
+			}
+		}
+	}
+
+	private void parseListings(NodeList listings) throws SAXException, IOException {
+		for (int i = 0; i < listings.getLength(); i++) {
+			Node listingNode = listings.item(i);
+			
+			String filePath = parseStringAtribute(listingNode, "filePathAndName", null);
+			
+			if (filePath == null || !filePath.matches(".+\\.xml")) {
+				logger.info("Include listing tag without valid 'filePathAndName' attribute encountered (make sure it ends in '.xml'!).");
+			} else {
+				logger.info("Loading included config "+filePath);
+				loadFile(filePath,this.ignoreEmptySounds);
+			}
+		}
 	}
 
 	public List<Sound> getSounds() {

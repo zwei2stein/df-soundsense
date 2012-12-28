@@ -36,6 +36,8 @@ public class ConfigurationXML {
 	private String gamelogPath;
 	private String gamelogEncoding;
 	private String soundpacksPath;
+	private boolean allowPackOverride;
+	private boolean noWarnAbsolutePaths;
 	private float volume;
 	private long playbackTheshhold;
 
@@ -61,7 +63,9 @@ public class ConfigurationXML {
 		this.gamelogEncoding = gamelogNode.getAttributes().getNamedItem("encoding").getNodeValue();
 		
 		Node soundpacksNode = configNodes.getElementsByTagName("soundpacks").item(0);
-		this.soundpacksPath = soundpacksNode.getAttributes().getNamedItem("path").getNodeValue();
+		this.soundpacksPath = soundpacksNode.getAttributes().getNamedItem("defaultPath").getNodeValue();
+		this.allowPackOverride = Boolean.parseBoolean(soundpacksNode.getAttributes().getNamedItem("allowOverride").getNodeValue());
+		this.noWarnAbsolutePaths = Boolean.parseBoolean(soundpacksNode.getAttributes().getNamedItem("noWarnAbsolutePath").getNodeValue());
 		
 		Node volumeNode = configNodes.getElementsByTagName("volume").item(0);
 		String volumeAdjustmentText = volumeNode.getAttributes().getNamedItem("value").getNodeValue();
@@ -149,6 +153,14 @@ public class ConfigurationXML {
 	
 	public String getSoundpacksPath() {
 		return this.soundpacksPath;
+	}
+	
+	public boolean isPackOverrideAllowed() {
+		return this.allowPackOverride;
+	}
+	
+	public boolean noWarnAbsolutePath() {
+		return this.noWarnAbsolutePaths;
 	}
 
 	public float getVolume() {

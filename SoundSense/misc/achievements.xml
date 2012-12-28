@@ -22,7 +22,7 @@
 		<achievement title="Cat powered industry" description="Butcher 1000 live kittens." triggerAmount="1000" image="cats.png" />
 	</achievementPattern>
 	
-	<achievementPattern logPattern="The Stray Kitten \(Tame\) has been struck down\.">
+	<achievementPattern logPattern="You have struck (.+)!">
 		<achievement title="Strike the earth!" description="Discover a mineral deposit." triggerAmount="1" image="ore.png" />
 		<achievement title="Dig Deeper!" description="Discover 10 mineral deposits." triggerAmount="10" image="ore.png" />
 		<achievement title="Underground diversity" description="Discover 100 mineral deposits." triggerAmount="100" image="ore.png" />

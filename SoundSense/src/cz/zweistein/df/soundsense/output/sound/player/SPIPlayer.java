@@ -67,6 +67,7 @@ public class SPIPlayer {
 			logger.severe("Failed to open "+this.fileName+" propably download error or configuration mistake.");
 		} catch (Exception e) {
 			logger.severe("Exception with "+this.fileName+": "+e+": "+e.getMessage());
+			e.printStackTrace();
 		}
 	}
 

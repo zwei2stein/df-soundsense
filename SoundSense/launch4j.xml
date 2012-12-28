@@ -15,7 +15,7 @@
   <icon>icons/icon.ico</icon>
   <classPath>
     <mainClass>cz.zweistein.df.soundsense.SoundSense</mainClass>
-    <cp>lib\MP3SPI\mp3spi1.9.4.jar;lib\MP3SPI\jl1.0.jar</cp>
+    <cp>lib\MP3SPI\mp3spi1.9.5.jar;lib\MP3SPI\jl1.0.1.jar</cp>
     <cp>lib\OGGSPI\jogg-0.0.7.jar;lib\OGGSPI\jorbis-0.0.15.jar;lib\OGGSPI\vorbisspi1.0.3.jar</cp>
     <cp>lib\tritonus_share.jar</cp>
     <cp>lib\commons-codec-1.4\commons-codec-1.4.jar;lib\autoUpdater.jar</cp>

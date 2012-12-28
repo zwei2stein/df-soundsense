@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/MP3SPI/jl1.0.jar"/>
-	<classpathentry kind="lib" path="lib/MP3SPI/mp3spi1.9.4.jar"/>
+	<classpathentry kind="lib" path="lib/MP3SPI/jl1.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/MP3SPI/mp3spi1.9.5.jar"/>
 	<classpathentry kind="lib" path="lib/OGGSPI/jogg-0.0.7.jar"/>
 	<classpathentry kind="lib" path="lib/OGGSPI/jorbis-0.0.15.jar"/>
 	<classpathentry kind="lib" path="lib/OGGSPI/vorbisspi1.0.3.jar"/>
