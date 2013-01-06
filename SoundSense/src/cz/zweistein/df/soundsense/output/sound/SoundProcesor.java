@@ -2,6 +2,7 @@ package cz.zweistein.df.soundsense.output.sound;
 
 import java.util.logging.Logger;
 
+import cz.zweistein.df.soundsense.config.ConfigurationXML;
 import cz.zweistein.df.soundsense.config.Sound;
 import cz.zweistein.df.soundsense.config.SoundsXML;
 import cz.zweistein.df.soundsense.output.Procesor;
@@ -12,12 +13,14 @@ public class SoundProcesor extends Procesor {
 	private static Logger logger = LoggerSource.logger;
 	
 	private SoundsXML soundsXML;
+	private ConfigurationXML configuration;
 	private PlayerManager player;
 	
-	public SoundProcesor(SoundsXML soundsXML, long playbackTheshhold) {
+	public SoundProcesor(SoundsXML soundsXML, ConfigurationXML configuration) {
 		this.soundsXML = soundsXML;
+		this.configuration = configuration;
 		this.player = new PlayerManager();
-		this.player.setPlaybackTheshhold(playbackTheshhold);
+		this.player.setPlaybackTheshhold(configuration.getPlaybackTheshhold());
 	}
 	
 	public SoundsXML getSoundsXML() {
@@ -35,7 +38,7 @@ public class SoundProcesor extends Procesor {
 		Sound matchedSound = null;
 		for (Sound sound: soundsXML.getSounds()) {
 			
-			if (sound.matches(nextLine)) {
+			if (!getConfiguration().getDisabledSounds().contains(sound.getParentFile()) && sound.matches(nextLine)) {
 				matches++;
 				matchedSound = sound;
 				
@@ -66,6 +69,10 @@ public class SoundProcesor extends Procesor {
 
 	public void setPlaybackTheshhold(long playbackTheshhold) {
 		this.player.setPlaybackTheshhold(playbackTheshhold);
+	}
+
+	public ConfigurationXML getConfiguration() {
+		return configuration;
 	}
 
 }

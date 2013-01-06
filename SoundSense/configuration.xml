@@ -16,5 +16,7 @@
 	</autoUpdateURLs>
 	<autoUpdateReplaceFiles value="true"/>
 	<autoUpdateDeleteFiles value="false"/>
+	
+	<disabledSounds><item path="./packs/battle/battle.xml"/><item path="./packs/battle/gore.xml"/><item path="./packs/battle/hitevents.xml"/><item path="./packs/battle/strikes.xml"/><item path="./packs/battle/status.xml"/><item path="./packs/battle/breath.xml"/></disabledSounds>
 
 </configuration>

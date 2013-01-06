@@ -52,6 +52,7 @@ public class ConfigurationPanel extends JPanel implements ActionListener, IReloa
 		ConfigurationXMLTreeAdapter treeAdapter = new ConfigurationXMLTreeAdapter(this.soundsConfiguration);
 		this.soundsConfiguration.registerReloadProgressCallback(treeAdapter);
         JTree soundsTree = new JTree(treeAdapter);
+        soundsTree.setCellRenderer(new IconTreeCellRenderer(sp.getConfiguration()));
         
         JScrollPane soundsTreeScroller = new JScrollPane(soundsTree);
         
@@ -66,6 +67,10 @@ public class ConfigurationPanel extends JPanel implements ActionListener, IReloa
         soundFileInfoPanel.setVisible(false);
         infos.add(soundFileInfoPanel);
         
+        final XMLFileInfoPanel xmlFileInfoPanel = new XMLFileInfoPanel(sp.getConfiguration(), soundsTree);
+        xmlFileInfoPanel.setVisible(false);
+        infos.add(xmlFileInfoPanel);
+        
         soundsTree.addTreeSelectionListener(new TreeSelectionListener() {
         	@Override
         	public void valueChanged(TreeSelectionEvent e) {
@@ -77,6 +82,7 @@ public class ConfigurationPanel extends JPanel implements ActionListener, IReloa
 	        			
 	        			soundInfoPanel.setVisible(true);
 	        			soundFileInfoPanel.setVisible(false);
+	        			xmlFileInfoPanel.setVisible(false);
 	        			
 	        			soundInfoPanel.updateSound((Sound) selectedItem);
 	        			
@@ -84,6 +90,7 @@ public class ConfigurationPanel extends JPanel implements ActionListener, IReloa
 	        			
 	        			soundInfoPanel.setVisible(false);
 	        			soundFileInfoPanel.setVisible(true);
+	        			xmlFileInfoPanel.setVisible(false);
 	        			
 	        			soundFileInfoPanel.updateSoundFile((SoundFile) selectedItem);
 	        			
@@ -91,12 +98,16 @@ public class ConfigurationPanel extends JPanel implements ActionListener, IReloa
 	        			
 	        			soundInfoPanel.setVisible(false);
 	        			soundFileInfoPanel.setVisible(false);
+	        			xmlFileInfoPanel.setVisible(true);
+	        			
+	        			xmlFileInfoPanel.updatePath((String) selectedItem);
 	        			
 	        		}
         		} else {
         			
         			soundInfoPanel.setVisible(false);
         			soundFileInfoPanel.setVisible(false);
+        			xmlFileInfoPanel.setVisible(false);
         			
         		}
         	}

@@ -3,6 +3,7 @@ package cz.zweistein.df.soundsense.output.sound.player;
 import java.util.logging.Logger;
 
 import cz.zweistein.df.soundsense.config.Sound;
+import cz.zweistein.df.soundsense.config.SoundFile;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class ChannelThread implements Runnable {
@@ -18,6 +19,8 @@ public class ChannelThread implements Runnable {
 	private String channelName;
 	
 	private PlayerManager manager;
+
+	private Long delay;
 
 	public void setDefaultGain(float defaultGain) {
 		logger.finest("Setting "+defaultGain+" gain for "+channelName);
@@ -82,6 +85,7 @@ public class ChannelThread implements Runnable {
 					
 					if (currentMusic == null && loopMusic != null) {
 						currentMusic = loopMusic.getRandomSoundFile().getFileName();
+						delay = loopMusic.getDelay();
 						logger.fine("Channel looping "+channelName+": "+currentMusic);
 					}
 
@@ -94,6 +98,13 @@ public class ChannelThread implements Runnable {
 					musicPlayer.setMute(this.mute);
 					
 					this.manager.channelStatusChanged(this);
+					
+					if (delay != null) {
+						logger.fine("Delaying channel "+channelName+" playback by " + delay + " ms.");
+	 					Thread.sleep(delay);
+						delay = 0l;
+					}
+					
 					musicPlayer.play(currentMusic);
 				
 				} else {
@@ -117,9 +128,10 @@ public class ChannelThread implements Runnable {
 	public String toString() {
 		return this.channelName+((this.currentMusic==null)?"":": "+this.currentMusic);
 	}
-
-	public void setSingualMusic(String singualMusic) {
-		this.singualMusic = singualMusic;
+	
+	public void setSingualMusic(SoundFile randomSoundFile, Long delay) {
+		this.singualMusic = randomSoundFile.getFileName();
+		this.delay = delay;
 	}
 
 }

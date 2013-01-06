@@ -2,7 +2,7 @@
 
 	<gamelog encoding="Cp850" path="../gamelog.txt"/>
 	
-	<soundpacks allowOverride="true" defaultPath="./packs/OfficialPack/" noWarnAbsolutePath="false"/>
+	<soundpacks allowOverride="true" defaultPath="./packs/" noWarnAbsolutePath="false"/>
 	
 	<volume value="0.0"/>
 	
@@ -16,5 +16,7 @@
 	</autoUpdateURLs>
 	<autoUpdateReplaceFiles value="true"/>
 	<autoUpdateDeleteFiles value="false"/>
+
+	<disabledSounds />
 
 </configuration>

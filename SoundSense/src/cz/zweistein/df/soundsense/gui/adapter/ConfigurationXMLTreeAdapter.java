@@ -90,8 +90,6 @@ public class ConfigurationXMLTreeAdapter implements TreeModel, IReloadProgressCa
 
 	@Override
 	public void valueForPathChanged(TreePath path, Object newValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

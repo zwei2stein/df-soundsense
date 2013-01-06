@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Logger;
 
 import javax.xml.transform.Transformer;
@@ -46,6 +48,8 @@ public class ConfigurationXML {
 	private boolean deleteFiles;
 
 	private boolean gui;
+	
+	private Set<String> disabledSounds;
 
 	public ConfigurationXML(String configurationFile) throws SAXException, IOException {
 		
@@ -100,7 +104,33 @@ public class ConfigurationXML {
 		this.setDeleteFiles(parseBoolean("autoUpdateDeleteFiles", configNodes));
 		this.setReplaceFiles(parseBoolean("autoUpdateReplaceFiles", configNodes));
 		
-		this.gui = parseBoolean("gui", configNodes); 
+		this.gui = parseBoolean("gui", configNodes);
+		
+		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
+		this.disabledSounds = new LinkedHashSet<String>();
+		
+		NodeList disabledSounds = disabledSoundsNode.getChildNodes();
+		for (int j = 0; j < disabledSounds.getLength(); j++) {
+			Node configNode = disabledSounds.item(j);
+			String name = configNode.getLocalName();
+			
+			if ("item".equals(name)) {
+				this.disabledSounds.add(configNode.getAttributes().getNamedItem("path").getNodeValue());
+			}
+		}
+		if (!this.disabledSounds.isEmpty()) {
+			StringBuffer sb = new StringBuffer();
+			sb.append("Disabled sound configurations: ");
+			int cnt = 0;
+			for (String disabledSound : this.disabledSounds) {
+				sb.append(disabledSound);
+				cnt++;
+				if (cnt != this.disabledSounds.size()) {
+					sb.append(", ");
+				}
+			}
+			logger.info(sb.toString());
+		}
 		
 	}
 	
@@ -129,6 +159,18 @@ public class ConfigurationXML {
 		
 		Node autoUpdateDeleteFilesNode = configNodes.getElementsByTagName("autoUpdateDeleteFiles").item(0);
 		autoUpdateDeleteFilesNode.getAttributes().getNamedItem("value").setNodeValue(Boolean.toString(this.getDeleteFiles()));
+		
+		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
+		NodeList disabledSounds = disabledSoundsNode.getChildNodes();
+		for (int j = 0; j < disabledSounds.getLength(); j++) {
+			disabledSoundsNode.removeChild(disabledSounds.item(j));
+		}
+		for (String disabledSound : this.disabledSounds) {
+			Node newNode = disabledSoundsNode.appendChild(doc.createElement("item"));
+			Node path = doc.createAttribute("path");
+			newNode.getAttributes().setNamedItem(path);
+			path.setNodeValue(disabledSound);
+		}
 		
 		try {
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -209,6 +251,10 @@ public class ConfigurationXML {
 
 	public void setGamelogEncoding(String gamelogEncoding) {
 		this.gamelogEncoding = gamelogEncoding;
+	}
+
+	public Set<String> getDisabledSounds() {
+		return disabledSounds;
 	}
 	
 }

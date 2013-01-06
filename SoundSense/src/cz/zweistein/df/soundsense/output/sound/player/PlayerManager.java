@@ -104,7 +104,7 @@ public final class PlayerManager {
 				channelThread.setCurrentMusic(null);
 				logger.finest("Stopped playin "+sound.getChannel()+".");
 			} else {
-				channelThread.setSingualMusic(sound.getRandomSoundFile().getFileName());
+				channelThread.setSingualMusic(sound.getRandomSoundFile(), sound.getDelay());
 			}
 
 			if (channelThread.getMusicPlayer() != null) {
