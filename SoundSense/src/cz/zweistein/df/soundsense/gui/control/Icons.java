@@ -5,6 +5,7 @@ public class Icons {
 	public static final String APP_ICON = "./icons/icon.png";
 	
 	public static final String PLAY_ALL = "./icons/play_all.png";
+	public static final String PLAY = "./icons/play.png";
 	public static final String STOP = "./icons/stop.png";
 	
 	public static final String MUTE = "./icons/sound_mute.png";

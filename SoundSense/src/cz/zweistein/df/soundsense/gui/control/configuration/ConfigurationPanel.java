@@ -67,7 +67,7 @@ public class ConfigurationPanel extends JPanel implements ActionListener, IReloa
         soundFileInfoPanel.setVisible(false);
         infos.add(soundFileInfoPanel);
         
-        final XMLFileInfoPanel xmlFileInfoPanel = new XMLFileInfoPanel(sp.getConfiguration(), soundsTree);
+        final XMLFileInfoPanel xmlFileInfoPanel = new XMLFileInfoPanel(sp.getConfiguration(), soundsConfiguration, soundsTree);
         xmlFileInfoPanel.setVisible(false);
         infos.add(xmlFileInfoPanel);
         
@@ -100,7 +100,7 @@ public class ConfigurationPanel extends JPanel implements ActionListener, IReloa
 	        			soundFileInfoPanel.setVisible(false);
 	        			xmlFileInfoPanel.setVisible(true);
 	        			
-	        			xmlFileInfoPanel.updatePath((String) selectedItem);
+	        			xmlFileInfoPanel.setPath((String) selectedItem);
 	        			
 	        		}
         		} else {

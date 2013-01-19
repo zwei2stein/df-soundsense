@@ -22,7 +22,7 @@ public class StartSoundPlaybackButton extends JButton implements ActionListener 
 		this.manager = manager;
 		addActionListener(this);
 		setText("Start");
-		setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.PLAY_ALL)));
+		setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.PLAY)));
 	}
 
 	@Override
