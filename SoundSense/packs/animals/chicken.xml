@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<sounds defaultAnsiColor="&#27;[34m">
+
+	<!-- http://www.freesound.org/people/AGFX/sounds/43381/ -->
+	<!-- http://www.freesound.org/people/AGFX/sounds/43382/ -->
+
+	<sound logPattern="(.+) has grown to become a Rooster\.">
+		<soundFile fileName="chicken/43381__agfx__rooster-chicken-calls-1.mp3" randomBalance="true" />
+		<soundFile fileName="chicken/43382__agfx__rooster-chicken-calls-2.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="(.+) has grown to become a Stray Rooster\.">
+		<soundFile fileName="chicken/43381__agfx__rooster-chicken-calls-1.mp3" randomBalance="true" />
+		<soundFile fileName="chicken/43382__agfx__rooster-chicken-calls-2.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="(.+) has grown to become a Hen\.">
+		<soundFile fileName="chicken/43381__agfx__rooster-chicken-calls-1.mp3" randomBalance="true" />
+		<soundFile fileName="chicken/43382__agfx__rooster-chicken-calls-2.mp3" randomBalance="true" />
+	</sound>
+	
+</sounds>

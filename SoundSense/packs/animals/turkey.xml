@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<sounds defaultAnsiColor="&#27;[34m">
+
+	<sound logPattern="(.+) has grown to become a Turkey Gobbler.">
+		<!-- http://www.freesound.org/people/sinatra314/sounds/67675/ -->
+		<!-- http://soundbible.com/1737-Turkey-Gobble.html -->
+		<!-- http://soundbible.com/1663-Turkey-Gobble.html -->
+		<soundFile fileName="turkey/67675__sinatra314__turkeygobble1.mp3" randomBalance="true" />
+		<soundFile fileName="turkey/Turkey Gobble-SoundBible.com-123256561.mp3" randomBalance="true" />
+		<soundFile fileName="turkey/Turkey Gobble-SoundBible.com-333537286.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="(.+) has grown to become a Turkey Hen.">
+		<soundFile fileName="turkey/67675__sinatra314__turkeygobble1.mp3" randomBalance="true" />
+		<soundFile fileName="turkey/Turkey Gobble-SoundBible.com-123256561.mp3" randomBalance="true" />
+		<soundFile fileName="turkey/Turkey Gobble-SoundBible.com-333537286.mp3" randomBalance="true" />
+	</sound>
+	
+</sounds>

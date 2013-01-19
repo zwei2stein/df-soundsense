@@ -1,0 +1,140 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<sounds>
+
+	<sound logPattern="You drop the (.+)\.">
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement2.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement3.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement4.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement5.mp3" />
+	</sound>
+	
+	<sound logPattern="You pick up the (.+)\.">
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement2.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement3.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement4.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement5.mp3" />
+	</sound>
+	
+	<sound logPattern="You put the (.+) into the (.+)\.">
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement2.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement3.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement4.mp3" />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement5.mp3" />
+	</sound>
+
+	<sound logPattern="You have nothing left to wear\." ansiFormat="&#27;[31m">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
+	<sound logPattern="There is nothing to pick up here\." ansiFormat="&#27;[31m">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
+	<sound logPattern="You do not have a free grasp\." ansiFormat="&#27;[31m">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
+	<sound logPattern="You have nothing left to fire\." ansiFormat="&#27;[31m">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
+	<sound logPattern="You can't stand up -- somebody is in the way\.">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
+	<sound logPattern="You cannot rest until you leave this site\." ansiFormat="&#27;[31m">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
+	<sound logPattern="You must come down from the mountains before you can travel\." ansiFormat="&#27;[31m">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
+	<sound logPattern="You must move away from the river before you can travel\." ansiFormat="&#27;[31m">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
+	<sound logPattern="You are too full\." ansiFormat="&#27;[31m">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
+	<sound logPattern="You drink the (.+) blood\.">
+		<soundFile fileName="foodanddrink/58847__morgantj__slurping-then-an-ah.mp3" />
+	</sound>
+	
+	<sound logPattern="You empty the (.+)\.">
+		<soundFile fileName="foodanddrink/58847__morgantj__slurping-then-an-ah.mp3" />
+	</sound>
+	
+	<sound logPattern="You drink the water(( \[[0-9]+]\])+)\.">
+		<soundFile fileName="foodanddrink/58847__morgantj__slurping-then-an-ah.mp3" />
+	</sound>
+	
+	<sound logPattern="You eat the (.+)\.">
+		<soundFile fileName="foodanddrink/20264__koops__apple-crunch-01.mp3" />
+		<soundFile fileName="foodanddrink/20268__koops__apple-crunch-05.mp3" />
+		<soundFile fileName="foodanddrink/20279__koops__apple-crunch-16.mp3" />
+	</sound>
+	
+	<sound logPattern="You stand up\.">
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement2.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement3.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement4.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement5.mp3" volumeAdjustment="-10"  />
+	</sound>
+	
+	<sound logPattern="You lie on the ground\.">
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement2.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement3.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement4.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement5.mp3" volumeAdjustment="-10"  />
+	</sound>
+	
+	<sound logPattern="You lower the bucket\.">
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement2.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement3.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement4.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement5.mp3" volumeAdjustment="-10"  />
+	</sound>
+	
+	<sound logPattern="You raise the bucket\.">
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement2.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement3.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement4.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement5.mp3" volumeAdjustment="-10"  />
+	</sound>
+	
+	<sound logPattern="You make a campfire\.">
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement2.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement3.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement4.mp3" volumeAdjustment="-10"  />
+		<soundFile fileName="../battle/movement/28301__HerbertBoland__HeavySkirtMovement5.mp3" volumeAdjustment="-10"  />
+	</sound>
+	
+</sounds>

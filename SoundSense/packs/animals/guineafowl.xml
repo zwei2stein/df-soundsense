@@ -1,0 +1,10 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<sounds defaultAnsiColor="&#27;[34m">
+
+	<sound logPattern="(.+) has grown to become a Guineahen\.">
+	</sound>
+	
+	<sound logPattern="(.+) has grown to become a Guineacock\.">
+	</sound>
+	
+</sounds>

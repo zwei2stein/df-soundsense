@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<sounds defaultAnsiColor="&#27;[34m">
+
+	<sound logPattern="(.+) has grown to become a Goose\.">
+	</sound>
+	
+	<sound logPattern="(.+) has grown to become a Stray Goose\.">
+	</sound>
+	
+	<sound logPattern="(.+) has grown to become a Gander\.">
+	</sound>
+	
+</sounds>

@@ -1,0 +1,23 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<sounds>
+	
+	<sound logPattern="The Stray Cat head-bumps (.+)\.">
+		<soundFile fileName="../animals/cat/4913__NoiseCollector__cat1.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/cat/33657__Corsica_S__Meow.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/cat/24966__mich3d__CatPurring_01.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/cat/33657__Corsica_S__Meow.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="The Stray Turkey ((Gobbler)|(Hen)) roots around in the (.+)\.">
+		<soundFile fileName="../animals/turkey/67675__sinatra314__turkeygobble1.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/turkey/Turkey Gobble-SoundBible.com-123256561.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/turkey/Turkey Gobble-SoundBible.com-333537286.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="The Stray Turkey ((Gobbler)|(Hen)) eats a ((thrips)|(beetle))\.">
+		<soundFile fileName="../animals/turkey/67675__sinatra314__turkeygobble1.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/turkey/Turkey Gobble-SoundBible.com-123256561.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/turkey/Turkey Gobble-SoundBible.com-333537286.mp3" randomBalance="true" />
+	</sound>
+	
+</sounds>
