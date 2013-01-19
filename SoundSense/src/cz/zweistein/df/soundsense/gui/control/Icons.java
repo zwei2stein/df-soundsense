@@ -12,6 +12,7 @@ public class Icons {
 	
 	public static final String TRANSFER = "./icons/transfer_document.png";
 	public static final String INFO = "./icons/help_purple_button.png";
+	public static final String LOGS = "./icons/terminal.png";
 	
 	public static final String LOAD_01 = "./icons/load_001.png";
 	public static final String LOAD_02 = "./icons/load_002.png";

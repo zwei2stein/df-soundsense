@@ -16,7 +16,10 @@ public class GameLogValidator {
 	
 	public void gamelogValidate() {
 		
+		boolean hadInvalidLogfile = false;
+		
 		while (!(new File(configuration.getGamelogPath()).exists())) {
+			hadInvalidLogfile = true;
 			
 			final JFileChooser fc = new JFileChooser(configuration.getGamelogPath());
 			
@@ -31,7 +34,9 @@ public class GameLogValidator {
 			
 		}
 		
-		configuration.saveConfiguration();
+		if (hadInvalidLogfile) {
+			configuration.saveConfiguration();
+		}
 		
 	}
 

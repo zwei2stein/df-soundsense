@@ -21,6 +21,7 @@ import cz.zweistein.df.soundsense.gui.control.ThreshholdSelector;
 import cz.zweistein.df.soundsense.gui.control.VolumeSlider;
 import cz.zweistein.df.soundsense.gui.control.configuration.ConfigurationPanel;
 import cz.zweistein.df.soundsense.gui.control.configuration.CurrentlyPlayingPanel;
+import cz.zweistein.df.soundsense.gui.control.configuration.PathsConfigurationPanel;
 import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 
 public class Gui extends JPanel {
@@ -43,8 +44,11 @@ public class Gui extends JPanel {
         JPanel configurationPanel = new ConfigurationPanel(sp); 
         tabPane.addTab("Sounds Configuration", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.PLAY_ALL)), configurationPanel);
         
+        JPanel pathsConfigurationPanel = new PathsConfigurationPanel(config);
+        tabPane.addTab("Logs", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.LOGS)), pathsConfigurationPanel);
+        
         JPanel soundPackUpdatePanel = new SoundPackUpdatePanel(config);
-		tabPane.addTab("Soundpack update", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TRANSFER)), soundPackUpdatePanel);
+		tabPane.addTab("Pack update", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TRANSFER)), soundPackUpdatePanel);
 		
 		JPanel infoPanel = new InfoPanel();
 		tabPane.addTab("Info", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.INFO)), infoPanel);

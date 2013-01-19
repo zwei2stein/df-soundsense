@@ -75,6 +75,7 @@
 				<include name="icons/**" />
 				<include name="lib/**" />
 				<include name="packs/default/**" />
+				<include name="dfhack/scripts/soundsense.lua" />
 			</zipfileset>
 			<zipfileset prefix="soundsense" dir="misc">
 				<exclude name="readme.txt" />

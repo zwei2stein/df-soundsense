@@ -1,5 +1,6 @@
 package cz.zweistein.df.soundsense;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
@@ -42,16 +43,25 @@ public class SoundSense {
 			
 			SoundProcesor sp = new SoundProcesor(soundsXML, configuration);
 			
-			if (configuration.getGui()) {
-				Gui.newGui(configuration, sp);
-			}
-			
 			sp.setGlobalVolume(configuration.getVolume());
 			
 			Glue.glue(logReader, sp);
 			
-			//NetworkManager nm = new NetworkManager(sp);
-			//nm.acceptIcommingConnections(3333);
+			String gamelogBasedir = new File(configuration.getGamelogPath()).getParentFile().getPath();
+			for (String supplementalLogPath : configuration.getSupplementalLogs()) {
+				supplementalLogPath = supplementalLogPath.replace("${gamelogBaseDir}", gamelogBasedir);
+				if (new File(supplementalLogPath).exists()) {
+					logger.info("Attempting to listen to supplemental "+supplementalLogPath);
+					LogReader supplementalLogReader = new LogReader(supplementalLogPath, configuration.getGamelogEncoding());
+					Glue.glue(supplementalLogReader, sp);
+				} else {
+					logger.info("Supplemental log "+supplementalLogPath+" not found.");
+				}
+			}
+
+			if (configuration.getGui()) {
+				Gui.newGui(configuration, sp);
+			}
 			
 		} catch (IOException e) {
 			logger.severe("Exception :"+e+": "+e.toString());

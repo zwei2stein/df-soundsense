@@ -50,6 +50,8 @@ public class ConfigurationXML {
 	private boolean gui;
 	
 	private Set<String> disabledSounds;
+	
+	private List<String> supplementalLogs;
 
 	public ConfigurationXML(String configurationFile) throws SAXException, IOException {
 		
@@ -89,17 +91,7 @@ public class ConfigurationXML {
 		}
 		
 		Node autoUpdateURLNode = configNodes.getElementsByTagName("autoUpdateURLs").item(0);
-		this.autoUpdateURLs = new ArrayList<String>();
-		
-		NodeList urls = autoUpdateURLNode.getChildNodes();
-		for (int j = 0; j < urls.getLength(); j++) {
-			Node configNode = urls.item(j);
-			String name = configNode.getLocalName();
-			
-			if ("item".equals(name)) {
-				autoUpdateURLs.add(configNode.getAttributes().getNamedItem("path").getNodeValue());
-			}
-		}
+		this.autoUpdateURLs = parsePathList(autoUpdateURLNode);
 		
 		this.setDeleteFiles(parseBoolean("autoUpdateDeleteFiles", configNodes));
 		this.setReplaceFiles(parseBoolean("autoUpdateReplaceFiles", configNodes));
@@ -107,17 +99,7 @@ public class ConfigurationXML {
 		this.gui = parseBoolean("gui", configNodes);
 		
 		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
-		this.disabledSounds = new LinkedHashSet<String>();
-		
-		NodeList disabledSounds = disabledSoundsNode.getChildNodes();
-		for (int j = 0; j < disabledSounds.getLength(); j++) {
-			Node configNode = disabledSounds.item(j);
-			String name = configNode.getLocalName();
-			
-			if ("item".equals(name)) {
-				this.disabledSounds.add(configNode.getAttributes().getNamedItem("path").getNodeValue());
-			}
-		}
+		this.disabledSounds = new LinkedHashSet<String>(parsePathList(disabledSoundsNode));
 		if (!this.disabledSounds.isEmpty()) {
 			StringBuffer sb = new StringBuffer();
 			sb.append("Disabled sound configurations: ");
@@ -132,6 +114,25 @@ public class ConfigurationXML {
 			logger.info(sb.toString());
 		}
 		
+		Node supplementalLogsNode = configNodes.getElementsByTagName("supplementalLogs").item(0);
+		this.supplementalLogs = parsePathList(supplementalLogsNode);
+		
+	}
+	
+	private List<String> parsePathList(Node listNode) {
+		List<String> list = new ArrayList<String>();
+		
+		NodeList items = listNode.getChildNodes();
+		for (int j = 0; j < items.getLength(); j++) {
+			Node item = items.item(j);
+			String name = item.getLocalName();
+			
+			if ("item".equals(name)) {
+				list.add(item.getAttributes().getNamedItem("path").getNodeValue());
+			}
+		}
+		
+		return list;
 	}
 	
 	private boolean parseBoolean(String noneName, Element nodes) {
@@ -248,13 +249,13 @@ public class ConfigurationXML {
 	public String getGamelogEncoding() {
 		return gamelogEncoding;
 	}
-
-	public void setGamelogEncoding(String gamelogEncoding) {
-		this.gamelogEncoding = gamelogEncoding;
-	}
-
+	
 	public Set<String> getDisabledSounds() {
 		return disabledSounds;
+	}
+
+	public List<String> getSupplementalLogs() {
+		return supplementalLogs;
 	}
 	
 }

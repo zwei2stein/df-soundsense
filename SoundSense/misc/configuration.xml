@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
 
 	<gamelog encoding="Cp850" path="../gamelog.txt"/>
+ 	<supplementallogs>
+ 		<item path="${gamelogBaseDir}/ss_fix.log"/>
+ 	</supplementallogs> 
 	
 	<soundpacks allowOverride="true" defaultPath="./packs/" noWarnAbsolutePath="false"/>
 	
