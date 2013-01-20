@@ -26,7 +26,7 @@
          <file name="actions.xml" sha1="223d3378a130f8d629dc763c6ba677a8d061112b" size="8559"/>
          <file name="adventurer.xml" sha1="0c89d7c9aa2dd4830ba511eaede2c64ecd70178c" size="4437"/>
          <file name="ambush.xml" sha1="bc4a2a9c2dfd6350d28a55187adef00e6c17d4f8" size="4267"/>
-         <file name="animal_behavior.xml" sha1="6ade5ec1192c60b33f389cd1ff47bacb09176345" size="1353"/>
+         <file name="animal_behavior.xml" sha1="6d577d5b63cc6ebd88970f6fb85487c3eddd4e94" size="2346"/>
          <file name="combat_actions.xml" sha1="f35fd0e5fa3f0d843c15ebf84b972ad1b8d20a2f" size="2252"/>
          <file name="enviroment.xml" sha1="c309b82238bc37a9ba5b47827787e1faa9b8e6db" size="475"/>
       </directory>
@@ -74,9 +74,15 @@
             <file name="43382__agfx__rooster-chicken-calls-2.mp3" sha1="1921c23074d8f958a22e271be0323b25027bc341" size="45134"/>
          </directory>
          <directory name="rabbit">
-            <file name="84141__dobroide__20091122-rabbit-carrot_1.mp3" sha1="376e5563b0424de7e21db21956fd7414b5ea196f" size="38451"/>
-            <file name="84141__dobroide__20091122-rabbit-carrot_2.mp3" sha1="364ca6025e0a1d35ef06439dc03b0bacb1c69c1d" size="43048"/>
-            <file name="84141__dobroide__20091122-rabbit-carrot_3.mp3" sha1="b4e9a463bfb4f5ff8da134d4a4d260d3b30c0b5f" size="30928"/>
+            <file name="84141__dobroide__20091122-rabbit-carrot_3.mp3" sha1="f1319d2ba5eb079650d5777dba7e6ea1d116cdc2" size="31134"/>
+            <file name="84141__dobroide__20091122-rabbit-carrot_1.mp3" sha1="ec959bcddeca951ed881ddc08ccc85f580cb68fd" size="38657"/>
+            <file name="84141__dobroide__20091122-rabbit-carrot_2.mp3" sha1="8f46900e68b832884e8b0f66e6a8b0e7676d6ab8" size="43254"/>
+         </directory>
+         <directory name="guineafowl">
+            <file name="nest_call_1.mp3" sha1="2d7c5e5c16723180e77227dd8c1993cea8bf2688" size="56179"/>
+            <file name="nest_call_2.mp3" sha1="7629ea6f952cfdd53c04766123fd9d27bb80b487" size="83796"/>
+            <file name="male_2.mp3" sha1="183e893060172f30dbe5bb23318a8c1cfb8fe393" size="23610"/>
+            <file name="male_1.mp3" sha1="2e49f9aad1e919731d5ed5dccfa29d9e4fb3ddac" size="41583"/>
          </directory>
          <file name="16933__acclivity__Donkey.mp3" sha1="b6bd7d7626bc86486add2e8cf88a600081fd3290" size="101769"/>
          <file name="18229__dobroide__20060419horse.mp3" sha1="5f13c66f8171d9582dcfa6e7af7a6e98037d1f39" size="56211"/>
@@ -95,7 +101,7 @@
          <file name="duck.xml" sha1="2e82c877f493a1094ac10bec89a448d3f5779aaf" size="233"/>
          <file name="goat.xml" sha1="e41810bc747f97996627df97ce42c40c9b725093" size="252"/>
          <file name="goose.xml" sha1="9c6f91d7bec8ffe35cc6b24422bc57518775e52c" size="313"/>
-         <file name="guineafowl.xml" sha1="b64d3b1fd28c9fbd276b10e91b41b2abf1200f97" size="243"/>
+         <file name="guineafowl.xml" sha1="9669b675a81d998037572053943e833932584ec2" size="649"/>
          <file name="peafowl.xml" sha1="953426e6716f400cfe48c8bd78c4ebed02d40dd5" size="181"/>
          <file name="pig.xml" sha1="511044aa6768bd92ce69c0028a22280a90cb4bfb" size="2115"/>
          <file name="rabbit.xml" sha1="ffceb518cb4ed5b59ef84adcbc9f3e99a220039b" size="1705"/>
@@ -323,7 +329,6 @@
          </directory>
          <directory name="vocals">
             <directory name="goblin">
-               <file name="uncon3.wav" sha1="0ac93bc22a026883c3d6df13be31a412cb4836f1" size="65574"/>
                <file name="enraged3.mp3" sha1="921a8069901ba8f1abec5b9785d5156e8bd7f97d" size="14040"/>
                <file name="pain6.mp3" sha1="0af89979b0b2bd2c780ae5ee84b9527fa7430735" size="8013"/>
                <file name="cantbreath1.mp3" sha1="f08677b683788420eda39255476e10d100af0fca" size="24708"/>
@@ -408,7 +413,7 @@
          </directory>
          <file name="50776__smcameron__fall_with_impact.mp3" sha1="dab6095ede5520f83ec2836b276725cb95502e19" size="77624"/>
          <file name="directdeaths.xml" sha1="0219f14e2cf6f374e0fab006d23ee50df3cde3b9" size="5953"/>
-         <file name="founddeaths.xml" sha1="9449c6bb7f9aac252d34f252c03311b171c38037" size="4564"/>
+         <file name="founddeaths.xml" sha1="4c2de3e1d06feb3735b7cdd4bcb0ca1ef3a027a2" size="4578"/>
          <file name="gutwrenching_scream.mp3" sha1="fa6643097b088537328d2eab1750e36d1931c085" size="76817"/>
          <file name="slaughtering.xml" sha1="be6d9a0a44d0a45cda5497c992c99237e33e59bc" size="408"/>
          <file name="WilhelmScream_vbr.mp3" sha1="a5738e2acee20391ce6054de5ac3e9aa7d220494" size="31649"/>
@@ -894,8 +899,14 @@
             <file name="29837__HerbertBoland__PianoMood32.mp3" sha1="b484d3e173081e9b43f90b93715cd01de1dad791" size="180007"/>
             <file name="29839__HerbertBoland__PianoMood34.mp3" sha1="a015e782418ca8d1bb48a33e7e975803ffbc6226" size="162035"/>
          </directory>
+         <directory name="votes">
+            <file name="paper_mix_1.mp3" sha1="3bcae230fcaac0b4ff08d670f04c58f979d95830" size="90452"/>
+            <file name="paper_mix_2.mp3" sha1="3205f1bba7075290034cfbf7e29f7322b5ae1423" size="87836"/>
+            <file name="atribution.txt" sha1="40731a38e7afce58ef1a5be02bfd5f1c8ac4615e" size="240"/>
+            <file name="paper_mix_3.mp3" sha1="139139572622e718d5c1a8546e58f97b6aa5447f" size="87140"/>
+         </directory>
          <file name="missing.xml" sha1="543a38df801cbaab9af1451b3a85cea5cad3322b" size="657"/>
-         <file name="social.xml" sha1="04e069a2cf0dd7596aa524bffeddabdef9d41b04" size="9429"/>
+         <file name="social.xml" sha1="5543159a144be96fb3789b52e9421bf6d81efe63" size="10735"/>
       </directory>
       <directory name="system">
          <directory name="embark">
@@ -969,12 +980,12 @@
             <file name="121894__stephensaldanha__magical-effect.mp3" sha1="f260749b96c510f5cc621108dabb4273499d40f7" size="33223"/>
          </directory>
          <directory name="were">
-            <file name="140491__alienxxx__box-25x25x7-thin-roar-006.mp3" sha1="c3bdf4f9db780c56ab48461d656096447aebd264" size="33024"/>
-            <file name="140488__alienxxx__box-25x25x7-thin-roar-009.mp3" sha1="674594c89e2d62ffea6fe7890ba792b7c3385f48" size="83712"/>
+            <file name="140488__alienxxx__box-25x25x7-thin-roar-009.mp3" sha1="d9cf58102215de9afe2c9b638c93d22f148032a2" size="83918"/>
+            <file name="140491__alienxxx__box-25x25x7-thin-roar-006.mp3" sha1="213536ec848720ceb93442fc51de2bb86c8aacc8" size="33230"/>
          </directory>
          <file name="necromancy.xml" sha1="855e19e36a0ef62b4bf763b3c0e9a02279d8f8e0" size="917"/>
          <file name="were.xml" sha1="e8a3b0ee610f4d7bb132c52633379cc7f740c622" size="587"/>
       </directory>
-      <file name="autoUpdater.xml" sha1="877983fd6d99103d5a793911bdcb3b133e794bc6" size="89373"/>
+      <file name="autoUpdater.xml" sha1="3f3f65c81eb740e89e73aa8c53dd68369fc36d23" size="183872"/>
    </directory>
 </autoUpdater>
