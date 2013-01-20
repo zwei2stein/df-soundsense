@@ -20,4 +20,21 @@
 		<soundFile fileName="../animals/turkey/Turkey Gobble-SoundBible.com-333537286.mp3" randomBalance="true" />
 	</sound>
 	
+	<!-- https://www.youtube.com/watch?v=sbX5KoVELrU -->
+	<!-- https://www.youtube.com/watch?v=_L9Sj1RCVYQ -->
+	
+	<sound logPattern="The Stray ((Guineacock)|(Guineahen)) eats a ((thrips)|(beetle))\.">
+		<soundFile fileName="../animals/guineafowl/nest_call_1.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/guineafowl/nest_call_2.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/guineafowl/male_1.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/guineafowl/male_2.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="The Stray ((Guineacock)|(Guineahen)) roots around in the (.+)\.">
+		<soundFile fileName="../animals/guineafowl/nest_call_1.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/guineafowl/nest_call_2.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/guineafowl/male_1.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/guineafowl/male_2.mp3" randomBalance="true" />
+	</sound>
+	
 </sounds>

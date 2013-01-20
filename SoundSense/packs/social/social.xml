@@ -179,5 +179,35 @@
 	<!-- too much of random spam for this. -->
 	<sound logPattern="(.+) has become a (.+)\.">
 	</sound>
+	
+	
+	<!-- BEWARE ACHTUNG Following sounds comde from dfhack plugin!! -->
+	
+	<sound logPattern="(.+) became mayor\." playbackThreshhold="4">
+		<soundFile fileName="votes/paper_mix_1.mp3" />
+		<soundFile fileName="votes/paper_mix_2.mp3" />
+		<soundFile fileName="votes/paper_mix_3.mp3" />
+	</sound>
+	
+	<sound logPattern="Mayor position is now vacant\." playbackThreshhold="4">
+		<soundFile fileName="promotions/29819__HerbertBoland__PianoMood14.mp3" />
+		<soundFile fileName="promotions/29820__HerbertBoland__PianoMood15.mp3" />
+	</sound>
+	
+	<sound logPattern="Expedition leader was replaced by mayor\." playbackThreshhold="4">
+		<soundFile fileName="promotions/29837__HerbertBoland__PianoMood32.mp3" />
+		<soundFile fileName="promotions/29839__HerbertBoland__PianoMood34.mp3" />
+	</sound>
+	
+	<sound logPattern="(.+) became expedition leader\." playbackThreshhold="4">
+		<soundFile fileName="votes/paper_mix_1.mp3" />
+		<soundFile fileName="votes/paper_mix_2.mp3" />
+		<soundFile fileName="votes/paper_mix_3.mp3" />
+	</sound>
+	
+	<sound logPattern="Expedition leader position is now vacant\." playbackThreshhold="4">
+		<soundFile fileName="promotions/29819__HerbertBoland__PianoMood14.mp3" />
+		<soundFile fileName="promotions/29820__HerbertBoland__PianoMood15.mp3" />
+	</sound>
 
 </sounds>

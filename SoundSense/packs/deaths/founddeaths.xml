@@ -28,7 +28,7 @@
 		<soundFile fileName="founddead/128553__herbertboland__pianomoodsad3.mp3" />
 	</sound>
 	
-	<sound logPattern="(.+) has been found dead\." playbackThreshhold="2">
+	<sound logPattern="(.+) has been found dead, badly crushed." playbackThreshhold="2">
 		<!-- http://www.freesound.org/people/HerbertBoland/sounds/128553/ -->
 		<!-- http://www.freesound.org/people/HerbertBoland/sounds/128554/ -->
 		<!-- http://www.freesound.org/people/HerbertBoland/sounds/128555/ -->
