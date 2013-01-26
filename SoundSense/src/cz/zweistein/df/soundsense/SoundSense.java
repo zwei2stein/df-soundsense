@@ -55,7 +55,7 @@ public class SoundSense {
 					LogReader supplementalLogReader = new LogReader(supplementalLogPath, configuration.getGamelogEncoding());
 					Glue.glue(supplementalLogReader, sp);
 				} else {
-					logger.info("Supplemental log "+supplementalLogPath+" not found.");
+					logger.info("Supplemental log "+supplementalLogPath+" not found. That is okay if you are not using dfhack plugin.");
 				}
 			}
 

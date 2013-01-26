@@ -91,50 +91,60 @@ local function event_loop()
 				unit_skills[unit.id] = {}
 			end
 
-			for _, value in pairs(unit.status.current_soul.skills) do 
+			for _, skill in pairs(unit.status.current_soul.skills) do 
 			
-				local rating = value.rating
+				local rating = skill.rating
 				if rating > 15 then
 					rating = 15 -- hide legendary+
 				end
 			
-				if unit_skills[unit.id][value.id] == nil then
-					unit_skills[unit.id][value.id] = {}
-					unit_skills[unit.id][value.id].rusty = false
-					unit_skills[unit.id][value.id].very_rusty = false
-					unit_skills[unit.id][value.id].proficient = false
-					unit_skills[unit.id][value.id].accomplished = false
-					unit_skills[unit.id][value.id].legendary = false
+				if unit_skills[unit.id][skill.id] == nil then
+					unit_skills[unit.id][skill.id] = {}
+					unit_skills[unit.id][skill.id].rusty = false
+					unit_skills[unit.id][skill.id].very_rusty = false
+					unit_skills[unit.id][skill.id].proficient = false
+					unit_skills[unit.id][skill.id].accomplished = false
+					unit_skills[unit.id][skill.id].legendary = false
 				end
 
-				if rating == 15 and unit_skills[unit.id][value.id].legendary == false and not first_run then
-					unit_skills[unit.id][value.id].legendary = true
-					unit_skills[unit.id][value.id].accomplished = true
-					unit_skills[unit.id][value.id].proficient = true
-					print(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[value.id]].caption_noun..".")
+				if rating == 15 and unit_skills[unit.id][skill.id].legendary == false and not first_run then
+					unit_skills[unit.id][skill.id].legendary = true
+					unit_skills[unit.id][skill.id].accomplished = true
+					unit_skills[unit.id][skill.id].proficient = true
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." has became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
 				end
-				if rating == 10 and unit_skills[unit.id][value.id].accomplished == false and not first_run then
-					unit_skills[unit.id][value.id].accomplished = true
-					unit_skills[unit.id][value.id].proficient = true
-					print(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[value.id]].caption_noun..".")
+				if rating == 10 and unit_skills[unit.id][skill.id].accomplished == false and not first_run then
+					unit_skills[unit.id][skill.id].accomplished = true
+					unit_skills[unit.id][skill.id].proficient = true
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." has became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
 				end
-				if rating == 5 and unit_skills[unit.id][value.id].proficient == false and not first_run then
-					unit_skills[unit.id][value.id].proficient = true
-					print(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[value.id]].caption_noun..".")
+				if rating == 5 and unit_skills[unit.id][skill.id].proficient == false and not first_run then
+					unit_skills[unit.id][skill.id].proficient = true
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." has became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
 				end
 				
 				local rusty = false
-				if value.rating > 0 and value.rating * 0.5 <= value.rusty then
+				if skill.rating > 0 and skill.rating * 0.5 <= skill.rusty then
 					rusty = true
 				end
+				local very_rusty = false
+				if skill.rating >= 4 and skill.rating * 0.75 <= skill.rusty then
+					very_rusty = true
+				end
 				
-				if rusty and unit_skills[unit.id][value.id].rusty == false and not first_run then
-					print(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." became rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[value.id]].caption_noun..".".. value.rusty .. ".")
+				if very_rusty and unit_skills[unit.id][skill.id].very_rusty == false and not first_run then
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is now very rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".".. skill.rusty .. ".")
 				end
-				if rusty == false and unit_skills[unit.id][value.id].rusty and not first_runthen
-					print(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is no longer rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[value.id]].caption_noun..".".. value.rusty .. ".")
+				if very_rusty == false and unit_skills[unit.id][skill.id].very_rusty and not first_run then
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is no longer very rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".".. skill.rusty .. ".")
 				end
-				unit_skills[unit.id][value.id].rusty = rusty
+				if rusty and unit_skills[unit.id][skill.id].rusty == false and not first_run then
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is now rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".".. skill.rusty .. ".")
+				end
+				if rusty == false and unit_skills[unit.id][skill.id].rusty and not first_run then
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is no longer rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".".. skill.rusty .. ".")
+				end
+				unit_skills[unit.id][skill.id].rusty = rusty
 				
 			end
 			
@@ -146,7 +156,7 @@ local function event_loop()
 	end
 	
 	if siege ~= old_siege and siege then
-		msg("A force of vile darkness has arrived!")
+		msg("A vile force of darkness has arrived!")
 	elseif siege ~= old_siege and not siege then
 		msg("Siege was broken.")
 	end
@@ -183,7 +193,7 @@ local function event_loop()
 	
 	for i=0, #buildings-1 do
 		local building = buildings[i]
-		if getmetatable(building) == "building_workshopst" then
+		if getmetatable(building) == "building_workshopst" or getmetatable(building) == "building_furnacest" then
 			if buildStates[building.id] == nil then
 				buildStates[building.id] = building.flags.exists
 			end
@@ -191,19 +201,11 @@ local function event_loop()
 			if oldval ~= building.flags.exists then
 				buildStates[building.id] = building.flags.exists
 				if building.flags.exists then
-					print(workshopTypes[building.type+1].." was built.")
-				end
-			end
-		end
-		if getmetatable(building) == "building_furnacest" then
-			if buildStates[building.id] == nil then
-				buildStates[building.id] = building.flags.exists
-			end
-			local oldval = buildStates[building.id]
-			if oldval ~= building.flags.exists then
-				buildStates[building.id] = building.flags.exists
-				if building.flags.exists then
-					print(furnaceTypes[building.type+1].." was built.")
+					if getmetatable(building) == "building_workshopst" then
+						msg(workshopTypes[building.type+1].." was built.")
+					elseif getmetatable(building) == "building_furnacest" then
+						msg(furnaceTypes[building.type+1].." was built.")
+					end
 				end
 			end
 		end

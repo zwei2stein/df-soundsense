@@ -1,15 +1,13 @@
-local buildings = df.global.world.buildings.all
 
-for i=0, #buildings-1 do
-	local building = buildings[i]
-print(building)
-	if type(building) == "building_workshopst" then
-	print(type(building))
-for key,value in pairs(building) do
-    print("found member " .. key);
-end
-for key,value in pairs(building.flags) do
-    print("found member " .. key);
-end
+local crimes = df.global.world.criminal_cases.all
+
+	for i=0, #crimes-1 do
+		local crime = crimes[i]
+		
+		if crime.flags.discovered then
+			print(dfhack.units.getVisibleName(crime.criminal))
+		end
+
 	end
-end
+
+

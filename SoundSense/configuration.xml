@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
 
- 	<gamelog encoding="Cp850" path="D:\Dropbox\Games\Dwarf Fortress\currentVersion\gamelog.txt"/>
+	<gamelog encoding="Cp850" path="D:\Dropbox\Games\Dwarf Fortress\currentVersion\gamelog.txt"/>
  	<supplementalLogs>
  		<item path="${gamelogBaseDir}/ss_fix.log"/>
  	</supplementalLogs> 
 	
-	<soundpacks allowOverride="true" defaultPath="./packs" noWarnAbsolutePath="true"/>
+	<soundpacks allowOverride="true" defaultPath="./packs/" noWarnAbsolutePath="false"/>
 	
 	<volume value="0.0"/>
 	
@@ -19,7 +19,7 @@
 	</autoUpdateURLs>
 	<autoUpdateReplaceFiles value="true"/>
 	<autoUpdateDeleteFiles value="false"/>
-	
-	<disabledSounds><item path="./packs/battle/strikes.xml"/><item path="./packs/battle/hitevents.xml"/><item path="./packs/battle/strikes.xml"/><item path="./packs/battle/hitevents.xml"/><item path="./packs/battle/status.xml"/><item path="./packs/battle/strikes.xml"/><item path="./packs/battle/battle.xml"/><item path="./packs/battle/hitevents.xml"/><item path="./packs/battle/status.xml"/><item path="./packs/battle/gore.xml"/><item path="./packs/battle/breath.xml"/></disabledSounds>
+
+	<disabledSounds/>
 
 </configuration>
