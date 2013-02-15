@@ -33,13 +33,29 @@
 		<soundFile fileName="win music 3.mp3" />
 	</sound>
 	
-	<sound logPattern="You have discovered an eerie cavern\.  The air above the dark stone floor is alive with vortices of purple light and dark, boiling clouds\.  Seemingly bottomless glowing pits mark the surface\." channel="music" playbackThreshhold="1" ansiPattern="&#27;[31;1m">
+	<sound logPattern="You have discovered an eerie cavern\.  The air above the dark stone floor is alive with vortices of purple light and dark, boiling clouds\.  Seemingly bottomless glowing pits mark the surface\." haltOnMatch="false" channel="music" playbackThreshhold="1" ansiPattern="&#27;[31;1m">
 		<soundFile fileName="../seasons/Musopen.Com  Arvo Part-Magnificat.mp3" />
 	</sound>
 	
+	<sound logPattern="You have discovered an eerie cavern\.  The air above the dark stone floor is alive with vortices of purple light and dark, boiling clouds\.  Seemingly bottomless glowing pits mark the surface\.">
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut1.ogg" />
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut2.ogg" />
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut3.ogg" />
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut4.ogg" />
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut5.ogg" />
+	</sound>
+	
 	<!-- HFS -->
-	<sound logPattern="Horrifying screams come from the darkness below!" channel="music" playbackThreshhold="1" ansiPattern="&#27;[31;1m">
+	<sound logPattern="Horrifying screams come from the darkness below!" haltOnMatch="false" channel="music" playbackThreshhold="1" ansiPattern="&#27;[31;1m">
 		<soundFile fileName="../seasons/Musopen.Com  Arvo Part-Magnificat.mp3" />
+	</sound>
+	
+	<sound logPattern="Horrifying screams come from the darkness below!">
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut1.ogg" />
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut2.ogg" />
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut3.ogg" />
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut4.ogg" />
+		<soundFile fileName="demon/Scary_Demon_Haunting-Adam_Webb-97651262_cut5.ogg" />
 	</sound>
 	
 	<sound logPattern="You have discovered a deep pit\." channel="music" playbackThreshhold="1" ansiPattern="&#27;[34m">
