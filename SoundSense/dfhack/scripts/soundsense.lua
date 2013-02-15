@@ -133,16 +133,16 @@ local function event_loop()
 				end
 				
 				if very_rusty and unit_skills[unit.id][skill.id].very_rusty == false and not first_run then
-					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is now very rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".".. skill.rusty .. ".")
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is now very rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
 				end
 				if very_rusty == false and unit_skills[unit.id][skill.id].very_rusty and not first_run then
-					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is no longer very rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".".. skill.rusty .. ".")
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is no longer very rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
 				end
 				if rusty and unit_skills[unit.id][skill.id].rusty == false and not first_run then
-					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is now rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".".. skill.rusty .. ".")
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is now rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
 				end
 				if rusty == false and unit_skills[unit.id][skill.id].rusty and not first_run then
-					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is no longer rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".".. skill.rusty .. ".")
+					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is no longer rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
 				end
 				unit_skills[unit.id][skill.id].rusty = rusty
 				
