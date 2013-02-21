@@ -145,6 +145,7 @@ local function event_loop()
 					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." is no longer rusty "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
 				end
 				unit_skills[unit.id][skill.id].rusty = rusty
+				unit_skills[unit.id][skill.id].very_rusty = very_rusty
 				
 			end
 			
