@@ -1,7 +1,6 @@
 package cz.zweistein.df.soundsense.config;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -21,15 +20,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-
-import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
 import cz.zweistein.df.soundsense.gui.control.Threshold;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
-public class ConfigurationXML {
+public class ConfigurationXML extends XMLConfig {
 	private static Logger logger = LoggerSource.logger;
 	
 	private String fileName;
@@ -57,10 +53,7 @@ public class ConfigurationXML {
 		
 		this.fileName = configurationFile;
 		
-		InputSource source = new InputSource(new FileInputStream(this.fileName));
-		DOMParser parser = new DOMParser();
-		parser.parse(source);
-		this.doc = parser.getDocument();
+		this.doc = parseDoc(fileName);
 		
 		Element configNodes = (Element) doc.getElementsByTagName("configuration").item(0);
 		
@@ -74,12 +67,7 @@ public class ConfigurationXML {
 		this.noWarnAbsolutePaths = Boolean.parseBoolean(soundpacksNode.getAttributes().getNamedItem("noWarnAbsolutePath").getNodeValue());
 		
 		Node volumeNode = configNodes.getElementsByTagName("volume").item(0);
-		String volumeAdjustmentText = volumeNode.getAttributes().getNamedItem("value").getNodeValue();
-		try {
-			this.volume = Float.parseFloat(volumeAdjustmentText);
-		} catch (NumberFormatException e) {
-			logger.info("Volume value '"+volumeAdjustmentText+" is not recognized as a number, using default "+this.volume+".");
-		}
+		this.volume = parseFloatAttribute(volumeNode, "value", this.volume);
 		
 		Node playbackTheshholdNode = configNodes.getElementsByTagName("playbackTheshhold").item(0);
 		String playbackTheshholdText = playbackTheshholdNode.getAttributes().getNamedItem("value").getNodeValue();

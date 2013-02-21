@@ -3,6 +3,9 @@ package cz.zweistein.df.soundsense.output.achievements;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
+import cz.zweistein.df.soundsense.config.achievement.Achievement;
+import cz.zweistein.df.soundsense.config.achievement.AchievementPattern;
+import cz.zweistein.df.soundsense.config.achievement.AchievementsXML;
 import cz.zweistein.df.soundsense.output.Procesor;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 

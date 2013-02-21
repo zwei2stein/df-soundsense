@@ -2,6 +2,8 @@ package cz.zweistein.df.soundsense;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.Logger;
 
@@ -11,10 +13,13 @@ import org.xml.sax.SAXException;
 
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
 import cz.zweistein.df.soundsense.config.SoundsXML;
+import cz.zweistein.df.soundsense.config.executor.ExecutorXML;
 import cz.zweistein.df.soundsense.glue.Glue;
 import cz.zweistein.df.soundsense.gui.GameLogValidator;
 import cz.zweistein.df.soundsense.gui.Gui;
 import cz.zweistein.df.soundsense.input.file.LogReader;
+import cz.zweistein.df.soundsense.output.Procesor;
+import cz.zweistein.df.soundsense.output.call.ExecutorProcesor;
 import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
@@ -31,6 +36,7 @@ public class SoundSense {
 			logger.info(getVersionString());
 			
 			ConfigurationXML configuration = new ConfigurationXML("configuration.xml");
+			String gameBaseDir = new File(configuration.getGamelogPath()).getParentFile().getPath();
 			
 			logger.info("Loading theme packs; default directory is "+configuration.getSoundpacksPath());
 			SoundsXML soundsXML = new SoundsXML(configuration.getSoundpacksPath(), true, configuration.noWarnAbsolutePath());
@@ -41,19 +47,23 @@ public class SoundSense {
 			LogReader logReader = new LogReader(configuration.getGamelogPath(), configuration.getGamelogEncoding());
 			logger.info("Listening to "+configuration.getGamelogPath());
 			
+			List<Procesor> procesors = new ArrayList<Procesor>(2);
 			SoundProcesor sp = new SoundProcesor(soundsXML, configuration);
+			procesors.add(sp);
+			ExecutorXML executorXML = new ExecutorXML("executor/executor.xml");
+			ExecutorProcesor ep = new ExecutorProcesor(executorXML, gameBaseDir);
+			procesors.add(ep);
 			
 			sp.setGlobalVolume(configuration.getVolume());
 			
-			Glue.glue(logReader, sp);
+			Glue.glue(logReader, procesors);
 			
-			String gamelogBasedir = new File(configuration.getGamelogPath()).getParentFile().getPath();
 			for (String supplementalLogPath : configuration.getSupplementalLogs()) {
-				supplementalLogPath = supplementalLogPath.replace("${gamelogBaseDir}", gamelogBasedir);
+				supplementalLogPath = supplementalLogPath.replace("${gameBaseDir}", gameBaseDir);
 				if (new File(supplementalLogPath).exists()) {
 					logger.info("Attempting to listen to supplemental "+supplementalLogPath);
 					LogReader supplementalLogReader = new LogReader(supplementalLogPath, configuration.getGamelogEncoding());
-					Glue.glue(supplementalLogReader, sp);
+					Glue.glue(supplementalLogReader, procesors);
 				} else {
 					logger.info("Supplemental log "+supplementalLogPath+" not found. That is okay if you are not using dfhack plugin.");
 				}

@@ -424,6 +424,7 @@
          <file name="readme.txt" sha1="2d0abfdc5b5e46f4b138cff2b8ff987d3641c7ee" size="126"/>
          <file name="sample.xml" sha1="5caf57942576e803d138ceadf1e842b08eccb063" size="5396"/>
          <file name="Sword Strike And Clash-SoundBible.com-1345262316.mp3" sha1="d242e5b71141c372c3f6217170dcecbd8594c64c" size="14092"/>
+         <file name="customHost.xml" sha1="fe7ce1c4f576f6afd31df03742f20010f59ee23a" size="151"/>
       </directory>
       <directory name="fishing">
          <directory name="NoFish">
@@ -494,7 +495,7 @@
          <file name="goblin_snatcher_foiled1.mp3" sha1="44e7fa9e3190c256a3308162305aa01b9829ec4c" size="24476"/>
          <file name="goblin_snatcher_foiled2.mp3" sha1="a004a881cb31419d85e50419c77ae35bb9cb7a49" size="44120"/>
          <file name="goblin_snatcher_foiled3.mp3" sha1="3bde4e37dc0aa15098c5752b89d55f4e6f6832f5" size="26984"/>
-         <file name="intruders.xml" sha1="e4104061e5d7d1b73a6e327991f0b044232baca8" size="9652"/>
+         <file name="intruders.xml" sha1="9fab120718b368a7c91068c37f43a8e31d1dea02" size="9362"/>
          <file name="Radakan - Dramatic event 2.mp3" sha1="d8cb9fc8664fa052a273b5061f7d1d8eeebf1c1c" size="178576"/>
          <file name="Radakan - Game Lost.mp3" sha1="afa0200d8347be4208d538df47cff4e0f409a602" size="352705"/>
       </directory>
@@ -518,6 +519,14 @@
          <file name="mandates.xml" sha1="0c6bd0375b4734756f3cbf95445458ebfa9b4dd0" size="2698"/>
       </directory>
       <directory name="mining">
+         <directory name="demon">
+            <file name="Scary_Demon_Haunting-Adam_Webb-97651262_cut2.ogg" sha1="ce6d21810265937ef71f0aa4f51b7287127978e5" size="114973"/>
+            <file name="Scary_Demon_Haunting-Adam_Webb-97651262_cut3.ogg" sha1="cbd3f82a47e76d5857dec096e8d6a6753cb69b0e" size="133146"/>
+            <file name="Scary_Demon_Haunting-Adam_Webb-97651262_cut4.ogg" sha1="a8c5cab4305b1f7bccdbd492958a236ddc60a2e9" size="151007"/>
+            <file name="Scary_Demon_Haunting-Adam_Webb-97651262_cut5.ogg" sha1="5631b4832bfb921f22b826b2fb9f0e5ad9017712" size="110957"/>
+            <file name="Scary_Demon_Haunting-Adam_Webb-97651262.txt" sha1="f2c1d00cd2dfd9aad07c8d086c27a919110829e9" size="481"/>
+            <file name="Scary_Demon_Haunting-Adam_Webb-97651262_cut1.ogg" sha1="c3d7ebc8144ba259c18c71be634f4025e859d489" size="163188"/>
+         </directory>
          <file name="16746__kijjaz__water_drop_01.mp3" sha1="edb190edbd57d0ec8d3eb9e7e5b76119b34da9f4" size="22854"/>
          <file name="25879__acclivity__Drip1.mp3" sha1="b908a77773cd96681c38e8872c8ab14106b76d6f" size="3628"/>
          <file name="30341__junggle__waterdrop24.mp3" sha1="14c9f8c9a1a19643a6bc566c3c0822b2340ed77e" size="12479"/>
@@ -535,7 +544,7 @@
          <file name="DFPICK.mp3" sha1="fa0fca1efd5761c8e9e83701ede851b81a449467" size="9862"/>
          <file name="DFRUBBLE.mp3" sha1="01ced6e1e1c07c640bc7eec2c044246dc6220298" size="35352"/>
          <file name="enviromentalHazard.xml" sha1="7b16a544e63a52b83ef8da42de94af813f52e8f1" size="2064"/>
-         <file name="mining.xml" sha1="7809cd6c4cd14fab2d700b1db0009bfb4f396016" size="6811"/>
+         <file name="mining.xml" sha1="fd70e3670c9d2a9393401958ea9b559f726f6e62" size="7998"/>
          <file name="Water Drop-SoundBible.com-2039669379.mp3" sha1="d0ba8f9a340e86f8c16271996fb33281309818ce" size="11617"/>
          <file name="win music 1.mp3" sha1="c15f0c7650e95f3d62c2fe3e5158860184a8247f" size="193369"/>
          <file name="win music 2.mp3" sha1="c5a910463a0ed58430a2953b2a0845d4f66e74f8" size="129421"/>
@@ -906,7 +915,7 @@
             <file name="paper_mix_3.mp3" sha1="139139572622e718d5c1a8546e58f97b6aa5447f" size="87140"/>
          </directory>
          <file name="missing.xml" sha1="543a38df801cbaab9af1451b3a85cea5cad3322b" size="657"/>
-         <file name="social.xml" sha1="5543159a144be96fb3789b52e9421bf6d81efe63" size="10735"/>
+         <file name="social.xml" sha1="d0eedbbf080c1f940b7554cc0e00e1bd4659c73b" size="9430"/>
       </directory>
       <directory name="system">
          <directory name="embark">
@@ -986,6 +995,26 @@
          <file name="necromancy.xml" sha1="855e19e36a0ef62b4bf763b3c0e9a02279d8f8e0" size="917"/>
          <file name="were.xml" sha1="e8a3b0ee610f4d7bb132c52633379cc7f740c622" size="587"/>
       </directory>
-      <file name="autoUpdater.xml" sha1="3f3f65c81eb740e89e73aa8c53dd68369fc36d23" size="183872"/>
+      <directory name="dfhack">
+         <directory name="rust">
+            <file name="171756__nenadsimic__picked-coin-echo-2.mp3" sha1="9e9c36b5ce6782c56d7286cd39f03f07a0f7731f" size="28667"/>
+            <file name="171696__nenadsimic__picked-coin-echo.mp3" sha1="c711162b48bd11b79090cb77d428c56628942123" size="29085"/>
+         </directory>
+         <directory name="gain">
+            <file name="46994__sub-d__guitar-chordal-improv.mp3" sha1="9b55f9e30d36693a8ab80114a263eb41a8f9d9af" size="81707"/>
+            <file name="46992__sub-d__emin-9-guitar-chord-interup.mp3" sha1="be519354df428a4396e367017f43b19ad569d47b" size="81289"/>
+            <file name="46993__sub-d__emin9th-chord-tweaked-in-lo.mp3" sha1="145b25d519e86e1c6642f229a8726a936be6f0cc" size="65406"/>
+         </directory>
+         <directory name="build">
+            <file name="atribution.txt" sha1="5b81806b33275ff2fd3cb7f2f28a816feae8df1e" size="125"/>
+            <file name="saw_and_hammer_2.mp3" sha1="006b73a5233bc0286984ae48d2a88b57e4d769b6" size="94663"/>
+            <file name="saw_and_hammer_3.mp3" sha1="2f84b7f2b1997bd8a12295bf8de85ab2313c3229" size="55793"/>
+            <file name="saw_and_hammer_4.mp3" sha1="782fee3250e543eb1c5f4f2d7d05ea4049f60128" size="110964"/>
+            <file name="saw_and_hammer_1.mp3" sha1="c9a135cc66089ad640bd53a574db657f62e104c5" size="89230"/>
+         </directory>
+         <file name="dfhack.xml" sha1="5e18f6fd49d7075a0b3b84fa3b5dd2b9f247cdf6" size="3973"/>
+         <file name="63643__superdaveosbourne__bong.mp3" sha1="47dcc4c86fd0cc29487acdc3468b0047a5e36695" size="90092"/>
+      </directory>
+      <file name="autoUpdater.xml" sha1="52cdb5440dd40c731915e1b7b8d6f2fd55bba841" size="90685"/>
    </directory>
 </autoUpdater>

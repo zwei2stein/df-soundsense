@@ -1,19 +1,19 @@
-package cz.zweistein.df.soundsense.output.achievements;
+package cz.zweistein.df.soundsense.config.achievement;
 
 public class Achievement {
 	
-	private int triggerAmount;
+	private long triggerAmount;
 	private String title;
 	private String description;
 	private String image;
 	
-	public Achievement(int triggerAmount, String title, String description,	String image) {
+	public Achievement(long triggerAmount, String title, String description,	String image) {
 		this.triggerAmount = triggerAmount;
 		this.title = title;
 		this.description = description;
 		this.image = image;
 	}
-	public int getTriggerAmount() {
+	public long getTriggerAmount() {
 		return this.triggerAmount;
 	}
 	public String getTitle() {

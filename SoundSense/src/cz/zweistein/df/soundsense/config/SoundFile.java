@@ -1,5 +1,8 @@
 package cz.zweistein.df.soundsense.config;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class SoundFile {
 
 	private String fileName;
@@ -9,12 +12,16 @@ public class SoundFile {
 	private Float balanceAdjustment;
 	private boolean randomBalance;
 	
+	private List<Attribution> attributions;
+	
 	public SoundFile(String fileName, int weight, float volumeAdjustment, Float balanceAdjustment, boolean randomBalance) {
 		this.fileName = fileName;
 		this.weight = weight;
 		this.volumeAdjustment = volumeAdjustment;
 		this.balanceAdjustment = balanceAdjustment;
 		this.randomBalance = randomBalance;
+		
+		this.attributions = new LinkedList<Attribution>();
 	}
 	
 	public String getFileName() {
@@ -40,6 +47,10 @@ public class SoundFile {
 	@Override
 	public String toString() {
 		return this.getFileName();
+	}
+
+	public List<Attribution> getAttributions() {
+		return attributions;
 	}
 	
 }

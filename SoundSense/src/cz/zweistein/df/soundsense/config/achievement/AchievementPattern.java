@@ -1,4 +1,4 @@
-package cz.zweistein.df.soundsense.output.achievements;
+package cz.zweistein.df.soundsense.config.achievement;
 
 import java.util.List;
 

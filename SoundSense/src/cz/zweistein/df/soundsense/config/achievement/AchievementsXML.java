@@ -1,6 +1,5 @@
-package cz.zweistein.df.soundsense.output.achievements;
+package cz.zweistein.df.soundsense.config.achievement;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -10,14 +9,12 @@ import java.util.logging.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import com.sun.org.apache.xerces.internal.parsers.DOMParser;
-
+import cz.zweistein.df.soundsense.config.XMLConfig;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
-public class AchievementsXML {
+public class AchievementsXML extends XMLConfig {
 	private static Logger logger = LoggerSource.logger;
 	
 	private List<AchievementPattern> achievementPatterns;
@@ -29,11 +26,7 @@ public class AchievementsXML {
 	
 	private void loadFile(String fileName) throws SAXException, IOException {
 		
-		Document doc = null;
-		InputSource source = new InputSource(new FileInputStream(fileName));
-		DOMParser parser = new DOMParser();
-		parser.parse(source);
-		doc = parser.getDocument();
+		Document doc = parseDoc(fileName);
 		
 		NodeList soundTags = doc.getElementsByTagName("achievementPattern");
 		
@@ -77,15 +70,7 @@ public class AchievementsXML {
 		String title = configNode.getAttributes().getNamedItem("title").getNodeValue();
 		String description = configNode.getAttributes().getNamedItem("description").getNodeValue();
 		
-		int triggerAmount = 1;
-		if (configNode.getAttributes().getNamedItem("triggerAmount") != null) {
-			String triggerAmountText = configNode.getAttributes().getNamedItem("triggerAmount").getNodeValue();
-			try {
-				triggerAmount = Integer.parseInt(triggerAmountText);
-			} catch (NumberFormatException e) {
-				logger.info("triggerAmount '"+triggerAmountText+"' is not recognized as a number, using default "+triggerAmount+".");
-			}
-		}
+		long triggerAmount = parseLongAtribute(configNode, "triggerAmount", 1l);
 		
 		return new Achievement(triggerAmount, title, description, image);
 	}

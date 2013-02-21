@@ -72,6 +72,7 @@
 		</copy>
 		<zip destfile="${release.prebuilt.path}/soundSense_${release}_${buildNum}.zip">
 			<zipfileset prefix="soundsense" dir="${basedir}">
+				<include name="exector/**" />
 				<include name="icons/**" />
 				<include name="lib/**" />
 				<include name="packs/default/**" />
@@ -140,7 +141,7 @@
 		</propertyfile>
 	</target>
 
-	<target name="themes">
+	<target name="themes" depends="preparePackage">
 		<zip destfile="${release.prebuilt.path}/soundpack.zip">
 			<fileset dir="${basedir}">
 				<include name="packs/**" />

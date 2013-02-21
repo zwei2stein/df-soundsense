@@ -2,7 +2,7 @@
 
 	<gamelog encoding="Cp850" path="../gamelog.txt"/>
  	<supplementalLogs>
- 		<item path="${gamelogBaseDir}/ss_fix.log"/>
+ 		<item path="${gameBaseDir}/ss_fix.log"/>
  	</supplementalLogs> 
 	
 	<soundpacks allowOverride="true" defaultPath="./packs/" noWarnAbsolutePath="false"/>

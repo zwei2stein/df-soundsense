@@ -8,11 +8,11 @@ import javax.swing.UIManager;
 import org.xml.sax.SAXException;
 
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
+import cz.zweistein.df.soundsense.config.achievement.AchievementsXML;
 import cz.zweistein.df.soundsense.glue.Glue;
 import cz.zweistein.df.soundsense.gui.GameLogValidator;
 import cz.zweistein.df.soundsense.input.file.LogReader;
 import cz.zweistein.df.soundsense.output.achievements.AchievementsProcesor;
-import cz.zweistein.df.soundsense.output.achievements.AchievementsXML;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class AchievementsTool {

@@ -1,7 +1,6 @@
 package cz.zweistein.df.soundsense.config;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,15 +11,12 @@ import java.util.logging.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-
-import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
 import cz.zweistein.df.soundsense.gui.control.Threshold;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
-public class SoundsXML {
+public class SoundsXML extends XMLConfig {
 	private static Logger logger = LoggerSource.logger;
 	
 	private List<Sound> sounds;
@@ -106,11 +102,7 @@ public class SoundsXML {
 	
 	private void loadFile(String fileName, boolean ignoreEmptySounds) throws SAXException, IOException {
 		
-		Document doc = null;
-		InputSource source = new InputSource(new FileInputStream(fileName));
-		DOMParser parser = new DOMParser();
-		parser.parse(source);
-		doc = parser.getDocument();
+		Document doc = parseDoc(fileName);
 		
 		NodeList rootElement = doc.getElementsByTagName("sounds");
 		String defaultAnsiFormat = null;
@@ -133,57 +125,6 @@ public class SoundsXML {
 		}
 		
 		// or add them here??
-	}
-
-	
-	private String parseStringAtribute(Node node, String atribute, String defaultValue) {
-		String string = defaultValue;
-		Node stringNode = node.getAttributes().getNamedItem(atribute);
-		if (stringNode != null) {
-			string = stringNode.getNodeValue();
-		}
-		return string;
-	}
-	
-	private Long parseLongAtribute(Node node, String atribute, Long defaultValue) {
-		Long value = defaultValue;
-		if (node.getAttributes().getNamedItem(atribute) != null) {
-			String numberText = node.getAttributes().getNamedItem(atribute).getNodeValue();
-			try {
-				value = Long.parseLong(numberText);
-			} catch (NumberFormatException e) {
-				logger.info(atribute+" '"+numberText+"' is not recognized as a number.");
-			}
-		}
-		return value;
-	}
-	
-	private Float parseFloatAttribute(Node node, String atribute) {
-		Float value = null;
-		if (node.getAttributes().getNamedItem(atribute) != null) {
-			String numberText = node.getAttributes().getNamedItem(atribute).getNodeValue();
-			try {
-				value = Float.parseFloat(numberText);
-			} catch (NumberFormatException e) {
-				logger.info(atribute+" '"+numberText+"' is not recognized as a floating point number.");
-			}
-		}
-		return value;
-	}
-	
-	private boolean parseBooleanAttribute(Node node, String nodeName, boolean defaultValue) {
-		boolean result = defaultValue;
-		if (node.getAttributes().getNamedItem(nodeName) != null) {
-			String booleanText = node.getAttributes().getNamedItem(nodeName).getNodeValue();
-			if ("true".equals(booleanText)) {
-				result = true;
-			} else if ("false".equals(booleanText)) {
-				result = false;
-			} else {
-				logger.fine(nodeName+" '"+booleanText+"' not recognized, using default "+defaultValue+".");
-			}
-		}
-		return result;
 	}
 
 	private void parseSounds(NodeList soundTags, String fileName, boolean ignoreEmptySounds, String defaultAnsiFormat) {
@@ -251,49 +192,52 @@ public class SoundsXML {
 
 	}
 
-	private SoundFile parseSoundFile(Node configNode, String fileName) {
+	private SoundFile parseSoundFile(Node soundFileNode, String fileName) {
 		
-		Node fileNameAttribute = configNode.getAttributes().getNamedItem("fileName");
+		Node fileNameAttribute = soundFileNode.getAttributes().getNamedItem("fileName");
 		if (fileNameAttribute == null) {
 			logger.info("Could not locate 'fileName' attribute of a sound element, please check spelling.");
 			return null;
 		}
 		
-		String soundFile = new File(fileName).getParent()+"/"+fileNameAttribute.getNodeValue();
+		String soundFileName = new File(fileName).getParent()+"/"+fileNameAttribute.getNodeValue();
 		// validate that wave file exists.
-		if (!new File(soundFile).exists()) {
+		if (!new File(soundFileName).exists()) {
 			// we did not find file on relative path respecting location of parent xml, lets see if it is on absolute path
 			if (new File(fileNameAttribute.getNodeValue()).exists()) {
-				soundFile = fileNameAttribute.getNodeValue();
+				soundFileName = fileNameAttribute.getNodeValue();
 				if (!this.noWarnAbsolutePath) {
-					logger.info("File " + soundFile + " is on absolute path.");
+					logger.info("File " + soundFileName + " is on absolute path.");
 				}
 			} else {
-				logger.warning("Did not find " + soundFile + ", ignoring.");
+				logger.warning("Did not find " + soundFileName + ", ignoring.");
 				return null;
 			}
 		}
 		
 		int weight = 100;
-		if (configNode.getAttributes().getNamedItem("weight") != null) {
-			String weightText = configNode.getAttributes().getNamedItem("weight").getNodeValue();
+		if (soundFileNode.getAttributes().getNamedItem("weight") != null) {
+			String weightText = soundFileNode.getAttributes().getNamedItem("weight").getNodeValue();
 			try {
 				weight = Integer.parseInt(weightText);
 			} catch (NumberFormatException e) {
-				logger.info("Weight '"+weightText+"' for '"+soundFile+"' is not recognized as a number, using default "+weight+".");
+				logger.info("Weight '"+weightText+"' for '"+soundFileName+"' is not recognized as a number, using default "+weight+".");
 			}
 		}
 		
-		Float volumeAdjustment = parseFloatAttribute(configNode, "volumeAdjustment");
+		Float volumeAdjustment = parseFloatAttribute(soundFileNode, "volumeAdjustment", null);
 		if (volumeAdjustment == null) {
 			volumeAdjustment = 0f;
 		}
 		
-		Float balanceAdjustment = parseFloatAttribute(configNode, "balanceAdjustment");
+		Float balanceAdjustment = parseFloatAttribute(soundFileNode, "balanceAdjustment", null);
 
-		boolean randomBalance = parseBooleanAttribute(configNode, "randomBalance", false);
-
-		return new SoundFile(soundFile, weight, volumeAdjustment, balanceAdjustment, randomBalance);
+		boolean randomBalance = parseBooleanAttribute(soundFileNode, "randomBalance", false);
+		
+		SoundFile soundFile = new SoundFile(soundFileName, weight, volumeAdjustment, balanceAdjustment, randomBalance);
+		parseAttributions(soundFile, soundFileNode.getChildNodes());
+		
+		return soundFile; 
 	}
 
 	private void parseDirectories(NodeList directoryReferences) {
@@ -324,6 +268,19 @@ public class SoundsXML {
 			}
 		}
 	}
+	
+	private void parseAttributions(SoundFile soundFile, NodeList soundFileChildren) {
+		for (int i = 0; i < soundFileChildren.getLength(); i++) {
+			Node attributionNode = soundFileChildren.item(i);
+			
+			if ("attribution".equals(attributionNode.getLocalName())) {
+				
+				attributionNode.getAttributes().getNamedItem("url");
+				
+			}
+		}
+	}
+	
 
 	public List<Sound> getSounds() {
 		return this.sounds;
