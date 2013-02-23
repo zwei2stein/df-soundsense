@@ -36,13 +36,13 @@ public class SoundSense {
 			logger.info(getVersionString());
 			
 			ConfigurationXML configuration = new ConfigurationXML("configuration.xml");
+			new GameLogValidator(configuration).gamelogValidate();
 			String gameBaseDir = new File(configuration.getGamelogPath()).getParentFile().getPath();
 			
 			logger.info("Loading theme packs; default directory is "+configuration.getSoundpacksPath());
 			SoundsXML soundsXML = new SoundsXML(configuration.getSoundpacksPath(), true, configuration.noWarnAbsolutePath());
 			logger.info("Done loading "+soundsXML.toString()+", loaded "+soundsXML.getSounds().size()+" items.");
 			
-			new GameLogValidator(configuration).gamelogValidate();
 			logger.info("Attempting to listen to "+configuration.getGamelogPath());
 			LogReader logReader = new LogReader(configuration.getGamelogPath(), configuration.getGamelogEncoding());
 			logger.info("Listening to "+configuration.getGamelogPath());
