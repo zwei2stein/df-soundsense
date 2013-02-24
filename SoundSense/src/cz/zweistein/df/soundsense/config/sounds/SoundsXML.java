@@ -108,12 +108,14 @@ public class SoundsXML extends XMLConfig {
 		
 		NodeList rootElement = doc.getElementsByTagName("sounds");
 		String defaultAnsiFormat = null;
+		boolean strictAttributions = false;
 		if (rootElement.getLength() > 0) {
 			defaultAnsiFormat = parseStringAtribute(rootElement.item(0), "defaultAnsiFormat", null);
+			strictAttributions = parseBooleanAttribute(rootElement.item(0), "strictAttributions", false);
 		}
 		
 		NodeList soundTags = doc.getElementsByTagName("sound");
-		parseSounds(soundTags, fileName, ignoreEmptySounds, defaultAnsiFormat);
+		parseSounds(soundTags, fileName, ignoreEmptySounds, defaultAnsiFormat, strictAttributions);
 		
 		// add check for directory/listing references here?
 		NodeList directoryReferences = doc.getElementsByTagName("includeDirectory");
@@ -129,7 +131,7 @@ public class SoundsXML extends XMLConfig {
 		// or add them here??
 	}
 
-	private void parseSounds(NodeList soundTags, String fileName, boolean ignoreEmptySounds, String defaultAnsiFormat) {
+	private void parseSounds(NodeList soundTags, String fileName, boolean ignoreEmptySounds, String defaultAnsiFormat, boolean strictAttributions) {
 		for (int i = 0; i < soundTags.getLength(); i++) {
 			Node soundNode = soundTags.item(i);
 			
@@ -178,6 +180,9 @@ public class SoundsXML extends XMLConfig {
 					SoundFile soundFile = this.parseSoundFile(configNode, fileName);
 					if (soundFile != null) {
 						soundFiles.add(soundFile);
+					}
+					if (strictAttributions && soundFile.getAttributions().size() == 0) {
+						logger.info("Sound file '" + soundFile.getFileName() + "' in '" + logPattern + "' lacks attributions!");
 					}
 				}
 			}
@@ -283,14 +288,17 @@ public class SoundsXML extends XMLConfig {
 				String description = parseStringAtribute(attributionNode, "description", "");
 				String note = parseStringAtribute(attributionNode, "note", "");
 				
-				if (url == null) {
+				if (url == null || "".equals(url)) {
 					logger.info("Attribution url is not set for "+soundFile.getFileName());
+					continue;
 				}
-				if (license == null) {
+				if (license == null || "".equals(license)) {
 					logger.info("Attribution license is not set for "+soundFile.getFileName());
+					continue;
 				}
-				if (author == null) {
+				if (author == null || "".equals(author)) {
 					logger.info("Attribution author is not set for "+soundFile.getFileName());
+					continue;
 				}
 				
 				Attribution attribuition = new Attribution(url, license, author, description, note);
