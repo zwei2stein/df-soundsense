@@ -10,9 +10,10 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeCellRenderer;
 
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
-import cz.zweistein.df.soundsense.config.Sound;
-import cz.zweistein.df.soundsense.config.SoundFile;
-import cz.zweistein.df.soundsense.gui.control.Icons;
+import cz.zweistein.df.soundsense.config.sounds.Attribution;
+import cz.zweistein.df.soundsense.config.sounds.Sound;
+import cz.zweistein.df.soundsense.config.sounds.SoundFile;
+import cz.zweistein.df.soundsense.gui.Icons;
 
 public class IconTreeCellRenderer implements TreeCellRenderer {
 	
@@ -39,6 +40,10 @@ public class IconTreeCellRenderer implements TreeCellRenderer {
 		} else if (value instanceof SoundFile) {
 			
 			defaultTreeCellRenderer.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TREE_SOUND_FILE)));
+			
+		} else if (value instanceof Attribution) {
+			
+			defaultTreeCellRenderer.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TREE_ATTRIBUTION)));
 			
 		} else if (value instanceof String) {
 			

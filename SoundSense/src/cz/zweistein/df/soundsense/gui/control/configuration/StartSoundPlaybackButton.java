@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-import cz.zweistein.df.soundsense.config.Sound;
-import cz.zweistein.df.soundsense.gui.control.Icons;
+import cz.zweistein.df.soundsense.config.sounds.Sound;
+import cz.zweistein.df.soundsense.gui.Icons;
 import cz.zweistein.df.soundsense.output.sound.player.PlayerManager;
 
 public class StartSoundPlaybackButton extends JButton implements ActionListener {

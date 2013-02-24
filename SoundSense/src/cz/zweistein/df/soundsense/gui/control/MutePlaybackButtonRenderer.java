@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 
+import cz.zweistein.df.soundsense.gui.Icons;
 import cz.zweistein.df.soundsense.output.sound.player.ChannelThread;
 
 public class MutePlaybackButtonRenderer extends JButton implements TableCellRenderer {

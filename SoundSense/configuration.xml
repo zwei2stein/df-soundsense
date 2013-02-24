@@ -19,6 +19,8 @@
 	</autoUpdateURLs>
 	<autoUpdateReplaceFiles value="true"/>
 	<autoUpdateDeleteFiles value="false"/>
+	
+	<executors path="./executor/"/>
 
 	<disabledSounds/>
 

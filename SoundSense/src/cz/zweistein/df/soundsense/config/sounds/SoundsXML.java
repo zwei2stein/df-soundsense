@@ -1,4 +1,4 @@
-package cz.zweistein.df.soundsense.config;
+package cz.zweistein.df.soundsense.config.sounds;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +13,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import cz.zweistein.df.soundsense.config.IReloadProgressCallback;
+import cz.zweistein.df.soundsense.config.XMLConfig;
 import cz.zweistein.df.soundsense.gui.control.Threshold;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
@@ -275,7 +277,25 @@ public class SoundsXML extends XMLConfig {
 			
 			if ("attribution".equals(attributionNode.getLocalName())) {
 				
-				attributionNode.getAttributes().getNamedItem("url");
+				String url = parseStringAtribute(attributionNode, "url", null);
+				String license = parseStringAtribute(attributionNode, "license", null);
+				String author = parseStringAtribute(attributionNode, "author", null);
+				String description = parseStringAtribute(attributionNode, "description", "");
+				String note = parseStringAtribute(attributionNode, "note", "");
+				
+				if (url == null) {
+					logger.info("Attribution url is not set for "+soundFile.getFileName());
+				}
+				if (license == null) {
+					logger.info("Attribution license is not set for "+soundFile.getFileName());
+				}
+				if (author == null) {
+					logger.info("Attribution author is not set for "+soundFile.getFileName());
+				}
+				
+				Attribution attribuition = new Attribution(url, license, author, description, note);
+				
+				soundFile.getAttributions().add(attribuition);
 				
 			}
 		}

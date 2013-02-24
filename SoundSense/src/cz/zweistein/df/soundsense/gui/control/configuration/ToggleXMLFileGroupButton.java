@@ -10,8 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JTree;
 
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
-import cz.zweistein.df.soundsense.config.SoundsXML;
-import cz.zweistein.df.soundsense.gui.control.Icons;
+import cz.zweistein.df.soundsense.config.sounds.SoundsXML;
+import cz.zweistein.df.soundsense.gui.Icons;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class ToggleXMLFileGroupButton extends JButton implements ActionListener {

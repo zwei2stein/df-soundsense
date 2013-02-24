@@ -1,4 +1,4 @@
-package cz.zweistein.df.soundsense.config;
+package cz.zweistein.df.soundsense.config.sounds;
 
 import java.util.ArrayList;
 import java.util.List;

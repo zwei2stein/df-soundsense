@@ -72,10 +72,11 @@
 		</copy>
 		<zip destfile="${release.prebuilt.path}/soundSense_${release}_${buildNum}.zip">
 			<zipfileset prefix="soundsense" dir="${basedir}">
-				<include name="exector/**" />
+				<include name="executor/**" />
 				<include name="icons/**" />
 				<include name="lib/**" />
 				<include name="packs/default/**" />
+				<include name="custom/**" />
 				<include name="dfhack/scripts/soundsense.lua" />
 			</zipfileset>
 			<zipfileset prefix="soundsense" dir="misc">

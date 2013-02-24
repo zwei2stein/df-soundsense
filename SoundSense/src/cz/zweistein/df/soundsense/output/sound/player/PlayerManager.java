@@ -9,8 +9,8 @@ import java.util.Random;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import cz.zweistein.df.soundsense.config.Loop;
-import cz.zweistein.df.soundsense.config.Sound;
+import cz.zweistein.df.soundsense.config.sounds.Loop;
+import cz.zweistein.df.soundsense.config.sounds.Sound;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public final class PlayerManager {

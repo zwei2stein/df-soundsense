@@ -1,4 +1,4 @@
-package cz.zweistein.df.soundsense.gui.control.configuration;
+package cz.zweistein.df.soundsense.gui.tab;
 
 import java.awt.BorderLayout;
 

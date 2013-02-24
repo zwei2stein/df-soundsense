@@ -1,4 +1,4 @@
-package cz.zweistein.df.soundsense.gui.control;
+package cz.zweistein.df.soundsense.gui.tab;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -26,6 +26,8 @@ import cz.zweistein.autoupdater.AutoUpdater;
 import cz.zweistein.autoupdater.callback.IControllCallback;
 import cz.zweistein.autoupdater.callback.IProgressCallback;
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
+import cz.zweistein.df.soundsense.gui.Icons;
+import cz.zweistein.df.soundsense.gui.control.ProgressTicker;
 
 public class SoundPackUpdatePanel extends JPanel implements ActionListener, IProgressCallback, IControllCallback, ChangeListener {
 	private static final long serialVersionUID = 5231590941209603954L;

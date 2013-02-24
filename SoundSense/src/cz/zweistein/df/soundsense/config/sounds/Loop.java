@@ -1,4 +1,4 @@
-package cz.zweistein.df.soundsense.config;
+package cz.zweistein.df.soundsense.config.sounds;
 
 public enum Loop {
 	

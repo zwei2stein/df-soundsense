@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import org.xml.sax.SAXException;
 
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
-import cz.zweistein.df.soundsense.config.SoundsXML;
+import cz.zweistein.df.soundsense.config.sounds.SoundsXML;
 import cz.zweistein.df.soundsense.glue.Glue;
 import cz.zweistein.df.soundsense.input.file.LogReader;
 import cz.zweistein.df.soundsense.output.analysis.MissingMessagesProcessor;

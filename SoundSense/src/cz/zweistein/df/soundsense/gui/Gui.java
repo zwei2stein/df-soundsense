@@ -14,14 +14,13 @@ import javax.swing.SwingUtilities;
 
 import cz.zweistein.df.soundsense.SoundSense;
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
-import cz.zweistein.df.soundsense.gui.control.Icons;
-import cz.zweistein.df.soundsense.gui.control.InfoPanel;
-import cz.zweistein.df.soundsense.gui.control.SoundPackUpdatePanel;
 import cz.zweistein.df.soundsense.gui.control.ThreshholdSelector;
 import cz.zweistein.df.soundsense.gui.control.VolumeSlider;
-import cz.zweistein.df.soundsense.gui.control.configuration.ConfigurationPanel;
-import cz.zweistein.df.soundsense.gui.control.configuration.CurrentlyPlayingPanel;
-import cz.zweistein.df.soundsense.gui.control.configuration.PathsConfigurationPanel;
+import cz.zweistein.df.soundsense.gui.tab.ConfigurationPanel;
+import cz.zweistein.df.soundsense.gui.tab.CurrentlyPlayingPanel;
+import cz.zweistein.df.soundsense.gui.tab.InfoPanel;
+import cz.zweistein.df.soundsense.gui.tab.PathsConfigurationPanel;
+import cz.zweistein.df.soundsense.gui.tab.SoundPackUpdatePanel;
 import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 
 public class Gui extends JPanel {

@@ -12,8 +12,8 @@ import javax.swing.UIManager;
 import org.xml.sax.SAXException;
 
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
-import cz.zweistein.df.soundsense.config.SoundsXML;
 import cz.zweistein.df.soundsense.config.executor.ExecutorXML;
+import cz.zweistein.df.soundsense.config.sounds.SoundsXML;
 import cz.zweistein.df.soundsense.glue.Glue;
 import cz.zweistein.df.soundsense.gui.GameLogValidator;
 import cz.zweistein.df.soundsense.gui.Gui;
@@ -43,6 +43,10 @@ public class SoundSense {
 			SoundsXML soundsXML = new SoundsXML(configuration.getSoundpacksPath(), true, configuration.noWarnAbsolutePath());
 			logger.info("Done loading "+soundsXML.toString()+", loaded "+soundsXML.getSounds().size()+" items.");
 			
+			logger.info("Loading executors executor/executor.xml");
+			ExecutorXML executorXML = new ExecutorXML("executor/executor.xml");
+			logger.info("Done loading executors, loaded "+executorXML.getExecutors().size()+" items.");
+
 			logger.info("Attempting to listen to "+configuration.getGamelogPath());
 			LogReader logReader = new LogReader(configuration.getGamelogPath(), configuration.getGamelogEncoding());
 			logger.info("Listening to "+configuration.getGamelogPath());
@@ -50,7 +54,6 @@ public class SoundSense {
 			List<Procesor> procesors = new ArrayList<Procesor>(2);
 			SoundProcesor sp = new SoundProcesor(soundsXML, configuration);
 			procesors.add(sp);
-			ExecutorXML executorXML = new ExecutorXML("executor/executor.xml");
 			ExecutorProcesor ep = new ExecutorProcesor(executorXML, gameBaseDir);
 			procesors.add(ep);
 			

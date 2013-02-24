@@ -11,8 +11,9 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.TableCellEditor;
 
-import cz.zweistein.df.soundsense.config.Loop;
-import cz.zweistein.df.soundsense.config.Sound;
+import cz.zweistein.df.soundsense.config.sounds.Loop;
+import cz.zweistein.df.soundsense.config.sounds.Sound;
+import cz.zweistein.df.soundsense.gui.Icons;
 import cz.zweistein.df.soundsense.output.sound.player.ChannelThread;
 import cz.zweistein.df.soundsense.output.sound.player.PlayerManager;
 

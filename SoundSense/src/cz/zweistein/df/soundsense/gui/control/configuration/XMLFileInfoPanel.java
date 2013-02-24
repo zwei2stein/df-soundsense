@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JTree;
 
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
-import cz.zweistein.df.soundsense.config.SoundsXML;
+import cz.zweistein.df.soundsense.config.sounds.SoundsXML;
 
 public class XMLFileInfoPanel extends JPanel implements IxmlFileInfoPanel{
 	private static final long serialVersionUID = -6987634849512435047L;

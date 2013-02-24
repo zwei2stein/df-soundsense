@@ -7,6 +7,8 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import cz.zweistein.df.soundsense.gui.Icons;
+
 public class ProgressTicker extends JLabel {
 	private static final long serialVersionUID = -1672969220162646775L;
 	

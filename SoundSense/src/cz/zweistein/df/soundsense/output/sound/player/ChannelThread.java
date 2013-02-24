@@ -2,8 +2,8 @@ package cz.zweistein.df.soundsense.output.sound.player;
 
 import java.util.logging.Logger;
 
-import cz.zweistein.df.soundsense.config.Sound;
-import cz.zweistein.df.soundsense.config.SoundFile;
+import cz.zweistein.df.soundsense.config.sounds.Sound;
+import cz.zweistein.df.soundsense.config.sounds.SoundFile;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class ChannelThread implements Runnable {

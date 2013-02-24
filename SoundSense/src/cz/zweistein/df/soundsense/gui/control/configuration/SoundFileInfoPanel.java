@@ -7,8 +7,8 @@ import java.util.Collections;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import cz.zweistein.df.soundsense.config.Sound;
-import cz.zweistein.df.soundsense.config.SoundFile;
+import cz.zweistein.df.soundsense.config.sounds.Sound;
+import cz.zweistein.df.soundsense.config.sounds.SoundFile;
 import cz.zweistein.df.soundsense.gui.control.Threshold;
 import cz.zweistein.df.soundsense.output.sound.player.PlayerManager;
 

@@ -1,7 +1,8 @@
-package cz.zweistein.df.soundsense.config;
+package cz.zweistein.df.soundsense.config.sounds;
 
 import java.util.LinkedList;
 import java.util.List;
+
 
 public class SoundFile {
 
@@ -44,13 +45,14 @@ public class SoundFile {
 		return this.randomBalance;
 	}
 
+	public List<Attribution> getAttributions() {
+		return attributions;
+	}
+
 	@Override
 	public String toString() {
 		return this.getFileName();
 	}
 
-	public List<Attribution> getAttributions() {
-		return attributions;
-	}
 	
 }

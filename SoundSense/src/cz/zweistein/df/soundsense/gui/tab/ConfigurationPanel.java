@@ -1,4 +1,4 @@
-package cz.zweistein.df.soundsense.gui.control.configuration;
+package cz.zweistein.df.soundsense.gui.tab;
 
 import java.awt.BorderLayout;
 import java.awt.Toolkit;
@@ -15,12 +15,18 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 
 import cz.zweistein.df.soundsense.config.IReloadProgressCallback;
-import cz.zweistein.df.soundsense.config.Sound;
-import cz.zweistein.df.soundsense.config.SoundFile;
-import cz.zweistein.df.soundsense.config.SoundsXML;
+import cz.zweistein.df.soundsense.config.sounds.Attribution;
+import cz.zweistein.df.soundsense.config.sounds.Sound;
+import cz.zweistein.df.soundsense.config.sounds.SoundFile;
+import cz.zweistein.df.soundsense.config.sounds.SoundsXML;
+import cz.zweistein.df.soundsense.gui.Icons;
 import cz.zweistein.df.soundsense.gui.adapter.ConfigurationXMLTreeAdapter;
-import cz.zweistein.df.soundsense.gui.control.Icons;
 import cz.zweistein.df.soundsense.gui.control.ProgressTicker;
+import cz.zweistein.df.soundsense.gui.control.configuration.AttributionInfoPanel;
+import cz.zweistein.df.soundsense.gui.control.configuration.IconTreeCellRenderer;
+import cz.zweistein.df.soundsense.gui.control.configuration.SoundFileInfoPanel;
+import cz.zweistein.df.soundsense.gui.control.configuration.SoundInfoPanel;
+import cz.zweistein.df.soundsense.gui.control.configuration.XMLFileInfoPanel;
 import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 
 public class ConfigurationPanel extends JPanel implements ActionListener, IReloadProgressCallback {
@@ -71,6 +77,10 @@ public class ConfigurationPanel extends JPanel implements ActionListener, IReloa
         xmlFileInfoPanel.setVisible(false);
         infos.add(xmlFileInfoPanel);
         
+        final AttributionInfoPanel attributionInfoPanel = new AttributionInfoPanel();
+        attributionInfoPanel.setVisible(false);
+        infos.add(attributionInfoPanel);
+        
         soundsTree.addTreeSelectionListener(new TreeSelectionListener() {
         	@Override
         	public void valueChanged(TreeSelectionEvent e) {
@@ -80,29 +90,41 @@ public class ConfigurationPanel extends JPanel implements ActionListener, IReloa
 	        		
 	        		if (selectedItem instanceof Sound) {
 	        			
-	        			soundInfoPanel.setVisible(true);
 	        			soundFileInfoPanel.setVisible(false);
 	        			xmlFileInfoPanel.setVisible(false);
+	        			attributionInfoPanel.setVisible(false);
 	        			
+	        			soundInfoPanel.setVisible(true);
 	        			soundInfoPanel.updateSound((Sound) selectedItem);
 	        			
 	        		} else if (selectedItem instanceof SoundFile) {
 	        			
 	        			soundInfoPanel.setVisible(false);
-	        			soundFileInfoPanel.setVisible(true);
 	        			xmlFileInfoPanel.setVisible(false);
+	        			attributionInfoPanel.setVisible(false);
 	        			
+	        			soundFileInfoPanel.setVisible(true);
 	        			soundFileInfoPanel.updateSoundFile((SoundFile) selectedItem);
 	        			
 	        		} else if (selectedItem instanceof String) {
 	        			
 	        			soundInfoPanel.setVisible(false);
 	        			soundFileInfoPanel.setVisible(false);
-	        			xmlFileInfoPanel.setVisible(true);
+	        			attributionInfoPanel.setVisible(false);
 	        			
+	        			xmlFileInfoPanel.setVisible(true);
 	        			xmlFileInfoPanel.setPath((String) selectedItem);
 	        			
-	        		}
+	        		} else if (selectedItem instanceof Attribution) {
+	        			
+	        			soundInfoPanel.setVisible(false);
+	        			soundFileInfoPanel.setVisible(false);
+	        			xmlFileInfoPanel.setVisible(false);
+	        			
+	        			attributionInfoPanel.setVisible(true);
+	        			attributionInfoPanel.setAttribution((Attribution)selectedItem);
+						
+					}
         		} else {
         			
         			soundInfoPanel.setVisible(false);

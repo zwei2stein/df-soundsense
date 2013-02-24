@@ -3,8 +3,8 @@ package cz.zweistein.df.soundsense.output.analysis;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
-import cz.zweistein.df.soundsense.config.Sound;
-import cz.zweistein.df.soundsense.config.SoundsXML;
+import cz.zweistein.df.soundsense.config.sounds.Sound;
+import cz.zweistein.df.soundsense.config.sounds.SoundsXML;
 import cz.zweistein.df.soundsense.output.Procesor;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 

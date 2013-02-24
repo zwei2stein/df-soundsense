@@ -9,9 +9,10 @@ import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 
 import cz.zweistein.df.soundsense.config.IReloadProgressCallback;
-import cz.zweistein.df.soundsense.config.Sound;
-import cz.zweistein.df.soundsense.config.SoundFile;
-import cz.zweistein.df.soundsense.config.SoundsXML;
+import cz.zweistein.df.soundsense.config.sounds.Attribution;
+import cz.zweistein.df.soundsense.config.sounds.Sound;
+import cz.zweistein.df.soundsense.config.sounds.SoundFile;
+import cz.zweistein.df.soundsense.config.sounds.SoundsXML;
 
 public class ConfigurationXMLTreeAdapter implements TreeModel, IReloadProgressCallback {
 
@@ -36,6 +37,8 @@ public class ConfigurationXMLTreeAdapter implements TreeModel, IReloadProgressCa
 			return ((Sound)parent).getSoundFiles().get(index);
 		} else if (parent instanceof String) {
 			return config.getSoundsByXMLFile((String)parent).get(index);
+		} else if (parent instanceof SoundFile){
+			return ((SoundFile)parent).getAttributions().get(index);
 		} else {
 			return null;
 		}
@@ -49,6 +52,8 @@ public class ConfigurationXMLTreeAdapter implements TreeModel, IReloadProgressCa
 			return ((Sound)parent).getSoundFiles().size();
 		} else if (parent instanceof String) {
 			return config.getSoundsByXMLFile((String)parent).size();
+		} else if (parent instanceof SoundFile){
+			return ((SoundFile)parent).getAttributions().size();
 		} else {
 			return 0;
 		}
@@ -60,6 +65,8 @@ public class ConfigurationXMLTreeAdapter implements TreeModel, IReloadProgressCa
 			return ((SoundsXML)parent).getSounds().indexOf(child);
 		} else if (parent instanceof Sound) {
 			return ((Sound)parent).getSoundFiles().indexOf(child);
+		} else if (parent instanceof SoundFile){
+			return ((SoundFile)parent).getAttributions().indexOf(child);
 		} else {
 			return 0;
 		}
@@ -73,11 +80,13 @@ public class ConfigurationXMLTreeAdapter implements TreeModel, IReloadProgressCa
 	@Override
 	public boolean isLeaf(Object node) {
 		if (node instanceof SoundFile) {
-			return true;
+			return ((SoundFile)node).getAttributions().isEmpty();
 		} else if (node instanceof Sound) {
 			return ((Sound)node).getSoundFiles().isEmpty();
 		} else if (node instanceof String) {
 			return config.getSoundsByXMLFile((String)node).isEmpty();
+		} else if (node instanceof Attribution) {
+			return true;
 		} else {
 			return false;
 		}
