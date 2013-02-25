@@ -1,5 +1,6 @@
 package cz.zweistein.df.soundsense.config.achievement;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -39,7 +40,7 @@ public class AchievementsXML extends XMLConfig {
 				logPattern = logPatternNode.getNodeValue();
 			}
 			
-			List<Achievement> soundFiles = new ArrayList<Achievement>();
+			List<Achievement> achievements = new ArrayList<Achievement>();
 			
 			NodeList achievementPatternElements = achievementPatternNode.getChildNodes();
 			for (int j = 0; j < achievementPatternElements.getLength(); j++) {
@@ -47,9 +48,9 @@ public class AchievementsXML extends XMLConfig {
 				String name = configNode.getLocalName();
 				
 				if ("achievement".equals(name)) {
-					Achievement soundFile = this.parseSoundFile(configNode);
-					if (soundFile != null) {
-						soundFiles.add(soundFile);
+					Achievement achievement = this.parseAchievement(configNode, fileName);
+					if (achievement != null) {
+						achievements.add(achievement);
 					}
 				}
 			}
@@ -57,16 +58,18 @@ public class AchievementsXML extends XMLConfig {
 			if (logPattern == null || logPattern.length() == 0) {
 				logger.info("Achievement does not have logPattern, ignoring.");
 			} else {
-				logPattern.charAt(1);
-				this.achievementPatterns.add(new AchievementPattern(logPattern, soundFiles));
+				this.achievementPatterns.add(new AchievementPattern(logPattern, achievements));
 				logger.finest("Added achievement for "+logPattern);
 			}
 		}
 		
 	}
 	
-	private Achievement parseSoundFile(Node configNode) {
-		String image = configNode.getAttributes().getNamedItem("image").getNodeValue();
+	private Achievement parseAchievement(Node configNode, String fileName) {
+		String image =  parseStringAtribute(configNode, "image", null);
+		if (image != null) {
+			image = new File(fileName).getParent() + "/" + image;
+		}
 		String title = configNode.getAttributes().getNamedItem("title").getNodeValue();
 		String description = configNode.getAttributes().getNamedItem("description").getNodeValue();
 		

@@ -13,9 +13,11 @@ public class AchievementsProcesor extends Procesor {
 	private static Logger logger = LoggerSource.logger;
 	
 	private AchievementsXML achievementPatterns;
+	private NotificationManager nm;
 	
 	public AchievementsProcesor(AchievementsXML achievementPatterns) {
 		this.achievementPatterns = achievementPatterns;
+		this.nm = new NotificationManager();
 	}
 
 	@Override
@@ -29,7 +31,15 @@ public class AchievementsProcesor extends Procesor {
 				Achievement achievement = ap.justAchieved();
 				
 				if (achievement != null) {
-					logger.info("Achieved: " + achievement.getTitle()+" - "+achievement.getDescription()+" - "+ap.getHits()+"/"+achievement.getTriggerAmount());
+					logger.info("Achieved: " 
+							+ achievement.getTitle() + " - "
+							+ achievement.getDescription() + " - "
+							+ ap.getHits() + "/"
+							+ achievement.getTriggerAmount());
+					this.nm.showNotification(achievement.getImage(),
+							achievement.getTitle(),
+							achievement.getDescription(),
+							achievement.getTriggerAmount() + "/" + achievement.getTriggerAmount());
 				}
 			}
 		}

@@ -37,4 +37,6 @@ public class Icons {
 	
 	public static final String LEAF_1 = "./icons/leaf1.png";
 	public static final String LEAF_2 = "./icons/leaf2.png";
+
+	public static final String CLOSE_WINDOW =  "./icons/close.png";
 }

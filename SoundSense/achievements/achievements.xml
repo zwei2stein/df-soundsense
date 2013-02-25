@@ -30,7 +30,7 @@
 	</achievementPattern>
 	
 	<achievementPattern logPattern="The (.+) has organized a party at (.+)\.">
-		<achievement title="Party time! Excellent!" description="Let dwarves organize party." triggerAmount="1" image="party.png" />
+		<achievement title="Party time! Excellent!" description="Let dwarves organize party." triggerAmount="1" />
 	</achievementPattern>
 	
 </achievements>

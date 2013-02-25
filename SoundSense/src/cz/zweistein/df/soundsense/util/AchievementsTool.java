@@ -29,7 +29,7 @@ public class AchievementsTool {
 			ConfigurationXML configuration = new ConfigurationXML("configuration.xml");
 			new GameLogValidator(configuration).gamelogValidate();
 
-			AchievementsXML achievementsConfugration = new AchievementsXML("achievements.xml");
+			AchievementsXML achievementsConfugration = new AchievementsXML("achievements/achievements.xml");
 			
 			logger.info("Attempting to open "+configuration.getGamelogPath());
 			LogReader logReader = new LogReader(configuration.getGamelogPath(), configuration.getGamelogEncoding(), false, true);
