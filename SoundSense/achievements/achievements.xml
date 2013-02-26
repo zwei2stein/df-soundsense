@@ -32,5 +32,41 @@
 	<achievementPattern logPattern="The (.+) has organized a party at (.+)\.">
 		<achievement title="Party time! Excellent!" description="Let dwarves organize party." triggerAmount="1" />
 	</achievementPattern>
+   
+  <achievementPattern logPattern="(.+) in the head with (.+) and the severed part sails off in an arc!">
+    <achievement title="Ouch." description="Witness beheading." triggerAmount="1" />
+    <achievement title="Habbitual beheader." description="Witness 10 beheadings." triggerAmount="10" />
+    <achievement title="It's raining heads." description="Witness 100 beheadings." triggerAmount="100" />
+    <achievement title="Execution factory." description="Witness 1000 beheadings." triggerAmount="1000" />
+  </achievementPattern>
+  
+  <achievementPattern logPattern="(.+) has been found dead(.+)\.">
+    <achievement title="Look what I found!" description="Find dead body." triggerAmount="1" />
+    <achievement title="Can I keep them?" description="Find 10 dead bodies." triggerAmount="10" />
+    <achievement title="Where should we keep them?" description="Find 100 dead bodies." triggerAmount="100" />
+    <achievement title="Lost &amp; Found" description="Find 1000 dead bodies." triggerAmount="1000" />
+  </achievementPattern>
+  
+  <achievementPattern logPattern="(.+) has come!  ((A)|(An)) (.+)">
+    <achievement title="Unwanted visitor" description="Have megabeast enter map." triggerAmount="1" />
+    <achievement title="Unwanted visitors" description="Have 10 megabeasts enter map." triggerAmount="10" />
+  </achievementPattern>
+  
+  <achievementPattern logPattern="You have discovered (.+)">
+    <achievement title="Explorer" description="Discover map feature." triggerAmount="1" />
+    <achievement title="Seeker" description="Discover 10 map features." triggerAmount="10" />
+  </achievementPattern>
+  
+  <achievementPattern logPattern="(.+) has created (.+), a (.+)!">
+    <achievement title="Noteworthy" description="Craft Artifact." triggerAmount="1" />
+    <achievement title="Artifactory" description="Craft 100 artifacts." triggerAmount="100" />
+  </achievementPattern>
+  
+  <achievementPattern logPattern="(.+) has been completed\.">
+    <achievement title="Managing" description="Make worshop order." triggerAmount="1" />
+    <achievement title="Bossy" description="Make 10 worshop orders." triggerAmount="10" />
+    <achievement title="Pointy Haired" description="Make 100 worshop orders." triggerAmount="100" />
+    <achievement title="Centralized Economy" description="Make 1000 worshop orders." triggerAmount="1000" />
+  </achievementPattern>
 	
 </achievements>
