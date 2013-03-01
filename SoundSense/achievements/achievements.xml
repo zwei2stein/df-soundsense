@@ -6,6 +6,7 @@
 		<achievement title="Fond of Industry" description="Create 10 Masterpiece items." triggerAmount="10" image="masterpiece.png" />
 		<achievement title="Legendary Craftsmen" description="Create 100 Masterpiece items." triggerAmount="100" image="masterpiece.png" />
 		<achievement title="Your deeds are legend" description="Create 1000 Masterpiece items." triggerAmount="1000" image="masterpiece.png" />
+    <achievement title="Industrial Revolution" description="Create 10000 Masterpiece items." triggerAmount="10000" image="masterpiece.png" />
 	</achievementPattern>
 	
 	<achievementPattern logPattern="(.+) has given birth to ((a kitten)|(kittens))\.">
@@ -34,10 +35,10 @@
 	</achievementPattern>
    
   <achievementPattern logPattern="(.+) in the head with (.+) and the severed part sails off in an arc!">
-    <achievement title="Ouch." description="Witness beheading." triggerAmount="1" />
+    <achievement title="Roll, roll on the ground!" description="Witness beheading." triggerAmount="1" />
     <achievement title="Habbitual beheader." description="Witness 10 beheadings." triggerAmount="10" />
     <achievement title="It's raining heads." description="Witness 100 beheadings." triggerAmount="100" />
-    <achievement title="Execution factory." description="Witness 1000 beheadings." triggerAmount="1000" />
+    <achievement title="Headless." description="Witness 1000 beheadings." triggerAmount="1000" />
   </achievementPattern>
   
   <achievementPattern logPattern="(.+) has been found dead(.+)\.">
@@ -63,10 +64,17 @@
   </achievementPattern>
   
   <achievementPattern logPattern="(.+) has been completed\.">
-    <achievement title="Managing" description="Make worshop order." triggerAmount="1" />
-    <achievement title="Bossy" description="Make 10 worshop orders." triggerAmount="10" />
-    <achievement title="Pointy Haired" description="Make 100 worshop orders." triggerAmount="100" />
-    <achievement title="Centralized Economy" description="Make 1000 worshop orders." triggerAmount="1000" />
+    <achievement title="Boss" description="Make 5 worshop orders." triggerAmount="5" />
+    <achievement title="Micromanging" description="Make 25 worshop orders." triggerAmount="25" />
+    <achievement title="Pointy Haired" description="Make 125 worshop orders." triggerAmount="125" />
+    <achievement title="Centralized Economy" description="Make 625 worshop orders." triggerAmount="625" />
   </achievementPattern>
+  
+  <achievementPattern logPattern="The flying (.+)bolt(.+) strikes The Goblin (.+) tearing the heart(.+)">
+    <achievement title="Heartseeker" description="Piece 5 goblin hearts with crossbow bolt." triggerAmount="5" />
+    <achievement title="Cupid" description="Piece 50 goblin hearts with crossbow bolt." triggerAmount="50" />
+    <achievement title="Winning hearts and minds" description="Piece 500 goblin hearts with crossbow bolt." triggerAmount="500" />
+  </achievementPattern>
+  
 	
 </achievements>
