@@ -1,5 +1,7 @@
 package cz.zweistein.df.soundsense.output.achievements;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
@@ -7,6 +9,7 @@ import cz.zweistein.df.soundsense.config.achievement.Achievement;
 import cz.zweistein.df.soundsense.config.achievement.AchievementPattern;
 import cz.zweistein.df.soundsense.config.achievement.AchievementsXML;
 import cz.zweistein.df.soundsense.output.Procesor;
+import cz.zweistein.df.soundsense.output.sound.player.ChangeCallback;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class AchievementsProcesor extends Procesor {
@@ -15,7 +18,10 @@ public class AchievementsProcesor extends Procesor {
 	private AchievementsXML achievementPatterns;
 	private NotificationManager nm;
 	
+	private List<ChangeCallback> changeCallbacks;
+	
 	public AchievementsProcesor(AchievementsXML achievementPatterns) {
+		this.changeCallbacks = new LinkedList<ChangeCallback>();
 		this.achievementPatterns = achievementPatterns;
 		this.nm = new NotificationManager();
 	}
@@ -40,9 +46,18 @@ public class AchievementsProcesor extends Procesor {
 							achievement.getTitle(),
 							achievement.getDescription(),
 							achievement.getTriggerAmount() + "/" + achievement.getTriggerAmount());
+					
+					
+					for (ChangeCallback changeCallback : this.changeCallbacks) {
+						changeCallback.changed();
+					}
 				}
 			}
 		}
+	}
+
+	public void addChangeCallback(ChangeCallback changeCallback) {
+		this.changeCallbacks.add(changeCallback);
 	}
 
 }

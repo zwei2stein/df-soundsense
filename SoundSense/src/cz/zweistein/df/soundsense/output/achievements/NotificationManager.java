@@ -90,11 +90,13 @@ public class NotificationManager {
         content.setBackground(backgroundColor);
         content.setBorder(BorderFactory.createLineBorder(borderColor, borderWidth));
         
+        JLabel image;
         if (imageFilename == null) {
-        	imageFilename = "./achievements/default.png";
+        	image = new JLabel();
+        	image.setPreferredSize(new Dimension(64, 64));
+        } else {
+        	image = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(imageFilename)));
         }
-        
-        JLabel image = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(imageFilename)));
 		content.add(image, new GridBagConstraints(0, 0, 1, 3, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
         
         JLabel achievementTile = new JLabel(title);

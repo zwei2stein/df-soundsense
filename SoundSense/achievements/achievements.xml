@@ -16,7 +16,7 @@
 		<achievement title="Catsplosion!" description="Have cats give 1000 births." triggerAmount="1000" image="cats.png" />
 	</achievementPattern>
 	
-	<achievementPattern logPattern="The Stray Kitten \(Tame\) has been struck down\.">
+	<achievementPattern logPattern="The Stray Kitten \(Tame\) has been slaughtered\.">
 		<achievement title="Heartless" description="Butcher live kitten." triggerAmount="1" image="cats.png" />
 		<achievement title="No catsplosion on my watch!" description="Butcher 10 live kittens." triggerAmount="10" image="cats.png" />
 		<achievement title="Critical cat mass prevention" description="Butcher 100 live kittens." triggerAmount="100" image="cats.png" />
@@ -31,9 +31,9 @@
 	</achievementPattern>
 	
 	<achievementPattern logPattern="The (.+) has organized a party at (.+)\.">
-		<achievement title="Party time! Excellent!" description="Let dwarves organize party." triggerAmount="1" />
+		<achievement title="Party time! Excellent!" description="Let dwarves organize party." triggerAmount="1" image="dwarf.png" />
 	</achievementPattern>
-   
+	
   <achievementPattern logPattern="(.+) in the head with (.+) and the severed part sails off in an arc!">
     <achievement title="Roll, roll on the ground!" description="Witness beheading." triggerAmount="1" />
     <achievement title="Habbitual beheader." description="Witness 10 beheadings." triggerAmount="10" />
@@ -75,6 +75,5 @@
     <achievement title="Cupid" description="Piece 50 goblin hearts with crossbow bolt." triggerAmount="50" />
     <achievement title="Winning hearts and minds" description="Piece 500 goblin hearts with crossbow bolt." triggerAmount="500" />
   </achievementPattern>
-  
 	
 </achievements>

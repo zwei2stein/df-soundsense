@@ -40,5 +40,29 @@ public class AchievementPattern {
 		
 		return null;
 	}
+	
+	public Achievement currentAchievement() {
+		
+		Achievement current = null;
+		
+		for (Achievement achievement: this.achievements) {
+			if (achievement.getTriggerAmount() <= this.getHits()) {
+				current = achievement;
+			}
+		}
+		
+		return current;
+	}
+
+	public Achievement nextAchievement() {
+		
+		for (Achievement achievement: this.achievements) {
+			if (achievement.getTriggerAmount() > this.getHits()) {
+				return achievement;
+			}
+		}
+		
+		return null;
+	}
 
 }

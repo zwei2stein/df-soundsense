@@ -21,7 +21,7 @@ public final class PlayerManager {
 	private float globalVolume;
 
 	private Map<String, ChannelThread> channels;
-	private List<ChannelPlaybackCallback> channelPlaybackCallback;
+	private List<ChangeCallback> channelPlaybackCallback;
 	
 	private Set<SFXThread> sfxThreads;
 	private List<SFXPlaybackCallback> sfxPlaybackCallback;
@@ -32,7 +32,7 @@ public final class PlayerManager {
 	
 	public PlayerManager() {
 		this.channels = new HashMap<String, ChannelThread>();
-		this.channelPlaybackCallback = new ArrayList<ChannelPlaybackCallback>();
+		this.channelPlaybackCallback = new ArrayList<ChangeCallback>();
 		
 		this.sfxThreads = new HashSet<SFXThread>();
 		this.sfxPlaybackCallback = new ArrayList<SFXPlaybackCallback>(1);
@@ -173,16 +173,16 @@ public final class PlayerManager {
 		this.setVolumeForAllSfx(globalVolume);
 	}
 
-	public void addChannelPlaybackCallback(ChannelPlaybackCallback channelListAdapter) {
+	public void addChannelPlaybackCallback(ChangeCallback channelListAdapter) {
 		this.channelPlaybackCallback.add(channelListAdapter);
 	}
 	
-	public synchronized void removeChannelPlaybackCallback(ChannelPlaybackCallback channelListAdapter) {
+	public synchronized void removeChannelPlaybackCallback(ChangeCallback channelListAdapter) {
 		this.channelPlaybackCallback.remove(channelListAdapter);
 	}
 
 	public void channelStatusChanged(ChannelThread channelThread) {
-		for (ChannelPlaybackCallback channelListAdapter: this.channelPlaybackCallback) {
+		for (ChangeCallback channelListAdapter: this.channelPlaybackCallback) {
 			channelListAdapter.changed();
 		}
 	}

@@ -12,6 +12,7 @@ import javax.swing.UIManager;
 import org.xml.sax.SAXException;
 
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
+import cz.zweistein.df.soundsense.config.achievement.AchievementsXML;
 import cz.zweistein.df.soundsense.config.executor.ExecutorXML;
 import cz.zweistein.df.soundsense.config.sounds.SoundsXML;
 import cz.zweistein.df.soundsense.glue.Glue;
@@ -19,6 +20,7 @@ import cz.zweistein.df.soundsense.gui.GameLogValidator;
 import cz.zweistein.df.soundsense.gui.Gui;
 import cz.zweistein.df.soundsense.input.file.LogReader;
 import cz.zweistein.df.soundsense.output.Procesor;
+import cz.zweistein.df.soundsense.output.achievements.AchievementsProcesor;
 import cz.zweistein.df.soundsense.output.call.ExecutorProcesor;
 import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
@@ -43,9 +45,13 @@ public class SoundSense {
 			SoundsXML soundsXML = new SoundsXML(configuration.getSoundpacksPath(), true, configuration.noWarnAbsolutePath());
 			logger.info("Done loading "+soundsXML.toString()+", loaded "+soundsXML.getSounds().size()+" items.");
 			
-			logger.info("Loading executors executor/executor.xml");
-			ExecutorXML executorXML = new ExecutorXML("executor/executor.xml");
+			logger.info("Loading executors.");
+			ExecutorXML executorXML = new ExecutorXML("./executor/");
 			logger.info("Done loading executors, loaded "+executorXML.getExecutors().size()+" items.");
+			
+			logger.info("Loading achievements.");
+			AchievementsXML achievementsXML = new AchievementsXML("./achievements/");
+			logger.info("Done loading achievements, loaded "+achievementsXML.getAchievementPatterns().size()+" items.");
 
 			logger.info("Attempting to listen to "+configuration.getGamelogPath());
 			LogReader logReader = new LogReader(configuration.getGamelogPath(), configuration.getGamelogEncoding());
@@ -56,6 +62,8 @@ public class SoundSense {
 			procesors.add(sp);
 			ExecutorProcesor ep = new ExecutorProcesor(executorXML, gameBaseDir);
 			procesors.add(ep);
+			AchievementsProcesor ap = new AchievementsProcesor(achievementsXML);
+			procesors.add(ap);
 			
 			sp.setGlobalVolume(configuration.getVolume());
 			
@@ -73,7 +81,7 @@ public class SoundSense {
 			}
 
 			if (configuration.getGui()) {
-				Gui.newGui(configuration, sp);
+				Gui.newGui(configuration, sp, achievementsXML, ap);
 			}
 			
 		} catch (IOException e) {

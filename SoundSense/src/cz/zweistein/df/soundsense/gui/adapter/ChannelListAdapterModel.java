@@ -5,11 +5,11 @@ import java.util.Map.Entry;
 
 import javax.swing.table.AbstractTableModel;
 
-import cz.zweistein.df.soundsense.output.sound.player.ChannelPlaybackCallback;
+import cz.zweistein.df.soundsense.output.sound.player.ChangeCallback;
 import cz.zweistein.df.soundsense.output.sound.player.ChannelThread;
 import cz.zweistein.df.soundsense.output.sound.player.PlayerManager;
 
-public class ChannelListAdapterModel extends AbstractTableModel implements ChannelPlaybackCallback {
+public class ChannelListAdapterModel extends AbstractTableModel implements ChangeCallback {
 	private static final long serialVersionUID = -6044410132230837932L;
 
 	private transient PlayerManager playerManager;

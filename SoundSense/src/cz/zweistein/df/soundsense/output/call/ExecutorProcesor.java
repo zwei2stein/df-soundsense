@@ -22,18 +22,36 @@ public class ExecutorProcesor extends Procesor {
 
 	@Override
 	public void processLine(String line) {
-		for (Executor executor : executorXML.getExecutors()) {
+		for (final Executor executor : executorXML.getExecutors()) {
 			if (executor.getParsedLogPattern().matcher(line).matches()) {
 				
-				String call = executor.getCall().replace("${baseDir}", baseDir);
-				
-				try {
-					logger.info("Calling external tool: "+call);
+				new Thread(new Runnable() {
 					
-					Runtime.getRuntime().exec(call);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+					@Override
+					public void run() {
+						String call = executor.getCall().replace("${baseDir}", baseDir);
+						logger.info("Calling external tool: "+call);
+						try {
+							Process process = Runtime.getRuntime().exec(call);
+							
+							process.waitFor();
+							
+							if (process.exitValue() == 0) {
+								logger.info("Calling external tool: "+call+" suceeded.");
+							} else {
+								logger.info("Calling external tool: "+call+" failed: "+process.exitValue());
+							}
+							
+						} catch (IOException e) {
+							logger.info("Calling external tool: "+call +" failed: "+e);
+						} catch (InterruptedException e) {
+							logger.info("Calling external tool: "+call +" failed: "+e);
+						}
+						
+					}
+					
+				}).start();
+
 			}
 		}
 	}
