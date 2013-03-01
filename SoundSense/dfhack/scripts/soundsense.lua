@@ -107,20 +107,26 @@ local function event_loop()
 					unit_skills[unit.id][skill.id].legendary = false
 				end
 
-				if rating == 15 and unit_skills[unit.id][skill.id].legendary == false and not first_run then
+				if rating == 15 and unit_skills[unit.id][skill.id].legendary == false then
 					unit_skills[unit.id][skill.id].legendary = true
 					unit_skills[unit.id][skill.id].accomplished = true
 					unit_skills[unit.id][skill.id].proficient = true
-					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." has became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
+          if not first_run then
+					  msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." has became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
+          end
 				end
-				if rating == 10 and unit_skills[unit.id][skill.id].accomplished == false and not first_run then
+				if rating == 10 and unit_skills[unit.id][skill.id].accomplished == false then
 					unit_skills[unit.id][skill.id].accomplished = true
 					unit_skills[unit.id][skill.id].proficient = true
-					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." has became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
+          if not first_run then
+            msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." has became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
+          end
 				end
-				if rating == 5 and unit_skills[unit.id][skill.id].proficient == false and not first_run then
+				if rating == 5 and unit_skills[unit.id][skill.id].proficient == false then
 					unit_skills[unit.id][skill.id].proficient = true
-					msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." has became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
+          if not first_run then
+					  msg(dfhack.TranslateName(dfhack.units.getVisibleName(unit)).." has became "..df.skill_rating.attrs[rating].caption.." "..df.job_skill.attrs[df.job_skill[skill.id]].caption_noun..".")
+          end
 				end
 				
 				local rusty = false
