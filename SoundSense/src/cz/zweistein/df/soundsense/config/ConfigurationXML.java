@@ -48,6 +48,8 @@ public class ConfigurationXML extends XMLConfig {
 	private Set<String> disabledSounds;
 	
 	private List<String> supplementalLogs;
+	
+	private boolean achievements;
 
 	public ConfigurationXML(String configurationFile) throws SAXException, IOException {
 		
@@ -85,6 +87,8 @@ public class ConfigurationXML extends XMLConfig {
 		this.setReplaceFiles(parseBoolean("autoUpdateReplaceFiles", configNodes));
 		
 		this.gui = parseBoolean("gui", configNodes);
+		
+		this.achievements = parseBoolean("achievements", configNodes);
 		
 		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
 		this.disabledSounds = new LinkedHashSet<String>(parsePathList(disabledSoundsNode));
@@ -148,6 +152,9 @@ public class ConfigurationXML extends XMLConfig {
 		
 		Node autoUpdateDeleteFilesNode = configNodes.getElementsByTagName("autoUpdateDeleteFiles").item(0);
 		autoUpdateDeleteFilesNode.getAttributes().getNamedItem("value").setNodeValue(Boolean.toString(this.getDeleteFiles()));
+		
+		Node achievementsNode = configNodes.getElementsByTagName("achievements").item(0);
+		achievementsNode.getAttributes().getNamedItem("value").setNodeValue(Boolean.toString(this.getAchievements()));
 		
 		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
 		NodeList disabledSounds = disabledSoundsNode.getChildNodes();
@@ -244,6 +251,14 @@ public class ConfigurationXML extends XMLConfig {
 
 	public List<String> getSupplementalLogs() {
 		return supplementalLogs;
+	}
+
+	public boolean getAchievements() {
+		return achievements;
+	}
+
+	public void setAchievements(boolean achievements) {
+		this.achievements = achievements;
 	}
 	
 }

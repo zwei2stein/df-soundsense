@@ -40,7 +40,9 @@
 	</sound>
 	
 	<sound logPattern="(.+) vomits\." concurency="1" timeout="30000" playbackThreshhold="4">
-		<soundFile fileName="vomit/13652__Koops__Sick_In_Toilet_01.mp3" randomBalance="true" />
+		<soundFile fileName="vomit/13652__Koops__Sick_In_Toilet_01.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Koops/sounds/13652/" license="CC BY 3.0" author="Koops" description="Sick_In_Toilet_01.wav" />
+		</soundFile>
 		<soundFile fileName="vomit/13652__Koops__Sick_In_Toilet_02.mp3" randomBalance="true" />
 		<soundFile fileName="vomit/13652__Koops__Sick_In_Toilet_03.mp3" randomBalance="true" />
 		<soundFile fileName="vomit/13652__Koops__Sick_In_Toilet_04.mp3" randomBalance="true" />
@@ -52,7 +54,9 @@
 		<soundFile fileName="sick/43481__jppi_Stu__SW_Cough.mp3" randomBalance="true" />
 		<soundFile fileName="sick/52323__stephsinger22__coughing.mp3" />
 		<soundFile fileName="sick/63102__Robinhood76__00553_coughing_man_2.mp3" />
-		<soundFile fileName="vomit/13652__Koops__Sick_In_Toilet_01.mp3" randomBalance="true" />
+		<soundFile fileName="vomit/13652__Koops__Sick_In_Toilet_01.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Koops/sounds/13652/" license="CC BY 3.0" author="Koops" description="Sick_In_Toilet_01.wav" />
+		</soundFile>
 		<soundFile fileName="vomit/13652__Koops__Sick_In_Toilet_02.mp3" randomBalance="true" />
 		<soundFile fileName="vomit/13652__Koops__Sick_In_Toilet_03.mp3" randomBalance="true" />
 	</sound>
@@ -105,11 +109,16 @@
 	<sound logPattern="(.+) is completely paralyzed!">
 	</sound>
 	
+	<sound logPattern="(.+) has fully overcome the paralysis\.">
+	</sound>
+	
 	<sound logPattern="(.+) has been bitten by (.+)!">
-		<!-- http://www.freesound.org/people/Vegemyte/sounds/84552/ -->
-		<!-- http://www.freesound.org/people/Vegemyte/sounds/84553/ -->
-		<soundFile fileName="cavespider/84553__vegemyte__bug1.mp3" randomBalance="true" />
-		<soundFile fileName="cavespider/84552__vegemyte__bug1-2.mp3" randomBalance="true" />
+		<soundFile fileName="cavespider/84553__vegemyte__bug1.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Vegemyte/sounds/84553/" license="Sampling Plus 1.0" author="Vegemyte" description="bug1.wav" />
+		</soundFile>
+		<soundFile fileName="cavespider/84552__vegemyte__bug1-2.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Vegemyte/sounds/84552/" license="Sampling Plus 1.0" author="Vegemyte" description="bug1,2.wav" />
+		</soundFile>
 	</sound> 
 	
 	<sound logPattern="(.+) is injected into the (.+)'s (.+) blood!">

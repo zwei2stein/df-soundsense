@@ -11,9 +11,13 @@
 	
 	<achievementPattern logPattern="(.+) has given birth to ((a kitten)|(kittens))\.">
 		<achievement title="Nice little kitten" description="Have cat give birth." triggerAmount="1" image="cats.png" />
-		<achievement title="Free kitten giveaway!" description="Have cats give 10 births." triggerAmount="10" image="cats.png" />
-		<achievement title="We might have a cat problem..." description="Have cats give 100 births." triggerAmount="100" image="cats.png" />
-		<achievement title="Catsplosion!" description="Have cats give 1000 births." triggerAmount="1000" image="cats.png" />
+		<achievement title="Free kitten giveaway!" description="Have cats give 2 births." triggerAmount="2" image="cats.png" />
+		<achievement title="We might have a cat problem..." description="Have cats give 4 births." triggerAmount="4" image="cats.png" />
+		<achievement title="Catsplosion!" description="Have cats give 8 births." triggerAmount="8" image="cats.png" />
+		<achievement title="Thermonuclear Catsplosion!" description="Have cats give 16 births." triggerAmount="16" image="cats.png" />
+		<achievement title="Meow?" description="Have cats give 32 births." triggerAmount="32" image="cats.png" />
+		<achievement title="Meow!" description="Have cats give 64 births." triggerAmount="64" image="cats.png" />
+		<achievement title="Cat ownership pounishable by death" description="Have cats give 128 births." triggerAmount="128" image="cats.png" />
 	</achievementPattern>
 	
 	<achievementPattern logPattern="The Stray Kitten \(Tame\) has been slaughtered\.">
@@ -71,9 +75,9 @@
   </achievementPattern>
   
   <achievementPattern logPattern="The flying (.+)bolt(.+) strikes The Goblin (.+) tearing the heart(.+)">
-    <achievement title="Heartseeker" description="Piece 5 goblin hearts with crossbow bolt." triggerAmount="5" />
-    <achievement title="Cupid" description="Piece 50 goblin hearts with crossbow bolt." triggerAmount="50" />
-    <achievement title="Winning hearts and minds" description="Piece 500 goblin hearts with crossbow bolt." triggerAmount="500" />
+    <achievement title="Heartseeker" description="Pierce 5 goblin hearts with crossbow bolt." triggerAmount="5" />
+    <achievement title="Cupid" description="Pierce 50 goblin hearts with crossbow bolt." triggerAmount="50" />
+    <achievement title="Winning hearts and minds" description="Pierce 500 goblin hearts with crossbow bolt." triggerAmount="500" />
   </achievementPattern>
 	
 </achievements>

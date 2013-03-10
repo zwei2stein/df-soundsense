@@ -11,7 +11,7 @@ import cz.zweistein.df.soundsense.output.sound.player.ChangeCallback;
 public class AchievementListAdapterModel extends AbstractTableModel implements ChangeCallback {
 	private static final long serialVersionUID = -6044410132230837932L;
 
-	private transient AchievementsXML achievementsXML;
+	private AchievementsXML achievementsXML;
 
 	public AchievementListAdapterModel(AchievementsXML achievementsXML, AchievementsProcesor ap) {
 		this.achievementsXML = achievementsXML;
@@ -25,7 +25,7 @@ public class AchievementListAdapterModel extends AbstractTableModel implements C
 
 	@Override
 	public int getColumnCount() {
-		return 4;
+		return 2;
 	}
 
 	@Override
@@ -44,31 +44,9 @@ public class AchievementListAdapterModel extends AbstractTableModel implements C
 		
 		switch (col) {
 			case 0:
-				if (current == null) {
-					return "";
-				} else {
-					return current.getTitle();
-				}
+				return current;
 			case 1:
-				if (current == null) {
-					return "";
-				} else {
-					return current.getDescription();
-				}
-			case 2:
-				if (current != null) {
-					return achievement.getHits()+"/"+current.getTriggerAmount();
-				} else if (next != null) {
-					return achievement.getHits()+"/"+next.getTriggerAmount();
-				} else {
-					return achievement.getHits();
-				}
-			case 3:
-				if (next == null) {
-					return "";
-				} else {
-					return next.getTitle();
-				}
+				return next;
 			default:
 				return null;
 		}
@@ -79,16 +57,16 @@ public class AchievementListAdapterModel extends AbstractTableModel implements C
 	public String getColumnName(int col) {
 		switch (col) {
 			case 0:
-				return "Title";
+				return "Current";
 			case 1:
-				return "Description";
-			case 2:
-				return "Progress";
-			case 3:
 				return "Next";
 			default:
 				return null;
 		}
 	}
 
+	public AchievementsXML getAchievementsXML() {
+		return this.achievementsXML;
+	}
+	
 }

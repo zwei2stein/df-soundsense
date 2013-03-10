@@ -24,7 +24,9 @@
 	</sound>
 
 	<sound logPattern="You vomit\.">
-		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_01.mp3" randomBalance="true" />
+		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_01.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Koops/sounds/13652/" license="CC BY 3.0" author="Koops" description="Sick_In_Toilet_01.wav" />
+		</soundFile>
 		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_02.mp3" randomBalance="true" />
 		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_03.mp3" randomBalance="true" />
 		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_04.mp3" randomBalance="true" />
@@ -36,7 +38,9 @@
 		<soundFile fileName="../battle/sick/43481__jppi_Stu__SW_Cough.mp3" randomBalance="true" />
 		<soundFile fileName="../battle/sick/52323__stephsinger22__coughing.mp3" />
 		<soundFile fileName="../battle/sick/63102__Robinhood76__00553_coughing_man_2.mp3" />
-		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_01.mp3" randomBalance="true" />
+		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_01.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Koops/sounds/13652/" license="CC BY 3.0" author="Koops" description="Sick_In_Toilet_01.wav" />
+		</soundFile>
 		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_02.mp3" randomBalance="true" />
 		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_03.mp3" randomBalance="true" />
 

@@ -35,7 +35,9 @@ public class AchievementsTool {
 			LogReader logReader = new LogReader(configuration.getGamelogPath(), configuration.getGamelogEncoding(), false, true);
 			logger.info("Parsing "+configuration.getGamelogPath());
 			
-			AchievementsProcesor ap = new AchievementsProcesor(achievementsConfugration);
+			configuration.setAchievements(true);
+			
+			AchievementsProcesor ap = new AchievementsProcesor(achievementsConfugration, configuration);
 			
 			Glue.glue(logReader, ap);
 			

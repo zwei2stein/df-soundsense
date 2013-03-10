@@ -29,12 +29,12 @@ import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 public class Gui extends JPanel {
 	private static final long serialVersionUID = 7326794456268877831L;
 	
-	public Gui(final ConfigurationXML config, final SoundProcesor sp, AchievementsXML achievementsXML, AchievementsProcesor ap) {
+	public Gui(final ConfigurationXML configurationXML, final SoundProcesor sp, AchievementsXML achievementsXML, AchievementsProcesor ap) {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		
-        add(new VolumeSlider(config, sp));
+        add(new VolumeSlider(configurationXML, sp));
         
-        add(new ThreshholdSelector(config, sp));
+        add(new ThreshholdSelector(configurationXML, sp));
         
         JTabbedPane tabPane = new JTabbedPane();
         
@@ -46,14 +46,14 @@ public class Gui extends JPanel {
         JPanel configurationPanel = new ConfigurationPanel(sp); 
         tabPane.addTab("Sounds Configuration", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.PLAY_ALL)), configurationPanel);
         
-        JPanel achievementsPanel = new AchievementsPanel(achievementsXML, ap);
+        JPanel achievementsPanel = new AchievementsPanel(achievementsXML, configurationXML,  ap);
         tabPane.addTab("Achievements", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.STAR)), achievementsPanel);
 
         
-        JPanel pathsConfigurationPanel = new PathsConfigurationPanel(config);
+        JPanel pathsConfigurationPanel = new PathsConfigurationPanel(configurationXML);
         tabPane.addTab("Logs", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.LOGS)), pathsConfigurationPanel);
         
-        JPanel soundPackUpdatePanel = new SoundPackUpdatePanel(config);
+        JPanel soundPackUpdatePanel = new SoundPackUpdatePanel(configurationXML);
 		tabPane.addTab("Pack update", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TRANSFER)), soundPackUpdatePanel);
 		
 		JPanel infoPanel = new InfoPanel();

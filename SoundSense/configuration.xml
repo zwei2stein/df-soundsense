@@ -11,6 +11,8 @@
 	
 	<gui value="true"/>
 	
+	<achievements value="true"/>
+	
 	<playbackTheshhold value="4"/>
 	
 	<autoUpdateURLs>
