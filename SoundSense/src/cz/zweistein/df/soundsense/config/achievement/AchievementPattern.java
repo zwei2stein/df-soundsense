@@ -6,7 +6,7 @@ public class AchievementPattern {
 	
 	private String logPattern;
 	private List<Achievement> achievements;
-	private int hits;
+	private long hits;
 	
 	public AchievementPattern(String logPattern, List<Achievement> achievements) {
 		this.logPattern = logPattern;
@@ -22,10 +22,14 @@ public class AchievementPattern {
 		return this.achievements;
 	}
 
-	public int getHits() {
+	public long getHits() {
 		return this.hits;
 	}
 	
+	public void setHits(long hits) {
+		this.hits = hits;
+	}
+
 	public void hit() {
 		this.hits++;
 	}

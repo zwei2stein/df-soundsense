@@ -1,11 +1,15 @@
 package cz.zweistein.df.soundsense.config.achievement;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 import java.util.logging.Logger;
 
 import org.w3c.dom.Document;
@@ -20,10 +24,38 @@ public class AchievementsXML extends XMLConfig {
 	private static Logger logger = LoggerSource.logger;
 	
 	private List<AchievementPattern> achievementPatterns;
+
+	private String achievementsProgressFilename = "achievementsProgress.xml";
 	
 	public AchievementsXML(String directory) throws SAXException, IOException {
 		this.achievementPatterns = new LinkedList<AchievementPattern>();
 		this.loadDirectory(directory);
+		
+		try {
+			Properties savedProgress = new Properties();
+			savedProgress.loadFromXML(new FileInputStream(new File(achievementsProgressFilename)));
+			for (AchievementPattern ap : this.getAchievementPatterns()) {
+				long hits = 0;
+				
+				hits = Long.parseLong(savedProgress.getProperty(ap.getLogPattern(), "0"));
+				
+				ap.setHits(hits);
+			}
+		} catch (FileNotFoundException e) {
+			// we dont care
+		}
+	}
+	
+	public void save() {
+		try {
+			Properties savedProgress = new Properties();
+			for (AchievementPattern ap : this.getAchievementPatterns()) {
+				savedProgress.setProperty(ap.getLogPattern(), Long.toString(ap.getHits()));
+			}
+			savedProgress.storeToXML(new FileOutputStream(new File(achievementsProgressFilename)), null);
+		} catch (IOException e) {
+			logger.info("Error while saving achievemnt progress: " + e.toString());
+		}
 	}
 	
 	private void loadDirectory(String directory) {

@@ -61,9 +61,9 @@ public class Gui extends JPanel {
 
 	}
 	
-    private static void createAndShowGUI(final ConfigurationXML config, SoundProcesor sp, AchievementsXML achievementsXML, AchievementsProcesor ap) {
+    private static void createAndShowGUI(final ConfigurationXML configurationXML, SoundProcesor sp, final AchievementsXML achievementsXML, AchievementsProcesor ap) {
         //Create and set up the window.
-        JFrame frame = new JFrame("SoundSense "+SoundSense.getVersionString()+" "+config.getGamelogPath());
+        JFrame frame = new JFrame("SoundSense "+SoundSense.getVersionString()+" "+configurationXML.getGamelogPath());
         frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Icons.APP_ICON));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -79,7 +79,8 @@ public class Gui extends JPanel {
 
 			@Override
 			public void windowClosing(WindowEvent arg0) {
-				config.saveConfiguration();
+				configurationXML.saveConfiguration();
+				achievementsXML.save();
 			}
 
 			@Override
@@ -101,7 +102,7 @@ public class Gui extends JPanel {
 
 		});
         
-        Gui gui = new Gui(config, sp, achievementsXML, ap);
+        Gui gui = new Gui(configurationXML, sp, achievementsXML, ap);
                 
         //Add content to the window.
         frame.add(gui, BorderLayout.CENTER);

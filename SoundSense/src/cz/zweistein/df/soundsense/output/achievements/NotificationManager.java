@@ -40,7 +40,7 @@ public class NotificationManager {
 
 	}
 
-	public void showNotification(Achievement achievement, int progress) {
+	public void showNotification(Achievement achievement, long progress) {
 
 		final JDialog dialog = new JDialog();
 		dialog.setUndecorated(true);
