@@ -21,7 +21,7 @@
 	</achievementPattern>
 	
 	<achievementPattern logPattern="The Stray Kitten \(Tame\) has been slaughtered\.">
-		<achievement title="Heartless" description="Butcher live kitten." triggerAmount="1" image="cats.png" />
+		<achievement title="Dwarven rite of passage" description="&quot;Dispose&quot; of your first kitten." triggerAmount="1" image="cats.png" />
 		<achievement title="No catsplosion on my watch!" description="Butcher 10 live kittens." triggerAmount="10" image="cats.png" />
 		<achievement title="Critical cat mass prevention" description="Butcher 100 live kittens." triggerAmount="100" image="cats.png" />
 		<achievement title="Cat powered industry" description="Butcher 1000 live kittens." triggerAmount="1000" image="cats.png" />
@@ -78,6 +78,10 @@
     <achievement title="Heartseeker" description="Pierce 5 goblin hearts with crossbow bolt." triggerAmount="5" />
     <achievement title="Cupid" description="Pierce 50 goblin hearts with crossbow bolt." triggerAmount="50" />
     <achievement title="Winning hearts and minds" description="Pierce 500 goblin hearts with crossbow bolt." triggerAmount="500" />
+  </achievementPattern>
+  
+  <achievementPattern logPattern="(.+) starved(.+)">
+    <achievement title="Aren't you forgetting something?" description="Dwarfs dying of hunger..." triggerAmount="50" />
   </achievementPattern>
 	
 </achievements>
