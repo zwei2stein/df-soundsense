@@ -8,8 +8,10 @@ import java.util.logging.Logger;
 
 import org.fusesource.jansi.AnsiConsole;
 
-public class LoggerSource {
-	public static Logger logger = Logger.getAnonymousLogger();
+public final class LoggerSource {
+	public static final Logger logger = Logger.getAnonymousLogger();
+	
+	private LoggerSource() {}
 	
 	static {
 		try {

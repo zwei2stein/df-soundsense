@@ -16,7 +16,7 @@ import cz.zweistein.df.soundsense.config.sounds.SoundFile;
 import cz.zweistein.df.soundsense.gui.Icons;
 
 public class IconTreeCellRenderer implements TreeCellRenderer {
-	
+
 	private ConfigurationXML configuration;
 
 	public IconTreeCellRenderer(ConfigurationXML configuration) {
@@ -26,27 +26,27 @@ public class IconTreeCellRenderer implements TreeCellRenderer {
 	@Override
 	public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
 		DefaultTreeCellRenderer defaultTreeCellRenderer = new DefaultTreeCellRenderer();
-		
+
 		defaultTreeCellRenderer.setText(value.toString());
-		
+
 		if (value instanceof Sound) {
-			
+
 			if (expanded) {
 				defaultTreeCellRenderer.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TREE_SOUND_EVENT_OPEN)));
 			} else {
 				defaultTreeCellRenderer.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TREE_SOUND_EVENT_CLOSED)));
 			}
-			
+
 		} else if (value instanceof SoundFile) {
-			
+
 			defaultTreeCellRenderer.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TREE_SOUND_FILE)));
-			
+
 		} else if (value instanceof Attribution) {
-			
+
 			defaultTreeCellRenderer.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TREE_ATTRIBUTION)));
-			
+
 		} else if (value instanceof String) {
-			
+
 			if (configuration.getDisabledSounds().contains(value)) {
 				if (expanded) {
 					defaultTreeCellRenderer.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TREE_SOUND_XML_DISABLED_OPEN)));
@@ -59,17 +59,17 @@ public class IconTreeCellRenderer implements TreeCellRenderer {
 					defaultTreeCellRenderer.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TREE_SOUND_XML_OPEN)));
 				} else {
 					defaultTreeCellRenderer.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TREE_SOUND_XML_CLOSED)));
-				}				
+				}
 			}
-			
+
 		}
-		
+
 		if (hasFocus) {
 			defaultTreeCellRenderer.setForeground(Color.WHITE);
 			defaultTreeCellRenderer.setBackground(Color.DARK_GRAY);
 			defaultTreeCellRenderer.setOpaque(true);
 		}
-		
+
 		return defaultTreeCellRenderer;
 	}
 

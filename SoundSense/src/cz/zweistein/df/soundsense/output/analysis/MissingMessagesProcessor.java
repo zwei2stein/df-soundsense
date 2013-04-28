@@ -34,7 +34,7 @@ public class MissingMessagesProcessor extends Procesor {
 				break;
 			}
 		}
-		if (matched == false) {
+		if (!matched) {
 			logger.info(nextLine);
 		}
 	}

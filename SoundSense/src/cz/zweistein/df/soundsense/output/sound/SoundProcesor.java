@@ -41,12 +41,12 @@ public class SoundProcesor extends Procesor {
 			if (!getConfiguration().getDisabledSounds().contains(sound.getParentFile()) && sound.matches(nextLine)) {
 				matches++;
 				matchedSound = sound;
-				
-				logger.fine("Message '"+nextLine+"' matched event '"+sound.toString()+"' from '"+sound.getParentFile()+"'.");
+
+				logger.fine("Message '" + nextLine + "' matched event '" + sound.toString() + "' from '" + sound.getParentFile() + "'.");
 				
 				player.playSound(sound);
 
-				if (sound.getHaltOnMatch() == true) {
+				if (sound.getHaltOnMatch()) {
 					logger.finest("Ending matching prematurely as expected.");
 					break;
 				} else {
@@ -58,8 +58,15 @@ public class SoundProcesor extends Procesor {
 			logger.info(nextLine);
 			logger.fine("Message '"+nextLine+"' did not match any rule.");
 		} else {
-			logger.info((matchedSound.getAnsiFormat()!= null ? matchedSound.getAnsiFormat() : "") + nextLine);
-			logger.finest("Message '"+nextLine+"' matched " + matches + " rules.");
+			StringBuilder sb = new StringBuilder();
+
+			if (matchedSound.getAnsiFormat() != null) {
+				sb.append(matchedSound.getAnsiFormat());
+			}
+			sb.append(nextLine);
+
+			logger.info(sb.toString());
+			logger.finest("Message '" + nextLine + "' matched " + matches + " rules.");
 		}
 	}
 

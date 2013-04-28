@@ -13,13 +13,13 @@ import cz.zweistein.df.soundsense.output.sound.player.PlayerManager;
 public class SoundInfoPanel extends JPanel {
 	private static final long serialVersionUID = -6987634849512435047L;
 	
-	final JLabel soundInfoPatternLabel;
-	final JLabel soundInfoChannelLabel;
-	final JLabel soundInfoLoopLabel;
-	final JLabel soundInfoTimeoutLabel;
-	final JLabel soundInfoConcurencyLabel;
-	final JLabel soundInfoDelayLabel;
-	final StartSoundPlaybackButton soundInfoPlayButton;
+	private final JLabel soundInfoPatternLabel;
+	private final JLabel soundInfoChannelLabel;
+	private final JLabel soundInfoLoopLabel;
+	private final JLabel soundInfoTimeoutLabel;
+	private final JLabel soundInfoConcurencyLabel;
+	private final JLabel soundInfoDelayLabel;
+	private final StartSoundPlaybackButton soundInfoPlayButton;
 
 	private JLabel soundInfoPropabilityLabel;
 
@@ -70,11 +70,11 @@ public class SoundInfoPanel extends JPanel {
 	public void updateSound(Sound sound) {
 		soundInfoPatternLabel.setText(sound.getLogPattern());
 		soundInfoChannelLabel.setText(sound.getChannel());
-		soundInfoLoopLabel.setText(sound.getLoop()==null?"":sound.getLoop().toString());
-		soundInfoTimeoutLabel.setText(sound.getTimeout()==null?"no timeout":sound.getTimeout()+"ms");
-		soundInfoConcurencyLabel.setText(sound.getConcurency()==null?"disregards concurency":sound.getConcurency().toString());
-		soundInfoDelayLabel.setText(sound.getDelay()==null?"no delay":sound.getDelay()+"ms");
-		soundInfoPropabilityLabel.setText(sound.getPropability()==null?"always plays":sound.getPropability()+"%");
+		soundInfoLoopLabel.setText(sound.getLoop() == null ? "" : sound.getLoop().toString());
+		soundInfoTimeoutLabel.setText(sound.getTimeout() == null ? "no timeout" : sound.getTimeout() + "ms");
+		soundInfoConcurencyLabel.setText(sound.getConcurency() == null ? "disregards concurency" : sound.getConcurency().toString());
+		soundInfoDelayLabel.setText(sound.getDelay() == null ? "no delay" : sound.getDelay() + "ms");
+		soundInfoPropabilityLabel.setText(sound.getPropability() == null ? "always plays" : sound.getPropability() + "%");
 		soundInfoplaybackTheshholdLabel.setText(Threshold.forValue(sound.getPlaybackTheshhold()).toString());
 		soundInfoPlayButton.setSound(sound);
 	}

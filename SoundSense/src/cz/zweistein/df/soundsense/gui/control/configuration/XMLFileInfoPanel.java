@@ -13,9 +13,9 @@ import cz.zweistein.df.soundsense.config.sounds.SoundsXML;
 public class XMLFileInfoPanel extends JPanel implements IxmlFileInfoPanel{
 	private static final long serialVersionUID = -6987634849512435047L;
 	
-	final JLabel pathLabel;
-	final ToggleXMLFileButton toggleXMLFileButton;
-	final ToggleXMLFileGroupButton toggleXMLFileGroupButton;
+	private final JLabel pathLabel;
+	private final ToggleXMLFileButton toggleXMLFileButton;
+	private final ToggleXMLFileGroupButton toggleXMLFileGroupButton;
 
 	public XMLFileInfoPanel(ConfigurationXML configuration, SoundsXML soundsConfiguration, JTree soundsTree) {
 		super();

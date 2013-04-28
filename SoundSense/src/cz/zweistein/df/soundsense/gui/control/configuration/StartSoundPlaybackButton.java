@@ -13,7 +13,7 @@ import cz.zweistein.df.soundsense.output.sound.player.PlayerManager;
 
 public class StartSoundPlaybackButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = 6661022698071626453L;
-	
+
 	private Sound sound;
 	private transient PlayerManager manager;
 

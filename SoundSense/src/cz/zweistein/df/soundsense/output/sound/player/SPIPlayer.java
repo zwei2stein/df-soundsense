@@ -19,16 +19,17 @@ public class SPIPlayer {
 	private static final int BUFFER_SIZE = 4096;
 
 	private static Logger logger = LoggerSource.logger;
-	
+
 	private boolean stop = false;
 	private float masterGain = 0;
 	private boolean mute = false;
 	private float balance = 0;
-	
+
 	private String fileName;
-	
+
 	/**
-	 * @param masterGain - decibell value of volume amplification.
+	 * @param masterGain
+	 *            - decibell value of volume amplification.
 	 */
 	public void setMasterGain(float masterGain) {
 		this.masterGain = masterGain;
@@ -41,59 +42,55 @@ public class SPIPlayer {
 	public void stopPlayback() {
 		this.stop = true;
 	}
-	
+
 	public void setMute(boolean mute) {
 		this.mute = mute;
 	}
-	
+
 	public void play(String fileName) {
 		try {
 			this.fileName = fileName;
-			logger.finest("Opening '"+this.fileName+"'");
+			logger.finest("Opening '" + this.fileName + "'");
 			File file = new File(this.fileName);
 			AudioInputStream in = AudioSystem.getAudioInputStream(file);
 			AudioInputStream din = null;
 			AudioFormat baseFormat = in.getFormat();
-			AudioFormat decodedFormat = new AudioFormat(
-					AudioFormat.Encoding.PCM_SIGNED,
-					baseFormat.getSampleRate(), 16, baseFormat.getChannels(),
-					baseFormat.getChannels() * 2, baseFormat.getSampleRate(),
-					false);
+			AudioFormat decodedFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, baseFormat.getSampleRate(), 16, baseFormat.getChannels(),
+					baseFormat.getChannels() * 2, baseFormat.getSampleRate(), false);
 			din = AudioSystem.getAudioInputStream(decodedFormat, in);
 			// Play now.
 			rawPlay(decodedFormat, din);
 			in.close();
-		} catch (IOException E) {
-			logger.severe("Failed to open "+this.fileName+" propably download error or configuration mistake.");
+		} catch (IOException e) {
+			logger.severe("Failed to open " + this.fileName + " propably download error or configuration mistake. " + e.getMessage());
 		} catch (Exception e) {
-			logger.severe("Exception with "+this.fileName+": "+e+": "+e.getMessage());
+			logger.severe("Exception with " + this.fileName + ": " + e + ": " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
 
-	private void rawPlay(AudioFormat targetFormat, AudioInputStream din)
-			throws IOException, LineUnavailableException {
+	private void rawPlay(AudioFormat targetFormat, AudioInputStream din) throws IOException, LineUnavailableException {
 		byte[] data = new byte[BUFFER_SIZE];
-		
+
 		SourceDataLine line = getLine(targetFormat);
-		
+
 		if (line != null) {
 			// Start
 			line.start();
-			
-			if (this.balance != 0 ) {
+
+			if (this.balance != 0) {
 				if (line.isControlSupported(FloatControl.Type.BALANCE)) {
 					FloatControl masterSampleRate = (FloatControl) line.getControl(FloatControl.Type.BALANCE);
 					masterSampleRate.setValue(this.balance);
 				} else {
-					logger.info("FloatControl.Type.BALANCE not supported for "+this.fileName+"!");
+					logger.info("FloatControl.Type.BALANCE not supported for " + this.fileName + "!");
 				}
 			}
-			
+
 			@SuppressWarnings("unused")
 			int nBytesRead = 0, nBytesWritten = 0;
 			while (nBytesRead != -1) {
-				if (this.stop == true) {
+				if (this.stop) {
 					logger.finest("Stopping playback.");
 					this.stop = false;
 					break;
@@ -107,13 +104,13 @@ public class SPIPlayer {
 				if (this.masterGain != 0) {
 					if (line.isControlSupported(FloatControl.Type.MASTER_GAIN)) {
 						FloatControl masterGainControl = (FloatControl) line.getControl(FloatControl.Type.MASTER_GAIN);
-						
-						if (this.masterGain < masterGainControl.getMinimum() ) {
+
+						if (this.masterGain < masterGainControl.getMinimum()) {
 							this.masterGain = masterGainControl.getMinimum();
-						} else if (this.masterGain > masterGainControl.getMaximum() ) {
+						} else if (this.masterGain > masterGainControl.getMaximum()) {
 							this.masterGain = masterGainControl.getMaximum();
 						}
-						
+
 						masterGainControl.setValue(this.masterGain);
 						this.masterGain = 0;
 					} else {
@@ -135,11 +132,9 @@ public class SPIPlayer {
 		}
 	}
 
-	private SourceDataLine getLine(AudioFormat audioFormat)
-			throws LineUnavailableException {
+	private SourceDataLine getLine(AudioFormat audioFormat) throws LineUnavailableException {
 		SourceDataLine res = null;
-		DataLine.Info info = new DataLine.Info(SourceDataLine.class,
-				audioFormat);
+		DataLine.Info info = new DataLine.Info(SourceDataLine.class, audioFormat);
 		res = (SourceDataLine) AudioSystem.getLine(info);
 		res.open(audioFormat);
 		return res;

@@ -11,41 +11,44 @@ public class Sound {
 	private List<SoundFile> soundFiles;
 
 	private int soundFilesWeightsSum;
-	
+
 	private String logPattern;
 	private Pattern parsedLogPattern;
-	
+
 	private String parentFile;
-	
+
 	// loop repeats indefinitely, only music can loop
 	private Loop loop;
 	// there can be only one sound played on channel.
 	private String channel;
-	
-	// concurency is cap on how many sounds can be played concurenctly to this one.
-	// if more sounds are playing than this number and this sound is triggered, it would be ignored.
-	private Long concurency; 
-	
+
+	// concurency is cap on how many sounds can be played concurenctly to this
+	// one.
+	// if more sounds are playing than this number and this sound is triggered,
+	// it would be ignored.
+	private Long concurency;
+
 	private boolean haltOnMatch;
-	
+
 	private long hits;
-	
-	// timeout in milliseconds, sound would not be repeated within this time. 
+
+	// timeout in milliseconds, sound would not be repeated within this time.
 	private Long timeout;
 	private long lastPlayed;
-	
+
 	private Long delay;
-	
+
 	// in percents
 	private Long propability;
-	
+
 	private long playbackTheshhold;
-	
+
 	private String ansiFormat;
 
-	public Sound(String parentFile, List<SoundFile> soundFiles, String logPattern, String ansiFormat, Loop loop, String channel, Long concurency, boolean haltOnMatch, Long timeout, Long delay, Long propability, long playbackTheshhold) {
+	public Sound(String parentFile, List<SoundFile> soundFiles, String logPattern, String ansiFormat, Loop loop, String channel, Long concurency,
+			boolean haltOnMatch, Long timeout, Long delay, Long propability, long playbackTheshhold) {
 		this.parentFile = parentFile;
-		
+
 		if (soundFiles != null) {
 			this.soundFiles = soundFiles;
 		} else {
@@ -60,23 +63,23 @@ public class Sound {
 		this.delay = delay;
 		this.propability = propability;
 		this.playbackTheshhold = playbackTheshhold;
-		
+
 		this.soundFilesWeightsSum = 0;
-		
-		for (SoundFile soundFile: this.soundFiles) {
+
+		for (SoundFile soundFile : this.soundFiles) {
 			this.soundFilesWeightsSum += soundFile.getWeight();
 		}
-		
+
 		this.hits = 0;
-		
+
 		if (this.logPattern != null) {
 			this.parsedLogPattern = Pattern.compile(this.logPattern);
 		}
-		
+
 		this.ansiFormat = ansiFormat;
-		
+
 	}
-	
+
 	public List<SoundFile> getSoundFiles() {
 		return this.soundFiles;
 	}
@@ -88,29 +91,29 @@ public class Sound {
 	public String getLogPattern() {
 		return this.logPattern;
 	}
-	
+
 	public Loop getLoop() {
 		return this.loop;
 	}
-	
+
 	public boolean hasNoSoundFiles() {
 		return this.soundFiles.isEmpty();
 	}
 
 	public SoundFile getRandomSoundFile() {
-		
+
 		if (this.soundFiles.size() > 0) {
 			int weightedRandom = new Random().nextInt(this.soundFilesWeightsSum);
-			for (SoundFile soundFile: this.soundFiles) {
+			for (SoundFile soundFile : this.soundFiles) {
 				if (soundFile.getWeight() > weightedRandom) {
 					return soundFile;
 				}
 				weightedRandom -= soundFile.getWeight();
 			}
 		}
-	
+
 		return null;
-		
+
 	}
 
 	public String getParentFile() {
@@ -124,7 +127,7 @@ public class Sound {
 	public boolean getHaltOnMatch() {
 		return this.haltOnMatch;
 	}
-	
+
 	public long getHits() {
 		return this.hits;
 	}
@@ -144,15 +147,15 @@ public class Sound {
 	public Long getTimeout() {
 		return this.timeout;
 	}
-	
+
 	public Long getDelay() {
 		return delay;
 	}
-	
+
 	public void setPropability(Long propability) {
 		this.propability = propability;
 	}
-	
+
 	public Long getPropability() {
 		return propability;
 	}
@@ -165,7 +168,7 @@ public class Sound {
 	public long getPlaybackTheshhold() {
 		return playbackTheshhold;
 	}
-	
+
 	public boolean matches(String logEvent) {
 		Matcher matcher = this.parsedLogPattern.matcher(logEvent);
 		return matcher.matches();

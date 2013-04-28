@@ -19,11 +19,11 @@ import cz.zweistein.df.soundsense.gui.Browser;
 public class AttributionInfoPanel extends JPanel {
 	private static final long serialVersionUID = 3819628170252365080L;
 	
-	final JLabel urlLabel;
-	final JLabel licenseLabel;
-	final JLabel authorLabel;
-	final JLabel descriptionLabel;
-	final JLabel noteLabel;
+	private final JLabel urlLabel;
+	private final JLabel licenseLabel;
+	private final JLabel authorLabel;
+	private final JLabel descriptionLabel;
+	private final JLabel noteLabel;
 
 	private Attribution attribution;
 

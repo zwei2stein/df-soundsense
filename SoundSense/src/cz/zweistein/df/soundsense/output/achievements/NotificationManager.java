@@ -71,7 +71,7 @@ public class NotificationManager {
 
 					AWTUtilities.setWindowOpacity(dialog, opacity);
 					opacity -= tickDecreement;
-					if (dialog.isVisible() == false) {
+					if (!dialog.isVisible()) {
 						opacity = 0f;
 					}
 

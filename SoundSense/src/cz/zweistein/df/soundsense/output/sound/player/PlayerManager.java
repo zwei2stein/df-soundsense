@@ -15,28 +15,28 @@ import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public final class PlayerManager {
 	private static final Logger logger = LoggerSource.logger;
-	
-	public int concurentSounds = 0;
+
+	private int concurentSounds = 0;
 	private float globalChanngelGain = 0;
 	private float globalVolume;
 
 	private Map<String, ChannelThread> channels;
 	private List<ChangeCallback> channelPlaybackCallback;
-	
+
 	private Set<SFXThread> sfxThreads;
 	private List<SFXPlaybackCallback> sfxPlaybackCallback;
-	
+
 	private VolumeAdjuster volumeAdjuster;
 
 	private long playbackTheshhold;
-	
+
 	public PlayerManager() {
 		this.channels = new HashMap<String, ChannelThread>();
 		this.channelPlaybackCallback = new ArrayList<ChangeCallback>();
-		
+
 		this.sfxThreads = new HashSet<SFXThread>();
 		this.sfxPlaybackCallback = new ArrayList<SFXPlaybackCallback>(1);
-		
+
 		this.volumeAdjuster = new VolumeAdjuster();
 		this.volumeAdjuster.setManager(this);
 		new Thread(this.volumeAdjuster, "VolumeAdjustment").start();
@@ -51,15 +51,15 @@ public final class PlayerManager {
 	}
 
 	public void playSound(Sound sound) {
-		
-		if (sound.hasNoSoundFiles() && sound.getChannel() == null ) {
+
+		if (sound.hasNoSoundFiles() && sound.getChannel() == null) {
 			logger.finest("Sound " + sound + " is ignored because it can not be played");
 			return;
 		}
-		
+
 		if (this.playbackTheshhold < sound.getPlaybackTheshhold()) {
-			logger.fine("Sound " + sound.toString() + " filtered because it's threshold is " +
-					sound.getPlaybackTheshhold() + " while global threshold is "+  this.playbackTheshhold + ".");
+			logger.fine("Sound " + sound.toString() + " filtered because it's threshold is " + sound.getPlaybackTheshhold() + " while global threshold is "
+					+ this.playbackTheshhold + ".");
 			return;
 		}
 
@@ -67,42 +67,43 @@ public final class PlayerManager {
 			if ((sound.getLastPlayed()) < System.currentTimeMillis() - sound.getTimeout()) {
 				sound.setLastPlayed(System.currentTimeMillis());
 			} else {
-				logger.fine("Sound " + sound.toString() + " is still timeouted, will be ready in " +
-						((sound.getLastPlayed() + sound.getTimeout()) - System.currentTimeMillis()) + ".");
+				logger.fine("Sound " + sound.toString() + " is still timeouted, will be ready in "
+						+ ((sound.getLastPlayed() + sound.getTimeout()) - System.currentTimeMillis()) + ".");
 				return;
 			}
 		}
-		
+
 		if (sound.getPropability() != null) {
 			if (new Random().nextInt(100) > sound.getPropability()) {
-				logger.fine("Sound " + sound.toString() + " dropped because its propability is "+sound.getPropability()+"% and failed dice roll.");
+				logger.fine("Sound " + sound.toString() + " dropped because its propability is " + sound.getPropability() + "% and failed dice roll.");
 				return;
 			}
 		}
-		
+
 		if (sound.getChannel() == null) {
 			if (sound.getConcurency() == null || (sound.getConcurency() != null && concurentSounds < sound.getConcurency())) {
 				SFXThread mp3Thread = new SFXThread(this, sound, this.globalVolume);
 				new Thread(mp3Thread, mp3Thread.getThreadName()).start();
 			} else {
-				logger.fine("Dropped sound for "+sound.toString()+" its concurency is "+sound.getConcurency()+" and there are "+concurentSounds+" sounds playing.");
+				logger.fine("Dropped sound for " + sound.toString() + " its concurency is " + sound.getConcurency() + " and there are " + concurentSounds
+						+ " sounds playing.");
 			}
-			
-		} else  {
-			
+
+		} else {
+
 			ChannelThread channelThread = this.getChannel(sound.getChannel());
-			
+
 			if (sound.getLoop() == Loop.START_LOOPING) {
 				channelThread.setLoopMusic(sound);
 			} else if (sound.getLoop() == Loop.STOP_LOOPING) {
 				this.channelStatusChanged(channelThread);
 				channelThread.setLoopMusic(null);
-				logger.fine("Stopped looping "+sound.getChannel()+".");
+				logger.fine("Stopped looping " + sound.getChannel() + ".");
 			}
-			
+
 			if (sound.hasNoSoundFiles()) {
 				channelThread.setCurrentMusic(null);
-				logger.finest("Stopped playin "+sound.getChannel()+".");
+				logger.finest("Stopped playin " + sound.getChannel() + ".");
 			} else {
 				channelThread.setSingualMusic(sound.getRandomSoundFile(), sound.getDelay());
 			}
@@ -110,31 +111,31 @@ public final class PlayerManager {
 			if (channelThread.getMusicPlayer() != null) {
 				channelThread.getMusicPlayer().stopPlayback();
 			}
-	
+
 		}
-		
+
 	}
 
 	private ChannelThread getChannel(String channel) {
 		ChannelThread channelThread = this.channels.get(channel);
 		if (channelThread == null) {
 			channelThread = new ChannelThread(channel, this);
-			channelThread.setDefaultGain(this.globalChanngelGain+this.globalVolume);
+			channelThread.setDefaultGain(this.globalChanngelGain + this.globalVolume);
 			this.channels.put(channel, channelThread);
-			new Thread(channelThread, "Channel"+channel+"Thread").start();
+			new Thread(channelThread, "Channel" + channel + "Thread").start();
 		}
 		return channelThread;
 	}
-	
+
 	public synchronized void setGainForAllChannels(float gain) {
 		this.globalChanngelGain = gain;
-		for(Map.Entry<String, ChannelThread> entry: this.channels.entrySet()) {
-			entry.getValue().setDefaultGain(gain+this.globalVolume);
+		for (Map.Entry<String, ChannelThread> entry : this.channels.entrySet()) {
+			entry.getValue().setDefaultGain(gain + this.globalVolume);
 		}
 	}
-	
+
 	public synchronized void setVolumeForAllSfx(float volume) {
-		for (SFXThread sfx: this.sfxThreads) {
+		for (SFXThread sfx : this.sfxThreads) {
 			sfx.setVolume(volume);
 		}
 	}
@@ -147,7 +148,7 @@ public final class PlayerManager {
 			callback.started();
 		}
 	}
-	
+
 	public synchronized void mp3ThreadPlayingEndCallback(SFXThread mp3Thread) {
 		this.sfxThreads.remove(mp3Thread);
 		concurentSounds--;
@@ -158,11 +159,11 @@ public final class PlayerManager {
 			callback.ended();
 		}
 	}
-	
+
 	public void addSfxPlaybackCallback(SFXPlaybackCallback callback) {
 		this.sfxPlaybackCallback.add(callback);
 	}
-	
+
 	public void removeSfxPlaybackCallback(SFXPlaybackCallback callback) {
 		this.sfxPlaybackCallback.remove(callback);
 	}
@@ -176,13 +177,13 @@ public final class PlayerManager {
 	public void addChannelPlaybackCallback(ChangeCallback channelListAdapter) {
 		this.channelPlaybackCallback.add(channelListAdapter);
 	}
-	
+
 	public synchronized void removeChannelPlaybackCallback(ChangeCallback channelListAdapter) {
 		this.channelPlaybackCallback.remove(channelListAdapter);
 	}
 
 	public void channelStatusChanged(ChannelThread channelThread) {
-		for (ChangeCallback channelListAdapter: this.channelPlaybackCallback) {
+		for (ChangeCallback channelListAdapter : this.channelPlaybackCallback) {
 			channelListAdapter.changed();
 		}
 	}
@@ -190,5 +191,9 @@ public final class PlayerManager {
 	public void setPlaybackTheshhold(long playbackTheshhold) {
 		this.playbackTheshhold = playbackTheshhold;
 	}
-	
+
+	public int getConcurentSounds() {
+		return this.concurentSounds;
+	}
+
 }

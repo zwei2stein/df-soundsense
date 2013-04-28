@@ -100,11 +100,17 @@ public class SoundSense {
 		}
 	}
 
+	/**
+	 * Constructs human readable information about build and version
+	 *
+	 * @return
+	 */
 	public static String getVersionString() {
 		Properties properties = new Properties();
 		try {
 			properties.load(SoundSense.class.getClassLoader().getResource("version.properties").openStream());
-			return "release #" + properties.getProperty("release") + " build #" + properties.getProperty("buildNum") + " date " + properties.getProperty("buildDate");
+			return "release #" + properties.getProperty("release") + " build #" + properties.getProperty("buildNum") + " date "
+					+ properties.getProperty("buildDate");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

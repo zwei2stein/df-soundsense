@@ -16,39 +16,39 @@ import cz.zweistein.df.soundsense.output.achievements.AchievementsProcesor;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class AchievementsTool {
-	
+
 	private static Logger logger = LoggerSource.logger;
-	
+
 	public static void main(String[] args) {
-		
+
 		setLookAndFeel();
-		
+
 		try {
 			logger.info("Achievements for SoundSense is starting...");
-			
+
 			ConfigurationXML configuration = new ConfigurationXML("configuration.xml");
 			new GameLogValidator(configuration).gamelogValidate();
 
 			AchievementsXML achievementsConfugration = new AchievementsXML("./achievements/");
-			
-			logger.info("Attempting to open "+configuration.getGamelogPath());
+
+			logger.info("Attempting to open " + configuration.getGamelogPath());
 			LogReader logReader = new LogReader(configuration.getGamelogPath(), configuration.getGamelogEncoding(), false, true);
-			logger.info("Parsing "+configuration.getGamelogPath());
-			
+			logger.info("Parsing " + configuration.getGamelogPath());
+
 			configuration.setAchievements(true);
-			
+
 			AchievementsProcesor ap = new AchievementsProcesor(achievementsConfugration, configuration);
-			
+
 			Glue.glue(logReader, ap);
-			
+
 		} catch (IOException e) {
-			logger.severe("Exception :"+e+": "+e.toString());
+			logger.severe("Exception :" + e + ": " + e.toString());
 		} catch (SAXException e) {
-			logger.severe("Exception :"+e+": "+e.toString());
+			logger.severe("Exception :" + e + ": " + e.toString());
 		}
-		
+
 	}
-	
+
 	private static void setLookAndFeel() {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

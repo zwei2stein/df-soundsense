@@ -1,9 +1,15 @@
 package cz.zweistein.df.soundsense.config;
 
 public interface IReloadProgressCallback {
-	
-	public void done();
-	
-	public void tick();
+
+	/**
+	 * Called when reload is done
+	 */
+	void done();
+
+	/**
+	 * Called when progress is made
+	 */
+	void tick();
 
 }

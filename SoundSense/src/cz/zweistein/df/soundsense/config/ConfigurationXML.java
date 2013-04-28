@@ -27,10 +27,10 @@ import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class ConfigurationXML extends XMLConfig {
 	private static Logger logger = LoggerSource.logger;
-	
+
 	private String fileName;
 	private Document doc;
-	
+
 	private String gamelogPath;
 	private String gamelogEncoding;
 	private String soundpacksPath;
@@ -44,52 +44,52 @@ public class ConfigurationXML extends XMLConfig {
 	private boolean deleteFiles;
 
 	private boolean gui;
-	
+
 	private Set<String> disabledSounds;
-	
+
 	private List<String> supplementalLogs;
-	
+
 	private boolean achievements;
 
 	public ConfigurationXML(String configurationFile) throws SAXException, IOException {
-		
+
 		this.fileName = configurationFile;
-		
+
 		this.doc = parseDoc(fileName);
-		
+
 		Element configNodes = (Element) doc.getElementsByTagName("configuration").item(0);
-		
+
 		Node gamelogNode = configNodes.getElementsByTagName("gamelog").item(0);
 		this.gamelogPath = gamelogNode.getAttributes().getNamedItem("path").getNodeValue();
 		this.gamelogEncoding = gamelogNode.getAttributes().getNamedItem("encoding").getNodeValue();
-		
+
 		Node soundpacksNode = configNodes.getElementsByTagName("soundpacks").item(0);
 		this.soundpacksPath = soundpacksNode.getAttributes().getNamedItem("defaultPath").getNodeValue();
 		this.allowPackOverride = Boolean.parseBoolean(soundpacksNode.getAttributes().getNamedItem("allowOverride").getNodeValue());
 		this.noWarnAbsolutePaths = Boolean.parseBoolean(soundpacksNode.getAttributes().getNamedItem("noWarnAbsolutePath").getNodeValue());
-		
+
 		Node volumeNode = configNodes.getElementsByTagName("volume").item(0);
 		this.volume = parseFloatAttribute(volumeNode, "value", this.volume);
-		
+
 		Node playbackTheshholdNode = configNodes.getElementsByTagName("playbackTheshhold").item(0);
 		String playbackTheshholdText = playbackTheshholdNode.getAttributes().getNamedItem("value").getNodeValue();
 		this.playbackTheshhold = Threshold.EVERYTHING.getValue();
 		try {
 			this.playbackTheshhold = Long.parseLong(playbackTheshholdText);
 		} catch (NumberFormatException e) {
-			logger.info("Volume value '"+playbackTheshholdText+" is not recognized as a number, using default "+this.volume+".");
+			logger.info("Volume value '" + playbackTheshholdText + " is not recognized as a number, using default " + this.volume + ".");
 		}
-		
+
 		Node autoUpdateURLNode = configNodes.getElementsByTagName("autoUpdateURLs").item(0);
 		this.autoUpdateURLs = parsePathList(autoUpdateURLNode);
-		
+
 		this.setDeleteFiles(parseBoolean("autoUpdateDeleteFiles", configNodes));
 		this.setReplaceFiles(parseBoolean("autoUpdateReplaceFiles", configNodes));
-		
+
 		this.gui = parseBoolean("gui", configNodes);
-		
+
 		this.achievements = parseBoolean("achievements", configNodes);
-		
+
 		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
 		this.disabledSounds = new LinkedHashSet<String>(parsePathList(disabledSoundsNode));
 		if (!this.disabledSounds.isEmpty()) {
@@ -105,57 +105,57 @@ public class ConfigurationXML extends XMLConfig {
 			}
 			logger.info(sb.toString());
 		}
-		
+
 		Node supplementalLogsNode = configNodes.getElementsByTagName("supplementalLogs").item(0);
 		this.supplementalLogs = parsePathList(supplementalLogsNode);
-		
+
 	}
-	
+
 	private List<String> parsePathList(Node listNode) {
 		List<String> list = new ArrayList<String>();
-		
+
 		NodeList items = listNode.getChildNodes();
 		for (int j = 0; j < items.getLength(); j++) {
 			Node item = items.item(j);
 			String name = item.getLocalName();
-			
+
 			if ("item".equals(name)) {
 				list.add(item.getAttributes().getNamedItem("path").getNodeValue());
 			}
 		}
-		
+
 		return list;
 	}
-	
+
 	private boolean parseBoolean(String noneName, Element nodes) {
 		Node node = nodes.getElementsByTagName(noneName).item(0);
 		String guiText = node.getAttributes().getNamedItem("value").getNodeValue();
 		return Boolean.parseBoolean(guiText);
 	}
-	
+
 	public void saveConfiguration() {
 		logger.info("Saving configuration.");
-		
+
 		Element configNodes = (Element) doc.getElementsByTagName("configuration").item(0);
-		
+
 		Node gamelogNode = configNodes.getElementsByTagName("gamelog").item(0);
 		gamelogNode.getAttributes().getNamedItem("path").setNodeValue(this.getGamelogPath());
-		
+
 		Node volumeNode = configNodes.getElementsByTagName("volume").item(0);
 		volumeNode.getAttributes().getNamedItem("value").setNodeValue(Float.toString(this.getVolume()));
-		
+
 		Node playbackTheshholdNode = configNodes.getElementsByTagName("playbackTheshhold").item(0);
 		playbackTheshholdNode.getAttributes().getNamedItem("value").setNodeValue(Long.toString(this.getPlaybackTheshhold()));
-		
+
 		Node autoUpdateReplaceFilesNode = configNodes.getElementsByTagName("autoUpdateReplaceFiles").item(0);
 		autoUpdateReplaceFilesNode.getAttributes().getNamedItem("value").setNodeValue(Boolean.toString(this.getReplaceFiles()));
-		
+
 		Node autoUpdateDeleteFilesNode = configNodes.getElementsByTagName("autoUpdateDeleteFiles").item(0);
 		autoUpdateDeleteFilesNode.getAttributes().getNamedItem("value").setNodeValue(Boolean.toString(this.getDeleteFiles()));
-		
+
 		Node achievementsNode = configNodes.getElementsByTagName("achievements").item(0);
 		achievementsNode.getAttributes().getNamedItem("value").setNodeValue(Boolean.toString(this.getAchievements()));
-		
+
 		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
 		NodeList disabledSounds = disabledSoundsNode.getChildNodes();
 		for (int j = 0; j < disabledSounds.getLength(); j++) {
@@ -167,7 +167,7 @@ public class ConfigurationXML extends XMLConfig {
 			newNode.getAttributes().setNamedItem(path);
 			path.setNodeValue(disabledSound);
 		}
-		
+
 		try {
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			transformer.transform(new DOMSource(this.doc), new StreamResult(new File(this.fileName)));
@@ -178,25 +178,25 @@ public class ConfigurationXML extends XMLConfig {
 		} catch (TransformerException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public String getGamelogPath() {
 		return this.gamelogPath;
 	}
-	
+
 	public void setGamelogPath(String gamelogPath) {
 		this.gamelogPath = gamelogPath;
 	}
-	
+
 	public String getSoundpacksPath() {
 		return this.soundpacksPath;
 	}
-	
+
 	public boolean isPackOverrideAllowed() {
 		return this.allowPackOverride;
 	}
-	
+
 	public boolean noWarnAbsolutePath() {
 		return this.noWarnAbsolutePaths;
 	}
@@ -204,11 +204,11 @@ public class ConfigurationXML extends XMLConfig {
 	public float getVolume() {
 		return this.volume;
 	}
-	
+
 	public void setVolume(float volume) {
 		this.volume = volume;
 	}
-	
+
 	public boolean getGui() {
 		return this.gui;
 	}
@@ -244,7 +244,7 @@ public class ConfigurationXML extends XMLConfig {
 	public String getGamelogEncoding() {
 		return gamelogEncoding;
 	}
-	
+
 	public Set<String> getDisabledSounds() {
 		return disabledSounds;
 	}
@@ -260,5 +260,5 @@ public class ConfigurationXML extends XMLConfig {
 	public void setAchievements(boolean achievements) {
 		this.achievements = achievements;
 	}
-	
+
 }

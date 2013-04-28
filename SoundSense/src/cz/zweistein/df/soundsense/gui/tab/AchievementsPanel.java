@@ -17,29 +17,29 @@ import cz.zweistein.df.soundsense.output.achievements.AchievementsProcesor;
 
 public class AchievementsPanel extends JPanel implements ChangeListener {
 	private static final long serialVersionUID = -1223717359315086803L;
-	
+
 	private ConfigurationXML configurationXML;
 	private JCheckBox achievementsEnabled;
 
 	public AchievementsPanel(AchievementsXML achievementsXML, ConfigurationXML configurationXML, AchievementsProcesor ap) {
 		super();
-		
+
 		this.configurationXML = configurationXML;
-		
+
 		this.setLayout(new BorderLayout());
-		
+
 		this.achievementsEnabled = new JCheckBox("Enable achievements", this.configurationXML.getAchievements());
 		achievementsEnabled.addChangeListener(this);
-		
+
 		this.add(achievementsEnabled, BorderLayout.NORTH);
-		
+
 		AchievementListAdapterModel achievementTableModel = new AchievementListAdapterModel(achievementsXML, ap);
 		final JTable achievementTable = new AchievementTable(achievementTableModel);
-		
+
 		JScrollPane achievementTableScroller = new JScrollPane(achievementTable);
 
-        this.add(achievementTableScroller, BorderLayout.CENTER);
-        
+		this.add(achievementTableScroller, BorderLayout.CENTER);
+
 	}
 
 	@Override

@@ -11,7 +11,7 @@ import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class GlueThread implements Runnable {
 	private static Logger logger = LoggerSource.logger;
-	
+
 	private Listener listener;
 	private List<Procesor> procesors;
 
@@ -19,22 +19,22 @@ public class GlueThread implements Runnable {
 		this.listener = listener;
 		this.procesors = procesors;
 	}
-	
+
 	@Override
 	public void run() {
 		try {
 			while (true) {
 				String line = listener.getNextLine();
-				for (Procesor procesor: this.procesors) {
+				for (Procesor procesor : this.procesors) {
 					try {
 						procesor.processLine(line);
 					} catch (ConcurrentModificationException e) {
-						logger.fine("Exception :"+e+": "+e.toString());
+						logger.fine("Exception :" + e + ": " + e.toString());
 					}
 				}
 			}
 		} catch (IOException e) {
-			logger.severe("Exception :"+e+": "+e.toString());
+			logger.severe("Exception :" + e + ": " + e.toString());
 		}
 	}
 

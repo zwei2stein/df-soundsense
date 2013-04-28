@@ -14,44 +14,44 @@ import cz.zweistein.df.soundsense.output.sound.player.PlayerManager;
 
 public class SoundFileInfoPanel extends JPanel {
 	private static final long serialVersionUID = 3819628170252365080L;
-	
-	final JLabel soundInfoFilenameLabel;
-	final JLabel soundInfoWeightLabel;
-	final JLabel soundInfoVolumeLabel;
-	final JLabel soundInfoBalanceLabel;
-	final StartSoundPlaybackButton soundInfoPlayButton;
+
+	private final JLabel soundInfoFilenameLabel;
+	private final JLabel soundInfoWeightLabel;
+	private final JLabel soundInfoVolumeLabel;
+	private final JLabel soundInfoBalanceLabel;
+	private final StartSoundPlaybackButton soundInfoPlayButton;
 
 	public SoundFileInfoPanel(PlayerManager manager) {
 		super();
-		
-        this.setLayout(new GridLayout(0,2));
 
-        this.add(new Label("Filename:"));
-        soundInfoFilenameLabel = new JLabel();
-        this.add(soundInfoFilenameLabel);
-        
-        this.add(new Label("Weight:"));
-        soundInfoWeightLabel = new JLabel();
-        this.add(soundInfoWeightLabel);
-        
-        this.add(new Label("Volume adjustment:"));
-        soundInfoVolumeLabel = new JLabel();
-        this.add(soundInfoVolumeLabel);
-        
-        this.add(new Label("Balance adjustment:"));
-        soundInfoBalanceLabel = new JLabel();
-        this.add(soundInfoBalanceLabel);
-        
-        this.add(new Label("Playback:"));
-        soundInfoPlayButton = new StartSoundPlaybackButton(manager);
-        this.add(soundInfoPlayButton);
+		this.setLayout(new GridLayout(0, 2));
+
+		this.add(new Label("Filename:"));
+		soundInfoFilenameLabel = new JLabel();
+		this.add(soundInfoFilenameLabel);
+
+		this.add(new Label("Weight:"));
+		soundInfoWeightLabel = new JLabel();
+		this.add(soundInfoWeightLabel);
+
+		this.add(new Label("Volume adjustment:"));
+		soundInfoVolumeLabel = new JLabel();
+		this.add(soundInfoVolumeLabel);
+
+		this.add(new Label("Balance adjustment:"));
+		soundInfoBalanceLabel = new JLabel();
+		this.add(soundInfoBalanceLabel);
+
+		this.add(new Label("Playback:"));
+		soundInfoPlayButton = new StartSoundPlaybackButton(manager);
+		this.add(soundInfoPlayButton);
 	}
 
 	public void updateSoundFile(SoundFile soundFile) {
 		soundInfoFilenameLabel.setText(soundFile.getFileName());
 		soundInfoWeightLabel.setText(Integer.toString(soundFile.getWeight()));
 		soundInfoVolumeLabel.setText(Float.toString(soundFile.getVolumeAdjustment()));
-		
+
 		if (soundFile.getRandomBalance()) {
 			soundInfoBalanceLabel.setText("Random");
 		} else {
@@ -61,9 +61,10 @@ public class SoundFileInfoPanel extends JPanel {
 				soundInfoBalanceLabel.setText("");
 			}
 		}
-		
-		Sound dummySound = new Sound(null, Collections.singletonList(soundFile), null, null, null, "manual playback", Long.MAX_VALUE, false, 0L, 0L, null, Threshold.EVERYTHING.getValue());
-		
+
+		Sound dummySound = new Sound(null, Collections.singletonList(soundFile), null, null, null, "manual playback", Long.MAX_VALUE, false, 0L, 0L, null,
+				Threshold.EVERYTHING.getValue());
+
 		soundInfoPlayButton.setSound(dummySound);
 	}
 
