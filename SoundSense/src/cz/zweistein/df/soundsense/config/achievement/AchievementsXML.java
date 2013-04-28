@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
@@ -124,6 +125,8 @@ public class AchievementsXML extends XMLConfig {
 					}
 				}
 			}
+			
+			Collections.sort(achievements);
 			
 			if (logPattern == null || logPattern.length() == 0) {
 				logger.info("Achievement does not have logPattern, ignoring.");
