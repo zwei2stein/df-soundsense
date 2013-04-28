@@ -220,7 +220,7 @@ local function event_loop()
 	
 	first_run = false
 	
-	dfhack.timeout(1, 'ticks', event_loop)
+	dfhack.timeout(25, 'ticks', event_loop)
 end
 
 event_loop()
