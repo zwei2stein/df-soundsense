@@ -3,5 +3,8 @@
 
 	<sound logPattern="(.+) has grown to become a Blue ((Peahen)|(Peacock))\.">
 	</sound>
+	
+	<sound logPattern="(.+) has grown to become a Stray Blue ((Peahen)|(Peacock))\.">
+	</sound>
 
 </sounds>

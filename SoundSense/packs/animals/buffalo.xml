@@ -4,4 +4,7 @@
 	<sound logPattern="(.+) has given birth to a water buffalo calf\.">
 	</sound>
 	
+	<sound logPattern="(.+) has grown to become a Stray Water Buffalo Cow\.">
+	</sound>
+	
 </sounds>
