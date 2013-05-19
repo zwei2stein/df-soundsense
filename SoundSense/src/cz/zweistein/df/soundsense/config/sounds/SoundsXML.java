@@ -180,9 +180,9 @@ public class SoundsXML extends XMLConfig {
 					SoundFile soundFile = this.parseSoundFile(configNode, fileName);
 					if (soundFile != null) {
 						soundFiles.add(soundFile);
-					}
-					if (strictAttributions && soundFile.getAttributions().size() == 0) {
-						logger.info("Sound file '" + soundFile.getFileName() + "' in '" + logPattern + "' lacks attributions!");
+						if (strictAttributions && soundFile.getAttributions().size() == 0) {
+							logger.info("Sound file '" + soundFile.getFileName() + "' in '" + logPattern + "' lacks attributions!");
+						}
 					}
 				}
 			}
