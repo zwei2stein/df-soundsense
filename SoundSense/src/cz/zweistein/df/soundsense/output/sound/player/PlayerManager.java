@@ -15,7 +15,7 @@ import cz.zweistein.df.soundsense.config.sounds.Sound;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public final class PlayerManager {
-	private static final Logger logger = LoggerSource.logger;
+	private static final Logger LOGGER = LoggerSource.LOGGER;
 
 	private int concurentSounds = 0;
 	private float globalChanngelGain = 0;
@@ -59,12 +59,12 @@ public final class PlayerManager {
 	public void playSound(Sound sound) {
 
 		if (sound.hasNoSoundFiles() && sound.getChannel() == null) {
-			logger.finest("Sound " + sound + " is ignored because it can not be played");
+			LOGGER.finest("Sound " + sound + " is ignored because it can not be played");
 			return;
 		}
 
 		if (this.playbackTheshhold < sound.getPlaybackTheshhold()) {
-			logger.fine("Sound " + sound.toString() + " filtered because it's threshold is " + sound.getPlaybackTheshhold() + " while global threshold is "
+			LOGGER.fine("Sound " + sound.toString() + " filtered because it's threshold is " + sound.getPlaybackTheshhold() + " while global threshold is "
 					+ this.playbackTheshhold + ".");
 			return;
 		}
@@ -73,7 +73,7 @@ public final class PlayerManager {
 			if ((sound.getLastPlayed()) < System.currentTimeMillis() - sound.getTimeout()) {
 				sound.setLastPlayed(System.currentTimeMillis());
 			} else {
-				logger.fine("Sound " + sound.toString() + " is still timeouted, will be ready in "
+				LOGGER.fine("Sound " + sound.toString() + " is still timeouted, will be ready in "
 						+ ((sound.getLastPlayed() + sound.getTimeout()) - System.currentTimeMillis()) + ".");
 				return;
 			}
@@ -81,7 +81,7 @@ public final class PlayerManager {
 
 		if (sound.getPropability() != null) {
 			if (new Random().nextInt(100) > sound.getPropability()) {
-				logger.fine("Sound " + sound.toString() + " dropped because its propability is " + sound.getPropability() + "% and failed dice roll.");
+				LOGGER.fine("Sound " + sound.toString() + " dropped because its propability is " + sound.getPropability() + "% and failed dice roll.");
 				return;
 			}
 		}
@@ -91,7 +91,7 @@ public final class PlayerManager {
 				SFXThread mp3Thread = new SFXThread(this, sound, this.globalVolume);
 				new Thread(mp3Thread, mp3Thread.getThreadName()).start();
 			} else {
-				logger.fine("Dropped sound for " + sound.toString() + " its concurency is " + sound.getConcurency() + " and there are " + concurentSounds
+				LOGGER.fine("Dropped sound for " + sound.toString() + " its concurency is " + sound.getConcurency() + " and there are " + concurentSounds
 						+ " sounds playing.");
 			}
 
@@ -104,12 +104,12 @@ public final class PlayerManager {
 			} else if (sound.getLoop() == Loop.STOP_LOOPING) {
 				this.channelStatusChanged(channelThread);
 				channelThread.setLoopMusic(null);
-				logger.fine("Stopped looping " + sound.getChannel() + ".");
+				LOGGER.fine("Stopped looping " + sound.getChannel() + ".");
 			}
 
 			if (sound.hasNoSoundFiles()) {
 				channelThread.setCurrentMusic(null);
-				logger.finest("Stopped playin " + sound.getChannel() + ".");
+				LOGGER.finest("Stopped playin " + sound.getChannel() + ".");
 			} else {
 				channelThread.setSingualMusic(sound.getRandomSoundFile(), sound.getDelay());
 			}

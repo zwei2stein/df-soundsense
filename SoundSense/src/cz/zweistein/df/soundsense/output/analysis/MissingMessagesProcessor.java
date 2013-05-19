@@ -9,7 +9,7 @@ import cz.zweistein.df.soundsense.output.Procesor;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class MissingMessagesProcessor extends Procesor {
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 	
 	private SoundsXML soundsXML;
 	

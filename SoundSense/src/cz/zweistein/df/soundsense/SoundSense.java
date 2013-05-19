@@ -26,7 +26,7 @@ import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class SoundSense {
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	public static void main(String[] args) {
 
@@ -101,9 +101,9 @@ public class SoundSense {
 	}
 
 	/**
-	 * Constructs human readable information about build and version
+	 * Constructs human readable information about build and version.
 	 *
-	 * @return
+	 * @return string with human readable version
 	 */
 	public static String getVersionString() {
 		Properties properties = new Properties();

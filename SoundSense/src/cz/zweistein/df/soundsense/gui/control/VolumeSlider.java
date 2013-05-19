@@ -47,7 +47,7 @@ public class VolumeSlider extends JPanel implements ChangeListener {
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		sp.setGlobalVolume(((JSlider) e.getSource()).getValue());
-		volumeLabel.setText("Volume: "+((JSlider) e.getSource()).getValue());
+		volumeLabel.setText("Volume: " + ((JSlider) e.getSource()).getValue());
 		config.setVolume(((JSlider) e.getSource()).getValue());
 	}
 

@@ -16,7 +16,7 @@ import cz.zweistein.df.soundsense.util.log.LoggerSource;
 public class ToggleXMLFileButton extends JButton implements ActionListener {
 	private static final long serialVersionUID = -7991286287466831023L;
 
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	private ConfigurationXML configuration;
 	private String path;

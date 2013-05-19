@@ -26,7 +26,7 @@ import cz.zweistein.df.soundsense.gui.control.Threshold;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class ConfigurationXML extends XMLConfig {
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	private String fileName;
 	private Document doc;
@@ -73,7 +73,7 @@ public class ConfigurationXML extends XMLConfig {
 		this.volume = parseFloatAttribute(volumeNode, "value", this.volume);
 
 		Node playbackTheshholdNode = configNodes.getElementsByTagName("playbackTheshhold").item(0);
-		this.playbackTheshhold = parseLongAtribute(playbackTheshholdNode, "value", Threshold.EVERYTHING.getValue()) ;
+		this.playbackTheshhold = parseLongAtribute(playbackTheshholdNode, "value", Threshold.EVERYTHING.getValue());
 
 		Node autoUpdateURLNode = configNodes.getElementsByTagName("autoUpdateURLs").item(0);
 		this.autoUpdateURLs = parsePathList(autoUpdateURLNode);
@@ -100,10 +100,10 @@ public class ConfigurationXML extends XMLConfig {
 			}
 			logger.info(sb.toString());
 		}
-		
+
 		Node mutedChannelsNode = configNodes.getElementsByTagName("mutedChannels").item(0);
 		this.mutedChannels = new LinkedHashSet<String>(parsePathList(mutedChannelsNode));
-		
+
 		Node supplementalLogsNode = configNodes.getElementsByTagName("supplementalLogs").item(0);
 		this.supplementalLogs = parsePathList(supplementalLogsNode);
 
@@ -147,7 +147,7 @@ public class ConfigurationXML extends XMLConfig {
 
 		Node achievementsNode = configNodes.getElementsByTagName("achievements").item(0);
 		achievementsNode.getAttributes().getNamedItem("value").setNodeValue(Boolean.toString(this.getAchievements()));
-		
+
 		savePathList(configNodes, "disabledSounds", this.disabledSounds);
 		savePathList(configNodes, "mutedChannels", this.mutedChannels);
 
@@ -163,9 +163,9 @@ public class ConfigurationXML extends XMLConfig {
 		}
 
 	}
-	
+
 	private void savePathList(Element configNodes, String rootName, Set<String> items) {
-		
+
 		NodeList candidates = configNodes.getElementsByTagName(rootName);
 		Node rootNode = null;
 		if (candidates == null) {
@@ -173,7 +173,7 @@ public class ConfigurationXML extends XMLConfig {
 		} else {
 			rootNode = configNodes.getElementsByTagName(rootName).item(0);
 		}
-		
+
 		NodeList childNodes = rootNode.getChildNodes();
 		for (int j = 0; j < childNodes.getLength(); j++) {
 			rootNode.removeChild(childNodes.item(j));

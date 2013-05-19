@@ -15,7 +15,7 @@ import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class XMLConfig {
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	public String parseStringAtribute(Node node, String atribute, String defaultValue) {
 		String string = defaultValue;

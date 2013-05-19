@@ -10,7 +10,7 @@ import cz.zweistein.df.soundsense.output.Procesor;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class GlueThread implements Runnable {
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	private Listener listener;
 	private List<Procesor> procesors;

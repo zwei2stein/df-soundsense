@@ -15,12 +15,12 @@ import cz.zweistein.df.soundsense.output.sound.player.SFXThread;
 public class SFXListAdapter implements ListModel<SFXThread>, SFXPlaybackCallback {
 
 	private PlayerManager playerManager;
-	
+
 	private List<ListDataListener> listeners;
 
 	public SFXListAdapter(PlayerManager playerManager) {
 		this.playerManager = playerManager;
-		
+
 		this.listeners = new ArrayList<ListDataListener>();
 
 		this.playerManager.addSfxPlaybackCallback(this);
@@ -41,7 +41,7 @@ public class SFXListAdapter implements ListModel<SFXThread>, SFXPlaybackCallback
 	public int getSize() {
 		return playerManager.getSfxThreads().size();
 	}
-	
+
 	@Override
 	public void addListDataListener(ListDataListener arg0) {
 		this.listeners.add(arg0);
@@ -55,7 +55,7 @@ public class SFXListAdapter implements ListModel<SFXThread>, SFXPlaybackCallback
 	@Override
 	public void ended() {
 		for (ListDataListener listener : this.listeners) {
-			listener.contentsChanged(new ListDataEvent(this, ListDataEvent.CONTENTS_CHANGED, 0, this.playerManager.getSfxThreads().size()+1));
+			listener.contentsChanged(new ListDataEvent(this, ListDataEvent.CONTENTS_CHANGED, 0, this.playerManager.getSfxThreads().size() + 1));
 		}
 	}
 

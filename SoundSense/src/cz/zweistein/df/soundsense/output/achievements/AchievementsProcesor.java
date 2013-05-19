@@ -14,7 +14,7 @@ import cz.zweistein.df.soundsense.output.sound.player.ChangeCallback;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class AchievementsProcesor extends Procesor {
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	private AchievementsXML achievementPatterns;
 	private NotificationManager nm;

@@ -18,7 +18,7 @@ import cz.zweistein.df.soundsense.util.log.LoggerSource;
 public class SPIPlayer {
 	private static final int BUFFER_SIZE = 4096;
 
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	private boolean stop = false;
 	private float masterGain = 0;

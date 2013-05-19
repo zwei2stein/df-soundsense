@@ -7,7 +7,7 @@ import cz.zweistein.df.soundsense.config.sounds.SoundFile;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class ChannelThread implements Runnable {
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	private SPIPlayer musicPlayer;
 	private Sound loopMusic;
@@ -116,6 +116,7 @@ public class ChannelThread implements Runnable {
 				try {
 					Thread.sleep(100);
 				} catch (InterruptedException e1) {
+					Thread.currentThread().interrupt();
 				}
 			}
 

@@ -32,7 +32,7 @@ import cz.zweistein.df.soundsense.util.log.LoggerSource;
 public class AchievementPanel extends JPanel {
 	private static final long serialVersionUID = 4106068569413756079L;
 
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 	
 	public static final int HEIGHT = 64;
 	

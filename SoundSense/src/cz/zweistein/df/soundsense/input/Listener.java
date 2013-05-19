@@ -23,7 +23,7 @@ public abstract class Listener {
 				try {
 					Thread.sleep(delay);
 				} catch (InterruptedException e) {
-					// no interrupts.
+					Thread.currentThread().interrupt();
 				}
 			}
 		}

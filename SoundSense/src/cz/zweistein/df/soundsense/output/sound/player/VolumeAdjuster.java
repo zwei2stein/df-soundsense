@@ -38,6 +38,7 @@ public class VolumeAdjuster implements Runnable {
 			try {
 				Thread.sleep(this.adjustmentInterval);
 			} catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
 			}
 		}
 

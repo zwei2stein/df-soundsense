@@ -16,7 +16,7 @@ import cz.zweistein.df.soundsense.config.XMLConfig;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class ExecutorXML extends XMLConfig {
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	private List<Executor> executors;
 

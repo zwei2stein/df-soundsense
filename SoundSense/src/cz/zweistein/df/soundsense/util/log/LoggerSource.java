@@ -9,31 +9,32 @@ import java.util.logging.Logger;
 import org.fusesource.jansi.AnsiConsole;
 
 public final class LoggerSource {
-	public static final Logger logger = Logger.getAnonymousLogger();
-	
-	private LoggerSource() {}
-	
+	public static final Logger LOGGER = Logger.getAnonymousLogger();
+
+	private LoggerSource() {
+	}
+
 	static {
 		try {
 			System.setOut(new PrintStream(System.out, true, "UTF-8"));
 		} catch (UnsupportedEncodingException e) {
-			// nothing, really.
-		} 
+			System.out.println(e.getMessage());
+		}
 		AnsiConsole.systemInstall();
-		
+
 		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
 			@Override
 			public void run() {
 				AnsiConsole.systemUninstall();
 			}
 		}));
-		
-        logger.setUseParentHandlers(false);
-        SingleLineFormatter formatter = new SingleLineFormatter();
-        ConsoleHandler handler = new ConsoleHandler();
-        handler.setFormatter(formatter);
-        logger.addHandler(handler);
-        handler.setLevel(Level.FINEST);
+
+		LOGGER.setUseParentHandlers(false);
+		SingleLineFormatter formatter = new SingleLineFormatter();
+		ConsoleHandler handler = new ConsoleHandler();
+		handler.setFormatter(formatter);
+		LOGGER.addHandler(handler);
+		handler.setLevel(Level.FINEST);
 	}
 
 }

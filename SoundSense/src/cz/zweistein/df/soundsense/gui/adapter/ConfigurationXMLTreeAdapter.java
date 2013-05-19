@@ -32,13 +32,13 @@ public class ConfigurationXMLTreeAdapter implements TreeModel, IReloadProgressCa
 	@Override
 	public Object getChild(Object parent, int index) {
 		if (parent instanceof SoundsXML) {
-			return ((SoundsXML)parent).getXMLFiles().get(index);
+			return ((SoundsXML) parent).getXMLFiles().get(index);
 		} else if (parent instanceof Sound) {
-			return ((Sound)parent).getSoundFiles().get(index);
+			return ((Sound) parent).getSoundFiles().get(index);
 		} else if (parent instanceof String) {
-			return config.getSoundsByXMLFile((String)parent).get(index);
-		} else if (parent instanceof SoundFile){
-			return ((SoundFile)parent).getAttributions().get(index);
+			return config.getSoundsByXMLFile((String) parent).get(index);
+		} else if (parent instanceof SoundFile) {
+			return ((SoundFile) parent).getAttributions().get(index);
 		} else {
 			return null;
 		}
@@ -47,13 +47,13 @@ public class ConfigurationXMLTreeAdapter implements TreeModel, IReloadProgressCa
 	@Override
 	public int getChildCount(Object parent) {
 		if (parent instanceof SoundsXML) {
-			return ((SoundsXML)parent).getXMLFiles().size();
+			return ((SoundsXML) parent).getXMLFiles().size();
 		} else if (parent instanceof Sound) {
-			return ((Sound)parent).getSoundFiles().size();
+			return ((Sound) parent).getSoundFiles().size();
 		} else if (parent instanceof String) {
-			return config.getSoundsByXMLFile((String)parent).size();
-		} else if (parent instanceof SoundFile){
-			return ((SoundFile)parent).getAttributions().size();
+			return config.getSoundsByXMLFile((String) parent).size();
+		} else if (parent instanceof SoundFile) {
+			return ((SoundFile) parent).getAttributions().size();
 		} else {
 			return 0;
 		}
@@ -62,11 +62,11 @@ public class ConfigurationXMLTreeAdapter implements TreeModel, IReloadProgressCa
 	@Override
 	public int getIndexOfChild(Object parent, Object child) {
 		if (parent instanceof SoundsXML) {
-			return ((SoundsXML)parent).getSounds().indexOf(child);
+			return ((SoundsXML) parent).getSounds().indexOf(child);
 		} else if (parent instanceof Sound) {
-			return ((Sound)parent).getSoundFiles().indexOf(child);
-		} else if (parent instanceof SoundFile){
-			return ((SoundFile)parent).getAttributions().indexOf(child);
+			return ((Sound) parent).getSoundFiles().indexOf(child);
+		} else if (parent instanceof SoundFile) {
+			return ((SoundFile) parent).getAttributions().indexOf(child);
 		} else {
 			return 0;
 		}

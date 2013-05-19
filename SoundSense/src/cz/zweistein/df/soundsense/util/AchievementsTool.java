@@ -17,7 +17,7 @@ import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class AchievementsTool {
 
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	public static void main(String[] args) {
 

@@ -7,7 +7,7 @@ import cz.zweistein.df.soundsense.config.sounds.SoundFile;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class SFXThread implements Runnable {
-	private static Logger logger = LoggerSource.logger;
+	private static Logger logger = LoggerSource.LOGGER;
 
 	private PlayerManager managerCallback;
 	private float volume;
