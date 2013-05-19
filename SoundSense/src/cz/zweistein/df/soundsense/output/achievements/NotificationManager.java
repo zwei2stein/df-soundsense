@@ -47,7 +47,7 @@ public class NotificationManager {
 		dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		dialog.setBackground(new Color(1f, 1f, 1f, 1f));
 		dialog.setAlwaysOnTop(true);
-		dialog.setPreferredSize(new Dimension(300, 64 + 2 * borderWidth));
+		dialog.setPreferredSize(new Dimension(300, AchievementPanel.HEIGHT + 2 * borderWidth));
 
 		JPanel content = new AchievementPanel(achievement, progress, dialog, Color.BLACK);
 		dialog.add(content);

@@ -13,6 +13,7 @@ import cz.zweistein.df.soundsense.config.ConfigurationXML;
 import cz.zweistein.df.soundsense.config.achievement.AchievementsXML;
 import cz.zweistein.df.soundsense.gui.adapter.AchievementListAdapterModel;
 import cz.zweistein.df.soundsense.gui.control.AchievementTable;
+import cz.zweistein.df.soundsense.gui.control.ResetAchievementsButon;
 import cz.zweistein.df.soundsense.output.achievements.AchievementsProcesor;
 
 public class AchievementsPanel extends JPanel implements ChangeListener {
@@ -39,6 +40,8 @@ public class AchievementsPanel extends JPanel implements ChangeListener {
 		JScrollPane achievementTableScroller = new JScrollPane(achievementTable);
 
 		this.add(achievementTableScroller, BorderLayout.CENTER);
+		
+		this.add(new ResetAchievementsButon(achievementsXML), BorderLayout.SOUTH);
 
 	}
 

@@ -10,7 +10,7 @@ public class AchievementTable extends JTable {
 
 	public AchievementTable(AchievementListAdapterModel dm) {
 		super(dm);
-		setRowHeight(64);
+		setRowHeight(AchievementPanel.HEIGHT);
 	}
 
 	@Override

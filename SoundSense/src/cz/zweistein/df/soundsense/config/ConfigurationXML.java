@@ -46,6 +46,7 @@ public class ConfigurationXML extends XMLConfig {
 	private boolean gui;
 
 	private Set<String> disabledSounds;
+	private Set<String> mutedChannels;
 
 	private List<String> supplementalLogs;
 
@@ -65,30 +66,24 @@ public class ConfigurationXML extends XMLConfig {
 
 		Node soundpacksNode = configNodes.getElementsByTagName("soundpacks").item(0);
 		this.soundpacksPath = soundpacksNode.getAttributes().getNamedItem("defaultPath").getNodeValue();
-		this.allowPackOverride = Boolean.parseBoolean(soundpacksNode.getAttributes().getNamedItem("allowOverride").getNodeValue());
-		this.noWarnAbsolutePaths = Boolean.parseBoolean(soundpacksNode.getAttributes().getNamedItem("noWarnAbsolutePath").getNodeValue());
+		this.allowPackOverride = parseBooleanAttribute(soundpacksNode, "allowOverride", true);
+		this.noWarnAbsolutePaths = parseBooleanAttribute(soundpacksNode, "noWarnAbsolutePath", true);
 
 		Node volumeNode = configNodes.getElementsByTagName("volume").item(0);
 		this.volume = parseFloatAttribute(volumeNode, "value", this.volume);
 
 		Node playbackTheshholdNode = configNodes.getElementsByTagName("playbackTheshhold").item(0);
-		String playbackTheshholdText = playbackTheshholdNode.getAttributes().getNamedItem("value").getNodeValue();
-		this.playbackTheshhold = Threshold.EVERYTHING.getValue();
-		try {
-			this.playbackTheshhold = Long.parseLong(playbackTheshholdText);
-		} catch (NumberFormatException e) {
-			logger.info("Volume value '" + playbackTheshholdText + " is not recognized as a number, using default " + this.volume + ".");
-		}
+		this.playbackTheshhold = parseLongAtribute(playbackTheshholdNode, "value", Threshold.EVERYTHING.getValue()) ;
 
 		Node autoUpdateURLNode = configNodes.getElementsByTagName("autoUpdateURLs").item(0);
 		this.autoUpdateURLs = parsePathList(autoUpdateURLNode);
 
-		this.setDeleteFiles(parseBoolean("autoUpdateDeleteFiles", configNodes));
-		this.setReplaceFiles(parseBoolean("autoUpdateReplaceFiles", configNodes));
+		this.setDeleteFiles(parseBooleanTag("autoUpdateDeleteFiles", configNodes));
+		this.setReplaceFiles(parseBooleanTag("autoUpdateReplaceFiles", configNodes));
 
-		this.gui = parseBoolean("gui", configNodes);
+		this.gui = parseBooleanTag("gui", configNodes);
 
-		this.achievements = parseBoolean("achievements", configNodes);
+		this.achievements = parseBooleanTag("achievements", configNodes);
 
 		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
 		this.disabledSounds = new LinkedHashSet<String>(parsePathList(disabledSoundsNode));
@@ -105,7 +100,10 @@ public class ConfigurationXML extends XMLConfig {
 			}
 			logger.info(sb.toString());
 		}
-
+		
+		Node mutedChannelsNode = configNodes.getElementsByTagName("mutedChannels").item(0);
+		this.mutedChannels = new LinkedHashSet<String>(parsePathList(mutedChannelsNode));
+		
 		Node supplementalLogsNode = configNodes.getElementsByTagName("supplementalLogs").item(0);
 		this.supplementalLogs = parsePathList(supplementalLogsNode);
 
@@ -125,12 +123,6 @@ public class ConfigurationXML extends XMLConfig {
 		}
 
 		return list;
-	}
-
-	private boolean parseBoolean(String noneName, Element nodes) {
-		Node node = nodes.getElementsByTagName(noneName).item(0);
-		String guiText = node.getAttributes().getNamedItem("value").getNodeValue();
-		return Boolean.parseBoolean(guiText);
 	}
 
 	public void saveConfiguration() {
@@ -155,18 +147,9 @@ public class ConfigurationXML extends XMLConfig {
 
 		Node achievementsNode = configNodes.getElementsByTagName("achievements").item(0);
 		achievementsNode.getAttributes().getNamedItem("value").setNodeValue(Boolean.toString(this.getAchievements()));
-
-		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
-		NodeList disabledSounds = disabledSoundsNode.getChildNodes();
-		for (int j = 0; j < disabledSounds.getLength(); j++) {
-			disabledSoundsNode.removeChild(disabledSounds.item(j));
-		}
-		for (String disabledSound : this.disabledSounds) {
-			Node newNode = disabledSoundsNode.appendChild(doc.createElement("item"));
-			Node path = doc.createAttribute("path");
-			newNode.getAttributes().setNamedItem(path);
-			path.setNodeValue(disabledSound);
-		}
+		
+		savePathList(configNodes, "disabledSounds", this.disabledSounds);
+		savePathList(configNodes, "mutedChannels", this.mutedChannels);
 
 		try {
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -179,6 +162,28 @@ public class ConfigurationXML extends XMLConfig {
 			e.printStackTrace();
 		}
 
+	}
+	
+	private void savePathList(Element configNodes, String rootName, Set<String> items) {
+		
+		NodeList candidates = configNodes.getElementsByTagName(rootName);
+		Node rootNode = null;
+		if (candidates == null) {
+			rootNode = configNodes.appendChild(doc.createElement(rootName));
+		} else {
+			rootNode = configNodes.getElementsByTagName(rootName).item(0);
+		}
+		
+		NodeList childNodes = rootNode.getChildNodes();
+		for (int j = 0; j < childNodes.getLength(); j++) {
+			rootNode.removeChild(childNodes.item(j));
+		}
+		for (String item : items) {
+			Node newNode = rootNode.appendChild(doc.createElement("item"));
+			Node path = doc.createAttribute("path");
+			newNode.getAttributes().setNamedItem(path);
+			path.setNodeValue(item);
+		}
 	}
 
 	public String getGamelogPath() {
@@ -259,6 +264,10 @@ public class ConfigurationXML extends XMLConfig {
 
 	public void setAchievements(boolean achievements) {
 		this.achievements = achievements;
+	}
+
+	public Set<String> getMutedChannels() {
+		return mutedChannels;
 	}
 
 }

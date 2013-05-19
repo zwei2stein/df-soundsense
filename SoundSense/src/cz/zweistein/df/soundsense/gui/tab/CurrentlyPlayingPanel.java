@@ -13,6 +13,7 @@ import javax.swing.table.TableModel;
 import cz.zweistein.df.soundsense.gui.adapter.ChannelListAdapterModel;
 import cz.zweistein.df.soundsense.gui.adapter.SFXListAdapter;
 import cz.zweistein.df.soundsense.gui.control.ChannelTable;
+import cz.zweistein.df.soundsense.gui.control.ThreshholdSelector;
 import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 import cz.zweistein.df.soundsense.output.sound.player.SFXThread;
 
@@ -23,6 +24,8 @@ public class CurrentlyPlayingPanel extends JPanel {
 		super();
 
 		this.setLayout(new BorderLayout());
+		
+		this.add(new ThreshholdSelector(sp.getConfiguration(), sp), BorderLayout.PAGE_START);
 
 		JPanel sfxPanel = new JPanel(new BorderLayout());
 

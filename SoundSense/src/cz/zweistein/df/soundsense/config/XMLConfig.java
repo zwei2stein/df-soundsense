@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -50,6 +51,12 @@ public class XMLConfig {
 			}
 		}
 		return value;
+	}
+	
+	protected boolean parseBooleanTag(String nodeName, Element nodes) {
+		Node node = nodes.getElementsByTagName(nodeName).item(0);
+		String attributeText = node.getAttributes().getNamedItem("value").getNodeValue();
+		return Boolean.parseBoolean(attributeText);
 	}
 
 	public boolean parseBooleanAttribute(Node node, String nodeName, boolean defaultValue) {

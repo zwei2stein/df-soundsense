@@ -9,6 +9,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import cz.zweistein.df.soundsense.config.ConfigurationXML;
 import cz.zweistein.df.soundsense.config.sounds.Loop;
 import cz.zweistein.df.soundsense.config.sounds.Sound;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
@@ -30,7 +31,9 @@ public final class PlayerManager {
 
 	private long playbackTheshhold;
 
-	public PlayerManager() {
+	private ConfigurationXML configurationXML;
+
+	public PlayerManager(ConfigurationXML configurationXML) {
 		this.channels = new HashMap<String, ChannelThread>();
 		this.channelPlaybackCallback = new ArrayList<ChangeCallback>();
 
@@ -39,6 +42,9 @@ public final class PlayerManager {
 
 		this.volumeAdjuster = new VolumeAdjuster();
 		this.volumeAdjuster.setManager(this);
+		
+		this.configurationXML = configurationXML;
+		
 		new Thread(this.volumeAdjuster, "VolumeAdjustment").start();
 	}
 
@@ -120,6 +126,9 @@ public final class PlayerManager {
 		ChannelThread channelThread = this.channels.get(channel);
 		if (channelThread == null) {
 			channelThread = new ChannelThread(channel, this);
+			if (configurationXML.getMutedChannels().contains(channel)) {
+				channelThread.setMute(true);
+			}
 			channelThread.setDefaultGain(this.globalChanngelGain + this.globalVolume);
 			this.channels.put(channel, channelThread);
 			new Thread(channelThread, "Channel" + channel + "Thread").start();

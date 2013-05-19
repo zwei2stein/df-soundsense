@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.TableCellEditor;
 
+import cz.zweistein.df.soundsense.config.ConfigurationXML;
 import cz.zweistein.df.soundsense.gui.Icons;
 import cz.zweistein.df.soundsense.output.sound.player.ChannelThread;
 
@@ -19,11 +20,13 @@ public class MutePlaybackButtonEditor extends AbstractCellEditor implements Tabl
 
 	private ChannelThread currentThread;
 	private JButton button;
+	private ConfigurationXML configurationXML;
 
-	public MutePlaybackButtonEditor() {
+	public MutePlaybackButtonEditor(ConfigurationXML configurationXML) {
 		button = new JButton();
 		button.addActionListener(this);
 		button.setBorderPainted(false);
+		this.configurationXML = configurationXML;
 	}
 
 	@Override
@@ -31,8 +34,10 @@ public class MutePlaybackButtonEditor extends AbstractCellEditor implements Tabl
 		currentThread.setMute(!currentThread.isMute());
 		
 		if (currentThread.isMute()) {
+			configurationXML.getMutedChannels().add(currentThread.getChannelName());
 			button.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.MUTE)));
 		} else {
+			configurationXML.getMutedChannels().remove(currentThread.getChannelName());
 			button.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.NOT_MUTE)));
 		}
 		

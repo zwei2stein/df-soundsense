@@ -16,11 +16,11 @@ public class SoundProcesor extends Procesor {
 	private ConfigurationXML configuration;
 	private PlayerManager player;
 	
-	public SoundProcesor(SoundsXML soundsXML, ConfigurationXML configuration) {
+	public SoundProcesor(SoundsXML soundsXML, ConfigurationXML configurationXML) {
 		this.soundsXML = soundsXML;
-		this.configuration = configuration;
-		this.player = new PlayerManager();
-		this.player.setPlaybackTheshhold(configuration.getPlaybackTheshhold());
+		this.configuration = configurationXML;
+		this.player = new PlayerManager(configurationXML);
+		this.player.setPlaybackTheshhold(configurationXML.getPlaybackTheshhold());
 	}
 	
 	public SoundsXML getSoundsXML() {

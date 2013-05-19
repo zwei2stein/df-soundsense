@@ -15,7 +15,6 @@ import javax.swing.SwingUtilities;
 import cz.zweistein.df.soundsense.SoundSense;
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
 import cz.zweistein.df.soundsense.config.achievement.AchievementsXML;
-import cz.zweistein.df.soundsense.gui.control.ThreshholdSelector;
 import cz.zweistein.df.soundsense.gui.control.VolumeSlider;
 import cz.zweistein.df.soundsense.gui.tab.AchievementsPanel;
 import cz.zweistein.df.soundsense.gui.tab.ConfigurationPanel;
@@ -33,9 +32,7 @@ public class Gui extends JPanel {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
 		add(new VolumeSlider(configurationXML, sp));
-
-		add(new ThreshholdSelector(configurationXML, sp));
-
+		
 		JTabbedPane tabPane = new JTabbedPane();
 
 		add(tabPane);

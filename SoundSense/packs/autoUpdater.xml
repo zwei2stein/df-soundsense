@@ -1021,6 +1021,6 @@
          </directory>
          <file name="weather.xml" sha1="aeff0124ebbbed224e32d3bdf0a450244bda0f88" size="2290"/>
       </directory>
-      <file name="autoUpdater.xml" sha1="f4ac6f37a629df68fd5ede6e2e5b32d435cdc1b1" size="93764"/>
+      <file name="autoUpdater.xml" sha1="60e9476ad89cac2c16a79443684a3015a055b933" size="93764"/>
    </directory>
 </autoUpdater>

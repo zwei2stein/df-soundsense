@@ -15,6 +15,7 @@ public class Icons {
 	public static final String INFO = "./icons/help_purple_button.png";
 	public static final String LOGS = "./icons/terminal.png";
 	public static final String STAR = "./icons/star.png";
+	public static final String BOMB = "./icons/clanbomber.png";
 	
 	public static final String LOAD_01 = "./icons/load_001.png";
 	public static final String LOAD_02 = "./icons/load_002.png";

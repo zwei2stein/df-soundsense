@@ -35,7 +35,7 @@ public class ChannelTable extends JTable {
 	@Override
 	public TableCellEditor getCellEditor(int row, int column) {
 		if (column == 4) {
-			return new MutePlaybackButtonEditor();
+			return new MutePlaybackButtonEditor(sp.getConfiguration());
 		} else if (column == 5) {
 			return new StopPlaybackButtonEditor(sp.getPlayerManager());
 		}

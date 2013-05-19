@@ -21,6 +21,11 @@ public class ChannelThread implements Runnable {
 	private PlayerManager manager;
 
 	private Long delay;
+	
+	public ChannelThread(String channelName, PlayerManager manager) {
+		this.channelName = channelName;
+		this.manager = manager;
+	}
 
 	public void setDefaultGain(float defaultGain) {
 		logger.finest("Setting " + defaultGain + " gain for " + channelName);
@@ -40,11 +45,6 @@ public class ChannelThread implements Runnable {
 			musicPlayer.setMute(mute);
 		}
 		this.mute = mute;
-	}
-
-	public ChannelThread(String channelName, PlayerManager manager) {
-		this.channelName = channelName;
-		this.manager = manager;
 	}
 
 	public void setLoopMusic(Sound sound) {

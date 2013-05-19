@@ -34,6 +34,8 @@ public class AchievementPanel extends JPanel {
 
 	private static Logger logger = LoggerSource.logger;
 	
+	public static final int HEIGHT = 64;
+	
 	private int borderWidth = 1;
 
 	private Color borderColor = Color.WHITE;
@@ -71,7 +73,7 @@ public class AchievementPanel extends JPanel {
 		Component image;
 		if (achievement.getImage() == null) {
 			image = new JPanel();
-			image.setPreferredSize(new Dimension(64, 64));
+			image.setPreferredSize(new Dimension(HEIGHT, HEIGHT));
 			image.setMinimumSize(image.getPreferredSize());
 			image.setBackground(backgroundColor);
 		} else {
