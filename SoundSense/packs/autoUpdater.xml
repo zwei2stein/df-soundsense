@@ -53,6 +53,16 @@
             <file name="34872__Sruddi1__BARK1.mp3" sha1="76849037213e60449084c3bd04f202c6c41f5e72" size="37821"/>
             <file name="86279__Tito_Lahaye__6_week_beagle_bark.mp3" sha1="3c43fcee32f7aa9ca3ac356854e3fcb3902fe5d2" size="64152"/>
          </directory>
+         <directory name="egg">
+            <file name="155872__erdie__eier02.mp3" sha1="1fa8b5b0ceb06220288d82d2501dfa589ccf74d0" size="90066"/>
+            <file name="155873__erdie__eier01.mp3" sha1="52fe068b74b9f1192cca5ee1da2341e519f9763f" size="106784"/>
+         </directory>
+         <directory name="goose">
+            <file name="164484__adam-n__geese_01.mp3" sha1="5362d20646e9649181778e6ffe4453f651212a1c" size="29006"/>
+            <file name="164484__adam-n__geese_02.mp3" sha1="741f923719a0d38b2610bef6188a2cee21b3fbd2" size="40329"/>
+            <file name="164484__adam-n__geese_03.mp3" sha1="f11214f62e29a54e11a0b52bd5c793b700f068eb" size="28208"/>
+            <file name="168776__jahffar__goose-in-the-pond.mp3" sha1="4808e57aac8076c96c13c97d3a75b5f4f9518d6b" size="58958"/>
+         </directory>
          <directory name="guineafowl">
             <file name="male_1.mp3" sha1="2e49f9aad1e919731d5ed5dccfa29d9e4fb3ddac" size="41583"/>
             <file name="male_2.mp3" sha1="183e893060172f30dbe5bb23318a8c1cfb8fe393" size="23610"/>
@@ -104,11 +114,11 @@
          <file name="camelmature.mp3" sha1="b97aa6a81c1b373fc1a369da6101f0b3715a4aca" size="102605"/>
          <file name="cat.xml" sha1="b6c1e8bafd9984f984e25a7f4aac5bc316a8513c" size="1528"/>
          <file name="cavy.xml" sha1="4715cfc4cc453b68f9e0769d57d2c5af810012a4" size="388"/>
-         <file name="chicken.xml" sha1="21ef2a9c033efee7b0c6f6a9bcacf086032ea81d" size="1028"/>
+         <file name="chicken.xml" sha1="702c1bc43a38b2e4047baa36663e0a96350ab353" size="3086"/>
          <file name="dog.xml" sha1="336bb75a00a909fe46b01a553e314d9e856a4846" size="860"/>
          <file name="duck.xml" sha1="2e82c877f493a1094ac10bec89a448d3f5779aaf" size="233"/>
          <file name="goat.xml" sha1="e41810bc747f97996627df97ce42c40c9b725093" size="252"/>
-         <file name="goose.xml" sha1="9c6f91d7bec8ffe35cc6b24422bc57518775e52c" size="313"/>
+         <file name="goose.xml" sha1="aa4d63e9c338205a0585df9c77b6a0b5bdb8d54f" size="5797"/>
          <file name="guineafowl.xml" sha1="9669b675a81d998037572053943e833932584ec2" size="649"/>
          <file name="peafowl.xml" sha1="baa786d6e24a259b4395f9ce2a443ee1522d322b" size="279"/>
          <file name="pig.xml" sha1="511044aa6768bd92ce69c0028a22280a90cb4bfb" size="2115"/>
@@ -117,7 +127,7 @@
          <file name="sheep.xml" sha1="7203de975f32682634085406968c3df186f1ae1d" size="785"/>
          <file name="training.xml" sha1="b3b070c37d52aae6239d5532ff9491099e01a3bb" size="1275"/>
          <file name="turkey.xml" sha1="e632e38003b07863a3df5fa956a132af354848d9" size="1013"/>
-         <file name="yak.xml" sha1="e933564dcb7989fdc181f1807f91a0f3e8c54d9b" size="1644"/>
+         <file name="yak.xml" sha1="04df6f7ce4e860b52c5ecc40ad4e4c277c98955f" size="1670"/>
       </directory>
       <directory name="battle">
          <directory name="blocked">
@@ -1021,6 +1031,6 @@
          </directory>
          <file name="weather.xml" sha1="aeff0124ebbbed224e32d3bdf0a450244bda0f88" size="2290"/>
       </directory>
-      <file name="autoUpdater.xml" sha1="60e9476ad89cac2c16a79443684a3015a055b933" size="93764"/>
+      <file name="autoUpdater.xml" sha1="dcf9832f33017e80cd2f0805e5150ffa034aa65d" size="93764"/>
    </directory>
 </autoUpdater>
