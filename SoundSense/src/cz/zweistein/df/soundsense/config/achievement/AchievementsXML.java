@@ -22,11 +22,11 @@ import cz.zweistein.df.soundsense.config.XMLConfig;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class AchievementsXML extends XMLConfig {
-	private static Logger logger = LoggerSource.LOGGER;
+	private static final Logger LOGGER = LoggerSource.LOGGER;
 
 	private List<AchievementPattern> achievementPatterns;
 
-	private String achievementsProgressFilename = "achievementsProgress.xml";
+	private static final String achievementsProgressFilename = "achievementsProgress.xml";
 
 	public AchievementsXML(String directory) throws SAXException, IOException {
 		this.achievementPatterns = new LinkedList<AchievementPattern>();
@@ -43,7 +43,7 @@ public class AchievementsXML extends XMLConfig {
 				ap.setHits(hits);
 			}
 		} catch (FileNotFoundException e) {
-			logger.info("Achievement history information not found, restarting.");
+			LOGGER.info("Achievement history information not found, restarting.");
 		}
 	}
 
@@ -55,7 +55,7 @@ public class AchievementsXML extends XMLConfig {
 			}
 			savedProgress.storeToXML(new FileOutputStream(new File(achievementsProgressFilename)), null);
 		} catch (IOException e) {
-			logger.info("Error while saving achievemnt progress: " + e.toString());
+			LOGGER.info("Error while saving achievemnt progress: " + e.toString());
 		}
 	}
 
@@ -63,13 +63,13 @@ public class AchievementsXML extends XMLConfig {
 		if (!(directory.substring(directory.length() - 1).equals("\\") || directory.substring(directory.length() - 1).equals("/"))) {
 			directory = directory + "/";
 		}
-		logger.fine("Scanning directory '" + directory + "'.");
+		LOGGER.fine("Scanning directory '" + directory + "'.");
 		File dir = new File(directory);
 
 		String[] files = dir.list();
 
 		if (files == null) {
-			logger.info("'" + directory + "' is empty or invalid? Ignoring.");
+			LOGGER.info("'" + directory + "' is empty or invalid? Ignoring.");
 		} else {
 
 			Arrays.sort(files);
@@ -82,14 +82,14 @@ public class AchievementsXML extends XMLConfig {
 				} else if (fileName.endsWith(".xml")) {
 
 					try {
-						logger.info("Loading config " + directory + fileName);
+						LOGGER.info("Loading config " + directory + fileName);
 						this.loadFile(directory + fileName);
 					} catch (Exception e) {
-						logger.severe("Failed to load " + fileName + ": " + e.toString());
+						LOGGER.severe("Failed to load " + fileName + ": " + e.toString());
 					}
 
 				} else {
-					logger.finest("'" + fileName + "' is not configuration file.");
+					LOGGER.finest("'" + fileName + "' is not configuration file.");
 				}
 			}
 
@@ -129,10 +129,10 @@ public class AchievementsXML extends XMLConfig {
 			Collections.sort(achievements);
 
 			if (logPattern == null || logPattern.length() == 0) {
-				logger.info("Achievement does not have logPattern, ignoring.");
+				LOGGER.info("Achievement does not have logPattern, ignoring.");
 			} else {
 				this.achievementPatterns.add(new AchievementPattern(logPattern, achievements));
-				logger.finest("Added achievement for " + logPattern);
+				LOGGER.finest("Added achievement for " + logPattern);
 			}
 		}
 

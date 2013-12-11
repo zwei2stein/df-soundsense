@@ -51,6 +51,8 @@ public class ConfigurationXML extends XMLConfig {
 	private List<String> supplementalLogs;
 
 	private boolean achievements;
+	
+	private long expectedMinimalSoundsCount;
 
 	public ConfigurationXML(String configurationFile) throws SAXException, IOException {
 
@@ -84,6 +86,9 @@ public class ConfigurationXML extends XMLConfig {
 		this.gui = parseBooleanTag("gui", configNodes);
 
 		this.achievements = parseBooleanTag("achievements", configNodes);
+		
+		Node expectedMinimalSoundsCountNode = configNodes.getElementsByTagName("expectedMinimalSoundsCount").item(0);
+		this.expectedMinimalSoundsCount = parseLongAtribute(expectedMinimalSoundsCountNode, "value", 100l);
 
 		Node disabledSoundsNode = configNodes.getElementsByTagName("disabledSounds").item(0);
 		this.disabledSounds = new LinkedHashSet<String>(parsePathList(disabledSoundsNode));
@@ -230,7 +235,7 @@ public class ConfigurationXML extends XMLConfig {
 		return playbackTheshhold;
 	}
 
-	public void setReplaceFiles(boolean replaceFiles) {
+	public final void setReplaceFiles(boolean replaceFiles) {
 		this.replaceFiles = replaceFiles;
 	}
 
@@ -238,7 +243,7 @@ public class ConfigurationXML extends XMLConfig {
 		return replaceFiles;
 	}
 
-	public void setDeleteFiles(boolean deleteFiles) {
+	public final void setDeleteFiles(boolean deleteFiles) {
 		this.deleteFiles = deleteFiles;
 	}
 
@@ -268,6 +273,10 @@ public class ConfigurationXML extends XMLConfig {
 
 	public Set<String> getMutedChannels() {
 		return mutedChannels;
+	}
+
+	public long getExpectedMinimalSoundsCount() {
+		return expectedMinimalSoundsCount;
 	}
 
 }

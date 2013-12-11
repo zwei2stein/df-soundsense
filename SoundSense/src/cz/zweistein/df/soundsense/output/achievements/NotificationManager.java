@@ -21,7 +21,7 @@ public class NotificationManager {
 	private List<JDialog> activeNotifications;
 
 	// settings:
-	private int duration = 5000;
+	private double duration = 5000;
 
 	private int borderWidth = 1;
 
@@ -63,7 +63,7 @@ public class NotificationManager {
 			public void run() {
 
 				int tickms = 40; // 25 fps
-				double tickDecreement = ((1f / (duration / tickms)));
+				double tickDecreement = ((1d / (duration / tickms)));
 
 				float opacity = 1f;
 

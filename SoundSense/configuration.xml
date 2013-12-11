@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
 
-	<gamelog encoding="Cp850" path="D:\Dropbox\Games\Dwarf Fortress\currentVersion\gamelog.txt"/>
+	<gamelog encoding="Cp850" path="C:\Users\Petr Prokop\Documents\vrh-c.txt"/>
  	<supplementalLogs>
  		<item path="${gameBaseDir}/ss_fix.log"/>
  	</supplementalLogs> 
@@ -14,6 +14,8 @@
 	<achievements value="true"/>
 	
 	<playbackTheshhold value="4"/>
+	
+	<expectedMinimalSoundsCount value="450"/>
 	
 	<autoUpdateURLs>
 		<item path="http://df.zweistein.cz/soundsense/soundpack"/>

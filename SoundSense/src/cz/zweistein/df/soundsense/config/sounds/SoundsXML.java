@@ -76,7 +76,7 @@ public class SoundsXML extends XMLConfig {
 			if (files == null) {
 				logger.info("'" + directory + "' is empty or invalid? Ignoring.");
 			} else {
-				this.parsedDirectories.add(new String(dir.getAbsolutePath()));
+				this.parsedDirectories.add(dir.getAbsolutePath());
 
 				Arrays.sort(files);
 				for (int i = 0; i < files.length; i++) {

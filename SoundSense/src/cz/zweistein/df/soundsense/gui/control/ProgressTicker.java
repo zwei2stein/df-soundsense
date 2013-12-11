@@ -34,7 +34,7 @@ public class ProgressTicker extends JLabel {
 		
 	}
 	
-	public void tick() {
+	public final void tick() {
 		this.phase++;
 		if (this.phase > (this.phases.size() - 1)) {
 			this.phase = 0;

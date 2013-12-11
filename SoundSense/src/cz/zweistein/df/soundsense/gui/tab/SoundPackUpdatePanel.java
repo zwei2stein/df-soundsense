@@ -58,7 +58,7 @@ public class SoundPackUpdatePanel extends JPanel implements ActionListener, IPro
 
 		this.progressTicker = new ProgressTicker();
 
-		JButton startButton = new JButton("Start automatic update");
+		JButton startButton = new JButton("Start update");
 		startButton.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TRANSFER)));
 		startButton.addActionListener(this);
 		this.startButton = startButton;

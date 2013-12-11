@@ -28,12 +28,16 @@ import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 public class Gui extends JPanel {
 	private static final long serialVersionUID = 7326794456268877831L;
 
+	private JTabbedPane tabPane;
+
+	private SoundPackUpdatePanel soundPackUpdatePanel;
+
 	public Gui(final ConfigurationXML configurationXML, final SoundProcesor sp, AchievementsXML achievementsXML, AchievementsProcesor ap) {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
 		add(new VolumeSlider(configurationXML, sp));
-		
-		JTabbedPane tabPane = new JTabbedPane();
+
+		this.tabPane = new JTabbedPane();
 
 		add(tabPane);
 
@@ -49,7 +53,7 @@ public class Gui extends JPanel {
 		JPanel pathsConfigurationPanel = new PathsConfigurationPanel(configurationXML);
 		tabPane.addTab("Logs", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.LOGS)), pathsConfigurationPanel);
 
-		JPanel soundPackUpdatePanel = new SoundPackUpdatePanel(configurationXML);
+		this.soundPackUpdatePanel = new SoundPackUpdatePanel(configurationXML);
 		tabPane.addTab("Pack update", new ImageIcon(Toolkit.getDefaultToolkit().getImage(Icons.TRANSFER)), soundPackUpdatePanel);
 
 		JPanel infoPanel = new InfoPanel();
@@ -57,10 +61,10 @@ public class Gui extends JPanel {
 
 	}
 
-	private static void createAndShowGUI(final ConfigurationXML configurationXML, SoundProcesor sp, final AchievementsXML achievementsXML,
+	private static Gui createAndShowGUI(final ConfigurationXML configurationXML, SoundProcesor sp, final AchievementsXML achievementsXML,
 			AchievementsProcesor ap) {
 		// Create and set up the window.
-		JFrame frame = new JFrame("SoundSense " + SoundSense.getVersionString() + " " + configurationXML.getGamelogPath());
+		final JFrame frame = new JFrame("SoundSense " + SoundSense.getVersionString() + " " + configurationXML.getGamelogPath());
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Icons.APP_ICON));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -98,22 +102,37 @@ public class Gui extends JPanel {
 
 		});
 
-		Gui gui = new Gui(configurationXML, sp, achievementsXML, ap);
+		final Gui gui = new Gui(configurationXML, sp, achievementsXML, ap);
 
-		// Add content to the window.
-		frame.add(gui, BorderLayout.CENTER);
-
-		// Display the window.
-		frame.pack();
-		frame.setVisible(true);
-	}
-
-	public static void newGui(final ConfigurationXML config, final SoundProcesor sp, final AchievementsXML achievementsXML, final AchievementsProcesor ap) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				createAndShowGUI(config, sp, achievementsXML, ap);
+
+				// Add content to the window.
+				frame.add(gui, BorderLayout.CENTER);
+
+				// Display the window.
+				frame.pack();
+				frame.setVisible(true);
+
 			}
 		});
+
+		return gui;
+	}
+
+	public static Gui newGui(final ConfigurationXML config, final SoundProcesor sp, final AchievementsXML achievementsXML, final AchievementsProcesor ap) {
+		return createAndShowGUI(config, sp, achievementsXML, ap);
+	}
+
+	public void triggerSoundPackUpdate() {
+
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				tabPane.setSelectedComponent(soundPackUpdatePanel);
+				soundPackUpdatePanel.actionPerformed(null);
+			}
+		});
+
 	}
 
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Logger;
 
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import org.xml.sax.SAXException;
@@ -26,7 +27,7 @@ import cz.zweistein.df.soundsense.output.sound.SoundProcesor;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
 public class SoundSense {
-	private static Logger logger = LoggerSource.LOGGER;
+	private static final Logger LOGGER = LoggerSource.LOGGER;
 
 	public static void main(String[] args) {
 
@@ -34,28 +35,28 @@ public class SoundSense {
 
 		try {
 
-			logger.info("SoundSense for Dwarf Fortress is starting...");
-			logger.info(getVersionString());
+			LOGGER.info("SoundSense for Dwarf Fortress is starting...");
+			LOGGER.info(getVersionString());
 
 			ConfigurationXML configurationXML = new ConfigurationXML("configuration.xml");
 			new GameLogValidator(configurationXML).gamelogValidate();
 			String gameBaseDir = new File(configurationXML.getGamelogPath()).getParentFile().getPath();
 
-			logger.info("Loading theme packs; default directory is " + configurationXML.getSoundpacksPath());
+			LOGGER.info("Loading theme packs; default directory is " + configurationXML.getSoundpacksPath());
 			SoundsXML soundsXML = new SoundsXML(configurationXML.getSoundpacksPath(), true, configurationXML.noWarnAbsolutePath());
-			logger.info("Done loading " + soundsXML.toString() + ", loaded " + soundsXML.getSounds().size() + " items.");
+			LOGGER.info("Done loading " + soundsXML.toString() + ", loaded " + soundsXML.getSounds().size() + " items.");
 
-			logger.info("Loading executors.");
+			LOGGER.info("Loading executors.");
 			ExecutorXML executorXML = new ExecutorXML("./executor/");
-			logger.info("Done loading executors, loaded " + executorXML.getExecutors().size() + " items.");
+			LOGGER.info("Done loading executors, loaded " + executorXML.getExecutors().size() + " items.");
 
-			logger.info("Loading achievements.");
+			LOGGER.info("Loading achievements.");
 			AchievementsXML achievementsXML = new AchievementsXML("./achievements/");
-			logger.info("Done loading achievements, loaded " + achievementsXML.getAchievementPatterns().size() + " items.");
+			LOGGER.info("Done loading achievements, loaded " + achievementsXML.getAchievementPatterns().size() + " items.");
 
-			logger.info("Attempting to listen to " + configurationXML.getGamelogPath());
+			LOGGER.info("Attempting to listen to " + configurationXML.getGamelogPath());
 			LogReader logReader = new LogReader(configurationXML.getGamelogPath(), configurationXML.getGamelogEncoding());
-			logger.info("Listening to " + configurationXML.getGamelogPath());
+			LOGGER.info("Listening to " + configurationXML.getGamelogPath());
 
 			List<Procesor> procesors = new ArrayList<Procesor>(2);
 			SoundProcesor sp = new SoundProcesor(soundsXML, configurationXML);
@@ -72,22 +73,34 @@ public class SoundSense {
 			for (String supplementalLogPath : configurationXML.getSupplementalLogs()) {
 				supplementalLogPath = supplementalLogPath.replace("${gameBaseDir}", gameBaseDir);
 				if (new File(supplementalLogPath).exists()) {
-					logger.info("Attempting to listen to supplemental " + supplementalLogPath);
+					LOGGER.info("Attempting to listen to supplemental " + supplementalLogPath);
 					LogReader supplementalLogReader = new LogReader(supplementalLogPath, configurationXML.getGamelogEncoding());
 					Glue.glue(supplementalLogReader, procesors);
 				} else {
-					logger.info("Supplemental log " + supplementalLogPath + " not found. That is okay if you are not using dfhack plugin.");
+					LOGGER.info("Supplemental log " + supplementalLogPath + " not found. That is okay if you are not using dfhack plugin.");
 				}
 			}
 
 			if (configurationXML.getGui()) {
-				Gui.newGui(configurationXML, sp, achievementsXML, ap);
+				Gui gui = Gui.newGui(configurationXML, sp, achievementsXML, ap);
+
+				if (soundsXML.getSounds().size() < configurationXML.getExpectedMinimalSoundsCount()) {
+					LOGGER.warning("It seems that there are too few sounds defined. Is soundpack installed?");
+					int result = JOptionPane.showConfirmDialog(null,
+							"It seems that there are too few sounds defined and thus soundpack might not be installed.\n"
+									+ "Easiest way to solve this issue is to go to tab 'Pack update' and click 'Start update' button.\n"
+									+ "Should I do that rightaway?", "SoundSense", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_NO_OPTION);
+					if (JOptionPane.YES_OPTION == result) {
+						gui.triggerSoundPackUpdate();
+					}
+				}
+
 			}
 
 		} catch (IOException e) {
-			logger.severe("Exception :" + e + ": " + e.toString());
+			LOGGER.severe("Exception :" + e + ": " + e.toString());
 		} catch (SAXException e) {
-			logger.severe("Exception :" + e + ": " + e.toString());
+			LOGGER.severe("Exception :" + e + ": " + e.toString());
 		}
 
 	}
@@ -102,7 +115,7 @@ public class SoundSense {
 
 	/**
 	 * Constructs human readable information about build and version.
-	 *
+	 * 
 	 * @return string with human readable version
 	 */
 	public static String getVersionString() {

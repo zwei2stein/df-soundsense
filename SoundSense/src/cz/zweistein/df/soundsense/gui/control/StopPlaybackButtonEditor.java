@@ -20,7 +20,7 @@ import cz.zweistein.df.soundsense.output.sound.player.PlayerManager;
 public class StopPlaybackButtonEditor extends AbstractCellEditor implements TableCellEditor, ActionListener {
 	private static final long serialVersionUID = -114871533700969832L;
 	
-	private ChannelThread currentThread;
+	private transient ChannelThread currentThread;
 	private transient PlayerManager manager;
 	private JButton button;
 

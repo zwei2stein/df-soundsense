@@ -21,10 +21,14 @@ public class NetworkManager {
 	public void acceptIcommingConnections(int port) throws IOException {
 		ServerSocket serverSocket = new ServerSocket(port);
 		logger.info("Listening for events at network port " + port + ".");
-		while (true) {
-			Socket clientSocket = serverSocket.accept();
-			logger.info("New client '" + clientSocket.getInetAddress() + "' connected.");
-			Glue.glue(new PacketListener(clientSocket), this.processor);
+		try {
+			while (true) {
+				Socket clientSocket = serverSocket.accept();
+				logger.info("New client '" + clientSocket.getInetAddress() + "' connected.");
+				Glue.glue(new PacketListener(clientSocket), this.processor);
+			}
+		} finally {
+			serverSocket.close();
 		}
 	}
 
