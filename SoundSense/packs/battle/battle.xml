@@ -49,6 +49,13 @@
 		<soundFile fileName="wrestling/swingfist4.mp3" />
 	</sound>
 	
+	<sound logPattern="(((.+) jumps)|(You jump)) away from the (.+)!" concurency="4" timeout="500" playbackThreshhold="4">
+		<soundFile fileName="wrestling/swingfist1.mp3" />
+		<soundFile fileName="wrestling/swingfist2.mp3" />
+		<soundFile fileName="wrestling/swingfist3.mp3" />	
+		<soundFile fileName="wrestling/swingfist4.mp3" />
+	</sound>
+	
 	<sound logPattern="The (.+) stands up\." concurency="1" timeout="2500" playbackThreshhold="4">
 		<soundFile fileName="wrestling/standup1.mp3" />
 		<soundFile fileName="wrestling/standup2.mp3" />

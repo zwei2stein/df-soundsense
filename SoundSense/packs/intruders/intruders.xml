@@ -172,17 +172,41 @@
 	
 	<!-- ghost batters -->
 	<sound logPattern="(.+) batters (.+)!" playbackThreshhold="3">
-		<!-- http://www.freesound.org/samplesViewSingle.php?id=8891 -->
-		<soundFile fileName="8891__patchen__0_STABscrapes.mp3" randomBalance="true" />
-		<soundFile fileName="8891__patchen__0_STABscrapes_rev.mp3" randomBalance="true" />
+		<soundFile fileName="8891__patchen__0_STABscrapes.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
+		<soundFile fileName="8891__patchen__0_STABscrapes_rev.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
 	</sound>
 	
 	<!-- ghost follows -->
 	<sound logPattern="(.+) is following (.+)!" playbackThreshhold="3" ansiFormat="&#27;[39m">
-		<!-- http://www.freesound.org/samplesViewSingle.php?id=8891 -->
-		<soundFile fileName="8891__patchen__0_STABscrapes.mp3" randomBalance="true" />
-		<soundFile fileName="8891__patchen__0_STABscrapes_rev.mp3" randomBalance="true" />
+		<soundFile fileName="8891__patchen__0_STABscrapes.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
+		<soundFile fileName="8891__patchen__0_STABscrapes_rev.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
 	</sound>
 	
+	<sound logPattern="a (.+) has been misplaced.  No doubt (.+), Ghostly (.+) is to blame!" playbackThreshhold="3" ansiFormat="&#27;[39m">
+		<soundFile fileName="8891__patchen__0_STABscrapes.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
+		<soundFile fileName="8891__patchen__0_STABscrapes_rev.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
+	</sound>
+
+	<sound logPattern="(.+) is throwing a tantrum, possessed by (.+), Ghostly (.+)!" playbackThreshhold="3" ansiFormat="&#27;[39m">
+		<soundFile fileName="8891__patchen__0_STABscrapes.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
+		<soundFile fileName="8891__patchen__0_STABscrapes_rev.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
+	</sound>
+
 
 </sounds>

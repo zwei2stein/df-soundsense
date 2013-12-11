@@ -30,9 +30,12 @@
 	</sound>
 	
 	<sound logPattern="A masterwork of (.+) has been lost!" playbackThreshhold="4" ansiFormat="&#27;[35;1m">
-		<!-- http://www.freesound.org/samplesViewSingle.php?id=8891 -->
-		<soundFile fileName="../intruders/8891__patchen__0_STABscrapes.mp3" randomBalance="true" />
-		<soundFile fileName="../intruders/8891__patchen__0_STABscrapes_rev.mp3" randomBalance="true" />
+		<soundFile fileName="../intruders/8891__patchen__0_STABscrapes.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
+		<soundFile fileName="../intruders/8891__patchen__0_STABscrapes_rev.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
 	</sound>
 	
 	<sound logPattern="Jobs removed from unpowered Magma Smelter\." playbackThreshhold="2" ansiFormat="&#27;[31m">
