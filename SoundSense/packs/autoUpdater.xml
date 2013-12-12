@@ -26,7 +26,7 @@
          <file name="actions.xml" sha1="223d3378a130f8d629dc763c6ba677a8d061112b" size="8559"/>
          <file name="adventurer.xml" sha1="0c89d7c9aa2dd4830ba511eaede2c64ecd70178c" size="4437"/>
          <file name="ambush.xml" sha1="bc4a2a9c2dfd6350d28a55187adef00e6c17d4f8" size="4267"/>
-         <file name="animal_behavior.xml" sha1="6d577d5b63cc6ebd88970f6fb85487c3eddd4e94" size="2346"/>
+         <file name="animal_behavior.xml" sha1="63c964eac2324722d64c505176176b315b573938" size="3312"/>
          <file name="combat_actions.xml" sha1="b17223c0496571ebe6578235aefaefbe474200dc" size="2578"/>
          <file name="enviroment.xml" sha1="c309b82238bc37a9ba5b47827787e1faa9b8e6db" size="475"/>
       </directory>
@@ -53,6 +53,11 @@
             <file name="34872__Sruddi1__BARK1.mp3" sha1="76849037213e60449084c3bd04f202c6c41f5e72" size="37821"/>
             <file name="86279__Tito_Lahaye__6_week_beagle_bark.mp3" sha1="3c43fcee32f7aa9ca3ac356854e3fcb3902fe5d2" size="64152"/>
          </directory>
+         <directory name="duck">
+            <file name="duck_1.mp3" sha1="737ceefebef9a06052357cced5b2d73824a195c9" size="25700"/>
+            <file name="duck_2.mp3" sha1="baf6a9da435191ea21f50632cf0221bcebe22d3a" size="53703"/>
+            <file name="duck_3.mp3" sha1="c90b301d6cc57219c0d1ef468530e42bbc2947f8" size="32387"/>
+         </directory>
          <directory name="egg">
             <file name="155872__erdie__eier02.mp3" sha1="1fa8b5b0ceb06220288d82d2501dfa589ccf74d0" size="90066"/>
             <file name="155873__erdie__eier01.mp3" sha1="52fe068b74b9f1192cca5ee1da2341e519f9763f" size="106784"/>
@@ -78,6 +83,11 @@
             <file name="84141__dobroide__20091122-rabbit-carrot_1.mp3" sha1="ec959bcddeca951ed881ddc08ccc85f580cb68fd" size="38657"/>
             <file name="84141__dobroide__20091122-rabbit-carrot_2.mp3" sha1="8f46900e68b832884e8b0f66e6a8b0e7676d6ab8" size="43254"/>
             <file name="84141__dobroide__20091122-rabbit-carrot_3.mp3" sha1="f1319d2ba5eb079650d5777dba7e6ea1d116cdc2" size="31134"/>
+         </directory>
+         <directory name="rat">
+            <file name="143125__zabuhailo__ratsqueak_1.mp3" sha1="1eb02e7b73df4a3ff5a02932d11104a09b5924af" size="34766"/>
+            <file name="143125__zabuhailo__ratsqueak_2.mp3" sha1="7ddd69920d838a89bc78ab9426ae70fd94ca6f86" size="30716"/>
+            <file name="143125__zabuhailo__ratsqueak_3.mp3" sha1="e35ffa0402b1ec4103da79a88cefd62beff88b78" size="36567"/>
          </directory>
          <directory name="sheep">
             <file name="baalamb3.mp3" sha1="ac9b4c13e03e87edfb945bf318ae6112b6a5a89c" size="7728"/>
@@ -114,9 +124,9 @@
          <file name="camelmature.mp3" sha1="b97aa6a81c1b373fc1a369da6101f0b3715a4aca" size="102605"/>
          <file name="cat.xml" sha1="b6c1e8bafd9984f984e25a7f4aac5bc316a8513c" size="1528"/>
          <file name="cavy.xml" sha1="4715cfc4cc453b68f9e0769d57d2c5af810012a4" size="388"/>
-         <file name="chicken.xml" sha1="702c1bc43a38b2e4047baa36663e0a96350ab353" size="3086"/>
+         <file name="chicken.xml" sha1="f414d7927fe13f3969af020277c3fea5ce1d2169" size="3692"/>
          <file name="dog.xml" sha1="336bb75a00a909fe46b01a553e314d9e856a4846" size="860"/>
-         <file name="duck.xml" sha1="2e82c877f493a1094ac10bec89a448d3f5779aaf" size="233"/>
+         <file name="duck.xml" sha1="650391dec0a392fba3e7827665213134c563b7e5" size="2417"/>
          <file name="goat.xml" sha1="e41810bc747f97996627df97ce42c40c9b725093" size="252"/>
          <file name="goose.xml" sha1="aa4d63e9c338205a0585df9c77b6a0b5bdb8d54f" size="5797"/>
          <file name="guineafowl.xml" sha1="9669b675a81d998037572053943e833932584ec2" size="649"/>
@@ -126,7 +136,8 @@
          <file name="reindeer.xml" sha1="203051ca7829a0cab3c8556e86810b66aec96c89" size="181"/>
          <file name="sheep.xml" sha1="7203de975f32682634085406968c3df186f1ae1d" size="785"/>
          <file name="training.xml" sha1="b3b070c37d52aae6239d5532ff9491099e01a3bb" size="1275"/>
-         <file name="turkey.xml" sha1="e632e38003b07863a3df5fa956a132af354848d9" size="1013"/>
+         <file name="turkey.xml" sha1="a3b437acb7f39feb41c236f46e017aa1a40809be" size="2654"/>
+         <file name="vermin.xml" sha1="bc4aef68507f7e363c7db4e176b316548e846781" size="1021"/>
          <file name="yak.xml" sha1="04df6f7ce4e860b52c5ecc40ad4e4c277c98955f" size="1670"/>
       </directory>
       <directory name="battle">
@@ -410,7 +421,7 @@
             <file name="swingfist3.mp3" sha1="c2657e0369b214f36a7ead2157fe7ffc5a07f004" size="2965"/>
             <file name="swingfist4.mp3" sha1="1da84be434a6b9e5111e44677b4712aa3555e75a" size="2318"/>
          </directory>
-         <file name="battle.xml" sha1="7d17924bee8f745db2898150aa90bcefc6203193" size="27657"/>
+         <file name="battle.xml" sha1="cd0c91842835e86cc3999f39b791fa52274f6655" size="28005"/>
          <file name="breath.xml" sha1="1b3938cd6c875bd2ba84365a47ca7c8fcd776868" size="6801"/>
          <file name="gore.xml" sha1="adf961e74bad3fb46307b88428681595e646a5f8" size="8772"/>
          <file name="hitevents.xml" sha1="7a3da391f8f70d10f0fb8b93e72717a844dcaa89" size="15661"/>
@@ -428,7 +439,7 @@
             <file name="impactsplat03.mp3" sha1="fe568cbfcbf22adec32ac6bc0f4924eaab656527" size="17005"/>
          </directory>
          <file name="50776__smcameron__fall_with_impact.mp3" sha1="6685d83f710192740ced533f5836cfbc35284365" size="76631"/>
-         <file name="directdeaths.xml" sha1="0219f14e2cf6f374e0fab006d23ee50df3cde3b9" size="5953"/>
+         <file name="directdeaths.xml" sha1="ddba59c7ecd076e2b20064d261f4d21275d00f23" size="8372"/>
          <file name="founddeaths.xml" sha1="4c2de3e1d06feb3735b7cdd4bcb0ca1ef3a027a2" size="4578"/>
          <file name="gutwrenching_scream.mp3" sha1="b411333f23d50af8f95e020bc1105ab9e6c91999" size="74460"/>
          <file name="slaughtering.xml" sha1="be6d9a0a44d0a45cda5497c992c99237e33e59bc" size="408"/>
@@ -544,7 +555,7 @@
          <file name="goblin_snatcher_foiled1.mp3" sha1="44e7fa9e3190c256a3308162305aa01b9829ec4c" size="24476"/>
          <file name="goblin_snatcher_foiled2.mp3" sha1="a004a881cb31419d85e50419c77ae35bb9cb7a49" size="44120"/>
          <file name="goblin_snatcher_foiled3.mp3" sha1="3bde4e37dc0aa15098c5752b89d55f4e6f6832f5" size="26984"/>
-         <file name="intruders.xml" sha1="9fab120718b368a7c91068c37f43a8e31d1dea02" size="9362"/>
+         <file name="intruders.xml" sha1="74a53c7bffc0b089aac891cf0470542bab26dbd7" size="11154"/>
          <file name="Radakan - Dramatic event 2.mp3" sha1="d8cb9fc8664fa052a273b5061f7d1d8eeebf1c1c" size="178576"/>
          <file name="Radakan - Game Lost.mp3" sha1="afa0200d8347be4208d538df47cff4e0f409a602" size="352705"/>
       </directory>
@@ -737,10 +748,10 @@
          <file name="707__vitriolix__subbasesoft.mp3" sha1="60865ac51eefada11ae14bd7067285c35bed6a70" size="48775"/>
          <file name="85792__sandyrb__NATIVE_FLUTE_FIGURE_03.mp3" sha1="5880732dd4866086c583a611b0eb1e06b8709420" size="93982"/>
          <file name="85794__sandyrb__NATIVE_FLUTE_FIGURE_05.mp3" sha1="8aa3eaa480ab8d64cea43c4cdb8dd627e78a2a98" size="57118"/>
-         <file name="cancelations.xml" sha1="ef777f7a0d524f92b543d3ca332d393aa703f00d" size="19817"/>
+         <file name="cancelations.xml" sha1="af0399e5a9ef04b40083022ccf7e4b4a40289b22" size="21671"/>
          <file name="Drop Metal Thing-SoundBible.com-401640954.mp3" sha1="5481da6ea954a8d859c65aae1c2a7ddef72dde40" size="11422"/>
          <file name="foodAndDrinkCancelations.xml" sha1="0fab342f3311f88d8c3d79846d0adebc49da9219" size="1856"/>
-         <file name="production.xml" sha1="bd169b5b3230ec5c0b0324054eb4115a26114217" size="2746"/>
+         <file name="production.xml" sha1="70592bd0fcf5a03001d9cb9a1f8886cf7894f4ba" size="3003"/>
       </directory>
       <directory name="seasons">
          <directory name="autumn">
@@ -1031,6 +1042,6 @@
          </directory>
          <file name="weather.xml" sha1="aeff0124ebbbed224e32d3bdf0a450244bda0f88" size="2290"/>
       </directory>
-      <file name="autoUpdater.xml" sha1="dcf9832f33017e80cd2f0805e5150ffa034aa65d" size="93764"/>
+      <file name="autoUpdater.xml" sha1="3805f7cfd9e7c5b611bb414dc136d7ceb263fc48" size="94592"/>
    </directory>
 </autoUpdater>
