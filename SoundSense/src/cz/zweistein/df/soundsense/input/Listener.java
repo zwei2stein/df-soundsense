@@ -8,6 +8,7 @@ public abstract class Listener {
 	protected int delay = 50; // miliseconds
 	protected BufferedReader br;
 	protected boolean streaming;
+	protected long startTime = System.currentTimeMillis();
 
 	public String getNextLine() throws IOException {
 
@@ -18,7 +19,7 @@ public abstract class Listener {
 			} else {
 				if (!this.streaming) {
 					this.br.close();
-					throw new IOException("Reached end of stream or file, breaking off");
+					throw new IOException("Reached end of stream or file, breaking off after " + (System.currentTimeMillis() - startTime) + "ms.");
 				}
 				try {
 					Thread.sleep(delay);

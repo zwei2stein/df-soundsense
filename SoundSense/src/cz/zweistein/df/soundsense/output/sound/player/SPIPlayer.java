@@ -83,7 +83,7 @@ public class SPIPlayer {
 					FloatControl masterSampleRate = (FloatControl) line.getControl(FloatControl.Type.BALANCE);
 					masterSampleRate.setValue(this.balance);
 				} else {
-					logger.info("FloatControl.Type.BALANCE not supported for " + this.fileName + "!");
+					logger.finest("FloatControl.Type.BALANCE not supported for " + this.fileName + "!");
 				}
 			}
 
@@ -99,7 +99,7 @@ public class SPIPlayer {
 					BooleanControl muteControl = (BooleanControl) line.getControl(BooleanControl.Type.MUTE);
 					muteControl.setValue(this.mute);
 				} else {
-					logger.info("BooleanControl.Type.MUTE is not supported by sound system.");
+					logger.finest("BooleanControl.Type.MUTE is not supported by sound system.");
 				}
 				if (this.masterGain != 0) {
 					if (line.isControlSupported(FloatControl.Type.MASTER_GAIN)) {
@@ -114,7 +114,7 @@ public class SPIPlayer {
 						masterGainControl.setValue(this.masterGain);
 						this.masterGain = 0;
 					} else {
-						logger.info("FloatControl.Type.MASTER_GAIN is not supported by sound system.");
+						logger.finest("FloatControl.Type.MASTER_GAIN is not supported by sound system.");
 					}
 				}
 				nBytesRead = din.read(data, 0, data.length);
