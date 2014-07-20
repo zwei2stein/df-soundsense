@@ -45,7 +45,14 @@
 		<soundFile fileName="gore/glance3.mp3" randomBalance="true" />
 		<soundFile fileName="gore/glance4.mp3" randomBalance="true" />
 		<soundFile fileName="gore/glance5.mp3" randomBalance="true" />
-
+	</sound>
+	
+	<sound logPattern="(.+), but it is deflected by The (.+)'s (.+)!" haltOnMatch="false" concurency="4" timeout="500" playbackThreshhold="4">
+		<soundFile fileName="gore/glance1.mp3" randomBalance="true" />
+		<soundFile fileName="gore/glance2.mp3" randomBalance="true" />
+		<soundFile fileName="gore/glance3.mp3" randomBalance="true" />
+		<soundFile fileName="gore/glance4.mp3" randomBalance="true" />
+		<soundFile fileName="gore/glance5.mp3" randomBalance="true" />
 	</sound>
 	
 	<sound logPattern="(.+), chipping the (.) through the (.+)!" haltOnMatch="false" concurency="4" timeout="500" playbackThreshhold="4">

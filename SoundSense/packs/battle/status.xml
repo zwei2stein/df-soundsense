@@ -4,9 +4,12 @@
 	<sound logPattern="(.+) skids along the ground!">
 	</sound>
 	
+	<!-- TODO: skid with hit effect -->
 	<sound logPattern="(.+) skids along the ground, (.+)!">
-	<!-- skid with hit effect -->
+	</sound>
 	
+	<!-- TODO: skid with hit effect -->
+	<sound logPattern="(.+) skids along the ground and the (.+) splits in gore!">
 	</sound>
 	
 	<sound logPattern="(.+) has been stunned!">

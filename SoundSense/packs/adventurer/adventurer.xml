@@ -45,6 +45,25 @@
 		
 		<soundFile fileName="../seasons/roguebard/9_22.mp3" />
 		<soundFile fileName="../seasons/roguebard/7_20.mp3" />
+	
+		<soundFile fileName="../seasons/alexandrzhelanov/Ambush in buch.mp3">
+			<attribution author="Alexandr Zhelanov" url="http://opengameart.org/users/alexandr-zhelanov" license="CC BY 3.0" description="Ambush in buch" />
+		</soundFile>
+		<soundFile fileName="../seasons/alexandrzhelanov/Campaign_0.mp3">
+			<attribution author="Alexandr Zhelanov" url="http://opengameart.org/users/alexandr-zhelanov" license="CC BY 3.0" description="Campaign 0" />
+		</soundFile>
+		<soundFile fileName="../seasons/alexandrzhelanov/Zombies also love to play the fool.mp3" weight="25">
+			<attribution author="Alexandr Zhelanov" url="http://opengameart.org/users/alexandr-zhelanov" license="CC BY 3.0" description="Zombies also love to play the fool" />
+		</soundFile>
+		<soundFile fileName="../seasons/alexandrzhelanov/Path to Lake Land.mp3">
+			<attribution author="Alexandr Zhelanov" url="http://opengameart.org/users/alexandr-zhelanov" license="CC BY 3.0" description="Path to Lake Land" />
+		</soundFile>
+		<soundFile fileName="../seasons/alexandrzhelanov/Caves of sorrow.mp3">
+			<attribution author="Alexandr Zhelanov" url="http://opengameart.org/users/alexandr-zhelanov" license="CC BY 3.0" description="Caves of sorrow" />
+		</soundFile>
+		<soundFile fileName="../seasons/alexandrzhelanov/04.Histories and tales_0.mp3">
+			<attribution author="Alexandr Zhelanov" url="http://opengameart.org/users/alexandr-zhelanov" license="CC BY 3.0" description="Histories and tales" />
+		</soundFile>
 		
 	</sound>
 	
@@ -57,6 +76,10 @@
 	</sound>
 	
 	<sound logPattern="You have bled to death\." ansiFormat="&#27;[31;1m">
+		<soundFile fileName="../deaths/WilhelmScream_vbr.mp3" />
+	</sound>
+	
+	<sound logPattern="You have drowned\." ansiFormat="&#27;[31m;1m">
 		<soundFile fileName="../deaths/WilhelmScream_vbr.mp3" />
 	</sound>
 	
@@ -76,8 +99,8 @@
 	</sound>
 	
 	<sound logPattern="Night is falling.">
-		<soundFile fileName="night/51690__inchadney__Owls.mp3" />
-		<soundFile fileName="night/42917__inchadney__Owl.mp3" />
+		<soundFile fileName="night/51690__inchadney__Owls.mp3" randomBalance="true" />
+		<soundFile fileName="night/42917__inchadney__Owl.mp3" randomBalance="true" />
 	</sound>
 	
 </sounds>

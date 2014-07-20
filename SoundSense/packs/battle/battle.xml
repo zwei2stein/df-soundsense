@@ -97,10 +97,44 @@
 		<soundFile fileName="blocked/blocked5.mp3"/>
 	</sound>
 	
+	<!-- TODO: steps/walking/running etc sounds -->
+	<sound logPattern="The (.+) jumps away!">
+	</sound>
+
 	<sound logPattern="The (.+) charges at (.+)!">
+		<soundFile fileName="movement/steps1.mp3" randomBalance="true">
+			<attribution author="kgatto" url="http://www.freesound.org/people/kgatto/sounds/240277/" license="CC BY 3.0" description="steps.wav" />
+		</soundFile>
+		<soundFile fileName="movement/steps2.mp3" randomBalance="true">
+			<attribution author="kgatto" url="http://www.freesound.org/people/kgatto/sounds/240277/" license="CC BY 3.0" description="steps.wav" />
+		</soundFile>
+		<soundFile fileName="movement/steps3.mp3" randomBalance="true">
+			<attribution author="kgatto" url="http://www.freesound.org/people/kgatto/sounds/240277/" license="CC BY 3.0" description="steps.wav" />
+		</soundFile>
 	</sound>
 	
 	<sound logPattern="The (.+) manages to stop where The (.+) used to be\.">
+		<soundFile fileName="movement/steps1.mp3" randomBalance="true">
+			<attribution author="kgatto" url="http://www.freesound.org/people/kgatto/sounds/240277/" license="CC BY 3.0" description="steps.wav" />
+		</soundFile>
+		<soundFile fileName="movement/steps2.mp3" randomBalance="true">
+			<attribution author="kgatto" url="http://www.freesound.org/people/kgatto/sounds/240277/" license="CC BY 3.0" description="steps.wav" />
+		</soundFile>
+		<soundFile fileName="movement/steps3.mp3" randomBalance="true">
+			<attribution author="kgatto" url="http://www.freesound.org/people/kgatto/sounds/240277/" license="CC BY 3.0" description="steps.wav" />
+		</soundFile>
+	</sound>
+	
+	<sound logPattern="The (.+) rushes by The (.+)!">
+		<soundFile fileName="movement/steps1.mp3" randomBalance="true">
+			<attribution author="kgatto" url="http://www.freesound.org/people/kgatto/sounds/240277/" license="CC BY 3.0" description="steps.wav" />
+		</soundFile>
+		<soundFile fileName="movement/steps2.mp3" randomBalance="true">
+			<attribution author="kgatto" url="http://www.freesound.org/people/kgatto/sounds/240277/" license="CC BY 3.0" description="steps.wav" />
+		</soundFile>
+		<soundFile fileName="movement/steps3.mp3" randomBalance="true">
+			<attribution author="kgatto" url="http://www.freesound.org/people/kgatto/sounds/240277/" license="CC BY 3.0" description="steps.wav" />
+		</soundFile>
 	</sound>
 	
 	<sound logPattern="The (.+) is knocked over and tumbles backward!" concurency="1" timeout="2500" playbackThreshhold="4">
@@ -124,9 +158,6 @@
 		<soundFile fileName="UnitSurprised/UnitSurprised10.mp3" randomBalance="true" />
 		<soundFile fileName="UnitSurprised/UnitSurprised11.mp3" randomBalance="true" />
 		<soundFile fileName="UnitSurprised/UnitSurprised12.mp3" randomBalance="true" />
-	</sound>
-	
-	<sound logPattern="The (.+) rushes by The (.+)!">
 	</sound>
 	
 	<sound logPattern="They tangle together and fall over!" concurency="1" timeout="2500" playbackThreshhold="4">
@@ -187,11 +218,21 @@
 		<soundFile fileName="hit/punch/punch5.mp3" randomBalance="true" />
 		<soundFile fileName="hit/punch/punch6.mp3" randomBalance="true" />
 		<soundFile fileName="hit/punch/punch7.mp3" randomBalance="true" />
-
-
 	</sound>
 	
-	<!-- statues -->
+	<!-- statuses -->
+	
+	<sound logPattern="(.+) pulls out and drops the (.+)\." concurency="5" timeout="250" playbackThreshhold="4">
+		<soundFile fileName="dropitem/dropitem1.mp3" randomBalance="true" />
+		<soundFile fileName="dropitem/dropitem2.mp3" randomBalance="true" />
+		<soundFile fileName="dropitem/dropitem3.mp3" randomBalance="true" />
+		<soundFile fileName="dropitem/dropitem4.mp3" randomBalance="true" />
+		<soundFile fileName="dropitem/dropitem5.mp3" randomBalance="true" />
+		<soundFile fileName="dropitem/dropitem6.mp3" randomBalance="true" />
+		<soundFile fileName="dropitem/dropitem7.mp3" randomBalance="true" />
+		<soundFile fileName="dropitem/dropitem8.mp3" randomBalance="true" />
+		<soundFile fileName="dropitem/dropitem9.mp3" randomBalance="true" />
+	</sound>
 	
 	<sound logPattern="(.+) lets the (.+) (.+) drop away as ((He)|(She)|(It)) attacks\." concurency="5" timeout="250" playbackThreshhold="4">
 		<soundFile fileName="dropitem/dropitem1.mp3" randomBalance="true" />
@@ -335,6 +376,18 @@
 		<soundFile fileName="wrestling/swingfist3.mp3" />	
 		<soundFile fileName="wrestling/swingfist4.mp3" />
 	</sound>
+
+	<sound logPattern="(.+) bends (.+) and (.+) collapses!" concurency="5" timeout="250" playbackThreshhold="4">
+		<soundFile fileName="bones/110617__soundscalpel-com__horror-bone-crunch.mp3" randomBalance="true">
+			<attribution author="soundscalpel.com" url="http://www.freesound.org/people/soundscalpel.com/sounds/110617/" license="CC BY 3.0" description="horror_bone_crunch.wav" />
+		</soundFile>
+		<soundFile fileName="bones/136460__joshfeed__bone-breaking-13.mp3" randomBalance="true">
+			<attribution author="joshfeed" url="http://www.freesound.org/people/joshfeed/sounds/136460/" license="CC BY-NC 3.0" description="Bone Breaking 13.wav" />
+		</soundFile>
+		<soundFile fileName="bones/176745__carlito62__bone-crushneck-twist.mp3" randomBalance="true">
+			<attribution author="carlito62" url="http://www.freesound.org/people/carlito62/sounds/176745/" license="CC0 1.0" description="Bone crush - neck twist.wav" />
+		</soundFile>
+	</sound>
 	
 	<sound logPattern="The (.+) takes The (.+) down by the (.+) with The (.+)'s (.+)!" concurency="4" timeout="500" playbackThreshhold="4">
 		<soundFile fileName="wrestling/swingfist1.mp3" />
@@ -443,6 +496,14 @@
 	
 
 	<sound logPattern="The (.+) strikes at The (.+) but the shot is parried!" concurency="4" timeout="500" playbackThreshhold="4">
+		<soundFile fileName="blocked/blocked1.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked2.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked3.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked4.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked5.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="The (.+) strikes at The (.+) but the shot is deftly parried by the (.+)!" concurency="4" timeout="500" playbackThreshhold="4">
 		<soundFile fileName="blocked/blocked1.mp3" randomBalance="true" />
 		<soundFile fileName="blocked/blocked2.mp3" randomBalance="true" />
 		<soundFile fileName="blocked/blocked3.mp3" randomBalance="true" />

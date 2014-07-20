@@ -10,6 +10,12 @@
 		<soundFile fileName="../battle/hit/strike/strike3.mp3" />
 	</sound>
 	
+	<sound logPattern="You slam into an obstacle!">
+		<soundFile fileName="../battle/hit/strike/strike1.mp3" />
+		<soundFile fileName="../battle/hit/strike/strike2.mp3" />
+		<soundFile fileName="../battle/hit/strike/strike3.mp3" />
+	</sound>
+	
 	<sound logPattern="You latch on firmly!">
 		<soundFile fileName="../battle/wrestling/swingfist1.mp3" />
 		<soundFile fileName="../battle/wrestling/swingfist2.mp3" />
@@ -44,6 +50,21 @@
 		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_02.mp3" randomBalance="true" />
 		<soundFile fileName="../battle/vomit/13652__Koops__Sick_In_Toilet_03.mp3" randomBalance="true" />
 
+	</sound>
+	
+	<sound logPattern="You give in to pain\.">
+	</sound>
+	
+	<sound logPattern="You regain consciousness\.">
+	</sound>
+	
+	<sound logPattern="You are no longer stunned\.">
+	</sound>
+	
+	<sound logPattern="You fall over\.">
+	</sound>
+	
+	<sound logPattern="You are having trouble breathing\.">
 	</sound>
 
 </sounds>

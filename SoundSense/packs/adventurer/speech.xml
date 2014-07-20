@@ -1,0 +1,190 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<sounds defaultAnsiFormat="&#27;[31;1m">
+
+	<sound logPattern="(.+): Hello (.+)\.">
+	</sound>
+
+	<sound logPattern="(.+): Hello (.+)\.  Long live the cause!">
+	</sound>
+
+	<sound logPattern="(.+): Greetings\.  My name is (.+)\.">
+	</sound>
+
+	<sound logPattern="(.+): Greetings\.  It is good to see you\.">
+	</sound>
+
+	<sound logPattern="(.+): Hey\.  It is good to see you\.">
+	</sound>
+	
+	<sound logPattern="(.+): It is good to see you\.">
+	</sound>
+
+	<sound logPattern="(.+): Hello\.  It is good to see you\.  It really is a pleasure to speak with you again\.">
+	</sound>
+
+	<sound logPattern="(.+): Hello\.  It is good to see you\.  Long live the cause!  Don't travel alone at night, or the bogeyman will get you\.">
+	</sound>
+
+	<sound logPattern="(.+): Ah, hello\.  I'm (.+)\.  Don't travel alone at night, or the bogeyman will get you\.">
+	</sound>
+
+	<sound logPattern="(.+): Hello\.  It is good to see you\.  Traveling alone in the wilds\?!  You know better than that\.">
+	</sound>
+
+	<sound logPattern="(.+): How have things been\?">
+	</sound>
+
+	<sound logPattern="(.+): Hello\.  It is good to see you\.">
+	</sound>
+
+	<sound logPattern="(.+): Hello\.  It is good to see you\.">
+	</sound>
+
+	<sound logPattern="(.+): Indoors, outdoors\.  It's all the same to me as long as the weather's fine\.">
+	</sound>
+
+	<sound logPattern="(.+): Seems a pleasant enough day out there\.">
+	</sound>
+
+	<sound logPattern="(.+): Goodbye\.">
+	</sound>
+
+	<sound logPattern="(.+): Well, let's see\.\.\.  we've got abductions\.">
+	</sound>
+
+	<sound logPattern="(.+): Tell me about the abductions\.">
+	</sound>
+
+	<sound logPattern="(.+): Several years ago, (.+) was kidnapped from (.+) by (.+)\.">
+	</sound>
+
+	<sound logPattern="(.+): Can you tell me where I can find the (.+)\?">
+	</sound>
+
+	<sound logPattern="(.+): (.+) is in (.+)\.">
+	</sound>
+
+	<sound logPattern="(.+): That is sad but not unexpected\.">
+	</sound>
+
+	<sound logPattern="(.+): Join me and we'll bring (.+) back home!">
+	</sound>
+
+	<sound logPattern="(.+): I'm with you on this\.">
+	</sound>
+
+	<sound logPattern="(.+): Tell me about the local ruler\.">
+	</sound>
+
+	<sound logPattern="(.+): (.+) rules (.+)\.  (.+) is ((lady)|(lord)).  I don't care one way or another\.  The seat of (.+) is also located here\.">
+	</sound>
+
+	<sound logPattern="(.+): Where are their forces\?  Are there patrols or guards\?">
+	</sound>
+
+	<sound logPattern="(.+): There are guards in the mead hall a short walk to the ((west)|(north)|(east)|(south))\.">
+	</sound>
+
+	<sound logPattern="(.+): (.+) is not at war with us, but there is ill-will between our peoples\.  The trouble started because of a dispute over the treatment of plants\.">
+	</sound>
+
+	<sound logPattern="(.+): There's fighting!  What's going on\?!">
+	</sound>
+
+	<sound logPattern="(.+): Come, join me on my adventures!">
+	</sound>
+
+	<sound logPattern="(.+): I will agree to travel with you if you lead me to glory and death\.">
+	</sound>
+
+	<sound logPattern="(.+): I've always wanted to travel the world\.  Let us be off!">
+	</sound>
+
+	<sound logPattern="(.+): With a band so large, what share of the glory would I have\?">
+	</sound>
+
+	<sound logPattern="(.+): It is terrifying\.">
+	</sound>
+
+	<sound logPattern="(.+): It was inevitable\.">
+	</sound>
+
+	<sound logPattern="(.+): Particular outlaws have been causing us much hardship\.  They have a tomb called (.+) somewhere in (.+)\.">
+	</sound>
+
+	<sound
+		logPattern="(.+): A creature of the night has our people cowering in fear\.  (.+) is in (.+)\.  Seek this place if you hunt (.+) the (.+)\.  This vile fiend has killed (.+) in her lust for murder!">
+	</sound>
+
+	<sound
+		logPattern="(.+): A creature of the night has our people cowering in fear\.  (.+) is in (.+)\.  Seek this place if you hunt (.+) the (.+)\.  This vile fiend murdered (.+)!">
+	</sound>
+
+	<sound
+		logPattern="(.+): Our people have been tormented by a fearsome foe\.  (.+) is in (.+)\.  Seek this place if you hunt (.+) the (.+) the minotaur.  This vile fiend has killed (.+) in his lust for murder!">
+	</sound>
+
+	<sound logPattern="(.+): I am your loyal hearthperson.  What do you command\?">
+	</sound>
+
+	<sound logPattern="(.+): You may enjoy these times of peace, but remain vigilant\.">
+	</sound>
+
+	<sound logPattern="(.+): Well, let's see\.\.\.  we've got armies on the march, beasts, criminals, bandits and skulking vermin\.">
+	</sound>
+
+	<sound logPattern="(.+): Malicious outlaws have brought terror to our doorsteps\.  They have a camp called (.+) somewhere in (.+)\.">
+	</sound>
+
+	<sound logPattern="(.+): This must be stopped by any means at our disposal\.">
+	</sound>
+
+	<sound logPattern="(.+): Tell me about this hall\.">
+	</sound>
+
+	<sound logPattern="(.+): This is (.+)\.  In [0-9]+, I ruled from (.+) of (.+) in (.+)\.">
+	</sound>
+
+	<sound logPattern="(.+): Can you tell me the way to (.+)\?">
+	</sound>
+
+	<sound logPattern="(.+): A great beast threatens to bring ruin upon our people\.  (.+) is (.+)\.  Seek this place if you hunt (.+)\.  This vile fiend murdered (.+)!">
+	</sound>
+
+	<sound logPattern="(.+): Not (.+) ago, (.+) became overlord of (.+)\.">
+	</sound>
+
+	<sound logPattern="(.+): A battle!  What's going on\?!">
+	</sound>
+
+	<sound logPattern="(.+): A battle!  That's alarming!">
+	</sound>
+
+	<sound logPattern="(.+): There's fighting!  That's alarming!">
+	</sound>
+
+	<sound logPattern="(.+): Is that a weapon\?  That's alarming!">
+	</sound>
+
+	<sound logPattern="(.+): Death\.\.\.  The horror\.\.\.">
+	</sound>
+
+	<sound logPattern="(.+): Those injuries\.\.\.  Begone fear!">
+	</sound>
+	
+	<sound logPattern="(.+): I have a part in this\.  I will have my revenge\.">
+	</sound>
+	
+	<sound logPattern="(.+): Wait here until I return\.">
+	</sound>
+
+	<sound logPattern="(.+): Sorry, I'm otherwise occupied\.">
+	</sound>
+
+	<sound logPattern="(.+): I would\.\.\.  rather not\.">
+	</sound>
+
+	<sound logPattern="(.+): (.+) is far to the ((west)|(north)|(east)|(south))\.  \[You receive a detailed description\.\]">
+	</sound>
+
+</sounds>

@@ -9,4 +9,7 @@
 	<sound logPattern="There is a cool breeze blowing from the (.+)\." channel="weather">
 	</sound>
 	
+	<sound logPattern="It is cold\." channel="weather">
+	</sound>
+	
 </sounds>

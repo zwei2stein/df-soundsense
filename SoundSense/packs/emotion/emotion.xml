@@ -1,0 +1,52 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<sounds defaultAnsiColor="&#27;[34m">
+
+	<sound logPattern="(.+): This does not scare me\.">
+	</sound>
+
+	<sound logPattern="(.+): I am not upset by this\.">
+	</sound>
+
+	<sound logPattern="(.+): I am not scared!">
+	</sound>
+
+	<sound logPattern="(.+): I laugh in the face of death!">
+	</sound>
+
+	<sound logPattern="(.+): Begone fear!">
+	</sound>
+
+	<sound logPattern="(.+): Ahhhhhhh!  No!">
+	</sound>
+
+	<sound logPattern="(.+): I must withdraw!">
+	</sound>
+
+	<sound logPattern="(.+): Help!  Save me!">
+	</sound>
+
+	<sound logPattern="(.+): The horror\.\.\.">
+	</sound>
+
+	<sound logPattern="(.+): This is truly horrifying\.">
+	</sound>
+
+	<sound logPattern="(.+): Stop!  This isn't happening!">
+	</sound>
+
+	<sound logPattern="(.+): This cannot horrify me\.">
+	</sound>
+
+	<sound logPattern="(.+): The horror consumes me!">
+	</sound>
+
+	<sound logPattern="(.+): I feel no terror\.">
+	</sound>
+	
+	<sound logPattern="(.+): This doesn't scare me\.">
+	</sound>
+	
+	<sound logPattern="(.+): I must press on!">
+	</sound>
+
+</sounds>

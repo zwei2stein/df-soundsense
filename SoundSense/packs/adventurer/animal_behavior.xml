@@ -8,6 +8,13 @@
 		<soundFile fileName="../animals/cat/33657__Corsica_S__Meow.mp3" randomBalance="true" />
 	</sound>
 	
+	<sound logPattern="The Stray Cat licks (.+)\.">
+		<soundFile fileName="../animals/cat/4913__NoiseCollector__cat1.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/cat/33657__Corsica_S__Meow.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/cat/24966__mich3d__CatPurring_01.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/cat/33657__Corsica_S__Meow.mp3" randomBalance="true" />
+	</sound>
+	
 	<sound logPattern="The Stray Turkey ((Gobbler)|(Hen)) roots around in the (.+)\.">
 		<soundFile fileName="../animals/turkey/67675__sinatra314__turkeygobble1.mp3" randomBalance="true">
 			<attribution url="http://www.freesound.org/people/sinatra314/sounds/67675/" license="CC BY 3.0" author="sinatra314" description="turkeygobble1.wav" />
@@ -47,6 +54,15 @@
 		<soundFile fileName="../animals/guineafowl/nest_call_2.mp3" randomBalance="true" />
 		<soundFile fileName="../animals/guineafowl/male_1.mp3" randomBalance="true" />
 		<soundFile fileName="../animals/guineafowl/male_2.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="(.+) spits!">
+		<soundFile fileName="./spit/spit_01.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Lex777/sounds/235773/" license="CC BY 3.0" author="Lex777" description="Spitting_Heavily_01.wav" />
+		</soundFile>
+		<soundFile fileName="./spit/spit_02.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Lex777/sounds/235773/" license="CC BY 3.0" author="Lex777" description="Spitting_Heavily_01.wav" />
+		</soundFile>
 	</sound>
 	
 </sounds>

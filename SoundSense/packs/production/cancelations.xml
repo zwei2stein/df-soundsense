@@ -364,5 +364,12 @@
 		<soundFile fileName="NotPossible/NotPossible21.mp3" weight="1" />
 		<soundFile fileName="NotPossible/NotPossible22.mp3" weight="1" />
 	</sound>
-
+	
+	<!-- TODO: horror cancelation -->
+	<sound logPattern="(.+) cancels (.+): Horrified\.">
+	</sound>
+	
+	<sound logPattern="(.+) cancels (.+): Unconscious\.">
+	</sound>
+	
 </sounds>

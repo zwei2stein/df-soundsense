@@ -139,5 +139,16 @@
 		<soundFile fileName="60085__Benboncan__Rockfall_in_mine1.mp3" randomBalance="true" weight="6" />
 		<soundFile fileName="60085__Benboncan__Rockfall_in_mine2.mp3" randomBalance="true" weight="6" />
 	</sound>
+	
+	<sound logPattern="Something has collapsed on the surface!" haltOnMatch="false" playbackThreshhold="1" ansiPattern="&#27;[31;1m">
+		<soundFile fileName="33637__HerbertBoland__CinematicBoomNorm.mp3" randomBalance="true" />
+		<soundFile fileName="33637__HerbertBoland__CinematicBoomNorm.mp3" randomBalance="true" volumeAdjustment="-10" weight="2" />
+		<soundFile fileName="33637__HerbertBoland__CinematicBoomNorm.mp3" randomBalance="true" volumeAdjustment="-20" weight="3" />
+	</sound>
+
+	<sound logPattern="Something has collapsed on the surface!" playbackThreshhold="1" ansiPattern="&#27;[31;1m">
+		<soundFile fileName="60085__Benboncan__Rockfall_in_mine1.mp3" randomBalance="true" weight="6" />
+		<soundFile fileName="60085__Benboncan__Rockfall_in_mine2.mp3" randomBalance="true" weight="6" />
+	</sound>
 
 </sounds>
