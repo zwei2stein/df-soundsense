@@ -46,6 +46,13 @@
 		<soundFile fileName="Radakan - Game Lost.mp3" />
 	</sound>
 	
+	<sound logPattern="Ambush!" channel="music" haltOnMatch="false" playbackThreshhold="1">
+		<!-- http://opengameart.org/content/radakan-dramatic-event-2 -->	
+		<soundFile fileName="Radakan - Dramatic event 2.mp3" />
+		<!-- http://opengameart.org/content/radakan-game-lost -->
+		<soundFile fileName="Radakan - Game Lost.mp3" />
+	</sound>
+	
 	<sound logPattern="An ambush!  Curse them!" playbackThreshhold="2">
 		<soundFile fileName="goblin/ambush1.mp3" />
 		<soundFile fileName="goblin/ambush2.mp3" />

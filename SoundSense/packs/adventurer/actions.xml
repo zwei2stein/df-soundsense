@@ -75,6 +75,12 @@
 		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
 	</sound>
 	
+	<sound logPattern="You must move away from the surrounding obstacles before you can travel\." ansiFormat="&#27;[31m">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
 	<sound logPattern="You can't travel until you emerge from underground or enter a tunnel\." ansiFormat="&#27;[31m">
 		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
 		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
@@ -161,6 +167,21 @@
 		</soundFile>
 	</sound>
 	
+	<sound logPattern="You fill your (.+) with water\.">
+		<soundFile fileName="water/190091__tran5ient__lifts.mp3" randomBalance="true">
+			<attribution author="tran5ient" url="http://www.freesound.org/people/tran5ient/sounds/190128/" license="CC0 1.0" description="splash1.wav" />
+		</soundFile>
+		<soundFile fileName="water/190092__tran5ient__loudsplash.mp3" randomBalance="true">
+			<attribution author="tran5ient" url="http://www.freesound.org/people/tran5ient/sounds/190092/" license="CC0 1.0" description="loudsplash.wav" />
+		</soundFile>
+		<soundFile fileName="water/190127__tran5ient__splash10.mp3" randomBalance="true">
+			<attribution author="tran5ient" url="http://www.freesound.org/people/tran5ient/sounds/190127/" license="CC0 1.0" description="splash10.wav" />
+		</soundFile>
+		<soundFile fileName="water/190128__tran5ient__splash1.mp3" randomBalance="true">
+			<attribution author="tran5ient" url="http://www.freesound.org/people/tran5ient/sounds/190128/" license="CC0 1.0" description="splash1.wav" />
+		</soundFile>
+	</sound>
+	
 	<sound logPattern="You make a campfire\.">
 		<soundFile fileName="fire/234542__electroviolence__bonfire.mp3" randomBalance="true">
 			<attribution url="http://www.freesound.org/people/Electroviolence/sounds/234542/" license="CC0 1.0" author="Electroviolence" description="Bonfire" />
@@ -228,6 +249,24 @@
 		<soundFile fileName="water/190128__tran5ient__splash1.mp3" randomBalance="true">
 			<attribution author="tran5ient" url="http://www.freesound.org/people/tran5ient/sounds/190128/" license="CC0 1.0" description="splash1.wav" />
 		</soundFile>
+	</sound>
+	
+	<sound logPattern="You spit!">
+		<soundFile fileName="./spit/spit_01.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Lex777/sounds/235773/" license="CC BY 3.0" author="Lex777" description="Spitting_Heavily_01.wav" />
+		</soundFile>
+		<soundFile fileName="./spit/spit_02.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/Lex777/sounds/235773/" license="CC BY 3.0" author="Lex777" description="Spitting_Heavily_01.wav" />
+		</soundFile>
+	</sound>
+	
+	<sound logPattern="You lick (.+)\.">
+		<soundFile fileName="./lick/176798__yummie__comic-lick.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/yummie/sounds/176798/" license="CC0 1.0" author="yummie" description="comic lick" />
+		</soundFile>
+	</sound>
+	
+	<sound logPattern="You butcher (.+)\.">
 	</sound>
 	
 </sounds>

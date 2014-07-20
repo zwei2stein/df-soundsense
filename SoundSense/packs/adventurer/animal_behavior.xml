@@ -56,6 +56,12 @@
 		<soundFile fileName="../animals/guineafowl/male_2.mp3" randomBalance="true" />
 	</sound>
 	
+	<sound logPattern="The Stray ((Boar)|(Sow)) roots around in the (.+)\.">
+		<soundFile fileName="../animals/pig/44271__erdie__pig02.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/pig/44273__erdie__pig04.mp3" randomBalance="true" />
+		<soundFile fileName="../animals/pig/44275__erdie__pig06.mp3" randomBalance="true" />
+	</sound>
+	
 	<sound logPattern="(.+) spits!">
 		<soundFile fileName="./spit/spit_01.mp3" randomBalance="true">
 			<attribution url="http://www.freesound.org/people/Lex777/sounds/235773/" license="CC BY 3.0" author="Lex777" description="Spitting_Heavily_01.wav" />
