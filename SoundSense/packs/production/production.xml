@@ -8,7 +8,14 @@
 		<soundFile fileName="85794__sandyrb__NATIVE_FLUTE_FIGURE_05.mp3" />
 	</sound>
 	
-	<sound logPattern="(.+) has created a masterpiece!" concurency="2" timeout="500" propability="25" playbackThreshhold="4" ansiFormat="&#27;[34m">
+		<sound logPattern="(.+) has created a masterpiece!" concurency="2" timeout="500" propability="25" playbackThreshhold="4" ansiFormat="&#27;[34m">
+		<!-- http://www.freesound.org/samplesViewSingle.php?id=707 -->
+		<soundFile fileName="707__vitriolix__subbasesoft.mp3" volumeAdjustment="-20" />
+		<soundFile fileName="707__vitriolix__subbasesoft.mp3" volumeAdjustment="-10" />
+		<soundFile fileName="707__vitriolix__subbasesoft.mp3" />
+	</sound>
+	
+	<sound logPattern="(.+) has cooked a masterpiece!" concurency="2" timeout="500" propability="25" playbackThreshhold="4" ansiFormat="&#27;[34m">
 		<!-- http://www.freesound.org/samplesViewSingle.php?id=707 -->
 		<soundFile fileName="707__vitriolix__subbasesoft.mp3" volumeAdjustment="-20" />
 		<soundFile fileName="707__vitriolix__subbasesoft.mp3" volumeAdjustment="-10" />

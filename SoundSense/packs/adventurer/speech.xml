@@ -633,5 +633,53 @@
 		</soundFile>
 	</sound>
 
+	<sound logPattern="(.+): Looks like rain outside\." randomBalance="true" concurency="5">
+
+		<soundFile fileName="../emotion/voices/Informative1_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative1_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative1_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative1_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative1_5.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative1_6.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative1_7.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative1_8.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative2_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative2_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative2_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative2_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative2_5.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative2_6.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Informative2_7.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative" />
+		</soundFile>
+	</sound>
 
 </sounds>

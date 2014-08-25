@@ -13,5 +13,9 @@
 			<attribution url="http://www.freesound.org/people/Zabuhailo/sounds/143125/" license="CC0 1.0" author="Zabuhailo" description="ratSqueak.wav" />
 		</soundFile>
 	</sound>
-	
+
+
+	<sound logPattern="[(]tame hamster[)] has gnawed its way out of confinement!" ansiFormat="&#27;[34;1m">
+	</sound>
+
 </sounds>
