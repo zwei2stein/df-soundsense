@@ -454,8 +454,87 @@
 		</soundFile>
 	</sound>
 
+	<sound logPattern="(.+): A (.+) ago, (.+) was kidnapped from (.+) by (.+)\." randomBalance="true" concurency="5">
 
+		<soundFile fileName="../emotion/voices/InformativeAngry1_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_5.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_5TRUE.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_5.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_6.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
 
+	</sound>
+
+	<sound logPattern="(.+): A bandit gang led by (.+) has been harassing people over in (.+)\." randomBalance="true" concurency="5">
+
+		<soundFile fileName="../emotion/voices/InformativeAngry1_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_5.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry1_5TRUE.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_5.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/InformativeAngry2_6.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
+		</soundFile>
+
+	</sound>
 
 	<sound logPattern="(.+): Well, let's see\.\.\.  we've got abductions\." randomBalance="true" concurency="5">
 
@@ -495,7 +574,6 @@
 		<soundFile fileName="../emotion/voices/InformativeAngry2_6.mp3">
 			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Informative, Angry" />
 		</soundFile>
-
 
 	</sound>
 

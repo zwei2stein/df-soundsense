@@ -441,6 +441,62 @@
 		</soundFile>
 
 	</sound>
+	
+	<sound logPattern="(.+): Gruesome wounds!  Ahhhhhhh!  No!" randomBalance="true" concurency="5">
+
+		<soundFile fileName="../emotion/voices/Fear1_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear1_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear1_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear1_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear2_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear2_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear2_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear2_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+	</sound>
+	
+	<sound logPattern="(.+): Death is all around us\.  The horror\.\.\." randomBalance="true" concurency="5">
+
+		<soundFile fileName="../emotion/voices/Fear1_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear1_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear1_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear1_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear2_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear2_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear2_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Fear2_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Disagreement, Anger" />
+		</soundFile>
+	</sound>
 
 	<sound logPattern="(.+): Death\.\.\.  The horror\.\.\." randomBalance="true" concurency="5">
 
