@@ -42,12 +42,17 @@
             <file name="190128__tran5ient__splash1.mp3" sha1="5c28bfa38fd50201c2a4492fc1dd2bc51997001f" size="34477"/>
          </directory>
          <file name="actions.xml" sha1="a030b6beabb36136a670efa707b3dd20a0839af0" size="16473"/>
-         <file name="adventurer.xml" sha1="7c927fcdf8a0807aa0fee8ccc73915761e0d01fa" size="6119"/>
+         <file name="adventurer.xml" sha1="42e8cba8edff813deb5bb5f570016deb535a8e7f" size="6566"/>
          <file name="ambush.xml" sha1="92105ad193339617f8ad5e47c60ea758daddf67c" size="4579"/>
          <file name="animal_behavior.xml" sha1="272af5c6f947e6c3b4c341afa17fc5c8c211ee38" size="4624"/>
          <file name="combat_actions.xml" sha1="40fec90c16cf63b931d3f4ddcb30527a44525df4" size="3138"/>
          <file name="enviroment.xml" sha1="f79f005954f2689fe841e137c77aea6e98c217c6" size="543"/>
-         <file name="speech.xml" sha1="6d699e57a032d992dfe5e742a181014a441fc3ac" size="6195"/>
+         <file name="speech.xml" sha1="f142c08d8257e79c6e4c4af0735962c4a8a3dd18" size="49165"/>
+         <file name="speech_anger.xml" sha1="d921780579c774b02f8940f27140de7329e8e58e" size="9023"/>
+         <file name="speech_answer.xml" sha1="e22d9f8dca8df7902f29905de91ab54db92726e6" size="66437"/>
+         <file name="speech_concern.xml" sha1="ab56470080f3aeeeb8a84259de0cce19ed1c7524" size="13420"/>
+         <file name="speech_greeting.xml" sha1="8a4f3c3c3349458a6b5126cd4a971c0083eb79f0" size="31259"/>
+         <file name="speech_question.xml" sha1="0ba63a2b374616ecebecccd8734add839e65767c" size="18034"/>
       </directory>
       <directory name="animals">
          <directory name="beekeeping">
@@ -157,7 +162,7 @@
          <file name="sheep.xml" sha1="7203de975f32682634085406968c3df186f1ae1d" size="785"/>
          <file name="training.xml" sha1="b3b070c37d52aae6239d5532ff9491099e01a3bb" size="1275"/>
          <file name="turkey.xml" sha1="a3b437acb7f39feb41c236f46e017aa1a40809be" size="2654"/>
-         <file name="vermin.xml" sha1="bc4aef68507f7e363c7db4e176b316548e846781" size="1021"/>
+         <file name="vermin.xml" sha1="a76bb3c40394d4e56ad03101b1e430818f9bf061" size="1141"/>
          <file name="yak.xml" sha1="04df6f7ce4e860b52c5ecc40ad4e4c277c98955f" size="1670"/>
       </directory>
       <directory name="battle">
@@ -449,7 +454,7 @@
             <file name="swingfist3.mp3" sha1="c2657e0369b214f36a7ead2157fe7ffc5a07f004" size="2965"/>
             <file name="swingfist4.mp3" sha1="1da84be434a6b9e5111e44677b4712aa3555e75a" size="2318"/>
          </directory>
-         <file name="battle.xml" sha1="d54890353bd726005ae4eebcd2a4be4807aa4fe4" size="32357"/>
+         <file name="battle.xml" sha1="25852a6c3b8eae8638859a78907832f9c661663e" size="32741"/>
          <file name="breath.xml" sha1="1b3938cd6c875bd2ba84365a47ca7c8fcd776868" size="6801"/>
          <file name="gore.xml" sha1="8bee8322ea4d8d12e636d8c28ec022b145968371" size="11735"/>
          <file name="hitevents.xml" sha1="c7f25230c889c1ff4ecdee68df277c1a16cc8b6f" size="16144"/>
@@ -499,10 +504,154 @@
             <file name="171756__nenadsimic__picked-coin-echo-2.mp3" sha1="9e9c36b5ce6782c56d7286cd39f03f07a0f7731f" size="28667"/>
          </directory>
          <file name="63643__superdaveosbourne__bong.mp3" sha1="47dcc4c86fd0cc29487acdc3468b0047a5e36695" size="90092"/>
-         <file name="dfhack.xml" sha1="5e18f6fd49d7075a0b3b84fa3b5dd2b9f247cdf6" size="3973"/>
+         <file name="dfhack.xml" sha1="d77b673d8dec8f8c7c20e9ef3ed66a983329d5bb" size="4955"/>
       </directory>
       <directory name="emotion">
-         <file name="emotion.xml" sha1="63bd2cb710fb9837fe0390142569212165003754" size="1104"/>
+         <directory name="voices">
+            <file name="Agree1_1.mp3" sha1="72f64155dd43fd9401d7e2b4d845fb64af4c5f8e" size="37798"/>
+            <file name="Agree1_2.mp3" sha1="ed29ef126b9767db68ce3439e591123d0ded7e58" size="32790"/>
+            <file name="Agree1_3.mp3" sha1="aa95564b787081d3af3568f81d43d3c1f6f3bcf0" size="37798"/>
+            <file name="Agree1_4.mp3" sha1="8c5273cac518a01981f4edbb8026bbbcd2e038e9" size="30286"/>
+            <file name="Agree1_5.mp3" sha1="56281937a4b269d3c36c5a0201b4725c88e42a23" size="40928"/>
+            <file name="Agree1_6.mp3" sha1="b591e3da7b1594b988361962aa42489d6f244814" size="34668"/>
+            <file name="Agree1_7.mp3" sha1="a2d6105d1018bd412e66f5aa684e6ca6c86927a3" size="30286"/>
+            <file name="Agree2_1.mp3" sha1="9f1bc5d0a470e447fc06b4af168813209c38a7c8" size="62061"/>
+            <file name="Agree2_2.mp3" sha1="03290adbd73e38a609adc4573a32f7797eb82bcc" size="45936"/>
+            <file name="Agree2_3.mp3" sha1="7efd3ea3c3a490b98c3202d13b3ad21dd67179c2" size="44058"/>
+            <file name="Agree2_4.mp3" sha1="361dcb831ad5d92f4a29756662e0b1351a397ec1" size="36546"/>
+            <file name="Agree2_5.mp3" sha1="694e02e144d391afe01efec53a921940668e0ac4" size="40302"/>
+            <file name="Agree2_6.mp3" sha1="0dd304f62b1dfa4c124c6e0585d5e80c27f1290a" size="42180"/>
+            <file name="Anger1_1.mp3" sha1="112b15b9f1da2d9c5efd385c84019ef54f354320" size="32164"/>
+            <file name="Anger1_2.mp3" sha1="b422d5fbc22a2ab0abe7218a123962d43722f38e" size="28408"/>
+            <file name="Anger1_3.mp3" sha1="14de84fb72353f7b452b5863c3b22af61067e1e6" size="25904"/>
+            <file name="Anger1_4.mp3" sha1="11bea6db14bb6f69bb734fa50dd65f8191a6cdfc" size="31538"/>
+            <file name="Anger2_1.mp3" sha1="2caf096a7892c0b954eb470f90e9dfc813438dc4" size="22774"/>
+            <file name="Anger2_2.mp3" sha1="b254a5a146c3a4ea681c4f086f20d9c358849c14" size="21490"/>
+            <file name="Anger2_3.mp3" sha1="ad3c678fd04839f384447f84dd2756a570bfc247" size="23400"/>
+            <file name="Anger2_4.mp3" sha1="9261b851656a8246c603606dfade0ef281e1c8c6" size="20896"/>
+            <file name="Anger2_5.mp3" sha1="8f7ac83467a61163213d2f8c272eb8b4775d839f" size="31538"/>
+            <file name="Bold1_1.mp3" sha1="8067c8992c046e152ae04f87a8d4462fbf62e12e" size="19644"/>
+            <file name="Bold1_2.mp3" sha1="1e89fb1a78f41c6f3381785ed82b0061cee995de" size="46532"/>
+            <file name="Bold1_3.mp3" sha1="993fc8df97784f0912f13aaefe7530593244e7ee" size="29034"/>
+            <file name="Bold1_4.mp3" sha1="a690f4c08460bb292adcaed23fb045dbab04c397" size="34668"/>
+            <file name="Bold1_5.mp3" sha1="cc75fcf1a7013258b2af2b48adb2904a85519a77" size="59678"/>
+            <file name="Bold2_1.mp3" sha1="d18e31d2ad5829745d72de84e787dcb367d891a5" size="70757"/>
+            <file name="Bold2_2.mp3" sha1="91c86e0f83dec685dfd3f1081167b06b8b1248b1" size="54044"/>
+            <file name="Bold2_3.mp3" sha1="babf1dc3dac0c0632e18fd85678bcc43dd890e8f" size="42135"/>
+            <file name="Bold2_4.mp3" sha1="7f74b97720cd00b043882faa7946db03e6b42f73" size="45159"/>
+            <file name="Bold2_6.mp3" sha1="4c5fe8e0b47c16075000b4f3d0533517c7356288" size="52760"/>
+            <file name="Bold2_7.mp3" sha1="89e1e364e41981f830109afee82f6597c21eda75" size="29034"/>
+            <file name="Bold2_8.mp3" sha1="7388db0feb644d783cfe5239ecc16da185dcb8ac" size="19018"/>
+            <file name="Bold2_9.mp3" sha1="d05075506e7df96c488707e749ed410d44ddb3d4" size="69724"/>
+            <file name="Bye1_1.mp3" sha1="e6a6d1bb311767d956b8af8c9f290a710920263d" size="32790"/>
+            <file name="Bye1_2.mp3" sha1="b72ce681faae05ade6a97d7683725e06d4cb9a4b" size="21522"/>
+            <file name="Bye1_3.mp3" sha1="47afa51fea06cc2aaa0912a4afc2e3f9ee3fba88" size="58305"/>
+            <file name="Bye1_4.mp3" sha1="ee3631afbbd771c9739ced60e2f6985155552ab7" size="43518"/>
+            <file name="Bye1_5.mp3" sha1="47f9331d669eea430c3fdc0859beae32fc88e8c8" size="31538"/>
+            <file name="Bye1_6.mp3" sha1="19a0c081bffebe2ba89bbcd5bc3e63d30c8943de" size="18392"/>
+            <file name="Bye1_7.mp3" sha1="cd7aae46691bad9dac34493105eeb4fb6bc154a3" size="50944"/>
+            <file name="Bye2_1.mp3" sha1="4c08d2b112775edbe294b23abcf795f402e1da8e" size="31538"/>
+            <file name="Bye2_10.mp3" sha1="be8560c697ea79679e390201e497b42d18605a51" size="16514"/>
+            <file name="Bye2_11.mp3" sha1="6937d4da954a23681f5a9239592272e11176e8f4" size="16514"/>
+            <file name="Bye2_12.mp3" sha1="f7aac1d88bef180de47683ee14fb11d7780ccd14" size="27156"/>
+            <file name="Bye2_2.mp3" sha1="ab70ce1117deb0b36a57acaa5e32e8045c3d3907" size="18392"/>
+            <file name="Bye2_3.mp3" sha1="209c6f9f05d0f69d8840225e05485476737b2dd5" size="19644"/>
+            <file name="Bye2_4.mp3" sha1="890a79ad35bebf22c097be6d0a0d64f100960602" size="28408"/>
+            <file name="Bye2_5.mp3" sha1="46b78416abf3f3ef1bc4ef31097f0d5b744248ca" size="25904"/>
+            <file name="Bye2_6.mp3" sha1="eed34db910d8f67aeadba9a8b721b8522303f843" size="22148"/>
+            <file name="Bye2_7.mp3" sha1="b97747b466070780c23bde6d8259d1a9dc96a8fb" size="34668"/>
+            <file name="Bye2_8.mp3" sha1="0e467b85bf6acc03501945b6c4cf426cf9d98a8d" size="29660"/>
+            <file name="Bye2_9.mp3" sha1="c004ca28372d62459411090cc0da9fb805c259bf" size="37172"/>
+            <file name="Concern1_1.mp3" sha1="2457b32d8a92d0649558b859737f1b9ee37a1dab" size="22148"/>
+            <file name="Concern1_2.mp3" sha1="cabb0be71ba0fe9b610814151534bd5769e5e184" size="27156"/>
+            <file name="Concern1_3.mp3" sha1="5c49e8cb45e92421f3da9ec03295da39c1436bc9" size="17140"/>
+            <file name="Concern1_4.mp3" sha1="77f18eb52bb12105e59e18decde82e90c7916ce5" size="44684"/>
+            <file name="Concern2_1.mp3" sha1="65d85e4bf6a1276e0c93ecc31b8cb431c5f1325c" size="19018"/>
+            <file name="Concern2_2.mp3" sha1="170c6ad01a1eef499fa353ce7ed7c351c750fe12" size="30912"/>
+            <file name="Concern2_3.mp3" sha1="4adb6b1e864723005662364b3f79a9d0fc557b90" size="25904"/>
+            <file name="Concern2_4.mp3" sha1="aef76ee5433fd1ff1c658f3fdbe6c100c9738b59" size="20270"/>
+            <file name="Concern2_5.mp3" sha1="56d64f8473ce210b5dad348e2167faf78005142b" size="37798"/>
+            <file name="Concern2_6.mp3" sha1="ec22dcbd861aff6632b01a71897aef7f9335db1b" size="28408"/>
+            <file name="Disagree1_1.mp3" sha1="f464d3f716609a3888cf88dccd98c804a4c0de7a" size="59082"/>
+            <file name="Disagree1_2.mp3" sha1="b9d250d90f2a6cfef0966888836d3196ef987ae5" size="22774"/>
+            <file name="Disagree1_3.mp3" sha1="92b7d84536fa0ef16c816d5d3650cac6bf8650ab" size="61586"/>
+            <file name="Disagree1_4.mp3" sha1="33ad9ac767a1a0115341e1093d89a193b1d700bb" size="40302"/>
+            <file name="Disagree2_1.mp3" sha1="4a924d62eb154cf60b2ff125ad00d3db387a259f" size="39050"/>
+            <file name="Disagree2_2.mp3" sha1="fd4466066b765b5b60d241aa67f621d420b897fc" size="35294"/>
+            <file name="Disagree2_3.mp3" sha1="7e73d89d991c89648a18ed337857354f082ea66b" size="35294"/>
+            <file name="Disagree2_4.mp3" sha1="2d338d99168206179a27a80d77f7a6b10c22cb08" size="44684"/>
+            <file name="Disagree2_5.mp3" sha1="1d3cf360fbeb50f92a6c38bc22634553f3d6bca9" size="25904"/>
+            <file name="Disagree2_6.mp3" sha1="7873259e254e20f74b02115ea2802f19dd3fa8fd" size="32790"/>
+            <file name="DisagreeAngry1_1.mp3" sha1="83ebf1a92ab4a61e91c8c59edfeba3d5251df427" size="35294"/>
+            <file name="DisagreeAngry1_2.mp3" sha1="79ccf8e94633bf82bd718f9585e683076d169269" size="55326"/>
+            <file name="DisagreeAngry1_3.mp3" sha1="a4fb1f7a95c8bd7d18c28f6ff21a5f704e21da88" size="35920"/>
+            <file name="DisagreeAngry1_4.mp3" sha1="43038ef4ecf68236fd57dcab94c082df4a5095c5" size="34042"/>
+            <file name="DisagreeAngry1_5.mp3" sha1="a1e8ef1e277884556bcdd2fa32cbcaf393d4324b" size="41554"/>
+            <file name="DisagreeAngry1_6.mp3" sha1="0ec7f846efc79ba64cec5ae46c948966a088ba04" size="37798"/>
+            <file name="DisagreeAngry2_1.mp3" sha1="320870e0041423edb85a8077edb389228dccb6bc" size="25278"/>
+            <file name="DisagreeAngry2_2.mp3" sha1="59fb04b390d411550f202e9eefcf73bef8278013" size="50318"/>
+            <file name="DisagreeAngry2_3.mp3" sha1="ea41d526d37a490623b96d3758a682fc8e24831d" size="43432"/>
+            <file name="DisagreeAngry2_4.mp3" sha1="c2b0eb5af6815f5295e50475f0edb9d8e4165e16" size="40928"/>
+            <file name="DisagreeAngry2_5.mp3" sha1="4475bc3c837443b7fa2b2462517aff1128d3ca91" size="44058"/>
+            <file name="DisagreeAngry2_6.mp3" sha1="20ac3aef34698cf82e83ed1297f80bbeeae16984" size="43432"/>
+            <file name="Fear1_1.mp3" sha1="8e28f7eb0451a3532eda670bd2cc355efc964bdf" size="22742"/>
+            <file name="Fear1_2.mp3" sha1="3a582fee9452be45f2b78187a8422c3fbde9ab0f" size="23400"/>
+            <file name="Fear1_3.mp3" sha1="a13b20420f060574587d773b8c9cc874ae4fcc99" size="25872"/>
+            <file name="Fear1_4.mp3" sha1="0e995542d0c9938d11d3105b35d966ae678f8ce2" size="32164"/>
+            <file name="Fear2_1.mp3" sha1="0d1f28b649a17b357b77d935ea364504ff23f520" size="35920"/>
+            <file name="Fear2_2.mp3" sha1="9ed1ca531e4fc360e8c61e3b8717b1f64294061e" size="55326"/>
+            <file name="Fear2_3.mp3" sha1="a3faf2c25b15faf6070159b7ad5a845505c71d93" size="30912"/>
+            <file name="Fear2_4.mp3" sha1="b9aff68782f504936002bfcfc2ae9da1d8814d24" size="40928"/>
+            <file name="Hello1_1.mp3" sha1="a9168ffdf53943afb80df487824ee0c0392840a5" size="24026"/>
+            <file name="Hello1_2.mp3" sha1="b29083190105235e0cac0b2eb7091ed6f13c912e" size="24026"/>
+            <file name="Hello1_3.mp3" sha1="a6e8d80afa0ebedd35531ebee8f20acdc3d92bb2" size="24652"/>
+            <file name="Hello1_4.mp3" sha1="ead9ad5c5b776c091d92f39d9b3da9dad91bf211" size="25278"/>
+            <file name="Hello1_5.mp3" sha1="648b3c02eb0a4f6597fbcd0d64e8a80ccb7fad65" size="21522"/>
+            <file name="Hello1_6.mp3" sha1="dfde927fdd0eb3f3523990f0554a260c734d0ee9" size="22148"/>
+            <file name="Hello2_1.mp3" sha1="e7f5ba4f0323ae7a57ccb670fc7cc1d4b67627eb" size="25904"/>
+            <file name="Hello2_2.mp3" sha1="906663b212814efb40c8647616d066c466bb5d38" size="25278"/>
+            <file name="Hello2_3.mp3" sha1="366ecbf1f86c0f0c0a2982f7f79341195ac688cd" size="33416"/>
+            <file name="Hello2_4.mp3" sha1="6f4107ef32f84c879b00e2e73506a148aaf29a5a" size="30912"/>
+            <file name="Hello2_5.mp3" sha1="34aeff3dbaa9544cd8392136be7fae8ecd571d62" size="22774"/>
+            <file name="Informative1_1.mp3" sha1="a6bb8a48acbd99e1a1d197351267a5b4decd5256" size="40928"/>
+            <file name="Informative1_2.mp3" sha1="9e7026850dcd7dd5ca757a3c04a0b6be3571dba3" size="25248"/>
+            <file name="Informative1_3.mp3" sha1="3eda8cc05cc556d7d53e00159e8fe5490d740a88" size="34668"/>
+            <file name="Informative1_4.mp3" sha1="2798b10bf2dc07ee4a01f19281d9d5f3b4e74a17" size="25278"/>
+            <file name="Informative1_5.mp3" sha1="c01331952b20502eb676d46539727827b9f5e466" size="22774"/>
+            <file name="Informative1_6.mp3" sha1="fe127a670364a90e112858ab07b09aafc45f5902" size="21522"/>
+            <file name="Informative1_7.mp3" sha1="d1c00e1b63bcdc9b9c60594cf397d2ed50554535" size="25278"/>
+            <file name="Informative1_8.mp3" sha1="3a97be635635f0afc855a664e235f9df94894f7b" size="39676"/>
+            <file name="Informative2_1.mp3" sha1="b0f0b27990d66caaeda5528961188961db85f205" size="40302"/>
+            <file name="Informative2_2.mp3" sha1="3f8f6a7d8582f9c0b45beb52116629b43eeebcdd" size="40928"/>
+            <file name="Informative2_3.mp3" sha1="2707be41ff94931efa8ebeb6639e69d73006f3ab" size="49692"/>
+            <file name="Informative2_4.mp3" sha1="45945fff684a8fce97a07a9541dc90f6ea26d5d1" size="32164"/>
+            <file name="Informative2_5.mp3" sha1="8411a73d2f001360fc0a53c437ba15d15989a55c" size="37798"/>
+            <file name="Informative2_6.mp3" sha1="a168bccf8b6e6493c69c611870c72e8e343a665b" size="50318"/>
+            <file name="Informative2_7.mp3" sha1="be443e293d5c9f85cc537ade098e39447e6114e4" size="44684"/>
+            <file name="InformativeAngry1_1.mp3" sha1="15653d8ed4e63b690c19a7c6a8403d75b0e7cb89" size="35294"/>
+            <file name="InformativeAngry1_2.mp3" sha1="db668aec0328b0243948f9ba5c043a21aa777e17" size="31538"/>
+            <file name="InformativeAngry1_3.mp3" sha1="38dd7329c0bc2389913c05da25e398bff7b00dd6" size="29034"/>
+            <file name="InformativeAngry1_4.mp3" sha1="e817254111bddd7dcacb74f399eba610f66f641a" size="49066"/>
+            <file name="InformativeAngry1_5.mp3" sha1="85aea9f1f5eee0cf0b0743b4af7f406ab3e74086" size="41554"/>
+            <file name="InformativeAngry1_5TRUE.mp3" sha1="90af1c9b891ea97439fb8b04a19a13cf75fb361d" size="40302"/>
+            <file name="InformativeAngry2_1.mp3" sha1="5acb0d5f658140cf656311725ef94390f7da4356" size="29034"/>
+            <file name="InformativeAngry2_2.mp3" sha1="b62f09d760fbafabf9b4dc9cc39806f176dbd7e3" size="37172"/>
+            <file name="InformativeAngry2_3.mp3" sha1="24963f49719dfc64958f15afe8da9e754308f0e5" size="38424"/>
+            <file name="InformativeAngry2_4.mp3" sha1="6a06b87c7c0939c04f9f8b9a918598e7cd40d69b" size="32164"/>
+            <file name="InformativeAngry2_5.mp3" sha1="6e5f8169a7225c05ee0f5db4d7b581ed8daa3252" size="32790"/>
+            <file name="InformativeAngry2_6.mp3" sha1="0c08f5f8ffaa2462490563f0ccc215f59ef52266" size="39050"/>
+            <file name="Question1_1.mp3" sha1="38bbc627604e1b6d325dec65148fc9b22ea52a31" size="32790"/>
+            <file name="Question1_2.mp3" sha1="d8be2f37954316168d6f94a443705341ad27e788" size="37798"/>
+            <file name="Question1_3.mp3" sha1="0167228c31a1d2c22040e468ebaa9201bb80f4f6" size="24652"/>
+            <file name="Question1_4.mp3" sha1="dd9db9f427f7d9cf1f2d4109c3559a066d7bc781" size="25904"/>
+            <file name="Question1_5.mp3" sha1="a56173688415e4dd1fc9886d490e1918cc6b0a86" size="34668"/>
+            <file name="Question2_1.mp3" sha1="2caa46f89649ea1493bc71721c674b302545c7ee" size="25904"/>
+            <file name="Question2_2.mp3" sha1="a50ae05fe3bafc44a87783364d87c318c5d24242" size="23400"/>
+            <file name="Question2_3.mp3" sha1="bfefc29bb11d33fd4ad41b7f9d056b5ef45cc146" size="28408"/>
+            <file name="Question2_4.mp3" sha1="b524c7c06c269bc1e29f03002d76a79a1c0ec6a7" size="48440"/>
+            <file name="Question2_5.mp3" sha1="a5760dde47c0231d538ed0068af46652f5008a42" size="20896"/>
+         </directory>
+         <file name="emotion.xml" sha1="530d15b8ea43a50e9a4ec5c14fef5fac159375bd" size="54834"/>
       </directory>
       <directory name="fishing">
          <directory name="NoFish">
@@ -782,7 +931,7 @@
          <file name="cancelations.xml" sha1="5a920076f8b8552f69f036b07735873e212b7450" size="21846"/>
          <file name="Drop Metal Thing-SoundBible.com-401640954.mp3" sha1="5481da6ea954a8d859c65aae1c2a7ddef72dde40" size="11422"/>
          <file name="foodAndDrinkCancelations.xml" sha1="0fab342f3311f88d8c3d79846d0adebc49da9219" size="1856"/>
-         <file name="production.xml" sha1="92463821ef1dc7554606dd54aceec377c04c37dd" size="3461"/>
+         <file name="production.xml" sha1="9c168ec93e60116991ae5e4bf1c65f9a8b3c8916" size="3914"/>
       </directory>
       <directory name="seasons">
          <directory name="alexandrzhelanov">
@@ -901,8 +1050,13 @@
          </directory>
          <directory name="simonswerwer">
             <file name="attribution.txt" sha1="73350f65bd7caaba39a9bc11d2c3cbeaa94a58f5" size="199"/>
-            <file name="encounter.mp3" sha1="ba4bf182ff1a2fa5b85fb19cf76bc08eeb6e2256" size="3619772"/>
+            <file name="Simon Swerwer - Cuggan's Cove.mp3" sha1="606c6b6200f637cbf678a0afadeafc37eb1a541f" size="4672386"/>
+            <file name="Simon Swerwer - Dagger Dance.mp3" sha1="43c9bfbe1cd56be8e01bda5660f83e435e8cea77" size="3941844"/>
             <file name="Simon Swerwer - Decapitated Camels.mp3" sha1="fcdc833d3f320cb82d388827a5139ecc7d447c06" size="9762773"/>
+            <file name="Simon Swerwer - Dolomite Lullaby.mp3" sha1="8f68c938d11d4bae0b50449bbe9f8ad1969985dc" size="4207268"/>
+            <file name="Simon Swerwer - Emergence.mp3" sha1="1267168edfd158d48f4fc1fe068a8050e08fcbdb" size="5133122"/>
+            <file name="Simon Swerwer - Encounter.mp3" sha1="1455dbcacc73c278e753d88595ed0ea182aca3a9" size="5556320"/>
+            <file name="Simon Swerwer - The King Is Dead.mp3" sha1="cde77344c3cd801bac0bed8b444caaa2c005084e" size="3980656"/>
             <file name="Simon Swerwer-Bonecrafter.mp3" sha1="37f00a80d4b0066674a4a4366066f6749081318f" size="4297038"/>
             <file name="Simon Swerwer-Galena.mp3" sha1="cbe23cb08ec4c9506bf6c35a65a5d543bd0c2be4" size="4710734"/>
             <file name="Simon Swerwer-Inith and Od Travel North.mp3" sha1="428edddf90b8a701f10bd316072e2b003007e556" size="4917582"/>
@@ -945,7 +1099,7 @@
          <file name="attribution.txt" sha1="75b343da3881e969f1d4f99cc9c5d42d3d4e9f96" size="1083"/>
          <file name="Musopen.Com  Arvo Part-Magnificat.mp3" sha1="990665aedd079a35740168d7d7a5452fce1a03e8" size="7848547"/>
          <file name="Peer Gynt - grieg - in the hall of the mountain king.mp3" sha1="1305815e27c3d75803e7baa5cb67840cae793bbd" size="2752718"/>
-         <file name="seasons.xml" sha1="659a58cb1a0ac4bdd72fa6ddcafff20471d01c47" size="15093"/>
+         <file name="seasons.xml" sha1="91ea2b5cd262b091aadb1eadf8681b6349705592" size="15777"/>
          <file name="[tindeck.com] - rdriftwood - Hey Di Lee Hi.mp3" sha1="49c815f78bf100696624b02813f0005579cd93ba" size="8281108"/>
       </directory>
       <directory name="social">
@@ -1014,7 +1168,7 @@
             <file name="paper_mix_3.mp3" sha1="139139572622e718d5c1a8546e58f97b6aa5447f" size="87140"/>
          </directory>
          <file name="missing.xml" sha1="543a38df801cbaab9af1451b3a85cea5cad3322b" size="657"/>
-         <file name="social.xml" sha1="d0eedbbf080c1f940b7554cc0e00e1bd4659c73b" size="9430"/>
+         <file name="social.xml" sha1="bbb1064b46e983b9132fb9bca754304c8f321640" size="9406"/>
       </directory>
       <directory name="system">
          <directory name="embark">
@@ -1032,7 +1186,7 @@
             <file name="embark_12.mp3" sha1="9dea17b8559e78e749769ed11980fafc7afeed01" size="75882"/>
          </directory>
          <file name="Radakan - Moldan Chase over (success).mp3" sha1="cb314402bf45bb787aa572967c09ab26e28d9f09" size="69797"/>
-         <file name="system.xml" sha1="6a7021c31720aded3bf378fce8cc4f4c8f80c13d" size="11261"/>
+         <file name="system.xml" sha1="b24752161e5b4f3be2059dce588bd40b6bec84a0" size="12602"/>
          <file name="worldgen.mp3" sha1="cb67d30029d2a3233be228f278ac579d7ea6a62a" size="5410123"/>
       </directory>
       <directory name="trading">
@@ -1081,6 +1235,6 @@
          </directory>
          <file name="weather.xml" sha1="aeff0124ebbbed224e32d3bdf0a450244bda0f88" size="2290"/>
       </directory>
-      <file name="autoUpdater.xml" sha1="132e7d6a868e30d1cf87eb0888b5b877edab965f" size="95475"/>
+      <file name="autoUpdater.xml" sha1="76863cc1616ac061b9ed3f9e02e630d13f16853d" size="114169"/>
    </directory>
 </autoUpdater>

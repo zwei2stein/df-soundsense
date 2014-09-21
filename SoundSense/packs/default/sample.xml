@@ -20,7 +20,37 @@
 			<attribution url="http://www.freesound.org/people/sandyrb/sounds/85791/" license="CC BY 3.0" author="sandyrb" description="NATIVE FLUTE FIGURE 02.wav" />
 		</soundFile>
 	</sound>
-
+	
+	<!-- play list support -->
+	
+	<sound logPattern="PlayListPLS">
+		<soundFile playlist="true" fileName="playlist.pls" balanceAdjustment="1">
+			<attribution url="http://www.freesound.org/people/sandyrb/sounds/85791/" license="CC BY 3.0" author="sandyrb" description="NATIVE FLUTE FIGURE 02.wav" />
+			<attribution url="http://soundbible.com/1445-Drop-Metal-Thing.html" license="CC BY 3.0" author="Caroline Ford" description="Drop Metal Thing Sound" />
+		</soundFile>
+	</sound>
+	
+	<sound logPattern="PlayListM3U">
+		<soundFile playlist="true" fileName="playlist.m3u" balanceAdjustment="1">
+			<attribution url="http://www.freesound.org/people/sandyrb/sounds/85791/" license="CC BY 3.0" author="sandyrb" description="NATIVE FLUTE FIGURE 02.wav" />
+			<attribution url="http://soundbible.com/1445-Drop-Metal-Thing.html" license="CC BY 3.0" author="Caroline Ford" description="Drop Metal Thing Sound" />
+		</soundFile>
+	</sound>
+	
+	<sound logPattern="PlayListMixed">
+		<soundFile playlist="true" fileName="playlist.m3u" weight="10">
+			<attribution url="http://www.freesound.org/people/sandyrb/sounds/85791/" license="CC BY 3.0" author="sandyrb" description="NATIVE FLUTE FIGURE 02.wav" />
+			<attribution url="http://soundbible.com/1445-Drop-Metal-Thing.html" license="CC BY 3.0" author="Caroline Ford" description="Drop Metal Thing Sound" />
+		</soundFile>
+		<soundFile playlist="true" fileName="playlist.pls" weight="5">
+			<attribution url="http://www.freesound.org/people/sandyrb/sounds/85791/" license="CC BY 3.0" author="sandyrb" description="NATIVE FLUTE FIGURE 02.wav" />
+			<attribution url="http://soundbible.com/1445-Drop-Metal-Thing.html" license="CC BY 3.0" author="Caroline Ford" description="Drop Metal Thing Sound" />
+		</soundFile>
+		<soundFile fileName="Drop Metal Thing-SoundBible.com-401640954.ogg" weight="1">
+			<attribution url="http://soundbible.com/1445-Drop-Metal-Thing.html" license="CC BY 3.0" author="Caroline Ford" description="Drop Metal Thing Sound" />
+		</soundFile>
+	</sound>
+	
 	<!-- Simple non-repeating sound -->
 	<sound logPattern="SimplePlayback">
 		<soundFile fileName="Drop Metal Thing-SoundBible.com-401640954.ogg">

@@ -1,9 +1,13 @@
 package cz.zweistein.df.soundsense.config.sounds;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -15,6 +19,9 @@ import org.xml.sax.SAXException;
 
 import cz.zweistein.df.soundsense.config.IReloadProgressCallback;
 import cz.zweistein.df.soundsense.config.XMLConfig;
+import cz.zweistein.df.soundsense.config.sounds.playlist.IPlayListParser;
+import cz.zweistein.df.soundsense.config.sounds.playlist.M3UParser;
+import cz.zweistein.df.soundsense.config.sounds.playlist.PLSParser;
 import cz.zweistein.df.soundsense.gui.control.Threshold;
 import cz.zweistein.df.soundsense.util.log.LoggerSource;
 
@@ -177,12 +184,14 @@ public class SoundsXML extends XMLConfig {
 				String name = configNode.getLocalName();
 
 				if ("soundFile".equals(name)) {
-					SoundFile soundFile = this.parseSoundFile(configNode, fileName);
-					if (soundFile != null) {
-						soundFiles.add(soundFile);
-						if (strictAttributions && soundFile.getAttributions().size() == 0) {
-							logger.info("Sound file '" + soundFile.getFileName() + "' in '" + logPattern + "' lacks attributions!");
+					List<SoundFile> soundFileTagSoundFiles = this.parseSoundFile(configNode, fileName);
+					if (soundFileTagSoundFiles != null) {
+						for (SoundFile soundFile : soundFileTagSoundFiles) {
+							if (strictAttributions && soundFile.getAttributions().size() == 0) {
+								logger.info("Sound file '" + soundFile.getFileName() + "' in '" + logPattern + "' lacks attributions!");
+							}
 						}
+						soundFiles.addAll(soundFileTagSoundFiles);
 					}
 				}
 			}
@@ -200,7 +209,7 @@ public class SoundsXML extends XMLConfig {
 
 	}
 
-	private SoundFile parseSoundFile(Node soundFileNode, String fileName) {
+	private List<SoundFile> parseSoundFile(Node soundFileNode, String fileName) {
 
 		Node fileNameAttribute = soundFileNode.getAttributes().getNamedItem("fileName");
 		if (fileNameAttribute == null) {
@@ -208,20 +217,46 @@ public class SoundsXML extends XMLConfig {
 			return null;
 		}
 
-		String soundFileName = new File(fileName).getParent() + "/" + fileNameAttribute.getNodeValue();
-		// validate that wave file exists.
-		if (!new File(soundFileName).exists()) {
-			// we did not find file on relative path respecting location of
-			// parent xml, lets see if it is on absolute path
-			if (new File(fileNameAttribute.getNodeValue()).exists()) {
-				soundFileName = fileNameAttribute.getNodeValue();
-				if (!this.noWarnAbsolutePath) {
-					logger.info("File " + soundFileName + " is on absolute path.");
+		boolean isPlaylist = parseBooleanAttribute(soundFileNode, "playlist", false);
+
+		List<String> soundFileNames = new LinkedList<String>();
+
+		if (isPlaylist) {
+			String playlistFileName = new File(fileName).getParent() + "/" + fileNameAttribute.getNodeValue();
+			// validate that wave file exists.
+			if (!new File(playlistFileName).exists()) {
+				// we did not find file on relative path respecting location of
+				// parent xml, lets see if it is on absolute path
+				if (new File(fileNameAttribute.getNodeValue()).exists()) {
+					playlistFileName = fileNameAttribute.getNodeValue();
+					if (!this.noWarnAbsolutePath) {
+						logger.info("File " + playlistFileName + " is on absolute path.");
+					}
+				} else {
+					logger.warning("Did not find " + playlistFileName + ", ignoring.");
+					return null;
 				}
-			} else {
-				logger.warning("Did not find " + soundFileName + ", ignoring.");
-				return null;
 			}
+			soundFileNames.addAll(parsePlaylist(fileName, playlistFileName));
+
+		} else {
+			String soundFileName = new File(fileName).getParent() + "/" + fileNameAttribute.getNodeValue();
+			// validate that wave file exists.
+			if (!new File(soundFileName).exists()) {
+				// we did not find file on relative path respecting location of
+				// parent xml, lets see if it is on absolute path
+				if (new File(fileNameAttribute.getNodeValue()).exists()) {
+					soundFileName = fileNameAttribute.getNodeValue();
+					if (!this.noWarnAbsolutePath) {
+						logger.info("File " + soundFileName + " is on absolute path.");
+					}
+				} else {
+					logger.warning("Did not find " + soundFileName + ", ignoring.");
+					return null;
+				}
+			}
+
+			soundFileNames.add(soundFileName);
 		}
 
 		int weight = 100;
@@ -230,7 +265,8 @@ public class SoundsXML extends XMLConfig {
 			try {
 				weight = Integer.parseInt(weightText);
 			} catch (NumberFormatException e) {
-				logger.info("Weight '" + weightText + "' for '" + soundFileName + "' is not recognized as a number, using default " + weight + ".");
+				logger.info("Weight '" + weightText + "' for '" + fileNameAttribute.getNodeValue() + "' is not recognized as a number, using default " + weight
+						+ ".");
 			}
 		}
 
@@ -243,10 +279,57 @@ public class SoundsXML extends XMLConfig {
 
 		boolean randomBalance = parseBooleanAttribute(soundFileNode, "randomBalance", false);
 
-		SoundFile soundFile = new SoundFile(soundFileName, weight, volumeAdjustment, balanceAdjustment, randomBalance);
-		parseAttributions(soundFile, soundFileNode.getChildNodes());
+		List<SoundFile> soundFiles = new ArrayList<SoundFile>(soundFileNames.size());
 
-		return soundFile;
+		for (String soundFileName : soundFileNames) {
+			SoundFile soundFile = new SoundFile(soundFileName, weight, volumeAdjustment, balanceAdjustment, randomBalance);
+			parseAttributions(soundFile, soundFileNode.getChildNodes());
+			soundFiles.add(soundFile);
+		}
+
+		return soundFiles;
+	}
+
+	private List<String> parsePlaylist(String parentFilename, String playlistFileName) {
+		
+		logger.info("Loading playlist " + playlistFileName);
+
+		String extension = playlistFileName.substring(playlistFileName.length() - 3).toLowerCase();
+
+		IPlayListParser playListParser = null;
+
+		if ("pls".equals(extension)) {
+			playListParser = new PLSParser();
+		} else if ("m3u".equals(extension)) {
+			playListParser = new M3UParser();
+		}
+
+		if (playListParser == null) {
+			logger.info("Usupported playlist format for '" + playlistFileName + "'.");
+
+			return Collections.emptyList();
+		} else {
+			InputStream is = null;
+			List<String> list = Collections.emptyList();
+
+			try {
+				is = new FileInputStream(new File(playlistFileName));
+				list = playListParser.parse(playlistFileName, is);
+			} catch (FileNotFoundException e) {
+				logger.severe("File not found '" + playlistFileName + "'.");
+			} catch (IOException e) {
+				logger.severe(e.getLocalizedMessage());
+			} finally {
+				try {
+					is.close();
+				} catch (IOException e) {
+					logger.severe("File not closed '" + playlistFileName + "'.");
+				}
+			}
+
+			return list;
+		}
+
 	}
 
 	private void parseDirectories(NodeList directoryReferences) {
