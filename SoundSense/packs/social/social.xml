@@ -175,6 +175,11 @@
 		<soundFile fileName="promotions/29837__HerbertBoland__PianoMood32.mp3" />
 		<soundFile fileName="promotions/29839__HerbertBoland__PianoMood34.mp3" />
 	</sound>
+	
+	<sound logPattern="(.+), being the rightful heir, has inherited the position of ((king)|(queen)) of The (.+)\." playbackThreshhold="3" ansiFormat="&#27;[33m">
+		<soundFile fileName="promotions/29837__HerbertBoland__PianoMood32.mp3" />
+		<soundFile fileName="promotions/29839__HerbertBoland__PianoMood34.mp3" />
+	</sound>
 
 	<!-- too much of random spam for this. -->
 	<sound logPattern="(.+) has become a (.+)\.">

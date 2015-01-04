@@ -482,8 +482,10 @@
          <file name="85791__sandyrb__NATIVE_FLUTE_FIGURE_02.wav" sha1="8d69fdf790bcbfbdebba0e26e5729a15a7b8a1f6" size="44792"/>
          <file name="customHost.xml" sha1="fe7ce1c4f576f6afd31df03742f20010f59ee23a" size="151"/>
          <file name="Drop Metal Thing-SoundBible.com-401640954.ogg" sha1="49d8715067c538c7a29de2ded7c10f870488d75b" size="14781"/>
+         <file name="playlist.m3u" sha1="a1ebd30003875596570872bc33055b7d0562efa6" size="196"/>
+         <file name="playlist.pls" sha1="7101529c629f738e7c79e8b007173eee47f8bcbb" size="266"/>
          <file name="readme.txt" sha1="2d0abfdc5b5e46f4b138cff2b8ff987d3641c7ee" size="126"/>
-         <file name="sample.xml" sha1="f69210c880ccb3748639ff096b30e1a68de19c3e" size="10951"/>
+         <file name="sample.xml" sha1="b052dd316a5d69e8c117d83a2f874e8611106441" size="12990"/>
          <file name="Sword Strike And Clash-SoundBible.com-1345262316.mp3" sha1="5476483257cfbef3c02cbf77f0ed40920e4500cf" size="13597"/>
       </directory>
       <directory name="dfhack">
@@ -508,6 +510,7 @@
       </directory>
       <directory name="emotion">
          <directory name="voices">
+            <file name="agree.m3u" sha1="2f94a5730f107ca8dcca26dfa93026c186e90e95" size="451"/>
             <file name="Agree1_1.mp3" sha1="72f64155dd43fd9401d7e2b4d845fb64af4c5f8e" size="37798"/>
             <file name="Agree1_2.mp3" sha1="ed29ef126b9767db68ce3439e591123d0ded7e58" size="32790"/>
             <file name="Agree1_3.mp3" sha1="aa95564b787081d3af3568f81d43d3c1f6f3bcf0" size="37798"/>
@@ -521,6 +524,7 @@
             <file name="Agree2_4.mp3" sha1="361dcb831ad5d92f4a29756662e0b1351a397ec1" size="36546"/>
             <file name="Agree2_5.mp3" sha1="694e02e144d391afe01efec53a921940668e0ac4" size="40302"/>
             <file name="Agree2_6.mp3" sha1="0dd304f62b1dfa4c124c6e0585d5e80c27f1290a" size="42180"/>
+            <file name="anger.m3u" sha1="088dfbc8492a0182d3c020cc8fc8f7cceb24f163" size="315"/>
             <file name="Anger1_1.mp3" sha1="112b15b9f1da2d9c5efd385c84019ef54f354320" size="32164"/>
             <file name="Anger1_2.mp3" sha1="b422d5fbc22a2ab0abe7218a123962d43722f38e" size="28408"/>
             <file name="Anger1_3.mp3" sha1="14de84fb72353f7b452b5863c3b22af61067e1e6" size="25904"/>
@@ -530,6 +534,7 @@
             <file name="Anger2_3.mp3" sha1="ad3c678fd04839f384447f84dd2756a570bfc247" size="23400"/>
             <file name="Anger2_4.mp3" sha1="9261b851656a8246c603606dfade0ef281e1c8c6" size="20896"/>
             <file name="Anger2_5.mp3" sha1="8f7ac83467a61163213d2f8c272eb8b4775d839f" size="31538"/>
+            <file name="bold.m3u" sha1="5b8cdf8cea0733a220c04208baf3933afba0e2f7" size="425"/>
             <file name="Bold1_1.mp3" sha1="8067c8992c046e152ae04f87a8d4462fbf62e12e" size="19644"/>
             <file name="Bold1_2.mp3" sha1="1e89fb1a78f41c6f3381785ed82b0061cee995de" size="46532"/>
             <file name="Bold1_3.mp3" sha1="993fc8df97784f0912f13aaefe7530593244e7ee" size="29034"/>
@@ -651,7 +656,7 @@
             <file name="Question2_4.mp3" sha1="b524c7c06c269bc1e29f03002d76a79a1c0ec6a7" size="48440"/>
             <file name="Question2_5.mp3" sha1="a5760dde47c0231d538ed0068af46652f5008a42" size="20896"/>
          </directory>
-         <file name="emotion.xml" sha1="530d15b8ea43a50e9a4ec5c14fef5fac159375bd" size="54834"/>
+         <file name="emotion.xml" sha1="370b7f663bbbc28e0db871a1d7d93e0ed6a91452" size="30005"/>
       </directory>
       <directory name="fishing">
          <directory name="NoFish">
@@ -1235,6 +1240,6 @@
          </directory>
          <file name="weather.xml" sha1="aeff0124ebbbed224e32d3bdf0a450244bda0f88" size="2290"/>
       </directory>
-      <file name="autoUpdater.xml" sha1="76863cc1616ac061b9ed3f9e02e630d13f16853d" size="114169"/>
+      <file name="autoUpdater.xml" sha1="190fee92c31a5888a44a6cb069e423e703217a93" size="114812"/>
    </directory>
 </autoUpdater>

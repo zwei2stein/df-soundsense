@@ -197,7 +197,6 @@
 		<soundFile fileName="roguebard/9_22.mp3" />
 
 		<soundFile fileName="423736_ultimatewhimsyoverturefix.mp3" />
-		<soundFile fileName="Peer Gynt - grieg - in the hall of the mountain king.mp3" weight="25" />
 
 		<soundFile fileName="alexandrzhelanov/Caves of sorrow.mp3">
 			<attribution author="Alexandr Zhelanov" url="http://opengameart.org/users/alexandr-zhelanov" license="CC BY 3.0" description="Caves of sorrow" />
@@ -279,7 +278,6 @@
 		<soundFile fileName="roguebard/9_22.mp3" />
 
 		<soundFile fileName="423736_ultimatewhimsyoverturefix.mp3" />
-		<soundFile fileName="Peer Gynt - grieg - in the hall of the mountain king.mp3" weight="25" />
 
 		<soundFile fileName="433242_Times__only_moment.mp3" />
 		<soundFile fileName="419488_Catacombs_Of_Valhalla.mp3" />

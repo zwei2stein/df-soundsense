@@ -164,7 +164,86 @@
 			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
 		</soundFile>
 	</sound>
+	
+	<sound logPattern="(.+): Death\.\.\.  This cannot horrify me\." randomBalance="true" concurency="5">
 
+		<soundFile fileName="../emotion/voices/Bold1_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold1_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold1_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold1_5.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_6.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_7.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_8.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_9.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+	</sound>
+
+	<sound logPattern="(.+): Death is all around us\.  This cannot horrify me\." randomBalance="true" concurency="5">
+
+		<soundFile fileName="../emotion/voices/Bold1_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold1_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold1_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold1_5.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_1.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_2.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_3.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_4.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_6.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_7.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_8.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+		<soundFile fileName="../emotion/voices/Bold2_9.mp3">
+			<attribution url="https://soundcloud.com/simonswerwer/" license=" CC BY-NC-SA 2.0" author="Simon Swerwer" description="Bold" />
+		</soundFile>
+	</sound>
 
 	<sound logPattern="(.+): I'm with you on this\." randomBalance="true" concurency="5">
 

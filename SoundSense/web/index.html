@@ -247,7 +247,7 @@
 			</span>
 		</div>
 		
-		<p>Sound can contain several <tt></>soundFile</tt> elements, when it is triggered one random of them is triggered.
+		<p>Sound can contain several <tt>soundFile</tt> elements, when it is triggered one random of them is triggered.
 		You can control how often is particular sound chosen by <tt>weight="number"</tt> attribute.</p>
 		
 		<div class="box">
@@ -259,6 +259,19 @@
 					<li>wav</li>
 					<li>aiff</li>
 					<li>au</li>
+				</ul>
+			</span>
+		</div>
+		
+		<p><tt>soundFile</tt> itself can be playlist instead of sound file itself, marked by <tt>playlist="true"</tt> attribute. Sound files in playlist inherit all
+		properties of their soundfile parent.</p>
+		
+		<div class="box">
+			<span>
+				Supported formats for playlist:
+				<ul>
+					<li>pls</li>
+					<li>m3u</li>
 				</ul>
 			</span>
 		</div>

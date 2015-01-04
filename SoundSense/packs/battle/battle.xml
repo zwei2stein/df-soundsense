@@ -511,7 +511,15 @@
 		<soundFile fileName="blocked/blocked5.mp3" randomBalance="true" />
 	</sound>
 
-	<sound logPattern="The (.+) strikes at The (.+) but the shot is deftly parried by the (.+)!" concurency="4" timeout="500" playbackThreshhold="4">
+	<sound logPattern="The (.+) strikes at The (.+) but the shot is ((deftly )|(easily )|(narrowly )|(just barely )|(effortlessly )|())parried by (.+)!" concurency="4" timeout="500" playbackThreshhold="4">
+		<soundFile fileName="blocked/blocked1.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked2.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked3.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked4.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked5.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="The (.+) strikes at The (.+) but the shot is ((deftly )|(easily )|(narrowly )|(just barely )|(effortlessly )|())deflected by (.+)!" concurency="4" timeout="500" playbackThreshhold="4">
 		<soundFile fileName="blocked/blocked1.mp3" randomBalance="true" />
 		<soundFile fileName="blocked/blocked2.mp3" randomBalance="true" />
 		<soundFile fileName="blocked/blocked3.mp3" randomBalance="true" />

@@ -62,6 +62,30 @@
 		<soundFile fileName="gore/tearheavygore9.mp3" randomBalance="true" />
 	</sound>
 	
+	<sound logPattern="(.+) pulls on the embedded (.+)\." concurency="4" timeout="500" playbackThreshhold="4">
+		<soundFile fileName="gore/tearheavygore1.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore2.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore3.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore4.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore5.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore6.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore7.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore8.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore9.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="(.+) pulls out and releases the (.+)\." concurency="4" timeout="500" playbackThreshhold="4">
+		<soundFile fileName="gore/tearheavygore1.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore2.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore3.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore4.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore5.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore6.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore7.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore8.mp3" randomBalance="true" />
+		<soundFile fileName="gore/tearheavygore9.mp3" randomBalance="true" />
+	</sound>
+	
 	<sound logPattern="((An artery)|(A major artery)) has been opened by the ((strike)|(attack))(.*)!" concurency="4" timeout="500" playbackThreshhold="4">
 		<soundFile fileName="gore/tearheavygore1.mp3" randomBalance="true" />
 		<soundFile fileName="gore/tearheavygore2.mp3" randomBalance="true" />

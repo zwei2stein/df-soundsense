@@ -192,6 +192,9 @@
 		<zip destfile="${release.prebuilt.path}/packSkeletons.zip">
 			<fileset dir="${basedir}">
 				<include name="packs/**/*.xml" />
+				<include name="packs/**/*.txt" />
+				<include name="packs/**/*.m3u" />
+				<include name="packs/**/*.pls" />
 			</fileset>
 		</zip>
 	</target>
