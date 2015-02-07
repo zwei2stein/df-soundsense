@@ -1,7 +1,9 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <sounds>
 	
-	<sound logPattern="The Forgotten Beast breathes a cloud of forgotten beast ((frozen)|(boiling)) extract!" playbackThreshhold="4">
+	The Forgotten Beast breathes a cloud of Niÿeru Mitecrypts the Deep Funeral of Sucking's forgotten beast frozen extract!
+	
+	<sound logPattern="The Forgotten Beast breathes a cloud of (.+) ((frozen)|(boiling)) extract!" playbackThreshhold="4">
 		<!-- http://www.freesound.org/samplesViewSingle.php?id=66642 -->
 		<soundFile fileName="breath/66642__Robinhood76__00861_dragons_breath.mp3" />
 		<!-- http://www.freesound.org/samplesViewSingle.php?id=94102 -->
