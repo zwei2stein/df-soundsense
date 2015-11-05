@@ -71,4 +71,11 @@
 		</soundFile>
 	</sound>
 	
+	<sound logPattern="(.+) is playing make believe\.">
+	</sound>
+
+	<sound logPattern="(.+) is playing with a (.+)\.">
+	</sound>	
+	
+	
 </sounds>

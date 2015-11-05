@@ -38,6 +38,13 @@
 		<soundFile fileName="../social/votes/paper_mix_2.mp3" randomBalance="true" />
 		<soundFile fileName="../social/votes/paper_mix_3.mp3" randomBalance="true" />
 	</sound>
+	
+	<!-- non dfhack -->
+	<sound logPattern="(.+) has assumed the position of expedition leader of (.+)\." playbackThreshhold="4">
+		<soundFile fileName="../social/votes/paper_mix_1.mp3" randomBalance="true" />
+		<soundFile fileName="../social/votes/paper_mix_2.mp3" randomBalance="true" />
+		<soundFile fileName="../social/votes/paper_mix_3.mp3" randomBalance="true" />
+	</sound>
 
 	<sound logPattern="Expedition leader position is now vacant\." playbackThreshhold="4" ansiFormat="&#27;[31m">
 		<soundFile fileName="../social/promotions/29819__HerbertBoland__PianoMood14.mp3" randomBalance="true" />

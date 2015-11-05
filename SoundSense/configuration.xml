@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
 
-	<gamelog encoding="Cp850" path="C:\Users\Petr Prokop\Documents\vrh-c.txt"/>
+	<gamelog encoding="Cp850" path="d:\Dropbox\Games\Dwarf Fortress\currentVersion\gamelog.txt"/>
+<!-- 	<gamelog encoding="Cp850" path="./work/gamelogb2.txt"/> -->
  	<supplementalLogs>
  		<item path="${gameBaseDir}/ss_fix.log"/>
  	</supplementalLogs> 
 	
-	<soundpacks allowOverride="true" defaultPath="./packs/" noWarnAbsolutePath="false"/>
+	<soundpacks allowOverride="true" defaultPath="./packsxx/" noWarnAbsolutePath="false"/>
 	
-	<volume value="0.0"/>
+	<volume value="2.0"/>
 	
 	<gui value="true"/>
 	
@@ -26,7 +27,7 @@
 	
 	<executors path="./executor/"/>
 
-	<disabledSounds/>
+	<disabledSounds><item path="./packs/adventurer/adventurer.xml"/></disabledSounds>
 	
 	<mutedChannels/>
 

@@ -48,6 +48,13 @@
 		<soundFile fileName="wrestling/swingfist3.mp3" />
 		<soundFile fileName="wrestling/swingfist4.mp3" />
 	</sound>
+	
+	<sound logPattern="(.+) jumps out of (.+)'s flight path!" concurency="4" timeout="500" playbackThreshhold="4">
+		<soundFile fileName="wrestling/swingfist1.mp3" />
+		<soundFile fileName="wrestling/swingfist2.mp3" />
+		<soundFile fileName="wrestling/swingfist3.mp3" />
+		<soundFile fileName="wrestling/swingfist4.mp3" />
+	</sound>
 
 	<sound logPattern="(((.+) jumps)|(You jump)) away from the (.+)!" concurency="4" timeout="500" playbackThreshhold="4">
 		<soundFile fileName="wrestling/swingfist1.mp3" />
@@ -420,6 +427,14 @@
 	</sound>
 
 	<sound logPattern="(.+) bats The ((spinning)|(flying)) (.+) out of the air!" concurency="4" timeout="500" playbackThreshhold="4">
+		<soundFile fileName="blocked/blocked1.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked2.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked3.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked4.mp3" randomBalance="true" />
+		<soundFile fileName="blocked/blocked5.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="(.+) bats The ((spinning)|(flying)) (.+) out of the air with ther\ (.+)!" concurency="4" timeout="500" playbackThreshhold="4">
 		<soundFile fileName="blocked/blocked1.mp3" randomBalance="true" />
 		<soundFile fileName="blocked/blocked2.mp3" randomBalance="true" />
 		<soundFile fileName="blocked/blocked3.mp3" randomBalance="true" />

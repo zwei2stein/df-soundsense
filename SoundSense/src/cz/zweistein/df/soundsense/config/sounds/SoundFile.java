@@ -54,5 +54,10 @@ public class SoundFile {
 		return this.getFileName();
 	}
 
+	public boolean getPositionalBallance() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
 	
 }

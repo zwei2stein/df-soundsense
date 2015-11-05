@@ -27,7 +27,7 @@ public class StartSoundPlaybackButton extends JButton implements ActionListener 
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		this.manager.playSound(this.sound);
+		this.manager.playSound(this.sound, null, null, null);
 	}
 
 	public void setSound(Sound sound) {

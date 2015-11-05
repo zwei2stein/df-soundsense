@@ -24,4 +24,11 @@
 		<soundFile fileName="training/80488__everdream__cmaj-direct.mp3" randomBalance="true" />
 	</sound>
 	
+	<sound logPattern="The (.+) of The (.+) are now expert (.+) trainers\.">
+		<soundFile fileName="training/80488__everdream__cmaj-direct.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="(.+) has discovered the (.+)\.">
+	</sound>
+	
 </sounds>

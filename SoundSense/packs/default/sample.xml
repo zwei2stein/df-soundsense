@@ -3,6 +3,13 @@
 
 	<!-- feature demonstrations and test cases -->
 	
+	<sound logPattern="(.+): (.+)">
+		<soundFile fileName="85791__sandyrb__NATIVE_FLUTE_FIGURE_02.wav" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/sandyrb/sounds/85791/" license="CC BY 3.0" author="sandyrb" description="NATIVE FLUTE FIGURE 02.wav" />
+		</soundFile>
+	</sound>
+	
+	
 	<sound logPattern="RandomBalance">
 		<soundFile fileName="85791__sandyrb__NATIVE_FLUTE_FIGURE_02.wav" randomBalance="true">
 			<attribution url="http://www.freesound.org/people/sandyrb/sounds/85791/" license="CC BY 3.0" author="sandyrb" description="NATIVE FLUTE FIGURE 02.wav" />

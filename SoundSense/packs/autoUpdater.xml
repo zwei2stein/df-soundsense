@@ -42,12 +42,12 @@
             <file name="190128__tran5ient__splash1.mp3" sha1="5c28bfa38fd50201c2a4492fc1dd2bc51997001f" size="34477"/>
          </directory>
          <file name="actions.xml" sha1="a030b6beabb36136a670efa707b3dd20a0839af0" size="16473"/>
-         <file name="adventurer.xml" sha1="42e8cba8edff813deb5bb5f570016deb535a8e7f" size="6566"/>
+         <file name="adventurer.xml" sha1="b07351e928ba14337a3fb6c49819c12d2abbb091" size="6635"/>
          <file name="ambush.xml" sha1="92105ad193339617f8ad5e47c60ea758daddf67c" size="4579"/>
          <file name="animal_behavior.xml" sha1="272af5c6f947e6c3b4c341afa17fc5c8c211ee38" size="4624"/>
          <file name="combat_actions.xml" sha1="40fec90c16cf63b931d3f4ddcb30527a44525df4" size="3138"/>
          <file name="enviroment.xml" sha1="f79f005954f2689fe841e137c77aea6e98c217c6" size="543"/>
-         <file name="speech.xml" sha1="f142c08d8257e79c6e4c4af0735962c4a8a3dd18" size="49165"/>
+         <file name="speech.xml" sha1="aae7042645777fafae64d0ee8f813ea041f48fe0" size="54309"/>
          <file name="speech_anger.xml" sha1="d921780579c774b02f8940f27140de7329e8e58e" size="9023"/>
          <file name="speech_answer.xml" sha1="e22d9f8dca8df7902f29905de91ab54db92726e6" size="66437"/>
          <file name="speech_concern.xml" sha1="ab56470080f3aeeeb8a84259de0cce19ed1c7524" size="13420"/>
@@ -454,9 +454,9 @@
             <file name="swingfist3.mp3" sha1="c2657e0369b214f36a7ead2157fe7ffc5a07f004" size="2965"/>
             <file name="swingfist4.mp3" sha1="1da84be434a6b9e5111e44677b4712aa3555e75a" size="2318"/>
          </directory>
-         <file name="battle.xml" sha1="25852a6c3b8eae8638859a78907832f9c661663e" size="32741"/>
-         <file name="breath.xml" sha1="1b3938cd6c875bd2ba84365a47ca7c8fcd776868" size="6801"/>
-         <file name="gore.xml" sha1="8bee8322ea4d8d12e636d8c28ec022b145968371" size="11735"/>
+         <file name="battle.xml" sha1="d8fb5106a66e5142d4d781621a91f4b4e1eca833" size="33367"/>
+         <file name="breath.xml" sha1="9343a6d7ced3effb126d1697fa6e71045f94d273" size="6916"/>
+         <file name="gore.xml" sha1="bd10c6322dc7b18985d1fb1a754eccb9f2cad64e" size="13300"/>
          <file name="hitevents.xml" sha1="c7f25230c889c1ff4ecdee68df277c1a16cc8b6f" size="16144"/>
          <file name="status.xml" sha1="99d986ee4c403b5fa7251bd9165609a8ac6233bb" size="11830"/>
          <file name="strikes.xml" sha1="01bdf5aca30929616dae5050f58ed2903b68f710" size="8058"/>
@@ -936,7 +936,7 @@
          <file name="cancelations.xml" sha1="5a920076f8b8552f69f036b07735873e212b7450" size="21846"/>
          <file name="Drop Metal Thing-SoundBible.com-401640954.mp3" sha1="5481da6ea954a8d859c65aae1c2a7ddef72dde40" size="11422"/>
          <file name="foodAndDrinkCancelations.xml" sha1="0fab342f3311f88d8c3d79846d0adebc49da9219" size="1856"/>
-         <file name="production.xml" sha1="9c168ec93e60116991ae5e4bf1c65f9a8b3c8916" size="3914"/>
+         <file name="production.xml" sha1="8c945d6a60a8c7baddbef535348f3a2c51602666" size="4362"/>
       </directory>
       <directory name="seasons">
          <directory name="alexandrzhelanov">
@@ -1072,6 +1072,8 @@
             <file name="Simon Swerwer-The Tankard Basher.mp3" sha1="8344d04f83660212ab9cfd6be3537b83047955b2" size="3141796"/>
             <file name="Simon Swerwer-Whip Vine.mp3" sha1="8d39ab619d8a8782c42bd3125143cee234851335" size="4953022"/>
             <file name="Simon Swerwer-ZTIQ.mp3" sha1="3ad2cc799b3d41f4f10a4cddf3182b090a2cde73" size="3551566"/>
+            <file name="simon-swerwer_danger-room.mp3" sha1="29e4a86016a338fa08172367fba019821f590f28" size="4436282"/>
+            <file name="simon-swerwer_the-storm-and-the-bounty.mp3" sha1="07bb431eead334e3689262013e684d6da471ea5a" size="4754290"/>
             <file name="theelvesofthecoast.mp3" sha1="828f39707febe51f900bd9f79e8671319e605700" size="3443393"/>
          </directory>
          <directory name="spring">
@@ -1101,10 +1103,9 @@
          <file name="419488_Catacombs_Of_Valhalla.mp3" sha1="966b09bbfcec9f78bd78914b80829f3da8e48fed" size="1622639"/>
          <file name="423736_ultimatewhimsyoverturefix.mp3" sha1="4d891d28f117d0e436d1a15856c0298fb73801cd" size="4588895"/>
          <file name="433242_Times__only_moment.mp3" sha1="9544eff98b6f8704686ae0356ed98b99b1800428" size="1210949"/>
-         <file name="attribution.txt" sha1="75b343da3881e969f1d4f99cc9c5d42d3d4e9f96" size="1083"/>
+         <file name="attribution.txt" sha1="944175f55f7749fe3a9e29ce02914e0c6be69069" size="993"/>
          <file name="Musopen.Com  Arvo Part-Magnificat.mp3" sha1="990665aedd079a35740168d7d7a5452fce1a03e8" size="7848547"/>
-         <file name="Peer Gynt - grieg - in the hall of the mountain king.mp3" sha1="1305815e27c3d75803e7baa5cb67840cae793bbd" size="2752718"/>
-         <file name="seasons.xml" sha1="91ea2b5cd262b091aadb1eadf8681b6349705592" size="15777"/>
+         <file name="seasons.xml" sha1="b9564222f20c59a2468cf036a0a788483fa9ef07" size="15893"/>
          <file name="[tindeck.com] - rdriftwood - Hey Di Lee Hi.mp3" sha1="49c815f78bf100696624b02813f0005579cd93ba" size="8281108"/>
       </directory>
       <directory name="social">
@@ -1173,7 +1174,7 @@
             <file name="paper_mix_3.mp3" sha1="139139572622e718d5c1a8546e58f97b6aa5447f" size="87140"/>
          </directory>
          <file name="missing.xml" sha1="543a38df801cbaab9af1451b3a85cea5cad3322b" size="657"/>
-         <file name="social.xml" sha1="bbb1064b46e983b9132fb9bca754304c8f321640" size="9406"/>
+         <file name="social.xml" sha1="ec9d5eda013645da2b0ccd081abbc5135fbfe910" size="9735"/>
       </directory>
       <directory name="system">
          <directory name="embark">
@@ -1191,7 +1192,7 @@
             <file name="embark_12.mp3" sha1="9dea17b8559e78e749769ed11980fafc7afeed01" size="75882"/>
          </directory>
          <file name="Radakan - Moldan Chase over (success).mp3" sha1="cb314402bf45bb787aa572967c09ab26e28d9f09" size="69797"/>
-         <file name="system.xml" sha1="b24752161e5b4f3be2059dce588bd40b6bec84a0" size="12602"/>
+         <file name="system.xml" sha1="017b1bcdebc167f9a50e7e210bdada5d882f3304" size="12809"/>
          <file name="worldgen.mp3" sha1="cb67d30029d2a3233be228f278ac579d7ea6a62a" size="5410123"/>
       </directory>
       <directory name="trading">
@@ -1240,6 +1241,7 @@
          </directory>
          <file name="weather.xml" sha1="aeff0124ebbbed224e32d3bdf0a450244bda0f88" size="2290"/>
       </directory>
-      <file name="autoUpdater.xml" sha1="190fee92c31a5888a44a6cb069e423e703217a93" size="114812"/>
+      <file name=".dropbox.attr" sha1="bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f" size="2"/>
+      <file name="autoUpdater.xml" sha1="27dc7cdbd0c3ee1b375d03f38585ccf9dfb53a75" size="115296"/>
    </directory>
 </autoUpdater>

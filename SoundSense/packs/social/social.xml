@@ -76,6 +76,28 @@
 		<soundFile fileName="MigrantsNone/MigrantsNone9.mp3" />
 		<soundFile fileName="MigrantsNone/MigrantsNone10.mp3" />
 	</sound>
+	
+	<sound logPattern="A migrant has arrived\." playbackThreshhold="2" ansiFormat="&#27;[34;1m">
+		<soundFile fileName="MigrantsArrived/MigrantsArrived1.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived2.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived3.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived4.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived5.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived6.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived7.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived8.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived9.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived10.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived11.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived12.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived13.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived14.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived15.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived16.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived17.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived18.mp3" />
+		<soundFile fileName="MigrantsArrived/MigrantsArrived19.mp3" />
+	</sound>
 
 	<sound logPattern="Some migrants have arrived\." playbackThreshhold="2" ansiFormat="&#27;[34;1m">
 		<soundFile fileName="MigrantsArrived/MigrantsArrived1.mp3" />
@@ -177,6 +199,11 @@
 	</sound>
 	
 	<sound logPattern="(.+), being the rightful heir, has inherited the position of ((king)|(queen)) of The (.+)\." playbackThreshhold="3" ansiFormat="&#27;[33m">
+		<soundFile fileName="promotions/29837__HerbertBoland__PianoMood32.mp3" />
+		<soundFile fileName="promotions/29839__HerbertBoland__PianoMood34.mp3" />
+	</sound>
+	
+	<sound logPattern="After a polite discussion with ((local rivals)|(a local rival)), (.+) has claimed the position of ((king)|(queen)) of (.+)\." playbackThreshhold="3" ansiFormat="&#27;[33m">
 		<soundFile fileName="promotions/29837__HerbertBoland__PianoMood32.mp3" />
 		<soundFile fileName="promotions/29839__HerbertBoland__PianoMood34.mp3" />
 	</sound>

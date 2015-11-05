@@ -42,9 +42,9 @@ public final class PlayerManager {
 
 		this.volumeAdjuster = new VolumeAdjuster();
 		this.volumeAdjuster.setManager(this);
-		
+
 		this.configurationXML = configurationXML;
-		
+
 		new Thread(this.volumeAdjuster, "VolumeAdjustment").start();
 	}
 
@@ -56,7 +56,7 @@ public final class PlayerManager {
 		return this.sfxThreads;
 	}
 
-	public void playSound(Sound sound) {
+	public void playSound(Sound sound, Long x, Long y, Long z) {
 
 		if (sound.hasNoSoundFiles() && sound.getChannel() == null) {
 			LOGGER.finest("Sound " + sound + " is ignored because it can not be played");
@@ -88,7 +88,7 @@ public final class PlayerManager {
 
 		if (sound.getChannel() == null) {
 			if (sound.getConcurency() == null || (sound.getConcurency() != null && concurentSounds < sound.getConcurency())) {
-				SFXThread mp3Thread = new SFXThread(this, sound, this.globalVolume);
+				SFXThread mp3Thread = new SFXThread(this, sound, this.globalVolume, x, y, z);
 				new Thread(mp3Thread, mp3Thread.getThreadName()).start();
 			} else {
 				LOGGER.fine("Dropped sound for " + sound.toString() + " its concurency is " + sound.getConcurency() + " and there are " + concurentSounds

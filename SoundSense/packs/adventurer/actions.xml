@@ -269,4 +269,13 @@
 	<sound logPattern="You butcher (.+)\.">
 	</sound>
 	
+	<sound logPattern="Your intense search turns up nothing\.">
+	</sound>
+	
+	<sound logPattern="You've already searched this area recently\.">
+		<soundFile fileName="../production/12884__schluppipuppie__tack_06.mp3" />
+		<soundFile fileName="../production/12894__schluppipuppie__tsch_02.mp3" />
+		<soundFile fileName="../production/12828__schluppipuppie__besteck_08.mp3" />
+	</sound>
+	
 </sounds>

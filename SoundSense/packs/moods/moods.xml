@@ -136,5 +136,13 @@
 		<soundFile fileName="ItemNamed/ItemNamed11.mp3" />
 		<soundFile fileName="ItemNamed/ItemNamed12.mp3" />
 	</sound>
+	
+	<!-- depression -->
+	<sound logPattern="(.+) has slipped into depression\.\.\." playbackThreshhold="3">
+	</sound>
+	
+	<sound logPattern="(.+) is stumbling around obliviously!" playbackThreshhold="3">
+	</sound>
+	
 
 </sounds>

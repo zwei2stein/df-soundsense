@@ -70,7 +70,10 @@
 	<sound logPattern="The vomit burns away in the lava\.">
 	</sound>
 	
-	<sound logPattern="The vomit splatters into the shallow puddle of water\.">
+	<sound logPattern="(.+) vomits\." concurency="1" timeout="30000" playbackThreshhold="4">
+	</sound>
+	
+	<sound logPattern="(.+) vomits into the ocean wave\.">
 	</sound>
 	
 	<sound logPattern="(.+) is having trouble breathing!">

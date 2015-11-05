@@ -21,7 +21,25 @@
 		<soundFile fileName="breath/48662__sea-fury__monster.mp3" randomBalance="true" />
 	</sound>
 	
+	<sound logPattern="The Plains Titan breathes a cloud of (.+) extract vapor!" playbackThreshhold="4">
+		<!-- http://www.freesound.org/samplesViewSingle.php?id=66642 -->
+		<soundFile fileName="breath/66642__Robinhood76__00861_dragons_breath.mp3" />
+		<!-- http://www.freesound.org/samplesViewSingle.php?id=94102 -->
+		<soundFile fileName="breath/94102__CGEffex__Fire_breathing_dragon.mp3" randomBalance="true" />
+		<!-- http://www.freesound.org/people/Sea%20Fury/sounds/48662/ -->
+		<soundFile fileName="breath/48662__sea-fury__monster.mp3" randomBalance="true" />
+	</sound>
+	
 	<sound logPattern="The Forgotten Beast breathes fire!" playbackThreshhold="4">
+		<!-- http://www.freesound.org/samplesViewSingle.php?id=66642 -->
+		<soundFile fileName="breath/66642__Robinhood76__00861_dragons_breath.mp3" />
+		<!-- http://www.freesound.org/samplesViewSingle.php?id=94102 -->
+		<soundFile fileName="breath/94102__CGEffex__Fire_breathing_dragon.mp3" randomBalance="true" />
+		<!-- http://www.freesound.org/people/Sea%20Fury/sounds/48662/ -->
+		<soundFile fileName="breath/48662__sea-fury__monster.mp3" randomBalance="true" />
+	</sound>
+	
+	<sound logPattern="The Hill Titan hurls a ball of fire!" playbackThreshhold="4">
 		<!-- http://www.freesound.org/samplesViewSingle.php?id=66642 -->
 		<soundFile fileName="breath/66642__Robinhood76__00861_dragons_breath.mp3" />
 		<!-- http://www.freesound.org/samplesViewSingle.php?id=94102 -->

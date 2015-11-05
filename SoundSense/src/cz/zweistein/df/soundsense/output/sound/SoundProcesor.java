@@ -1,6 +1,8 @@
 package cz.zweistein.df.soundsense.output.sound;
 
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import cz.zweistein.df.soundsense.config.ConfigurationXML;
 import cz.zweistein.df.soundsense.config.sounds.Sound;
@@ -13,14 +15,20 @@ public class SoundProcesor extends Procesor {
 	private static Logger logger = LoggerSource.LOGGER;
 
 	private SoundsXML soundsXML;
+
 	private ConfigurationXML configuration;
+
 	private PlayerManager player;
+
+	private Pattern coordinatePattern;
 
 	public SoundProcesor(SoundsXML soundsXML, ConfigurationXML configurationXML) {
 		this.soundsXML = soundsXML;
 		this.configuration = configurationXML;
 		this.player = new PlayerManager(configurationXML);
 		this.player.setPlaybackTheshhold(configurationXML.getPlaybackTheshhold());
+
+		this.coordinatePattern = Pattern.compile("\\[(\\-?\\d),(\\-?\\d),(\\-?\\d)\\] (.*)");
 	}
 
 	public SoundsXML getSoundsXML() {
@@ -36,6 +44,21 @@ public class SoundProcesor extends Procesor {
 
 		int matches = 0;
 		Sound matchedSound = null;
+
+		// parse location "[x,y,z] eventtext"
+		Matcher matcher = coordinatePattern.matcher(nextLine);
+
+		Long x = null;
+		Long y = null;
+		Long z = null;
+
+		if (matcher.find()) {
+			x = Long.parseLong(matcher.group(1));
+			y = Long.parseLong(matcher.group(2));
+			z = Long.parseLong(matcher.group(3));
+			nextLine = matcher.group(4);
+		}
+
 		for (Sound sound : soundsXML.getSounds()) {
 
 			if (!getConfiguration().getDisabledSounds().contains(sound.getParentFile()) && sound.matches(nextLine)) {
@@ -44,7 +67,7 @@ public class SoundProcesor extends Procesor {
 
 				logger.fine("Message '" + nextLine + "' matched event '" + sound.toString() + "' from '" + sound.getParentFile() + "'.");
 
-				player.playSound(sound);
+				player.playSound(sound, x, y, z);
 
 				if (sound.getHaltOnMatch()) {
 					logger.finest("Ending matching prematurely as expected.");

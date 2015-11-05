@@ -225,4 +225,30 @@ end
 
 event_loop()
 
+local eventful=require('plugins.eventful')
+
+function appendToSoundsenseLog(message)
+    local gamelog=assert(io.open(dfhack.getDFPath()..'/soundsense_gamelog.txt','a'))
+    gamelog:write(message)
+    gamelog:close()
+end
+
+eventful.onReport.soundsense_coord=function(reportId)
+    local report=df.report.find(reportId)
+    if report.flags.continuation then return false end
+    local reportText=report.text
+    local i=1
+    while df.report.find(reportId+i) and df.report.find(reportId+i).flags.continuation do
+        reportText=reportText..' '..df.report.find(reportId+i).text
+        i=i+1
+    end
+    if report.pos.x then
+        print(report.pos.y,(df.global.window_y+df.global.gps.screeny)/2)
+        reportText='['..report.pos.x-(df.global.window_x+df.global.gps.screenx/2) .. ','..report.pos.y-(df.global.window_y+df.global.gps.screeny/2) .. ','..report.pos.z-df.global.window_z..']'..reportText..'\n'
+    end
+    appendToSoundsenseLog(reportText)
+end
+
+eventful.enableEvent(eventful.eventType.REPORT,1)
+
 -- io.close(log)
