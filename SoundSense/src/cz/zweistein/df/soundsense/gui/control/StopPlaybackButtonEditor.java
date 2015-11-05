@@ -19,7 +19,7 @@ import cz.zweistein.df.soundsense.output.sound.player.PlayerManager;
 
 public class StopPlaybackButtonEditor extends AbstractCellEditor implements TableCellEditor, ActionListener {
 	private static final long serialVersionUID = -114871533700969832L;
-	
+
 	private transient ChannelThread currentThread;
 	private transient PlayerManager manager;
 	private JButton button;
@@ -35,7 +35,9 @@ public class StopPlaybackButtonEditor extends AbstractCellEditor implements Tabl
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		manager.playSound(new Sound(null, null, null, null, Loop.STOP_LOOPING, currentThread.getChannelName(), 0L, false, 0L, 0L, null, Threshold.NOTHING.getValue()));
+		manager.playSound(
+				new Sound(null, null, null, null, Loop.STOP_LOOPING, currentThread.getChannelName(), 0L, false, 0L, 0L, null, Threshold.NOTHING.getValue()),
+				null, null, null);
 	}
 
 	@Override
@@ -44,8 +46,7 @@ public class StopPlaybackButtonEditor extends AbstractCellEditor implements Tabl
 	}
 
 	@Override
-	public Component getTableCellEditorComponent(JTable table, Object value,
-			boolean isSelected, int row, int column) {
+	public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
 		currentThread = (ChannelThread) value;
 		return button;
 	}

@@ -1,4 +1,0 @@
-<antlib>
-   <taskdef name="fileutil" classname="ise.antelope.tasks.FileUtilTask"/>
-   
-</antlib>

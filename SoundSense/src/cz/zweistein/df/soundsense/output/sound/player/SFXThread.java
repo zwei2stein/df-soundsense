@@ -15,11 +15,18 @@ public class SFXThread implements Runnable {
 	private SPIPlayer player;
 	private Long delay;
 
-	public SFXThread(PlayerManager manager, Sound sound, float volume) {
+	private Long xPos;
+	private Long yPos;
+	private Long zPos;
+
+	public SFXThread(PlayerManager manager, Sound sound, float volume, Long xPos, Long yPos, Long zPos) {
 		this.managerCallback = manager;
 		this.soundFile = sound.getRandomSoundFile();
 		this.volume = volume;
 		this.delay = sound.getDelay();
+		this.xPos = xPos;
+		this.yPos = yPos;
+		this.zPos = zPos;
 	}
 
 	public void setVolume(float volume) {
@@ -41,8 +48,30 @@ public class SFXThread implements Runnable {
 
 			logger.finest("Concurent sounds: " + managerCallback.getConcurentSounds());
 			this.player = new SPIPlayer();
-			player.setMasterGain(volume + soundFile.getVolumeAdjustment());
-			if (soundFile.getRandomBalance()) {
+
+			float distanceVolume = 1f;
+			if (soundFile.getPositionalBallance() && xPos != null && yPos != null && zPos != null) {
+				double dist = Math.sqrt(xPos * xPos + yPos * yPos + zPos * zPos);
+				if (dist > 80) {
+					distanceVolume = 0.1f;
+				} else if (dist > 0) {
+					distanceVolume = 1 * (0.9f * (float) dist / 80f);
+				}
+			}
+
+			player.setMasterGain(distanceVolume * (volume + soundFile.getVolumeAdjustment()));
+
+			if (soundFile.getPositionalBallance() && xPos != null) {
+				float balance = 0;
+				if (xPos <= -80) {
+					balance = -1;
+				} else if (xPos >= 80) {
+					balance = 1;
+				} else {
+					balance = xPos.floatValue() / 80f;
+				}
+				player.setBalance(balance);
+			} else if (soundFile.getRandomBalance()) {
 				player.setBalance(((float) Math.random()) * 2 - 1);
 			} else {
 				if (soundFile.getBalanceAdjustment() != null) {
