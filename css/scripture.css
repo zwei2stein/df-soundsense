@@ -1,0 +1,53 @@
+span.scripture span {
+	display: none;
+}
+
+span.scripture {
+	display: block;
+	float: left;
+	width: 64px;
+	height: 64px;
+	margin-right: 0.25em;
+	padding: 0px !important;
+}
+
+span.scripture {
+	background-position: center;
+}
+
+.a {
+	background-image: url('../g/a.png') !important; 
+}
+
+.d {
+	background-image: url('../g/d.png') !important; 
+}
+
+.g {
+	background-image: url('../g/g.png') !important; 
+}
+
+.i {
+	background-image: url('../g/i.png') !important; 
+}
+
+.l {
+	background-image: url('../g/l.png') !important; 
+}
+
+
+.r {
+	background-image: url('../g/r.png') !important; 
+}
+
+.y {
+	background-image: url('../g/y.png') !important; 
+}
+
+.s {
+	background-image: url('../g/s.png') !important; 
+}
+
+.t {
+	background-image: url('../g/t.png') !important; 
+}

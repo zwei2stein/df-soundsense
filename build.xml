@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<project name="SoundSense" basedir="." default="package">
+
+	<taskdef name="fileutil" classname="ise.antelope.tasks.FileUtilTask">
+		<classpath>
+			<pathelement location="./ant/AntelopeTasks_3.4.0.jar" />
+		</classpath>
+	</taskdef>
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="./ant/ant-contrib-1.0b3.jar" />
+		</classpath>
+	</taskdef>
+	<taskdef name="launch4j"
+	    classname="net.sf.launch4j.ant.Launch4jTask"
+	    classpath="./ant/launch4j.jar:./ant/lib/xstream.jar" />
+
+
+	<property file="build.properties"/>
+	<property file="version.properties"/>
+
+	<target name="cleanPackage">
+		<delete dir="${release.prebuilt.path}"/>
+	</target>
+
+	<target name="preparePackage">
+		<mkdir dir="${release.prebuilt.path}"/>
+	</target>
+
+	<target name="clean" depends="cleanPackage">
+		<delete dir="${build.temp.path}"/>
+	</target>
+
+	<target name="compile" depends="clean">
+		<mkdir dir="${build.temp.path}"/>
+		<javac
+			source="1.6"
+			target="1.6"
+			srcdir="src"
+			destdir="${build.temp.path}"
+			classpath="./lib/jl1.0.1.jar;./lib/freetts-1.2/freetts.jar;./lib/commons-codec-1.4/commons-codec-1.4.jar;./lib/autoUpdater.jar;./lib/jansi-1.8.jar"
+		/>
+	</target>
+
+	<target name="jar" depends="compile,preparePackage">
+		<jar destfile="${release.prebuilt.path}/soundSense.jar" basedir="${build.temp.path}">
+			<fileset file="version.properties" />
+			<manifest>
+				<attribute name="Main-Class" value="cz.zweistein.df.soundsense.SoundSense"/>
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="exe" depends="jar">
+		<launch4j
+			outfile="${release.prebuilt.path}/soundSense.exe"
+			configFile="./launch4j.xml" />
+	</target>
+
+	<target name="zip" depends="exe,zipsource,packSkeletons,preparePackage">
+		<tstamp>
+			<format property="app.date" pattern="dd.MM.yyyy" />
+		</tstamp>
+		<copy file="${basedir}/misc/readme.txt" tofile="${release.prebuilt.path}/readme.txt" >
+			<filterchain>
+				<replacetokens>
+					<token key="app.release" value="${release}" />
+					<token key="app.buildNum" value="${buildNum}" />
+					<token key="app.date" value="${app.date}" />
+				</replacetokens>
+			</filterchain>
+		</copy>
+		<zip destfile="${release.prebuilt.path}/soundSense_${release}_${buildNum}.zip">
+			<zipfileset prefix="soundsense" dir="${basedir}">
+				<include name="achievements/**" />
+				<include name="executor/**" />
+				<include name="fonts/**" />
+				<include name="icons/**" />
+				<include name="lib/**" />
+				<include name="packs/default/**" />
+				<include name="custom/**" />
+				<include name="dfhack/scripts/soundsense.lua" />
+			</zipfileset>
+			<zipfileset prefix="soundsense" dir="misc">
+				<exclude name="readme.txt" />
+			</zipfileset>
+			<zipfileset prefix="soundsense" dir="${release.prebuilt.path}" />
+		</zip>
+	</target>
+
+	<target name="zipsource" depends="preparePackage">
+		<zip destfile="${release.prebuilt.path}/soundSense_${release}_${buildNum}_source.zip">
+			<fileset dir="${basedir}">
+				<include name="src/**" />
+				<include name="build.xml" />
+				<include name="*.properties" />
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="package" depends="versionUpdate,zip">
+	</target>
+	
+	<target name="packageInfo" depends="package">
+		<tstamp>
+			<format property="app.date" pattern="dd.MM.yyyy" />
+		</tstamp>
+		<length file="${release.prebuilt.path}/soundSense_${release}_${buildNum}.zip" property="app.size" />
+		<script language="javascript">
+			var filesize = project.getProperty("app.size");
+			var str=filesize+" B";
+			if (Number(filesize) > 1024) { str = (filesize/1024).toFixed(2)+' kB'; }
+			if (Number(filesize) > 1048576) { str = (filesize/1048576).toFixed(2)+' MB'; }
+			if (Number(filesize) > 1073741824) { str = (filesize/1073741824).toFixed(2)+' GB'; }
+		 	project.setNewProperty("app.size.formated", str);
+		</script>
+	</target>
+
+	<target name="website" depends="packageInfo,themes">
+		<delete file="${release.prebuilt.path}/index.html"/>
+		<echo message="${packs.size.formated}" />
+		<echo message="${packs.date}" />
+		<copy file="${basedir}/web/index.html" tofile="${release.prebuilt.path}/index.html" >
+			<filterchain>
+				<replacetokens>
+					<token key="packs.size" value="${packs.size.formated}" />
+					<token key="packs.date" value="${packs.date}" />
+					<token key="app.release" value="${release}" />
+					<token key="app.buildNum" value="${buildNum}" />
+					<token key="app.size" value="${app.size.formated}" />
+					<token key="app.date" value="${app.date}" />
+				</replacetokens>
+			</filterchain>
+		</copy>
+	</target>
+
+	<!-- this target will automatically create an html file with
+    an incremented build number and version number-->
+	<target name="versionUpdate">
+		<propertyfile
+            file="version.properties" comment="Build version info">
+			<entry key="buildDate" type="date" value="now" pattern="dd.MM.yyyy HH:mm:ss"/>
+			<entry key="buildNum" default="0" type="int" operation="+" value="1"/>
+		</propertyfile>
+	</target>
+
+	<target name="themes" depends="preparePackage">
+		<zip destfile="${release.prebuilt.path}/soundpack.zip">
+			<fileset dir="${basedir}">
+				<include name="packs/**" />
+			</fileset>
+		</zip>
+		<timestampselector property="mostrecentpackfile">
+			<path>
+				<fileset dir="${basedir}">
+					<include name="packs/**" />
+				</fileset>
+			</path>
+		</timestampselector>
+		<echo message="most recent in pack: ${mostrecentpackfile}" />
+		<fileutil file="${mostrecentpackfile}" property="packs.date">
+			<lastmodified format="dd.MM.yyyy"/>
+		</fileutil>
+		<length file="${release.prebuilt.path}/soundpack.zip" property="packs.size" />
+		<script language="javascript">
+			var filesize = project.getProperty("packs.size");
+			var str=filesize+" B";
+			if (Number(filesize) > 1024) { str = (filesize/1024).toFixed(2)+' kB'; }
+			if (Number(filesize) > 1048576) { str = (filesize/1048576).toFixed(2)+' MB'; }
+			if (Number(filesize) > 1073741824) { str = (filesize/1073741824).toFixed(2)+' GB'; }
+		 	project.setNewProperty("packs.size.formated", str);
+		</script>
+	</target>
+
+	<target name="toikkusTheme" depends="preparePackage">
+		<zip destfile="${release.prebuilt.path}/toikkus.zip">
+			<fileset dir="${basedir}">
+				<include name="3rd_party_packs/toikkus/**" />
+			</fileset>
+		</zip>
+	</target>
+	
+	<target name="toikkus2Theme" depends="preparePackage">
+		<zip destfile="${release.prebuilt.path}/toikkus2.zip">
+			<fileset dir="${basedir}">
+				<include name="3rd_party_packs/toikkus2/**" />
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="packSkeletons">
+		<zip destfile="${release.prebuilt.path}/packSkeletons.zip">
+			<fileset dir="${basedir}">
+				<include name="packs/**/*.xml" />
+				<include name="packs/**/*.txt" />
+				<include name="packs/**/*.m3u" />
+				<include name="packs/**/*.pls" />
+			</fileset>
+		</zip>
+	</target>
+
+</project>

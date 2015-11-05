@@ -1,0 +1,12 @@
+.svn
+**/.svn
+*/**/*.mp3
+*/**/*.wav
+*/**/*.ogg
+.settings
+3rd_party_packs
+achievementsProgress.xml
+bin
+packsxx
+reports
+work
