@@ -1,7 +1,10 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <sounds>
 
-	<sound logPattern="The (.+) and the (.+) have married\.  Congratulations!">
+	<sound logPattern="The (.+) and the (.+) have married\.  Congratulations!" playbackThreshhold="3">
+		<soundFile fileName="bell.mp3" randomBalance="true">
+			<attribution url="https://www.freesound.org/people/Peaveycroquette/sounds/78381/" license="CC BY 3.0" author="Peaveycroquette" description="Angelus Bell.aif" />
+		</soundFile>
 	</sound>
 
 	<sound logPattern="They have organized a wedding reception at (.+)\." playbackThreshhold="3">

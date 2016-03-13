@@ -58,6 +58,15 @@
 			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
 		</soundFile>
 	</sound>
+	
+	<sound logPattern="The impertinent vegetation has defaced a (.+)!" playbackThreshhold="4" ansiFormat="&#27;[35;1m">
+		<soundFile fileName="../intruders/8891__patchen__0_STABscrapes.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
+		<soundFile fileName="../intruders/8891__patchen__0_STABscrapes_rev.mp3" randomBalance="true">
+			<attribution url="http://www.freesound.org/people/patchen/sounds/8891/" license="CC BY 3.0" author="patchen" description="0 STABscrapes.ogg" />
+		</soundFile>
+	</sound>
 
 	<sound logPattern="Jobs removed from unpowered Magma Forge\." playbackThreshhold="2" ansiFormat="&#27;[31m">
 		<soundFile fileName="../mining/81205__Mirors___FryPanSizlzLongRelease.mp3" randomBalance="true" />

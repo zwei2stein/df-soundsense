@@ -34,6 +34,10 @@
 	</sound>
 
 	<sound logPattern="The (.+) is caught in a burst of (.+)!">
+		<soundFile fileName="81205__Mirors___FryPanSizlzLongRelease.mp3" randomBalance="true" />
+		<soundFile fileName="45579__burriss__pan_hiss_part1.mp3" />
+		<soundFile fileName="45579__burriss__pan_hiss_part2.mp3" />
+		<soundFile fileName="69299__Nummer39__steam.mp3" randomBalance="true" />
 	</sound>
 
 </sounds>

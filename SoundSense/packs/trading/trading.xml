@@ -22,7 +22,7 @@
 	<sound logPattern="The (([oO]utpost)|([vV]illage)|([mM]etropolis)) [lL]iaison (.+) from (.+) has arrived\.">
 	</sound>
 	
-	<sound logPattern="No outpost liaison?  How curious\.\.\.">
+	<sound logPattern="No outpost liaison\?  How curious\.\.\.">
 	</sound>
 	
 	<sound logPattern="A (.+) diplomat from (.+) has arrived\.">

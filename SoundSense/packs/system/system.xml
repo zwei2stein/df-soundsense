@@ -7,8 +7,9 @@
 	</sound>
 	
 	<sound logPattern="Generating world using parameter set (.+)" channel="music" loop="stop" playbackThreshhold="0">
-		<!-- Rhapsody - Village of Dwarves! -->
-		<soundFile fileName="worldgen.mp3" />
+		<soundFile fileName="Crypto.mp3" >
+			<attribution url="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600013" license="CC BY 3.0" author="Kevin MacLeod" description="Crypto" />
+		</soundFile>
 		<soundFile fileName="../seasons/simonswerwer/Simon Swerwer-The Tankard Basher.mp3" />
 	</sound>
 	
