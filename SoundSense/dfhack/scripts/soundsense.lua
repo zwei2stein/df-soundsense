@@ -10,20 +10,20 @@ function msg(m, c)
 	dfhack.println(m)
 end
 
+
+
 -- SEASON FIX
 
 --403200 per year, 100800 per season
 
 local season = math.floor(df.global.cur_year_tick/100800) 
 
-if season == 0 then
-	msg("Spring has arrived on the calendar.")
-elseif season == 1 then
-	msg("Summer has arrived on the calendar.")
-elseif season == 2 then
-	msg("Autumn has arrived on the calendar.")
-elseif season == 3 then
-	msg("Winter has arrived on the calendar.")
+if op == SC_WORLD_LOADED then
+    if df.global.gamemode==1 then
+      qerror("Adventure mode, omitting season detection.")
+    else
+      dfhack.gui.writeToGamelog(seasons[df.global.cur_season]..' has arrived on the calendar.')
+    end
 end
 
 -- WEATHER FIX
